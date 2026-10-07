@@ -1,0 +1,322 @@
+<!-- ══════════════════════════════════════════════════════════════════
+     company-news.html  ·  Webflow paste guide
+     3 parts · each under 50,000 chars (Webflow HTML Embed limit)
+     Paste each PART below into its own HTML Embed, in this order.
+     The PART comments are landmarks only - you do not need to copy them.
+     Source: /company/news. Requires global-head.html and the shared navbar/footer.
+     ══════════════════════════════════════════════════════════════════ -->
+
+<!-- ════════ PART 1 of 3 · CSS · 8,825 chars ════════ -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"><style>.ts-cn .ts-cn-1i{--background:40 60% 99% !important;--foreground:240 3% 15% !important;--card:0 0% 100% !important;--card-foreground:240 3% 15% !important;--popover:0 0% 100% !important;--popover-foreground:240 3% 15% !important;--primary:205 72% 44% !important;--primary-foreground:0 0% 100% !important;--secondary:199 71% 94% !important;--secondary-foreground:240 3% 15% !important;--muted:205 60% 97% !important;--muted-foreground:210 19% 42% !important;--accent:197 100% 67% !important;--accent-foreground:240 3% 15% !important;--border:208 45% 91% !important;--input:208 45% 91% !important;--ring:197 100% 67% !important;--radius:20px !important;--v2-sky:197 100% 67% !important;--v2-aqua:187 100% 81% !important;--v2-pale:214 100% 97% !important;--v2-pale-strong:196 55% 90% !important;--v2-periwinkle:217 85% 76% !important;--v2-navy:210 19% 42% !important;--v2-navy-soft:212 24% 64% !important;--v2-ink:240 3% 15% !important;color:hsl(var(--foreground)) !important;background-color:hsl(var(--background)) !important}.ts-cn .ts-cn-1j{background-image:var(--v3-gradient, linear-gradient(90deg, #89B6F7 0%, #FFA2D1 50%, #89B6F7 100%)) !important;background-size:220% 100% !important;background-position:0% 50% !important;font-weight:500 !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important;display:inline-block !important;padding-bottom:.14em !important;margin-bottom:-.14em !important;-webkit-box-decoration-break:clone !important;box-decoration-break:clone !important;animation:ts-cn-v3-gradient-drift 18s ease-in-out infinite !important}@keyframes ts-cn-v3-gradient-drift{0%{background-position:0% 50%}50%{background-position:100% 50%}to{background-position:0% 50%}}@media (prefers-reduced-motion: reduce){.ts-cn .ts-cn-1j{animation:none !important}}.ts-cn .ts-cn-12{position:relative !important}.ts-cn .ts-cn-w{margin-left:auto !important;margin-right:auto !important}.ts-cn .ts-cn-v{margin-top:20px !important}.ts-cn .ts-cn-3{display:block !important}.ts-cn .ts-cn-b{display:grid !important}.ts-cn .ts-cn-h{display:none !important}.ts-cn .ts-cn-g{height:16px !important}.ts-cn .ts-cn-1m{width:16px !important}.ts-cn .ts-cn-n{max-width:520px !important}.ts-cn .ts-cn-o{max-width:880px !important}.ts-cn .ts-cn-a{gap:8px !important}.ts-cn .ts-cn-5{border-bottom-width:1px !important}.ts-cn .ts-cn-6{border-top-width:1px !important}.ts-cn .ts-cn-4{--tw-border-opacity:1 !important;border-color:rgb(230 234 240 / var(--tw-border-opacity, 1)) !important}.ts-cn .ts-cn-1{background-color:hsl(var(--background)) !important}.ts-cn .ts-cn-2{--tw-bg-opacity:1 !important;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1)) !important}.ts-cn .ts-cn-10{padding-left:16px !important;padding-right:16px !important}.ts-cn .ts-cn-11{padding-top:28px !important;padding-bottom:28px !important}.ts-cn .ts-cn-x{padding-bottom:64px !important}.ts-cn .ts-cn-y{padding-bottom:128px !important}.ts-cn .ts-cn-z{padding-top:171px !important}.ts-cn .ts-cn-1c{text-align:center !important}.ts-cn .ts-cn-7{font-family:Poppins !important}.ts-cn .ts-cn-9{font-family:Poppins,system-ui,sans-serif !important}.ts-cn .ts-cn-16{font-size:12px !important}.ts-cn .ts-cn-17{font-size:13px !important}.ts-cn .ts-cn-18{font-size:16px !important}.ts-cn .ts-cn-19{font-size:18px !important}.ts-cn .ts-cn-1a{font-size:44px !important}.ts-cn .ts-cn-8{font-weight:500 !important}.ts-cn .ts-cn-1h{text-transform:uppercase !important}.ts-cn .ts-cn-i{line-height:1.08 !important}.ts-cn .ts-cn-j{line-height:26px !important}.ts-cn .ts-cn-1d{letter-spacing:-.02em !important}.ts-cn .ts-cn-1e{letter-spacing:.1em !important}.ts-cn .ts-cn-13{--tw-text-opacity:1 !important;color:rgb(82 155 251 / var(--tw-text-opacity, 1)) !important}.ts-cn .ts-cn-14{--tw-text-opacity:1 !important;color:rgb(86 110 129 / var(--tw-text-opacity, 1)) !important}.ts-cn .ts-cn-15{--tw-text-opacity:1 !important;color:rgb(138 155 173 / var(--tw-text-opacity, 1)) !important}.ts-cn .ts-cn-1b{color:var(--v3-head) !important}.ts-cn .ts-cn-0{-webkit-font-smoothing:antialiased !important;-moz-osx-font-smoothing:grayscale !important}.ts-cn .ts-cn-1f{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke !important;transition-timing-function:cubic-bezier(.4,0,.2,1) !important;transition-duration:.15s !important}.ts-cn .ts-cn-1g{transition-property:transform !important;transition-timing-function:cubic-bezier(.4,0,.2,1) !important;transition-duration:.15s !important}@property --v3-trace-angle{syntax:"<angle>";inherits:false;initial-value:0deg}.ts-cn{--v3-a1:#89B6F7 !important;--v3-a1-rgb:137 182 247 !important;--v3-a2:#FFA2D1 !important;--v3-a2-rgb:255 162 209 !important;--v3-cta:#529BFB !important;--v3-cta-rgb:82 155 251 !important;--v3-head:#6C93B3 !important;--v3-gradient:linear-gradient(90deg, #89B6F7 0%, #FFA2D1 50%, #89B6F7 100%) !important;--v3-bar-soft:#FFD6EA !important}.ts-cn .ts-cn-1l{--v3-a1:#529BFB !important;--v3-a1-rgb:82 155 251 !important;--v3-a2:#58D0FF !important;--v3-a2-rgb:88 208 255 !important;--v3-cta:#529BFB !important;--v3-cta-rgb:82 155 251 !important;--v3-gradient:linear-gradient(90deg, #58D0FF 0%, #529BFB 100%) !important;--v3-bar-soft:#B7EBFF !important;--v3-bar-s1:43% !important;--v3-bar-s2:86% !important}.ts-cn{overflow-x:clip !important}.ts-cn .ts-cn-1k{--v3-gradient:linear-gradient(90deg, #89B6F7 0%, #FFA2D1 50%, #89B6F7 100%) !important}.ts-cn .ts-cn-1k:not(.ts-cn-none){--v3-head:#0F1B2A !important}.ts-cn .ts-cn-1k h1,.ts-cn .ts-cn-1k h2{font-weight:500 !important;letter-spacing:-.03em !important}.ts-cn .ts-cn-1k h3,.ts-cn .ts-cn-1k h4{font-weight:500 !important;letter-spacing:-.02em !important}.ts-cn .ts-cn-1k .ts-cn-1j{font-weight:500 !important}.ts-cn .ts-cn-1k:not(.ts-cn-none) h1,.ts-cn .ts-cn-1k:not(.ts-cn-none) h2,.ts-cn .ts-cn-1k:not(.ts-cn-none) h3,.ts-cn .ts-cn-1k:not(.ts-cn-none) h4{color:#0f1b2a !important}.ts-cn .ts-cn-1k h1 .ts-cn-1j,.ts-cn .ts-cn-1k h2 .ts-cn-1j,.ts-cn .ts-cn-1k h3 .ts-cn-1j,.ts-cn .ts-cn-1k h4 .ts-cn-1j{color:transparent !important}.ts-cn .ts-cn-1k footer h3{color:inherit !important}.ts-cn .ts-cn-c:hover .ts-cn-d{--tw-translate-y:-2px !important;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important}.ts-cn .ts-cn-c:hover .ts-cn-f{--tw-translate-x:2px !important;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important}.ts-cn .ts-cn-c:hover .ts-cn-e{--tw-text-opacity:1 !important;color:rgb(82 155 251 / var(--tw-text-opacity, 1)) !important}@media (min-width: 768px){.ts-cn .ts-cn-p{display:block !important}.ts-cn .ts-cn-r{grid-template-columns:120px 130px 1fr 24px !important}.ts-cn .ts-cn-s{align-items:baseline !important}.ts-cn .ts-cn-q{gap:24px !important}.ts-cn .ts-cn-t{padding-left:24px !important;padding-right:24px !important}.ts-cn .ts-cn-u{font-size:64px !important}}@media (min-width: 1024px){.ts-cn .ts-cn-k{padding-left:32px !important;padding-right:32px !important}}.ts-cn{width:100%!important;margin:0!important;padding:0!important;isolation:isolate!important;overflow-x:clip!important;font-size:16px!important;line-height:1.5!important;-webkit-font-smoothing:antialiased!important}.ts-cn,.ts-cn *,.ts-cn *::before,.ts-cn *::after{box-sizing:border-box!important}.ts-cn [hidden]{display:none!important}.ts-cn h1,.ts-cn h2,.ts-cn h3,.ts-cn h4,.ts-cn h5,.ts-cn h6,.ts-cn p,.ts-cn ul,.ts-cn ol,.ts-cn li{margin:0;padding:0;line-height:inherit;letter-spacing:inherit;font-family:inherit}.ts-cn p,.ts-cn li{font-size:inherit;font-weight:inherit}.ts-cn button{font-family:inherit!important}.ts-cn a:focus-visible{outline:2px solid #529bfb!important;outline-offset:4px!important}.ts-cn [data-ts-hero="engine"]{padding-top:37px!important}@media(min-width:768px){.ts-cn [data-ts-hero="engine"]{padding-top:53px!important}}@media(max-width:1023px){.ts-cn [data-ts-showcase]{min-height:0!important}.ts-cn h1{overflow-wrap:break-word!important}}@media(prefers-reduced-motion:reduce){.ts-cn *,.ts-cn *::before,.ts-cn *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}.ts-cn [data-ts-tab-view][hidden]{display:none!important}.ts-cn [data-ts-tab-view] [role="tab"]{cursor:pointer!important}.ts-cn [data-ts-tab-view] [role="tab"]:focus-visible{outline:2px solid #529bfb!important;outline-offset:3px!important}.ts-cn h2 .block{display:block!important}</style>
+<!-- ════════ END PART 1 of 3 ════════ -->
+
+<!-- ════════ PART 2 of 3 · HTML · 9,149 chars ════════ -->
+<div id="ts-company-news" class="ts-root ts-cn ts-core ts-core-prd"><div class="ts-cn-1i ts-cn-1k ts-cn-1 ts-cn-9 ts-cn-0"><div class="ts-cn-1l ts-cn-2"><section class="ts-cn-12 ts-cn-10 ts-cn-x ts-cn-z ts-cn-t ts-cn-k"><div class="ts-cn-w ts-cn-o ts-cn-1c ts-cn-7"><h1 class="ts-cn-v ts-cn-1a ts-cn-8 ts-cn-i ts-cn-1d ts-cn-1b ts-cn-u">What's new at <span class="ts-cn-1j">Topsort</span></h1><p class="ts-cn-w ts-cn-v ts-cn-n ts-cn-18 ts-cn-j ts-cn-14">Announcements, launches and partnerships from Topsort.</p></div></section><section class="ts-cn-10 ts-cn-y ts-cn-t ts-cn-k"><ul class="ts-cn-w ts-cn-o ts-cn-6 ts-cn-4 ts-cn-7" data-cn-list=""><li class="ts-cn-5 ts-cn-4"><a href="https://www.topsort.com/post/universal-ads" target="_blank" rel="noopener noreferrer"><div class="ts-cn-c ts-cn-b ts-cn-a ts-cn-11 ts-cn-r ts-cn-s ts-cn-q"><span class="ts-cn-17 ts-cn-15" data-cn-field="date">September 16, 2026</span><span class="ts-cn-16 ts-cn-8 ts-cn-1h ts-cn-1e ts-cn-13" data-cn-field="tag">New Feature</span><span><span class="ts-cn-3 ts-cn-19 ts-cn-8 ts-cn-j ts-cn-1b ts-cn-1f ts-cn-e" data-cn-field="title">Meet Universal Ads: Expand Commerce Media Across CTV, Streaming, and Digital Video</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-cn-l ts-cn-m ts-cn-h ts-cn-g ts-cn-1m ts-cn-15 ts-cn-1g ts-cn-d ts-cn-f ts-cn-e ts-cn-p"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div></a></li><li class="ts-cn-5 ts-cn-4"><a href="https://www.topsort.com/post/openai-ads-integration" target="_blank" rel="noopener noreferrer"><div class="ts-cn-c ts-cn-b ts-cn-a ts-cn-11 ts-cn-r ts-cn-s ts-cn-q"><span class="ts-cn-17 ts-cn-15" data-cn-field="date">September 8, 2026</span><span class="ts-cn-16 ts-cn-8 ts-cn-1h ts-cn-1e ts-cn-13" data-cn-field="tag">New Feature</span><span><span class="ts-cn-3 ts-cn-19 ts-cn-8 ts-cn-j ts-cn-1b ts-cn-1f ts-cn-e" data-cn-field="title">OpenAI Ads Are Now Available Through Topsort</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-cn-l ts-cn-m ts-cn-h ts-cn-g ts-cn-1m ts-cn-15 ts-cn-1g ts-cn-d ts-cn-f ts-cn-e ts-cn-p"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div></a></li><li class="ts-cn-5 ts-cn-4"><a href="https://www.topsort.com/post/smarter-marketplace-admin-updates" target="_blank" rel="noopener noreferrer"><div class="ts-cn-c ts-cn-b ts-cn-a ts-cn-11 ts-cn-r ts-cn-s ts-cn-q"><span class="ts-cn-17 ts-cn-15" data-cn-field="date">September 4, 2026</span><span class="ts-cn-16 ts-cn-8 ts-cn-1h ts-cn-1e ts-cn-13" data-cn-field="tag">New Feature</span><span><span class="ts-cn-3 ts-cn-19 ts-cn-8 ts-cn-j ts-cn-1b ts-cn-1f ts-cn-e" data-cn-field="title">A Smarter, More Self-Service Marketplace Admin</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-cn-l ts-cn-m ts-cn-h ts-cn-g ts-cn-1m ts-cn-15 ts-cn-1g ts-cn-d ts-cn-f ts-cn-e ts-cn-p"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div></a></li><li class="ts-cn-5 ts-cn-4"><a href="https://www.topsort.com/post/whats-new-at-topsort-in-store-planning-offsite-geotargeting-and-easier-ad-reporting" target="_blank" rel="noopener noreferrer"><div class="ts-cn-c ts-cn-b ts-cn-a ts-cn-11 ts-cn-r ts-cn-s ts-cn-q"><span class="ts-cn-17 ts-cn-15" data-cn-field="date">August 31, 2026</span><span class="ts-cn-16 ts-cn-8 ts-cn-1h ts-cn-1e ts-cn-13" data-cn-field="tag">New Feature</span><span><span class="ts-cn-3 ts-cn-19 ts-cn-8 ts-cn-j ts-cn-1b ts-cn-1f ts-cn-e" data-cn-field="title">What’s New at Topsort: In-Store Planning, Offsite Geotargeting, and Easier Ad Reporting</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-cn-l ts-cn-m ts-cn-h ts-cn-g ts-cn-1m ts-cn-15 ts-cn-1g ts-cn-d ts-cn-f ts-cn-e ts-cn-p"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div></a></li><li class="ts-cn-5 ts-cn-4"><a href="https://www.topsort.com/post/how-topsort-built-ai-insights-agentic-ai-for-retail-media-analytics" target="_blank" rel="noopener noreferrer"><div class="ts-cn-c ts-cn-b ts-cn-a ts-cn-11 ts-cn-r ts-cn-s ts-cn-q"><span class="ts-cn-17 ts-cn-15" data-cn-field="date">June 17, 2026</span><span class="ts-cn-16 ts-cn-8 ts-cn-1h ts-cn-1e ts-cn-13" data-cn-field="tag">Product Deep Dive</span><span><span class="ts-cn-3 ts-cn-19 ts-cn-8 ts-cn-j ts-cn-1b ts-cn-1f ts-cn-e" data-cn-field="title">How Topsort Built AI Insights: Agentic AI for Retail Media Analytics</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-cn-l ts-cn-m ts-cn-h ts-cn-g ts-cn-1m ts-cn-15 ts-cn-1g ts-cn-d ts-cn-f ts-cn-e ts-cn-p"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div></a></li><li class="ts-cn-5 ts-cn-4"><a href="https://www.topsort.com/post/introducing-insights-ai-powered-analytics-for-marketplace-performance" target="_blank" rel="noopener noreferrer"><div class="ts-cn-c ts-cn-b ts-cn-a ts-cn-11 ts-cn-r ts-cn-s ts-cn-q"><span class="ts-cn-17 ts-cn-15" data-cn-field="date">June 16, 2026</span><span class="ts-cn-16 ts-cn-8 ts-cn-1h ts-cn-1e ts-cn-13" data-cn-field="tag">New Feature</span><span><span class="ts-cn-3 ts-cn-19 ts-cn-8 ts-cn-j ts-cn-1b ts-cn-1f ts-cn-e" data-cn-field="title">Introducing Insights: AI-Powered Analytics That Help You Spot Issues Before They Impact Growth</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-cn-l ts-cn-m ts-cn-h ts-cn-g ts-cn-1m ts-cn-15 ts-cn-1g ts-cn-d ts-cn-f ts-cn-e ts-cn-p"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div></a></li><li class="ts-cn-5 ts-cn-4"><a href="https://www.topsort.com/post/introducing-redesigned-analytics-reports-in-topsort" target="_blank" rel="noopener noreferrer"><div class="ts-cn-c ts-cn-b ts-cn-a ts-cn-11 ts-cn-r ts-cn-s ts-cn-q"><span class="ts-cn-17 ts-cn-15" data-cn-field="date">June 8, 2026</span><span class="ts-cn-16 ts-cn-8 ts-cn-1h ts-cn-1e ts-cn-13" data-cn-field="tag">New Feature</span><span><span class="ts-cn-3 ts-cn-19 ts-cn-8 ts-cn-j ts-cn-1b ts-cn-1f ts-cn-e" data-cn-field="title">Understand Performance Better: The New Analytics Experience Is Here</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-cn-l ts-cn-m ts-cn-h ts-cn-g ts-cn-1m ts-cn-15 ts-cn-1g ts-cn-d ts-cn-f ts-cn-e ts-cn-p"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div></a></li><li class="ts-cn-5 ts-cn-4"><a href="https://www.topsort.com/post/rd-saude-brazils-largest-pharmacy-network-partners-with-topsort-to-transform-retail-media" target="_blank" rel="noopener noreferrer"><div class="ts-cn-c ts-cn-b ts-cn-a ts-cn-11 ts-cn-r ts-cn-s ts-cn-q"><span class="ts-cn-17 ts-cn-15" data-cn-field="date"></span><span class="ts-cn-16 ts-cn-8 ts-cn-1h ts-cn-1e ts-cn-13" data-cn-field="tag">New Partnership</span><span><span class="ts-cn-3 ts-cn-19 ts-cn-8 ts-cn-j ts-cn-1b ts-cn-1f ts-cn-e" data-cn-field="title">RD Saúde Partners with Topsort to Transform Retail Media</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-cn-l ts-cn-m ts-cn-h ts-cn-g ts-cn-1m ts-cn-15 ts-cn-1g ts-cn-d ts-cn-f ts-cn-e ts-cn-p"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div></a></li></ul></section><div hidden="" data-cn-template=""><li class="ts-cn-5 ts-cn-4"><a href="https://www.topsort.com/post/openai-ads-integration" target="_blank" rel="noopener noreferrer"><div class="ts-cn-c ts-cn-b ts-cn-a ts-cn-11 ts-cn-r ts-cn-s ts-cn-q"><span class="ts-cn-17 ts-cn-15" data-cn-field="date">May 2026</span><span class="ts-cn-16 ts-cn-8 ts-cn-1h ts-cn-1e ts-cn-13" data-cn-field="tag">Announcement</span><span><span class="ts-cn-3 ts-cn-19 ts-cn-8 ts-cn-j ts-cn-1b ts-cn-1f ts-cn-e" data-cn-field="title">OpenAI Ads now available through Topsort</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-cn-l ts-cn-m ts-cn-h ts-cn-g ts-cn-1m ts-cn-15 ts-cn-1g ts-cn-d ts-cn-f ts-cn-e ts-cn-p"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div></a></li></div></div></div></div>
+<!-- ════════ END PART 2 of 3 ════════ -->
+
+<!-- ════════ PART 3 of 3 · JS · 18,353 chars ════════ -->
+<script>(function(){function run(){var roots=["ts-company-news"].map(function(id){return document.getElementById(id);}).filter(Boolean);function all(s){return roots.flatMap(function(r){return Array.from(r.querySelectorAll(s));});}function one(s){return all(s)[0];}var views=all('[data-ts-tab-view]');views.forEach(function(view){view.querySelectorAll('[role="tab"]').forEach(function(button,i){button.addEventListener('click',function(){views.forEach(function(v,k){v.hidden=k!==i;});views[i].querySelectorAll('[role="tab"]')[i].focus();});button.addEventListener('keydown',function(e){if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();var next=e.key==='Home'?0:e.key==='End'?views.length-1:(i+(e.key==='ArrowRight'?1:-1)+views.length)%views.length;views[next].querySelectorAll('[role="tab"]')[next].click();});});});function sortResourceUpdates(entries) {
+  const timestamp=entry=>{
+    const date=String(entry.date||'').trim();
+    const value=/\b\d{4}\b/.test(date)?Date.parse(date):NaN;
+    return Number.isFinite(value)?value:-Infinity;
+  };
+  const updates=entries.filter(entry=>entry.category==='Product Updates').sort((a,b)=>{
+    const left=timestamp(a),right=timestamp(b);
+    return left===right?0:left>right?-1:1;
+  });
+  let index=0;
+  return entries.map(entry=>entry.category==='Product Updates'?updates[index++]:entry);
+}
+
+function readResourceCMS(document) {
+  const text=(el,name)=>{const n=el.querySelector('.cms-field-'+name);return n&&!n.classList.contains('w-dyn-bind-empty')?n.textContent.trim():'';};
+  const image=(el,name)=>{const n=el.querySelector('img.cms-field-'+name);return n&&!n.classList.contains('w-dyn-bind-empty')?n.getAttribute('src')||'':'';};
+  const read=(selector,category)=>Array.from(document.querySelectorAll(selector)).map((el,i)=>{
+    const link=el.querySelector('.cms-field-link');
+    const tags=Array.from(el.querySelectorAll('.cms-field-tag:not(.w-dyn-bind-empty)')).map(tag=>tag.textContent.trim().replace(/\s*\*$/,'')).filter(Boolean);
+    return {id:category+'-'+i,category,title:text(el,'title'),summary:text(el,'summary'),date:text(el,'date'),tags,tag:text(el,'card-tag')||tags[0]||category,meta:[text(el,'company'),text(el,'industry'),text(el,'region')].filter(Boolean).join(' · '),company:text(el,'company'),industry:text(el,'industry'),region:text(el,'region'),metric:text(el,'metric'),metricLabel:text(el,'metric-label'),image:image(el,'thumbnail'),logo:image(el,'logo'),href:link?.getAttribute('href')||link?.textContent.trim()||'',featured:text(el,'card-tag').endsWith('*')};
+  }).filter(e=>e.title).map(e=>({...e,tag:e.tag.replace(/\s*\*$/,'')}));
+  const customers=read('.cms-customers .cms-item','Customers');
+  const opinions=read('.cms-opinions > [role="listitem"]','Opinion');
+  const updates=read('.cms-updates > [role="listitem"]','Product Updates');
+  const press=read('.cms-press > [role="listitem"]','Press Room');
+  const research=read('.cms-research > [role="listitem"]','Research');
+  const videos=read('.cms-videos > [role="listitem"],.cms-videos .cms-item','Videos');
+  const events=read('.cms-events > [role="listitem"],.cms-events .cms-item','Events');
+  const news=read('.cms-news > [role="listitem"],.cms-news .cms-item','News');
+  opinions.forEach(e=>{if([e.tag,...e.tags].some(tag=>['product updates','new feature','product deep dive','integration'].includes(tag.toLowerCase())))e.category='Product Updates';if(/OpenAI Ads|partnership|partners with/i.test(e.title))e.category='News';});
+  return sortResourceUpdates([...customers,...opinions,...updates,...research,...press,...videos,...events,...news]);
+}
+
+var list=one('[data-cn-list]'), template=one('[data-cn-template] li');var rows=readResourceCMS(document).filter(function(e){return e.category==='News'||e.category==='Product Updates';});if(rows.length){rows.sort(function(a,b){return Date.parse(b.date)-Date.parse(a.date);});list.replaceChildren();rows.forEach(function(e){var li=template.cloneNode(true);li.querySelectorAll('[data-cn-field]').forEach(function(el){el.textContent=e[el.getAttribute('data-cn-field')]||'';});li.querySelector('a').href=e.href;list.append(li);});}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();})();</script><script>(function () {
+  'use strict';
+  var roots = ["ts-company-news"].map(function (id) { return document.getElementById(id); }).filter(function (root) { return root && !root.hasAttribute('data-ts-ready'); });
+  if (!roots.length) return;
+  roots.forEach(function (root) { root.setAttribute('data-ts-ready', ''); });
+  var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var reduced = function () { return motion.matches; };
+  var set = function (el, key, value) { if (el) el.style.setProperty(key, String(value), 'important'); };
+  var all = function (selector, scope) {
+    var list = [];
+    (scope ? [scope] : roots).forEach(function (root) { list.push.apply(list, root.querySelectorAll(selector)); });
+    return list;
+  };
+  var num = function (el, name, fallback) { var value = el.getAttribute(name); return value === null || value === '' ? fallback : Number(value); };
+  var viewport = function () { return window.innerHeight || document.documentElement.clientHeight; };
+  var wide = function () { return window.innerWidth >= 1024; };
+  var ease = function (ms) { return ms + 'ms cubic-bezier(0.22, 1, 0.36, 1)'; };
+  // Components toggle Tailwind classes between an active and an idle state.
+  // The generator records both class sets (already mapped) per role.
+  function swap(el, states, on) {
+    if (!el || !states) return;
+    (on ? states[1] : states[0]).forEach(function (c) { el.classList.remove(c); });
+    (on ? states[0] : states[1]).forEach(function (c) { el.classList.add(c); });
+  }
+  // Scroll progress through a sticky section, as in ScrollShowcase,
+  // EvaluationScroll and ImplementationTimeline: the step advances while the
+  // sticky panel is pinned below the 104px desktop header allowance.
+  // 104px in the source (a 75px nav plus 29px); re-derived under the host nav.
+  var stickyTop = 104;
+  var pinOffset = function () { return wide() ? stickyTop : 0; };
+  function stepFor(wrap, steps, previous) {
+    var rect = wrap.getBoundingClientRect(), stickyTop = pinOffset();
+    var total = rect.height - viewport() + stickyTop;
+    if (total <= 0) return previous;
+    var progress = Math.min(Math.max((stickyTop - rect.top) / total, 0), 0.9999);
+    return Math.min(steps - 1, Math.floor(progress * steps));
+  }
+
+  // Reveal.tsx and FadeInCard: fade and slide in while in view, reverse on the
+  // way out. Delay and offset come from the component props at capture time.
+  var KINDS = {reveal: {ms: 850, top: 0.88, bottom: 0.06}, card: {ms: 900, top: 0.85, bottom: 0.1}};
+  var reveals = all('[data-ts-reveal]').map(function (el) {
+    return {el: el, kind: KINDS[el.getAttribute('data-ts-reveal-kind')] || KINDS.reveal, delay: num(el, 'data-ts-reveal', 0), from: 'translateY(' + num(el, 'data-ts-reveal-y', 24) + 'px)', on: null};
+  });
+  function primeReveals() {
+    reveals.forEach(function (item) {
+      if (reduced()) {
+        item.on = null;
+        ['opacity', 'transform', 'transition', 'transition-delay', 'will-change'].forEach(function (p) { item.el.style.removeProperty(p); });
+        return;
+      }
+      set(item.el, 'transition', 'opacity ' + ease(item.kind.ms) + ', transform ' + ease(item.kind.ms));
+      set(item.el, 'will-change', 'opacity, transform');
+      if (item.on === null) { set(item.el, 'opacity', 0); set(item.el, 'transform', item.from); }
+    });
+  }
+  function updateReveals() {
+    if (reduced()) return;
+    var vh = viewport();
+    reveals.forEach(function (item) {
+      var rect = item.el.getBoundingClientRect();
+      var on = rect.top < vh * item.kind.top && rect.bottom > vh * item.kind.bottom;
+      if (on === item.on) return;
+      item.on = on;
+      set(item.el, 'transition-delay', (on ? item.delay : 0) + 'ms');
+      set(item.el, 'opacity', on ? 1 : 0);
+      set(item.el, 'transform', on ? 'translateY(0)' : item.from);
+    });
+  }
+
+  // ScrollShowcase: numbered list on the left, one visual per item on the
+  // right. Desktop pins the panel and advances with scroll; below 1024px the
+  // panel is not sticky, so every description stays open and the highlight
+  // follows the row nearest the reading line.
+  var showcases = all('[data-ts-showcase]').map(function (wrap) {
+    return {
+      wrap: wrap, n: num(wrap, 'data-ts-showcase', 1), head: wrap.querySelector('[data-ts-sc-head]'),
+      rows: all('[data-ts-sc-row]', wrap), visuals: all('[data-ts-sc-visual]', wrap),
+      label: wrap.querySelector('[data-ts-sc-label]'), states: JSON.parse(wrap.getAttribute('data-ts-states') || '{}'),
+      active: null, mode: null, pad: null
+    };
+  });
+  function measureShowcase(s) {
+    var stickyTop = pinOffset(), head = s.head ? s.head.offsetHeight : 0;
+    var available = viewport() - stickyTop - head - s.n * 30 - 68 - 48;
+    var pad = Math.max(8, Math.min(28, Math.round(available / (s.n * 2))));
+    if (pad === s.pad) return;
+    s.pad = pad;
+    s.rows.forEach(function (row) { set(row, 'padding-top', pad + 'px'); set(row, 'padding-bottom', pad + 'px'); });
+  }
+  function updateShowcase(s) {
+    var desktop = wide(), active;
+    if (desktop) active = stepFor(s.wrap, s.n, s.active === null ? 0 : s.active);
+    else {
+      var line = viewport() * 0.6;
+      active = 0;
+      s.rows.forEach(function (row, i) { if (row.getBoundingClientRect().top < line) active = i; });
+    }
+    if (active === s.active && desktop === s.mode) return;
+    s.active = active; s.mode = desktop;
+    s.rows.forEach(function (row, i) {
+      var on = i === active;
+      swap(row.querySelector('[data-ts-sc-num]'), s.states.num, on);
+      swap(row.querySelector('[data-ts-sc-title]'), s.states.title, on);
+      swap(row.querySelector('[data-ts-sc-desc]'), s.states.desc, on || !desktop);
+    });
+    s.visuals.forEach(function (visual, i) {
+      var on = i === active;
+      set(visual, 'opacity', on ? 1 : 0);
+      set(visual, 'transform', 'scale(' + (on ? 1 : 1.04) + ')');
+      visual.setAttribute('aria-hidden', String(!on));
+      set(visual.querySelector('[data-ts-sc-box]'), 'transform', 'translateY(' + (on ? 0 : 14) + 'px) scale(' + (on ? 1 : 0.92) + ')');
+    });
+    var title = s.rows[active] && s.rows[active].querySelector('[data-ts-sc-title]');
+    if (s.label && title) s.label.textContent = title.textContent;
+  }
+
+  // EvaluationScroll: sticky title, questions that stagger in and advance.
+  var evaluations = all('[data-ts-eval]').map(function (wrap) {
+    return {wrap: wrap, n: num(wrap, 'data-ts-eval', 1), rows: all('[data-ts-ev-row]', wrap), states: JSON.parse(wrap.getAttribute('data-ts-states') || '{}'), active: null, shown: null, still: null};
+  });
+  function updateEvaluation(e) {
+    var vh = viewport(), rect = e.wrap.getBoundingClientRect(), still = reduced();
+    var active = stepFor(e.wrap, e.n, e.active === null ? 0 : e.active);
+    var shown = still || (rect.top < vh * 0.8 && rect.bottom > vh * 0.1);
+    if (active !== e.active) {
+      e.active = active;
+      e.rows.forEach(function (row, i) {
+        swap(row.querySelector('[data-ts-ev-num]'), e.states.num, i === active);
+        swap(row.querySelector('[data-ts-ev-q]'), e.states.q, i === active);
+      });
+    }
+    if (shown !== e.shown || still !== e.still) {
+      e.shown = shown; e.still = still;
+      e.rows.forEach(function (row, i) {
+        set(row, 'transition', still ? 'none' : 'opacity ' + ease(700) + ', transform ' + ease(700));
+        set(row, 'transition-delay', (shown ? i * 130 : (e.n - 1 - i) * 60) + 'ms');
+        set(row, 'opacity', shown ? 1 : 0);
+        set(row, 'transform', shown ? 'translateY(0)' : 'translateY(22px)');
+      });
+    }
+  }
+
+  // ImplementationTimeline: sticky section whose active step, bar highlight,
+  // glow and card emphasis follow scroll progress.
+  var timelines = all('[data-ts-timeline]').map(function (wrap) {
+    return {
+      wrap: wrap, n: Math.max(1, num(wrap, 'data-ts-timeline', 1)), states: JSON.parse(wrap.getAttribute('data-ts-states') || '{}'),
+      head: wrap.querySelector('[data-ts-tl-head]'), bar: wrap.querySelector('[data-ts-tl-bar]'),
+      glow: wrap.querySelector('[data-ts-tl-glow]'), highlight: wrap.querySelector('[data-ts-tl-highlight]'),
+      grid: wrap.querySelector('[data-ts-tl-grid]'), cards: all('[data-ts-tl-card]', wrap),
+      active: null, shown: null, shownFor: null, wide: null, still: null
+    };
+  });
+  function updateTimeline(t) {
+    var vh = viewport(), desktop = wide(), still = reduced(), rect = t.wrap.getBoundingClientRect();
+    var active = stepFor(t.wrap, t.n, t.active === null ? 0 : t.active);
+    var shown = still || (rect.top < vh * 0.98 && rect.bottom > vh * 0.05);
+    if (desktop !== t.wide) {
+      t.wide = desktop;
+      if (desktop) set(t.grid, 'grid-template-columns', 'repeat(' + t.n + ', minmax(0px, 1fr))');
+      else t.grid.style.removeProperty('grid-template-columns');
+    }
+    if (still !== t.still) {
+      t.still = still;
+      [t.head, t.bar, t.glow, t.highlight].concat(t.cards).forEach(function (el) {
+        if (!el) return;
+        if (still) set(el, 'transition', 'none'); else el.style.removeProperty('transition');
+      });
+    }
+    if (shown !== t.shown) {
+      t.shown = shown;
+      set(t.head, 'opacity', shown ? 1 : 0);
+      set(t.head, 'transform', shown ? 'translateY(0)' : 'translateY(18px)');
+      set(t.bar, 'transform', 'translateX(-50%) scaleY(' + (shown ? 1 : 0) + ')');
+      set(t.bar, 'transition-delay', (shown ? 150 : 0) + 'ms');
+    }
+    if (active !== t.active || shown !== t.shownFor) {
+      t.active = active; t.shownFor = shown;
+      var center = ((active + 0.5) / t.n) * 100;
+      set(t.glow, 'left', (center - 30) + '%');
+      set(t.highlight, 'left', (center - 50) + '%');
+      t.cards.forEach(function (card, i) {
+        var on = i === active;
+        set(card, 'transform', 'scale(' + (on ? 1.06 : 1) + ')');
+        set(card, 'opacity', shown ? (on ? 1 : 0.55) : 0);
+        set(card, 'transition-delay', (shown ? 300 + i * 70 : 0) + 'ms');
+        swap(card.querySelector('[data-ts-tl-label]'), t.states.label, on);
+        swap(card.querySelector('[data-ts-tl-title]'), t.states.title, on);
+      });
+    }
+  }
+
+  function scrollEffects() {
+    updateReveals();
+    showcases.forEach(updateShowcase);
+    evaluations.forEach(updateEvaluation);
+    timelines.forEach(updateTimeline);
+  }
+  var frame = 0;
+  function requestFrame() { if (!frame) frame = requestAnimationFrame(function () { frame = 0; scrollEffects(); }); }
+  function resize() { showcases.forEach(measureShowcase); requestFrame(); }
+  window.addEventListener('scroll', requestFrame, {passive: true});
+  window.addEventListener('resize', resize);
+  primeReveals(); showcases.forEach(measureShowcase); scrollEffects();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
+
+  // The host owns navigation. Reserve room under a fixed header only when the
+  // layout has not already done so, and size the first-viewport heroes to the
+  // space left below it (the source's --v3-banner-h hook).
+  var hostNav = document.querySelector('[data-ts-navbar],.w-nav,#ts-navbar');
+  var stickies = all('[data-ts-sticky]').map(function (el) {
+    var rule = el.getAttribute('data-ts-sticky').split(':');
+    return {el: el, prop: rule[0], gap: Number(rule[1]) || 0};
+  });
+  function applySticky() {
+    stickies.forEach(function (s) {
+      if (wide() && stickyTop !== 104) {
+        set(s.el, 'top', stickyTop + 'px');
+        if (s.prop) set(s.el, s.prop, 'calc(100vh - ' + (stickyTop + s.gap) + 'px)');
+      } else {
+        s.el.style.removeProperty('top');
+        if (s.prop) s.el.style.removeProperty(s.prop);
+      }
+    });
+  }
+  function navbarClearance() {
+    var root = roots[0], navHeight = 0;
+    if (hostNav && /fixed|sticky|absolute/.test(getComputedStyle(hostNav).position)) navHeight = hostNav.getBoundingClientRect().height;
+    root.style.removeProperty('padding-top');
+    var top = root.getBoundingClientRect().top + window.scrollY;
+    var clearance = /fixed|absolute/.test(hostNav ? getComputedStyle(hostNav).position : '') ? Math.max(0, navHeight - top) : 0;
+    set(root, 'padding-top', clearance + 'px');
+    var offset = top + clearance;
+    roots.forEach(function (r) { set(r, '--v3-banner-h', (offset > 0 && offset < 400 ? Math.round(offset) : 0) + 'px'); });
+    stickyTop = Math.max(104, Math.round(navHeight) + 29);
+    applySticky();
+    showcases.forEach(measureShowcase);
+    requestFrame();
+  }
+  navbarClearance();
+  window.addEventListener('resize', navbarClearance);
+  window.addEventListener('load', navbarClearance);
+  window.addEventListener('pageshow', navbarClearance);
+  if ('ResizeObserver' in window && hostNav) new ResizeObserver(navbarClearance).observe(hostNav);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(navbarClearance);
+
+  // Background loops play only while visible, never under reduced motion.
+  var videos = all('[data-ts-video]');
+  videos.forEach(function (video) { video.muted = true; video.playsInline = true; });
+  function updateVideo(video, visible) {
+    if (reduced() || document.hidden || !visible) video.pause();
+    else { var play = video.play(); if (play) play.catch(function () {}); }
+  }
+  if ('IntersectionObserver' in window) {
+    var videoObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { entry.target.setAttribute('data-ts-visible', String(entry.isIntersecting)); updateVideo(entry.target, entry.isIntersecting); });
+    }, {rootMargin: '200px 0px'});
+    videos.forEach(function (video) { videoObserver.observe(video); });
+  } else videos.forEach(function (video) { updateVideo(video, true); });
+  document.addEventListener('visibilitychange', function () {
+    videos.forEach(function (video) { updateVideo(video, video.getAttribute('data-ts-visible') === 'true'); });
+  });
+  motion.addEventListener('change', function () {
+    reveals.forEach(function (item) { item.on = null; });
+    primeReveals(); scrollEffects();
+    videos.forEach(function (video) { updateVideo(video, video.getAttribute('data-ts-visible') === 'true'); });
+  });
+})();
+</script>
+<!-- ════════ END PART 3 of 3 ════════ -->

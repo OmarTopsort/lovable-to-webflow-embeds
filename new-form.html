@@ -1,0 +1,159 @@
+<!-- ══════════════════════════════════════════════════════════════════
+     new-form.html  ·  Webflow paste guide
+     2 parts · each under 50,000 chars (Webflow HTML Embed limit)
+     Paste each PART below into its own HTML Embed, in this order.
+     The PART comments are landmarks only - you do not need to copy them.
+     ══════════════════════════════════════════════════════════════════ -->
+
+
+<!-- ════════ PART 1 of 2 · CSS · 3,520 chars ════════ -->
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+  .ts-subscribe-root,
+  .ts-subscribe-root *,
+  .ts-subscribe-root *::before,
+  .ts-subscribe-root *::after {
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ts-subscribe-root {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  .ts-subscribe-form {
+    display: flex !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ts-subscribe-root .ts-subscribe-label {
+    display: block !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    padding-bottom: 8px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: hsl(0, 0%, 20%) !important;
+  }
+
+  .ts-subscribe-input {
+    flex: 1 !important;
+    padding: 14px 16px !important;
+    border: 1px solid hsl(0, 0%, 90%) !important;
+    border-right: none !important;
+    background: hsl(0, 0%, 97%) !important;
+    font-size: 14px !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    color: hsl(0, 0%, 20%) !important;
+    outline: none !important;
+    transition: border-color 0.2s ease !important;
+    min-width: 0 !important;
+  }
+
+  .ts-subscribe-input::placeholder {
+    color: hsl(0, 0%, 40%) !important;
+  }
+
+  .ts-subscribe-input:focus {
+    border-color: hsl(235, 100%, 50%) !important;
+  }
+
+  .ts-subscribe-btn {
+    padding: 14px 32px !important;
+    background: hsl(235, 100%, 50%) !important;
+    color: #fff !important;
+    border: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    transition: background 0.2s ease !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  .ts-subscribe-btn:hover {
+    background: hsl(235, 100%, 45%) !important;
+  }
+
+  /* Success state (matches homepage.html) */
+  .ts-plg-success {
+    display: none !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-top: 16px !important;
+    padding: 16px !important;
+    background: hsla(162, 62%, 50%, 0.1) !important;
+    border: 1px solid hsla(162, 62%, 50%, 0.2) !important;
+    border-radius: 12px !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 480px !important;
+  }
+
+  .ts-plg-success svg {
+    width: 20px !important;
+    height: 20px !important;
+    color: hsl(162, 62%, 50%) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .ts-plg-success > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .ts-plg-success-title {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: hsl(162, 62%, 50%) !important;
+    margin-bottom: 2px !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  }
+
+  .ts-plg-success-desc {
+    font-size: 12px !important;
+    color: rgba(0, 0, 0, 0.6) !important;
+    line-height: 1.4 !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  }
+
+  /* Responsive: stack on very small screens */
+  @media (max-width: 420px) {
+    .ts-subscribe-form:not(.ts-plg-success) {
+      flex-direction: column !important;
+    }
+
+    .ts-subscribe-input {
+      border-right: 1px solid hsl(0, 0%, 90%) !important;
+      border-bottom: none !important;
+    }
+  }
+</style>
+<!-- ════════ END PART 1 of 2 ════════ -->
+
+<!-- ════════ PART 2 of 2 · HTML · 368 chars ════════ -->
+<div class="ts-subscribe-root">
+  <label class="ts-subscribe-label" for="ts-subscribe-email">Email address</label>
+  <form class="ts-subscribe-form ts-plg-form" id="ts-subscribe-form-wrap">
+    <input type="email" required class="ts-subscribe-input" placeholder="Subscribe to Newsletter..."
+      id="ts-subscribe-email" name="email" autocomplete="email">
+    <button type="submit" class="ts-subscribe-btn" id="ts-subscribe-btn">Subscribe</button>
+  </form>
+</div>
+<!-- ════════ END PART 2 of 2 ════════ -->

@@ -1,0 +1,293 @@
+<!-- ══════════════════════════════════════════════════════════════════
+     products/genie-copilot.html  ·  Webflow paste guide
+     3 parts · each under 50,000 chars (Webflow HTML Embed limit)
+     Paste each PART below into its own HTML Embed, in this order.
+     The PART comments are landmarks only - you do not need to copy them.
+     Page: https://www.topsort.com/products/genie-copilot  ·  design: /platform/data-genie (v3 source)
+     Needs global-head.html in Site Settings > Custom Code > Head.
+     ══════════════════════════════════════════════════════════════════ -->
+
+<!-- ════════ PART 1 of 3 · CSS · 19,620 chars ════════ -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap">
+<style>
+.ts-dg .ts-dg-50{--background:40 60% 99% !important;--foreground:240 3% 15% !important;--card:0 0% 100% !important;--card-foreground:240 3% 15% !important;--popover:0 0% 100% !important;--popover-foreground:240 3% 15% !important;--primary:205 72% 44% !important;--primary-foreground:0 0% 100% !important;--secondary:199 71% 94% !important;--secondary-foreground:240 3% 15% !important;--muted:205 60% 97% !important;--muted-foreground:210 19% 42% !important;--accent:197 100% 67% !important;--accent-foreground:240 3% 15% !important;--border:208 45% 91% !important;--input:208 45% 91% !important;--ring:197 100% 67% !important;--radius:20px !important;--v2-sky:197 100% 67% !important;--v2-aqua:187 100% 81% !important;--v2-pale:214 100% 97% !important;--v2-pale-strong:196 55% 90% !important;--v2-periwinkle:217 85% 76% !important;--v2-navy:210 19% 42% !important;--v2-navy-soft:212 24% 64% !important;--v2-ink:240 3% 15% !important;color:hsl(var(--foreground)) !important;background-color:hsl(var(--background)) !important}.ts-dg .ts-dg-52{background-image:var(--v3-gradient, linear-gradient(90deg, #89B6F7 0%, #FFA2D1 50%, #89B6F7 100%)) !important;background-size:220% 100% !important;background-position:0% 50% !important;font-weight:500 !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important;display:inline-block !important;padding-bottom:.14em !important;margin-bottom:-.14em !important;-webkit-box-decoration-break:clone !important;box-decoration-break:clone !important;animation:ts-dg-v3-gradient-drift 18s ease-in-out infinite !important}@keyframes ts-dg-v3-gradient-drift{0%{background-position:0% 50%}50%{background-position:100% 50%}to{background-position:0% 50%}}@media (prefers-reduced-motion: reduce){.ts-dg .ts-dg-52{animation:none !important}}.ts-dg .ts-dg-3k{pointer-events:none !important}.ts-dg .ts-dg-4{position:absolute !important}.ts-dg .ts-dg-3v{position:relative !important}.ts-dg .ts-dg-1r{top:0 !important;right:0 !important;bottom:0 !important;left:0 !important}.ts-dg .ts-dg-1s{top:8% !important;right:8% !important;bottom:8% !important;left:8% !important}.ts-dg .ts-dg-1t{left:0 !important;right:0 !important}.ts-dg .ts-dg-1{left:-10% !important}.ts-dg .ts-dg-g{bottom:0 !important}.ts-dg .ts-dg-23{left:3% !important}.ts-dg .ts-dg-3w{right:-10% !important}.ts-dg .ts-dg-3x{right:3% !important}.ts-dg .ts-dg-4s{top:50% !important}.ts-dg .ts-dg-4t{top:-25% !important}.ts-dg .ts-dg-5d{z-index:10 !important}.ts-dg .ts-dg-39{margin-left:auto !important;margin-right:auto !important}.ts-dg .ts-dg-2j{margin-bottom:40px !important}.ts-dg .ts-dg-32{margin-top:4px !important}.ts-dg .ts-dg-33{margin-top:48px !important}.ts-dg .ts-dg-34{margin-top:12px !important}.ts-dg .ts-dg-35{margin-top:16px !important}.ts-dg .ts-dg-36{margin-top:20px !important}.ts-dg .ts-dg-37{margin-top:36px !important}.ts-dg .ts-dg-38{margin-top:12px !important}.ts-dg .ts-dg-l{display:flex !important}.ts-dg .ts-dg-1q{display:inline-flex !important}.ts-dg .ts-dg-12{display:grid !important}.ts-dg .ts-dg-1g{display:none !important}.ts-dg .ts-dg-6{aspect-ratio:1 / 1 !important}.ts-dg .ts-dg-19{height:64px !important}.ts-dg .ts-dg-1a{height:14px !important}.ts-dg .ts-dg-1b{height:24px !important}.ts-dg .ts-dg-1c{height:35% !important}.ts-dg .ts-dg-1d{height:36% !important}.ts-dg .ts-dg-1e{height:70% !important}.ts-dg .ts-dg-1f{height:100% !important}.ts-dg .ts-dg-56{width:14px !important}.ts-dg .ts-dg-57{width:260px !important}.ts-dg .ts-dg-58{width:36% !important}.ts-dg .ts-dg-59{width:55% !important}.ts-dg .ts-dg-5a{width:auto !important}.ts-dg .ts-dg-5b{width:100% !important}.ts-dg .ts-dg-2f{max-width:672px !important}.ts-dg .ts-dg-2g{max-width:768px !important}.ts-dg .ts-dg-2h{max-width:1400px !important}.ts-dg .ts-dg-2i{max-width:576px !important}.ts-dg .ts-dg-m{flex:1 1 0% !important}.ts-dg .ts-dg-2{--tw-translate-y:-45% !important;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important}.ts-dg .ts-dg-41{-webkit-user-select:none !important;-moz-user-select:none !important;user-select:none !important}.ts-dg .ts-dg-13{grid-template-columns:repeat(1,minmax(0,1fr)) !important}.ts-dg .ts-dg-14{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr) !important}.ts-dg .ts-dg-n{flex-direction:column !important}.ts-dg .ts-dg-o{flex-wrap:wrap !important}.ts-dg .ts-dg-3j{place-items:center !important}.ts-dg .ts-dg-1u{align-items:center !important}.ts-dg .ts-dg-1v{justify-content:center !important}.ts-dg .ts-dg-v{gap:4px !important}.ts-dg .ts-dg-w{gap:6px !important}.ts-dg .ts-dg-x{gap:40px !important}.ts-dg .ts-dg-y{gap:8px !important}.ts-dg .ts-dg-z{gap:12px !important}.ts-dg .ts-dg-10{gap:24px !important}.ts-dg .ts-dg-11{gap:28px !important}.ts-dg .ts-dg-i>:not([hidden])~:not([hidden]){--tw-divide-y-reverse:0 !important;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse))) !important;border-bottom-width:calc(1px * var(--tw-divide-y-reverse)) !important}.ts-dg .ts-dg-h>:not([hidden])~:not([hidden]){--tw-divide-opacity:1 !important;border-color:rgb(234 240 247 / var(--tw-divide-opacity, 1)) !important}.ts-dg .ts-dg-42{align-self:flex-start !important}.ts-dg .ts-dg-3e{overflow:hidden !important}.ts-dg .ts-dg-3y{border-radius:18px !important}.ts-dg .ts-dg-3z{border-radius:28px !important}.ts-dg .ts-dg-40{border-radius:9999px !important}.ts-dg .ts-dg-d{border-width:1px !important}.ts-dg .ts-dg-e{border-color:#e4e6eb !important}.ts-dg .ts-dg-f{border-color:#e4e6eb !important}.ts-dg .ts-dg-7{background-color:var(--v3-cta) !important}.ts-dg .ts-dg-8{background-color:hsl(var(--background)) !important}.ts-dg .ts-dg-a{background-color:hsl(var(--v2-pale)) !important}.ts-dg .ts-dg-b{--tw-bg-opacity:1 !important;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1)) !important}.ts-dg .ts-dg-9{background-image:linear-gradient(to bottom,var(--tw-gradient-stops)) !important}.ts-dg .ts-dg-u{--tw-gradient-from:transparent var(--tw-gradient-from-position) !important;--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position) !important;--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to) !important}.ts-dg .ts-dg-55{--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position) !important;--tw-gradient-stops:var(--tw-gradient-from), rgb(255 255 255 / .7) var(--tw-gradient-via-position), var(--tw-gradient-to) !important}.ts-dg .ts-dg-4r{--tw-gradient-to:#fff var(--tw-gradient-to-position) !important}.ts-dg .ts-dg-3a{-o-object-fit:cover !important;object-fit:cover !important}.ts-dg .ts-dg-3f{padding:16px !important}.ts-dg .ts-dg-3g{padding:20px !important}.ts-dg .ts-dg-3h{padding:32px !important}.ts-dg .ts-dg-0.ts-dg-0{padding-top:48px!important;padding-bottom:48px!important}.ts-dg .ts-dg-3m{padding-left:8px !important;padding-right:8px !important}.ts-dg .ts-dg-3n{padding-left:16px !important;padding-right:16px !important}.ts-dg .ts-dg-3o{padding-left:20px !important;padding-right:20px !important}.ts-dg .ts-dg-3p{padding-left:24px !important;padding-right:24px !important}.ts-dg .ts-dg-3q{padding-top:48px !important;padding-bottom:48px !important}.ts-dg .ts-dg-3r{padding-top:64px !important;padding-bottom:64px !important}.ts-dg .ts-dg-3s{padding-top:96px !important;padding-bottom:96px !important}.ts-dg .ts-dg-3t{padding-top:12px !important;padding-bottom:12px !important}.ts-dg .ts-dg-3u{padding-top:20px !important;padding-bottom:20px !important}.ts-dg .ts-dg-3i{padding-bottom:24px !important}.ts-dg .ts-dg-3l{padding-top:112px !important}.ts-dg .ts-dg-4o{text-align:center !important}.ts-dg .ts-dg-p{font-family:Poppins !important}.ts-dg .ts-dg-s{font-family:Poppins,system-ui,sans-serif !important}.ts-dg .ts-dg-4b{font-size:12.5px !important}.ts-dg .ts-dg-4c{font-size:13px !important}.ts-dg .ts-dg-4d{font-size:14.5px !important}.ts-dg .ts-dg-4e{font-size:14px !important}.ts-dg .ts-dg-4f{font-size:15px !important}.ts-dg .ts-dg-4g{font-size:16px !important}.ts-dg .ts-dg-4h{font-size:26px !important}.ts-dg .ts-dg-4i{font-size:28px !important}.ts-dg .ts-dg-4j{font-size:30px !important}.ts-dg .ts-dg-q{font-weight:500 !important}.ts-dg .ts-dg-r{font-weight:400 !important}.ts-dg .ts-dg-t{font-weight:600 !important}.ts-dg .ts-dg-1w{line-height:1.08 !important}.ts-dg .ts-dg-1x{line-height:1.12 !important}.ts-dg .ts-dg-1y{line-height:1.1 !important}.ts-dg .ts-dg-1z{line-height:18px !important}.ts-dg .ts-dg-20{line-height:22px !important}.ts-dg .ts-dg-21{line-height:24px !important}.ts-dg .ts-dg-22{line-height:26px !important}.ts-dg .ts-dg-4u{letter-spacing:-.03em !important}.ts-dg .ts-dg-4v{letter-spacing:-.025em !important}.ts-dg .ts-dg-49{--tw-text-opacity:1 !important;color:rgb(15 27 42 / var(--tw-text-opacity, 1)) !important}.ts-dg .ts-dg-4a{--tw-text-opacity:1 !important;color:rgb(86 110 129 / var(--tw-text-opacity, 1)) !important}.ts-dg .ts-dg-4k{color:var(--v3-a1) !important}.ts-dg .ts-dg-4l{color:var(--v3-cta) !important}.ts-dg .ts-dg-4m{color:var(--v3-cta-fg,#FFFFFF) !important}.ts-dg .ts-dg-4n{color:var(--v3-head) !important}.ts-dg .ts-dg-4p{color:hsl(var(--foreground)) !important}.ts-dg .ts-dg-4q{color:hsl(var(--muted-foreground)) !important}.ts-dg .ts-dg-5{-webkit-font-smoothing:antialiased !important;-moz-osx-font-smoothing:grayscale !important}.ts-dg .ts-dg-3b{opacity:0 !important}.ts-dg .ts-dg-3c{opacity:.45 !important}.ts-dg .ts-dg-3d{opacity:.5 !important}.ts-dg .ts-dg-43{--tw-shadow:0 0 16px 0 rgb(var(--v3-cta-rgb)/.55) !important;--tw-shadow-colored:0 0 16px 0 var(--tw-shadow-color) !important;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow) !important}.ts-dg .ts-dg-44{--tw-shadow:0 0 #0000 !important;--tw-shadow-colored:0 0 #0000 !important;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow) !important}.ts-dg .ts-dg-c{--tw-blur:blur(90px) !important;filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important}.ts-dg .ts-dg-4w{transition-property:all !important;transition-timing-function:cubic-bezier(.4,0,.2,1) !important;transition-duration:.15s !important}.ts-dg .ts-dg-4x{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke !important;transition-timing-function:cubic-bezier(.4,0,.2,1) !important;transition-duration:.15s !important}.ts-dg .ts-dg-4y{transition-property:opacity !important;transition-timing-function:cubic-bezier(.4,0,.2,1) !important;transition-duration:.15s !important}.ts-dg .ts-dg-4z{transition-property:transform !important;transition-timing-function:cubic-bezier(.4,0,.2,1) !important;transition-duration:.15s !important}.ts-dg .ts-dg-j{transition-duration:.3s !important}.ts-dg .ts-dg-k{transition-duration:.5s !important}.ts-dg .ts-dg-j{animation-duration:.3s !important}.ts-dg .ts-dg-k{animation-duration:.5s !important}.ts-dg .ts-dg-51{position:relative !important;border-radius:30px !important;background:#fff !important;border:1px solid rgb(228 230 235) !important;box-shadow:0 0 24px #8ab6f600 !important;transform:translateY(0) !important;transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s cubic-bezier(.22,1,.36,1),border-color .45s cubic-bezier(.22,1,.36,1) !important;will-change:transform,box-shadow,border-color !important}.ts-dg .ts-dg-51:hover,.ts-dg .ts-dg-51:focus-visible,.ts-dg .ts-dg-51:focus-within{border-color:#8ab6f600 !important;box-shadow:0 0 24px #8ab6f680 !important;transform:translateY(-4px) !important}@property --v3-trace-angle{syntax:"<angle>";inherits:false;initial-value:0deg}@media (prefers-reduced-motion: reduce){.ts-dg .ts-dg-51{transition-duration:.01ms !important}}.ts-dg{--v3-a1:#89B6F7 !important;--v3-a1-rgb:137 182 247 !important;--v3-a2:#FFA2D1 !important;--v3-a2-rgb:255 162 209 !important;--v3-cta:#529BFB !important;--v3-cta-rgb:82 155 251 !important;--v3-head:#6C93B3 !important;--v3-gradient:linear-gradient(90deg, #89B6F7 0%, #FFA2D1 50%, #89B6F7 100%) !important;--v3-bar-soft:#FFD6EA !important}.ts-dg{overflow-x:clip !important}.ts-dg .ts-dg-54{--v3-gradient:linear-gradient(90deg, #89B6F7 0%, #FFA2D1 50%, #89B6F7 100%) !important}.ts-dg .ts-dg-54:not(.ts-dg-none){--v3-head:#0F1B2A !important}.ts-dg .ts-dg-54 h1,.ts-dg .ts-dg-54 h2{font-weight:500 !important;letter-spacing:-.03em !important}.ts-dg .ts-dg-54 h3,.ts-dg .ts-dg-54 h4{font-weight:500 !important;letter-spacing:-.02em !important}.ts-dg .ts-dg-54 .ts-dg-52{font-weight:500 !important}.ts-dg .ts-dg-54:not(.ts-dg-none) h1,.ts-dg .ts-dg-54:not(.ts-dg-none) h2,.ts-dg .ts-dg-54:not(.ts-dg-none) h3,.ts-dg .ts-dg-54:not(.ts-dg-none) h4{color:#0f1b2a !important}.ts-dg .ts-dg-54 h1 .ts-dg-52,.ts-dg .ts-dg-54 h2 .ts-dg-52,.ts-dg .ts-dg-54 h3 .ts-dg-52,.ts-dg .ts-dg-54 h4 .ts-dg-52{color:transparent !important}.ts-dg .ts-dg-54 footer h3{color:inherit !important}.ts-dg .ts-dg-1h:hover{--tw-translate-y:-4px !important;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important}.ts-dg .ts-dg-1k:hover{border-color:rgb(var(--v3-cta-rgb)/.45) !important}.ts-dg .ts-dg-1l:hover{border-color:transparent !important}.ts-dg .ts-dg-1i:hover{background-color:rgb(var(--v3-cta-rgb)/.03) !important}.ts-dg .ts-dg-1j:hover{background-color:#ffffffe6 !important}.ts-dg .ts-dg-1p:hover{color:hsl(var(--foreground)) !important}.ts-dg .ts-dg-1n:hover{--tw-shadow:0 0 24px 0 rgb(var(--v3-cta-rgb)/.7) !important;--tw-shadow-colored:0 0 24px 0 var(--tw-shadow-color) !important;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow) !important}.ts-dg .ts-dg-1o:hover{--tw-shadow:0 26px 60px -26px rgb(var(--v3-a1-rgb)/.75) !important;--tw-shadow-colored:0 26px 60px -26px var(--tw-shadow-color) !important;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow) !important}.ts-dg .ts-dg-1m:hover{--tw-brightness:brightness(1.05) !important;filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important}.ts-dg .ts-dg-15:hover .ts-dg-17{--tw-scale-x:1.05 !important;--tw-scale-y:1.05 !important;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important}.ts-dg .ts-dg-15:hover .ts-dg-18{color:var(--v3-cta) !important}.ts-dg .ts-dg-15:hover .ts-dg-16{opacity:1 !important}@media (min-width: 640px){.ts-dg .ts-dg-46{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr) !important}.ts-dg .ts-dg-47{align-items:flex-start !important}.ts-dg .ts-dg-45{gap:24px !important}.ts-dg .ts-dg-48{border-radius:12px !important}}@media (min-width: 768px){.ts-dg .ts-dg-2n{height:96px !important}.ts-dg .ts-dg-2m{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.ts-dg .ts-dg-2l{flex-direction:row !important}.ts-dg .ts-dg-2o{align-items:flex-end !important}.ts-dg .ts-dg-2p{justify-content:space-between !important}.ts-dg .ts-dg-2q{padding:48px !important}.ts-dg .ts-dg-2r{padding:28px !important}.ts-dg .ts-dg-2k.ts-dg-2k{padding-top:64px!important;padding-bottom:64px!important}.ts-dg .ts-dg-2u{padding-left:24px !important;padding-right:24px !important}.ts-dg .ts-dg-2v{padding-top:64px !important;padding-bottom:64px !important}.ts-dg .ts-dg-2w{padding-top:80px !important;padding-bottom:80px !important}.ts-dg .ts-dg-2x{padding-top:144px !important;padding-bottom:144px !important}.ts-dg .ts-dg-2s{padding-bottom:32px !important}.ts-dg .ts-dg-2t{padding-top:128px !important}.ts-dg .ts-dg-2y{font-size:34px !important}.ts-dg .ts-dg-2z{font-size:36px !important}.ts-dg .ts-dg-30{font-size:40px !important}.ts-dg .ts-dg-31{font-size:46px !important}}@media (min-width: 1024px){.ts-dg .ts-dg-25{grid-column:span 4 / span 4 !important}.ts-dg .ts-dg-26{grid-column:span 8 / span 8 !important}.ts-dg .ts-dg-24{display:block !important}.ts-dg .ts-dg-28{grid-template-columns:repeat(12,minmax(0,1fr)) !important}.ts-dg .ts-dg-29{grid-template-columns:repeat(3,minmax(0,1fr)) !important}.ts-dg .ts-dg-27{gap:64px !important}.ts-dg .ts-dg-2a{padding-left:32px !important;padding-right:32px !important}.ts-dg .ts-dg-2b{font-size:52px !important}}@media (min-width: 1280px){.ts-dg .ts-dg-5c{width:300px !important}}.ts-dg .ts-dg-3>ol{justify-content:center !important}.ts-dg .ts-dg-i5{background:linear-gradient(135deg, rgb(var(--v3-a2-rgb)/0.55) 0%, rgb(var(--v3-a1-rgb)/0.16) 42%, rgb(var(--v3-cta-rgb)/0.10) 72%, rgba(255,255,255,0) 100%) !important}.ts-dg .ts-dg-i6{background:radial-gradient(circle, rgb(var(--v3-a1-rgb)/0.3) 0%, rgb(var(--v3-a1-rgb)/0) 70%) !important}.ts-dg .ts-dg-i7{background:radial-gradient(circle, rgb(var(--v3-a2-rgb)/0.3) 0%, rgb(var(--v3-a2-rgb)/0) 70%) !important}.ts-dg .ts-dg-i9{transform:scaleX(-1) !important}.ts-dg .ts-dg-ia{background:radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.5) 45%, rgba(255, 255, 255, 0) 75%) !important}.ts-dg .ts-dg-ib{background:radial-gradient(circle at 70% 75%, rgb(var(--v3-a2-rgb)/0.3) 0%, rgb(var(--v3-a2-rgb)/0) 60%), radial-gradient(circle at 30% 25%, rgb(var(--v3-a1-rgb)/0.28) 0%, rgb(var(--v3-a1-rgb)/0) 60%) !important;box-shadow:0 40px 120px -40px rgb(var(--v3-a1-rgb)/0.5) !important}.ts-dg .ts-dg-ip{background:radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.5) 45%, rgba(255, 255, 255, 0) 75%) !important}.ts-dg .ts-dg-iq{background:radial-gradient(circle at 70% 75%, rgb(var(--v3-a2-rgb)/0.3) 0%, rgb(var(--v3-a2-rgb)/0) 60%), radial-gradient(circle at 30% 25%, rgb(var(--v3-a1-rgb)/0.28) 0%, rgb(var(--v3-a1-rgb)/0) 60%) !important;box-shadow:0 40px 120px -40px rgb(var(--v3-a1-rgb)/0.5) !important}.ts-dg .ts-dg-i31{background:rgb(253, 231, 236) !important}.ts-dg .ts-dg-i3b{background:rgb(251, 240, 218) !important}.ts-dg .ts-dg-i3l{background:rgb(244, 244, 244) !important}.ts-dg{width:100%!important;margin:0!important;padding:0!important;isolation:isolate!important;overflow-x:clip!important;font-size:16px!important;line-height:1.5!important;-webkit-font-smoothing:antialiased!important}.ts-dg,.ts-dg *,.ts-dg *::before,.ts-dg *::after{box-sizing:border-box!important}.ts-dg [hidden]{display:none!important}.ts-dg h1,.ts-dg h2,.ts-dg h3,.ts-dg h4,.ts-dg h5,.ts-dg h6,.ts-dg p,.ts-dg ul,.ts-dg ol,.ts-dg li{margin:0;padding:0;line-height:inherit;letter-spacing:inherit;font-family:inherit}.ts-dg p,.ts-dg li{font-size:inherit;font-weight:inherit}.ts-dg button{font-family:inherit!important}.ts-dg a:focus-visible{outline:2px solid #529bfb!important;outline-offset:4px!important}.ts-dg [data-ts-hero="engine"]{padding-top:37px!important}@media(min-width:768px){.ts-dg [data-ts-hero="engine"]{padding-top:53px!important}}@media(max-width:1023px){.ts-dg [data-ts-showcase]{min-height:0!important}.ts-dg h1{overflow-wrap:break-word!important}}@media(prefers-reduced-motion:reduce){.ts-dg *,.ts-dg *::before,.ts-dg *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+<!-- ════════ END PART 1 of 3 ════════ -->
+
+<!-- ════════ PART 2 of 3 · HTML · 12,738 chars ════════ -->
+<div id="ts-prd-genie-copilot" class="ts-root ts-dg ts-core ts-core-prd"><div class="ts-dg-50 ts-dg-54 ts-dg-8 ts-dg-s ts-dg-5"><div><div class="ts-dg-b"><section class="ts-dg-3v ts-dg-3e ts-dg-3p ts-dg-3i ts-dg-3l ts-dg-2s ts-dg-2t" data-ts-hero="capability"><div class="ts-dg-3k ts-dg-4 ts-dg-1r" aria-hidden="true"><div class="ts-dg-4 ts-dg-1r ts-dg-i5"></div><div class="ts-dg-4 ts-dg-1 ts-dg-4t ts-dg-1e ts-dg-59 ts-dg-40 ts-dg-c ts-dg-i6"></div><div class="ts-dg-4 ts-dg-3w ts-dg-4t ts-dg-1e ts-dg-59 ts-dg-40 ts-dg-c ts-dg-i7"></div><div class="ts-dg-4 ts-dg-23 ts-dg-4s ts-dg-1g ts-dg-2 ts-dg-24"><div class="ts-dg-3v ts-dg-6 ts-dg-57 ts-dg-5c ts-dg-i9"><div class="ts-dg-4 ts-dg-1r ts-dg-40 ts-dg-ia"></div><div class="ts-dg-4 ts-dg-1s ts-dg-40 ts-dg-ib"></div><div class="ts-dg-4 ts-dg-1r ts-dg-12 ts-dg-3j"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ts-dg-2c ts-dg-2e ts-dg-1d ts-dg-58 ts-dg-4k ts-dg-3c" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"></line><line x1="10" x2="3" y1="4" y2="4"></line><line x1="21" x2="12" y1="12" y2="12"></line><line x1="8" x2="3" y1="12" y2="12"></line><line x1="21" x2="16" y1="20" y2="20"></line><line x1="12" x2="3" y1="20" y2="20"></line><line x1="14" x2="14" y1="2" y2="6"></line><line x1="8" x2="8" y1="10" y2="14"></line><line x1="16" x2="16" y1="18" y2="22"></line></svg></div></div></div><div class="ts-dg-4 ts-dg-3x ts-dg-4s ts-dg-1g ts-dg-2 ts-dg-24"><div class="ts-dg-3v ts-dg-6 ts-dg-57 ts-dg-5c"><div class="ts-dg-4 ts-dg-1r ts-dg-40 ts-dg-ip"></div><div class="ts-dg-4 ts-dg-1s ts-dg-40 ts-dg-iq"></div><div class="ts-dg-4 ts-dg-1r ts-dg-12 ts-dg-3j"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="ts-dg-2c ts-dg-2e ts-dg-1d ts-dg-58 ts-dg-4k ts-dg-3c" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"></line><line x1="10" x2="3" y1="4" y2="4"></line><line x1="21" x2="12" y1="12" y2="12"></line><line x1="8" x2="3" y1="12" y2="12"></line><line x1="21" x2="16" y1="20" y2="20"></line><line x1="12" x2="3" y1="20" y2="20"></line><line x1="14" x2="14" y1="2" y2="6"></line><line x1="8" x2="8" y1="10" y2="14"></line><line x1="16" x2="16" y1="18" y2="22"></line></svg></div></div></div><div class="ts-dg-4 ts-dg-1t ts-dg-g ts-dg-1c ts-dg-9 ts-dg-u ts-dg-55 ts-dg-4r"></div></div><div class="ts-dg-3v ts-dg-5d ts-dg-39 ts-dg-5b ts-dg-2h"><div class="ts-dg-l ts-dg-n ts-dg-1u ts-dg-4o" data-ts-reveal="0"><nav aria-label="Breadcrumb" class="ts-dg-2j ts-dg-5b ts-dg-3"><ol class="ts-dg-l ts-dg-o ts-dg-1u ts-dg-v ts-dg-4b ts-dg-4q"><li><a class="ts-dg-1p" href="https://www.topsort.com">Home</a></li><li class="ts-dg-l ts-dg-1u ts-dg-v"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-dg-2c ts-dg-2d ts-dg-1a ts-dg-56 ts-dg-3d"><path d="m9 18 6-6-6-6"></path></svg><a class="ts-dg-1p" href="https://www.topsort.com/products/t-platform">Platform</a></li><li class="ts-dg-l ts-dg-1u ts-dg-v"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-dg-2c ts-dg-2d ts-dg-1a ts-dg-56 ts-dg-3d"><path d="m9 18 6-6-6-6"></path></svg><span class="ts-dg-q ts-dg-4p">Data Genie</span></li></ol></nav><h1 class="ts-dg-32 ts-dg-2g ts-dg-p ts-dg-4j ts-dg-q ts-dg-1w ts-dg-4u ts-dg-49 ts-dg-31 ts-dg-2b">Data <span class="ts-dg-52">Genie</span></h1><p class="ts-dg-36 ts-dg-2f ts-dg-p ts-dg-4g ts-dg-22 ts-dg-4a">Data Genie turns network activity into reporting your commercial teams and advertisers can act on, without exporting spreadsheets.</p><div class="ts-dg-37 ts-dg-l ts-dg-o ts-dg-1v ts-dg-z"><a class="ts-dg-15 ts-dg-1q ts-dg-1u ts-dg-y ts-dg-40 ts-dg-3o ts-dg-3t ts-dg-4e ts-dg-t ts-dg-4w ts-dg-7 ts-dg-4m ts-dg-43 ts-dg-1m ts-dg-1n ts-bad-cta" href="https://www.topsort.com/book-a-demo">Talk to sales</a></div></div></div><div class="ts-dg-19 ts-dg-2n"></div></section><section class="ts-dg-3n ts-dg-3s ts-dg-2u ts-dg-2x ts-dg-2a ts-dg-0 ts-dg-2k"><div class="ts-dg-39 ts-dg-2h"><div class="ts-dg-12 ts-dg-1u ts-dg-x ts-dg-28 ts-dg-27"><div class="ts-dg-2i ts-dg-25" data-ts-reveal="0"><h2 class="ts-dg-36 ts-dg-p ts-dg-4i ts-dg-q ts-dg-1y ts-dg-4u ts-dg-49 ts-dg-30">What <span class="ts-dg-52">you get</span></h2></div><div class="ts-dg-26" data-ts-reveal="80"><div class="ts-dg-51 ts-dg-3f ts-dg-2r"><ul class="ts-dg-i ts-dg-h"><li class="ts-dg-15 ts-dg-12 ts-dg-13 ts-dg-w ts-dg-3m ts-dg-3u ts-dg-4x ts-dg-j ts-dg-1i ts-dg-46 ts-dg-47 ts-dg-45 ts-dg-48"><h3 class="ts-dg-p ts-dg-4g ts-dg-q ts-dg-21 ts-dg-49 ts-dg-4x ts-dg-18">Network dashboards</h3><p class="ts-dg-p ts-dg-4d ts-dg-20 ts-dg-4a">Revenue, fill, yield and demand health in one view.</p></li><li class="ts-dg-15 ts-dg-12 ts-dg-13 ts-dg-w ts-dg-3m ts-dg-3u ts-dg-4x ts-dg-j ts-dg-1i ts-dg-46 ts-dg-47 ts-dg-45 ts-dg-48"><h3 class="ts-dg-p ts-dg-4g ts-dg-q ts-dg-21 ts-dg-49 ts-dg-4x ts-dg-18">Advertiser reporting</h3><p class="ts-dg-p ts-dg-4d ts-dg-20 ts-dg-4a">Shareable performance views brands can trust and act on.</p></li><li class="ts-dg-15 ts-dg-12 ts-dg-13 ts-dg-w ts-dg-3m ts-dg-3u ts-dg-4x ts-dg-j ts-dg-1i ts-dg-46 ts-dg-47 ts-dg-45 ts-dg-48"><h3 class="ts-dg-p ts-dg-4g ts-dg-q ts-dg-21 ts-dg-49 ts-dg-4x ts-dg-18">Benchmarking</h3><p class="ts-dg-p ts-dg-4d ts-dg-20 ts-dg-4a">Compare category and placement performance over time.</p></li><li class="ts-dg-15 ts-dg-12 ts-dg-13 ts-dg-w ts-dg-3m ts-dg-3u ts-dg-4x ts-dg-j ts-dg-1i ts-dg-46 ts-dg-47 ts-dg-45 ts-dg-48"><h3 class="ts-dg-p ts-dg-4g ts-dg-q ts-dg-21 ts-dg-49 ts-dg-4x ts-dg-18">Data sharing</h3><p class="ts-dg-p ts-dg-4d ts-dg-20 ts-dg-4a">Controlled sharing with brands without exposing customer data.</p></li><li class="ts-dg-15 ts-dg-12 ts-dg-13 ts-dg-w ts-dg-3m ts-dg-3u ts-dg-4x ts-dg-j ts-dg-1i ts-dg-46 ts-dg-47 ts-dg-45 ts-dg-48"><h3 class="ts-dg-p ts-dg-4g ts-dg-q ts-dg-21 ts-dg-49 ts-dg-4x ts-dg-18">Warehouse exports</h3><p class="ts-dg-p ts-dg-4d ts-dg-20 ts-dg-4a">Push structured data into your own analytics stack.</p></li><li class="ts-dg-15 ts-dg-12 ts-dg-13 ts-dg-w ts-dg-3m ts-dg-3u ts-dg-4x ts-dg-j ts-dg-1i ts-dg-46 ts-dg-47 ts-dg-45 ts-dg-48"><h3 class="ts-dg-p ts-dg-4g ts-dg-q ts-dg-21 ts-dg-49 ts-dg-4x ts-dg-18">Alerting</h3><p class="ts-dg-p ts-dg-4d ts-dg-20 ts-dg-4a">Surface pacing, fill and inventory issues early.</p></li></ul></div></div></div></div></section><section class="ts-dg-3n ts-dg-3s ts-dg-2u ts-dg-2x ts-dg-2a ts-dg-3q ts-dg-2v"><div class="ts-dg-39 ts-dg-2h"><div class="" data-ts-reveal="0"><div class="ts-dg-3v ts-dg-3e ts-dg-3z ts-dg-d ts-dg-3h ts-dg-2q ts-dg-e ts-dg-a"><video class="ts-dg-3k ts-dg-4 ts-dg-1r ts-dg-1f ts-dg-5b ts-dg-3a" src="https://preview--topsort-nav-palette.lovable.app/__l5e/assets-v1/c3512b7c-84fb-4013-aa99-cc76ee025d63/bg_animation.webm" loop="" playsinline="" aria-hidden="true" muted="" preload="none" data-ts-video=""></video><div class="ts-dg-3v ts-dg-5d ts-dg-l ts-dg-n ts-dg-11 ts-dg-2l ts-dg-2o ts-dg-2p"><div class="ts-dg-2i"><h2 class="ts-dg-35 ts-dg-p ts-dg-4h ts-dg-r ts-dg-1x ts-dg-4v ts-dg-2y ts-dg-4n">Talk to a <span class="ts-dg-52">retail media expert</span></h2><p class="ts-dg-34 ts-dg-p ts-dg-4f ts-dg-20 ts-dg-4a">Share your surfaces, current stack and timeline. We will map the fastest safe path to production.</p></div><div class="ts-dg-l ts-dg-o ts-dg-z"><a class="ts-dg-15 ts-dg-1q ts-dg-1u ts-dg-y ts-dg-40 ts-dg-3o ts-dg-3t ts-dg-4e ts-dg-t ts-dg-4w ts-dg-7 ts-dg-4m ts-dg-43 ts-dg-1m ts-dg-1n ts-bad-cta" href="https://www.topsort.com/book-a-demo">Talk to sales</a><a class="ts-dg-15 ts-dg-1q ts-dg-1u ts-dg-y ts-dg-40 ts-dg-3o ts-dg-3t ts-dg-4e ts-dg-t ts-dg-4w ts-dg-d ts-dg-f ts-dg-b ts-dg-4l ts-dg-1k ts-dg-1j" href="https://www.topsort.com/products/t-platform">Explore the Core Platform</a></div></div></div></div></div></section><div class="ts-dg-b"><section class="ts-dg-3n ts-dg-3s ts-dg-2u ts-dg-2x ts-dg-2a ts-dg-3r ts-dg-2w"><div class="ts-dg-39 ts-dg-2h"><div class="ts-dg-39 ts-dg-2g ts-dg-4o" data-ts-reveal="0"><h2 class="ts-dg-p ts-dg-4j ts-dg-r ts-dg-1x ts-dg-4v ts-dg-4n ts-dg-2z">Related <span class="ts-dg-52">Products</span></h2><p class="ts-dg-38 ts-dg-p ts-dg-4g ts-dg-20 ts-dg-4a">The rest of the Topsort system, designed to work together as one.</p></div><div class="ts-dg-33 ts-dg-12 ts-dg-10 ts-dg-2m ts-dg-29"><div class="" data-ts-reveal="0"><a class="ts-dg-15 ts-dg-12 ts-dg-1f ts-dg-14 ts-dg-3e ts-dg-3y ts-dg-d ts-dg-e ts-dg-b ts-dg-44 ts-dg-4w ts-dg-j ts-dg-1h ts-dg-1l ts-dg-1o" href="https://www.topsort.com/products/toppie-dsp"><div class="ts-dg-l ts-dg-1u ts-dg-1v ts-dg-i31"><img src="https://preview--topsort-nav-palette.lovable.app/__l5e/assets-v1/fc79f659-2deb-491d-875c-2550830d180d/card_toppie.png" alt="Toppie product illustration" class="ts-dg-1f ts-dg-5b ts-dg-41 ts-dg-3a ts-dg-4z ts-dg-k ts-dg-17" loading="lazy"></div><div class="ts-dg-l ts-dg-n ts-dg-3g"><img src="https://preview--topsort-nav-palette.lovable.app/__l5e/assets-v1/888a9f53-1199-4522-bd75-7dc4492f4438/logo_toppie.svg" alt="Toppie logo" class="ts-dg-53 ts-dg-1b ts-dg-5a ts-dg-42" loading="lazy"><p class="ts-dg-34 ts-dg-m ts-dg-p ts-dg-4b ts-dg-1z ts-dg-4a">A free workspace for brands and agencies to access and manage participating retail media networks.</p><span class="ts-dg-35 ts-dg-1q ts-dg-1u ts-dg-v ts-dg-p ts-dg-4c ts-dg-4l ts-dg-3b ts-dg-4y ts-dg-j ts-dg-16">Read more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-dg-2c ts-dg-2d ts-dg-1a ts-dg-56"><path d="m9 18 6-6-6-6"></path></svg></span></div></a></div><div class="" data-ts-reveal="110"><a class="ts-dg-15 ts-dg-12 ts-dg-1f ts-dg-14 ts-dg-3e ts-dg-3y ts-dg-d ts-dg-e ts-dg-b ts-dg-44 ts-dg-4w ts-dg-j ts-dg-1h ts-dg-1l ts-dg-1o" href="https://www.topsort.com/products/tomi"><div class="ts-dg-l ts-dg-1u ts-dg-1v ts-dg-i3b"><img src="https://preview--topsort-nav-palette.lovable.app/__l5e/assets-v1/352bc9f1-eff4-4eea-ba58-dce4c567377a/card_tomi.png" alt="Tomi product illustration" class="ts-dg-1f ts-dg-5b ts-dg-41 ts-dg-3a ts-dg-4z ts-dg-k ts-dg-17" loading="lazy"></div><div class="ts-dg-l ts-dg-n ts-dg-3g"><img src="https://preview--topsort-nav-palette.lovable.app/__l5e/assets-v1/05478424-054c-4328-a6d0-fd6f6cee4f5e/logo_tomi.svg" alt="Tomi logo" class="ts-dg-53 ts-dg-1b ts-dg-5a ts-dg-42" loading="lazy"><p class="ts-dg-34 ts-dg-m ts-dg-p ts-dg-4b ts-dg-1z ts-dg-4a">An AI agent that builds, analyzes and optimizes campaigns for you.</p><span class="ts-dg-35 ts-dg-1q ts-dg-1u ts-dg-v ts-dg-p ts-dg-4c ts-dg-4l ts-dg-3b ts-dg-4y ts-dg-j ts-dg-16">Read more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-dg-2c ts-dg-2d ts-dg-1a ts-dg-56"><path d="m9 18 6-6-6-6"></path></svg></span></div></a></div><div class="" data-ts-reveal="220"><a class="ts-dg-15 ts-dg-12 ts-dg-1f ts-dg-14 ts-dg-3e ts-dg-3y ts-dg-d ts-dg-e ts-dg-b ts-dg-44 ts-dg-4w ts-dg-j ts-dg-1h ts-dg-1l ts-dg-1o" href="https://www.topsort.com/products/t-brain"><div class="ts-dg-l ts-dg-1u ts-dg-1v ts-dg-i3l"><img src="https://preview--topsort-nav-palette.lovable.app/__l5e/assets-v1/56b36aa9-f7a4-4aa4-afdd-d6af5b2bab55/card_t-brain.png" alt="T-brain product illustration" class="ts-dg-1f ts-dg-5b ts-dg-41 ts-dg-3a ts-dg-4z ts-dg-k ts-dg-17" loading="lazy"></div><div class="ts-dg-l ts-dg-n ts-dg-3g"><img src="https://preview--topsort-nav-palette.lovable.app/__l5e/assets-v1/3640934d-e25d-46b5-8881-4b63458485a9/logo_t_brain.svg" alt="T-brain logo" class="ts-dg-53 ts-dg-1b ts-dg-5a ts-dg-42" loading="lazy"><p class="ts-dg-34 ts-dg-m ts-dg-p ts-dg-4b ts-dg-1z ts-dg-4a">Commerce-native models for discovery, advertising, personalization and AI agents.</p><span class="ts-dg-35 ts-dg-1q ts-dg-1u ts-dg-v ts-dg-p ts-dg-4c ts-dg-4l ts-dg-3b ts-dg-4y ts-dg-j ts-dg-16">Read more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ts-dg-2c ts-dg-2d ts-dg-1a ts-dg-56"><path d="m9 18 6-6-6-6"></path></svg></span></div></a></div></div></div></section></div></div></div></div></div>
+<!-- ════════ END PART 2 of 3 ════════ -->
+
+<!-- ════════ PART 3 of 3 · JS · 14,095 chars ════════ -->
+<script>
+(function () {
+  'use strict';
+  var roots = ["ts-prd-genie-copilot"].map(function (id) { return document.getElementById(id); }).filter(function (root) { return root && !root.hasAttribute('data-ts-ready'); });
+  if (!roots.length) return;
+  roots.forEach(function (root) { root.setAttribute('data-ts-ready', ''); });
+  var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var reduced = function () { return motion.matches; };
+  var set = function (el, key, value) { if (el) el.style.setProperty(key, String(value), 'important'); };
+  var all = function (selector, scope) {
+    var list = [];
+    (scope ? [scope] : roots).forEach(function (root) { list.push.apply(list, root.querySelectorAll(selector)); });
+    return list;
+  };
+  var num = function (el, name, fallback) { var value = el.getAttribute(name); return value === null || value === '' ? fallback : Number(value); };
+  var viewport = function () { return window.innerHeight || document.documentElement.clientHeight; };
+  var wide = function () { return window.innerWidth >= 1024; };
+  var ease = function (ms) { return ms + 'ms cubic-bezier(0.22, 1, 0.36, 1)'; };
+  // Components toggle Tailwind classes between an active and an idle state.
+  // The generator records both class sets (already mapped) per role.
+  function swap(el, states, on) {
+    if (!el || !states) return;
+    (on ? states[1] : states[0]).forEach(function (c) { el.classList.remove(c); });
+    (on ? states[0] : states[1]).forEach(function (c) { el.classList.add(c); });
+  }
+  // Scroll progress through a sticky section, as in ScrollShowcase,
+  // EvaluationScroll and ImplementationTimeline: the step advances while the
+  // sticky panel is pinned below the 104px desktop header allowance.
+  // 104px in the source (a 75px nav plus 29px); re-derived under the host nav.
+  var stickyTop = 104;
+  var pinOffset = function () { return wide() ? stickyTop : 0; };
+  function stepFor(wrap, steps, previous) {
+    var rect = wrap.getBoundingClientRect(), stickyTop = pinOffset();
+    var total = rect.height - viewport() + stickyTop;
+    if (total <= 0) return previous;
+    var progress = Math.min(Math.max((stickyTop - rect.top) / total, 0), 0.9999);
+    return Math.min(steps - 1, Math.floor(progress * steps));
+  }
+
+  // Reveal.tsx and FadeInCard: fade and slide in while in view, reverse on the
+  // way out. Delay and offset come from the component props at capture time.
+  var KINDS = {reveal: {ms: 850, top: 0.88, bottom: 0.06}, card: {ms: 900, top: 0.85, bottom: 0.1}};
+  var reveals = all('[data-ts-reveal]').map(function (el) {
+    return {el: el, kind: KINDS[el.getAttribute('data-ts-reveal-kind')] || KINDS.reveal, delay: num(el, 'data-ts-reveal', 0), from: 'translateY(' + num(el, 'data-ts-reveal-y', 24) + 'px)', on: null};
+  });
+  function primeReveals() {
+    reveals.forEach(function (item) {
+      if (reduced()) {
+        item.on = null;
+        ['opacity', 'transform', 'transition', 'transition-delay', 'will-change'].forEach(function (p) { item.el.style.removeProperty(p); });
+        return;
+      }
+      set(item.el, 'transition', 'opacity ' + ease(item.kind.ms) + ', transform ' + ease(item.kind.ms));
+      set(item.el, 'will-change', 'opacity, transform');
+      if (item.on === null) { set(item.el, 'opacity', 0); set(item.el, 'transform', item.from); }
+    });
+  }
+  function updateReveals() {
+    if (reduced()) return;
+    var vh = viewport();
+    reveals.forEach(function (item) {
+      var rect = item.el.getBoundingClientRect();
+      var on = rect.top < vh * item.kind.top && rect.bottom > vh * item.kind.bottom;
+      if (on === item.on) return;
+      item.on = on;
+      set(item.el, 'transition-delay', (on ? item.delay : 0) + 'ms');
+      set(item.el, 'opacity', on ? 1 : 0);
+      set(item.el, 'transform', on ? 'translateY(0)' : item.from);
+    });
+  }
+
+  // ScrollShowcase: numbered list on the left, one visual per item on the
+  // right. Desktop pins the panel and advances with scroll; below 1024px the
+  // panel is not sticky, so every description stays open and the highlight
+  // follows the row nearest the reading line.
+  var showcases = all('[data-ts-showcase]').map(function (wrap) {
+    return {
+      wrap: wrap, n: num(wrap, 'data-ts-showcase', 1), head: wrap.querySelector('[data-ts-sc-head]'),
+      rows: all('[data-ts-sc-row]', wrap), visuals: all('[data-ts-sc-visual]', wrap),
+      label: wrap.querySelector('[data-ts-sc-label]'), states: JSON.parse(wrap.getAttribute('data-ts-states') || '{}'),
+      active: null, mode: null, pad: null
+    };
+  });
+  function measureShowcase(s) {
+    var stickyTop = pinOffset(), head = s.head ? s.head.offsetHeight : 0;
+    var available = viewport() - stickyTop - head - s.n * 30 - 68 - 48;
+    var pad = Math.max(8, Math.min(28, Math.round(available / (s.n * 2))));
+    if (pad === s.pad) return;
+    s.pad = pad;
+    s.rows.forEach(function (row) { set(row, 'padding-top', pad + 'px'); set(row, 'padding-bottom', pad + 'px'); });
+  }
+  function updateShowcase(s) {
+    var desktop = wide(), active;
+    if (desktop) active = stepFor(s.wrap, s.n, s.active === null ? 0 : s.active);
+    else {
+      var line = viewport() * 0.6;
+      active = 0;
+      s.rows.forEach(function (row, i) { if (row.getBoundingClientRect().top < line) active = i; });
+    }
+    if (active === s.active && desktop === s.mode) return;
+    s.active = active; s.mode = desktop;
+    s.rows.forEach(function (row, i) {
+      var on = i === active;
+      swap(row.querySelector('[data-ts-sc-num]'), s.states.num, on);
+      swap(row.querySelector('[data-ts-sc-title]'), s.states.title, on);
+      swap(row.querySelector('[data-ts-sc-desc]'), s.states.desc, on || !desktop);
+    });
+    s.visuals.forEach(function (visual, i) {
+      var on = i === active;
+      set(visual, 'opacity', on ? 1 : 0);
+      set(visual, 'transform', 'scale(' + (on ? 1 : 1.04) + ')');
+      visual.setAttribute('aria-hidden', String(!on));
+      set(visual.querySelector('[data-ts-sc-box]'), 'transform', 'translateY(' + (on ? 0 : 14) + 'px) scale(' + (on ? 1 : 0.92) + ')');
+    });
+    var title = s.rows[active] && s.rows[active].querySelector('[data-ts-sc-title]');
+    if (s.label && title) s.label.textContent = title.textContent;
+  }
+
+  // EvaluationScroll: sticky title, questions that stagger in and advance.
+  var evaluations = all('[data-ts-eval]').map(function (wrap) {
+    return {wrap: wrap, n: num(wrap, 'data-ts-eval', 1), rows: all('[data-ts-ev-row]', wrap), states: JSON.parse(wrap.getAttribute('data-ts-states') || '{}'), active: null, shown: null, still: null};
+  });
+  function updateEvaluation(e) {
+    var vh = viewport(), rect = e.wrap.getBoundingClientRect(), still = reduced();
+    var active = stepFor(e.wrap, e.n, e.active === null ? 0 : e.active);
+    var shown = still || (rect.top < vh * 0.8 && rect.bottom > vh * 0.1);
+    if (active !== e.active) {
+      e.active = active;
+      e.rows.forEach(function (row, i) {
+        swap(row.querySelector('[data-ts-ev-num]'), e.states.num, i === active);
+        swap(row.querySelector('[data-ts-ev-q]'), e.states.q, i === active);
+      });
+    }
+    if (shown !== e.shown || still !== e.still) {
+      e.shown = shown; e.still = still;
+      e.rows.forEach(function (row, i) {
+        set(row, 'transition', still ? 'none' : 'opacity ' + ease(700) + ', transform ' + ease(700));
+        set(row, 'transition-delay', (shown ? i * 130 : (e.n - 1 - i) * 60) + 'ms');
+        set(row, 'opacity', shown ? 1 : 0);
+        set(row, 'transform', shown ? 'translateY(0)' : 'translateY(22px)');
+      });
+    }
+  }
+
+  // ImplementationTimeline: sticky section whose active step, bar highlight,
+  // glow and card emphasis follow scroll progress.
+  var timelines = all('[data-ts-timeline]').map(function (wrap) {
+    return {
+      wrap: wrap, n: Math.max(1, num(wrap, 'data-ts-timeline', 1)), states: JSON.parse(wrap.getAttribute('data-ts-states') || '{}'),
+      head: wrap.querySelector('[data-ts-tl-head]'), bar: wrap.querySelector('[data-ts-tl-bar]'),
+      glow: wrap.querySelector('[data-ts-tl-glow]'), highlight: wrap.querySelector('[data-ts-tl-highlight]'),
+      grid: wrap.querySelector('[data-ts-tl-grid]'), cards: all('[data-ts-tl-card]', wrap),
+      active: null, shown: null, shownFor: null, wide: null, still: null
+    };
+  });
+  function updateTimeline(t) {
+    var vh = viewport(), desktop = wide(), still = reduced(), rect = t.wrap.getBoundingClientRect();
+    var active = stepFor(t.wrap, t.n, t.active === null ? 0 : t.active);
+    var shown = still || (rect.top < vh * 0.98 && rect.bottom > vh * 0.05);
+    if (desktop !== t.wide) {
+      t.wide = desktop;
+      if (desktop) set(t.grid, 'grid-template-columns', 'repeat(' + t.n + ', minmax(0px, 1fr))');
+      else t.grid.style.removeProperty('grid-template-columns');
+    }
+    if (still !== t.still) {
+      t.still = still;
+      [t.head, t.bar, t.glow, t.highlight].concat(t.cards).forEach(function (el) {
+        if (!el) return;
+        if (still) set(el, 'transition', 'none'); else el.style.removeProperty('transition');
+      });
+    }
+    if (shown !== t.shown) {
+      t.shown = shown;
+      set(t.head, 'opacity', shown ? 1 : 0);
+      set(t.head, 'transform', shown ? 'translateY(0)' : 'translateY(18px)');
+      set(t.bar, 'transform', 'translateX(-50%) scaleY(' + (shown ? 1 : 0) + ')');
+      set(t.bar, 'transition-delay', (shown ? 150 : 0) + 'ms');
+    }
+    if (active !== t.active || shown !== t.shownFor) {
+      t.active = active; t.shownFor = shown;
+      var center = ((active + 0.5) / t.n) * 100;
+      set(t.glow, 'left', (center - 30) + '%');
+      set(t.highlight, 'left', (center - 50) + '%');
+      t.cards.forEach(function (card, i) {
+        var on = i === active;
+        set(card, 'transform', 'scale(' + (on ? 1.06 : 1) + ')');
+        set(card, 'opacity', shown ? (on ? 1 : 0.55) : 0);
+        set(card, 'transition-delay', (shown ? 300 + i * 70 : 0) + 'ms');
+        swap(card.querySelector('[data-ts-tl-label]'), t.states.label, on);
+        swap(card.querySelector('[data-ts-tl-title]'), t.states.title, on);
+      });
+    }
+  }
+
+  function scrollEffects() {
+    updateReveals();
+    showcases.forEach(updateShowcase);
+    evaluations.forEach(updateEvaluation);
+    timelines.forEach(updateTimeline);
+  }
+  var frame = 0;
+  function requestFrame() { if (!frame) frame = requestAnimationFrame(function () { frame = 0; scrollEffects(); }); }
+  function resize() { showcases.forEach(measureShowcase); requestFrame(); }
+  window.addEventListener('scroll', requestFrame, {passive: true});
+  window.addEventListener('resize', resize);
+  primeReveals(); showcases.forEach(measureShowcase); scrollEffects();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
+
+  // The host owns navigation. Reserve room under a fixed header only when the
+  // layout has not already done so, and size the first-viewport heroes to the
+  // space left below it (the source's --v3-banner-h hook).
+  var hostNav = document.querySelector('[data-ts-navbar],.w-nav,#ts-navbar');
+  var stickies = all('[data-ts-sticky]').map(function (el) {
+    var rule = el.getAttribute('data-ts-sticky').split(':');
+    return {el: el, prop: rule[0], gap: Number(rule[1]) || 0};
+  });
+  function applySticky() {
+    stickies.forEach(function (s) {
+      if (wide() && stickyTop !== 104) {
+        set(s.el, 'top', stickyTop + 'px');
+        if (s.prop) set(s.el, s.prop, 'calc(100vh - ' + (stickyTop + s.gap) + 'px)');
+      } else {
+        s.el.style.removeProperty('top');
+        if (s.prop) s.el.style.removeProperty(s.prop);
+      }
+    });
+  }
+  function navbarClearance() {
+    var root = roots[0], navHeight = 0;
+    if (hostNav && /fixed|sticky|absolute/.test(getComputedStyle(hostNav).position)) navHeight = hostNav.getBoundingClientRect().height;
+    root.style.removeProperty('padding-top');
+    var top = root.getBoundingClientRect().top + window.scrollY;
+    var clearance = /fixed|absolute/.test(hostNav ? getComputedStyle(hostNav).position : '') ? Math.max(0, navHeight - top) : 0;
+    set(root, 'padding-top', clearance + 'px');
+    var offset = top + clearance;
+    roots.forEach(function (r) { set(r, '--v3-banner-h', (offset > 0 && offset < 400 ? Math.round(offset) : 0) + 'px'); });
+    stickyTop = Math.max(104, Math.round(navHeight) + 29);
+    applySticky();
+    showcases.forEach(measureShowcase);
+    requestFrame();
+  }
+  navbarClearance();
+  window.addEventListener('resize', navbarClearance);
+  window.addEventListener('load', navbarClearance);
+  window.addEventListener('pageshow', navbarClearance);
+  if ('ResizeObserver' in window && hostNav) new ResizeObserver(navbarClearance).observe(hostNav);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(navbarClearance);
+
+  // Background loops play only while visible, never under reduced motion.
+  var videos = all('[data-ts-video]');
+  videos.forEach(function (video) { video.muted = true; video.playsInline = true; });
+  function updateVideo(video, visible) {
+    if (reduced() || document.hidden || !visible) video.pause();
+    else { var play = video.play(); if (play) play.catch(function () {}); }
+  }
+  if ('IntersectionObserver' in window) {
+    var videoObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { entry.target.setAttribute('data-ts-visible', String(entry.isIntersecting)); updateVideo(entry.target, entry.isIntersecting); });
+    }, {rootMargin: '200px 0px'});
+    videos.forEach(function (video) { videoObserver.observe(video); });
+  } else videos.forEach(function (video) { updateVideo(video, true); });
+  document.addEventListener('visibilitychange', function () {
+    videos.forEach(function (video) { updateVideo(video, video.getAttribute('data-ts-visible') === 'true'); });
+  });
+  motion.addEventListener('change', function () {
+    reveals.forEach(function (item) { item.on = null; });
+    primeReveals(); scrollEffects();
+    videos.forEach(function (video) { updateVideo(video, video.getAttribute('data-ts-visible') === 'true'); });
+  });
+})();
+</script>
+<!-- ════════ END PART 3 of 3 ════════ -->

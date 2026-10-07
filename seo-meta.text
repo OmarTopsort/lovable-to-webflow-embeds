@@ -1,0 +1,390 @@
+SEO metadata from /source (October 7, 2026)
+Paste into each Webflow page’s SEO settings, not its HTML Embed.
+
+UPDATED EMBED PAGES
+
+/products/t-platform, /retail-media (source: /platform/core-platform)
+Title: Core Platform: Commerce AI Ad Server, Auctions & Sponsored Listings | Topsort
+Description: Run your retail media network on one platform: ad server, real-time auctions, sponsored listings, display ads, advertiser self-serve, measurement and APIs.
+
+/products/t-engine
+Title: T-Engine · Intelligent Ad Engine for Commerce | Topsort
+Description: T-Engine powers real-time auctions, pacing, quality scoring, attribution-aware optimization and full-funnel decisioning for commerce media.
+
+/products/t-zero
+Title: T-Zero · Modern Ad Server for Commerce | Topsort
+Description: T-Zero is a lightweight, programmable commerce ad server: ad serving, auctions, ranking logic and sponsored listings, launched in days.
+
+/products/t-brain (source: /platform/t-brain)
+Title: T-Brain | The Intelligence Layer Behind Topsort Commerce AI | Topsort
+Description: T-brain is the commerce foundation under every Topsort decision: shared models and embeddings powering relevance, ranking and prediction across every surface.
+
+/products/toptimize, /products/toptimize-ssp
+Title: Toptimize · AI Intelligence Layer for Your Ad Server | Topsort
+Description: Toptimize wraps your existing ad server in an AI intelligence layer: revenue predictions, dynamic pricing and demand-aware allocation. No rip-and-replace.
+
+/products/tomi (source: /platform/tomi)
+Title: Tomi | AI agent for retail media campaign operations | Topsort
+Description: Tomi handles retail media campaign operations conversationally: creating campaigns, spotting issues and recommending changes grounded in commerce data.
+
+/products/private-toppie, /products/toppie-dsp (source: /platform/toppie)
+Title: Toppie | Free cross-retailer campaign workspace | Topsort
+Description: Toppie gives brands and agencies a free workspace to plan, launch, manage and measure retail media campaigns across every connected retailer.
+
+/products/data-genie, /products/genie-copilot (source: /platform/data-genie)
+Title: Data Genie | Topsort
+Description: Retail media reporting, benchmarking and data sharing for retailers, brands and agencies, from one measurement source.
+
+/products/offsite-ads (source: /platform/offsite)
+Title: Offsite Retail Media | Topsort
+Description: Extend retail media demand beyond owned properties with commerce audiences, closed-loop measurement and one campaign workflow.
+
+/products/in-store-journey (source: /platform/in-store)
+Title: In-Store Media | Topsort
+Description: Bring physical stores into the same retail media system: screens, store-level assortment and in-store transaction signals.
+
+/about (source: /company/about)
+Title: About Topsort | Commerce infrastructure for modern marketplaces
+Description: Topsort powers the auctions, ranking systems and monetization infrastructure behind modern commerce platforms. 120+ people, 40+ countries, billions of commerce decisions.
+
+/company/news
+Title: Company News & Announcements | Topsort
+Description: The latest Topsort news: company announcements, product launches, partnerships and milestones from the Commerce AI company.
+
+/
+Title: Topsort | Commerce AI for Retail Media Networks
+Description: Topsort is Commerce AI for retailers and marketplaces: grow your retail media network with sponsored listings, sub-5ms auctions, offsite and in-store ads.
+
+/platform/agentic-traffic-control-room
+Title: Agentic Traffic Control Room: Manage AI Shopping Agents | Topsort
+Description: Understand and manage AI shopping traffic. See how AI agents interact with your store, fix missing product answers, configure sponsored offers and manage agent access.
+
+/book-a-demo (source: /talk-to-sales)
+Title: Talk to Sales: Commerce AI Demo & Pricing | Topsort
+Description: Tell us what you're building and we'll introduce you to the right person on our sales team. Demos, pricing and migration questions, answered within one business day.
+
+/legals
+Title: Legal Center | Topsort
+Description: Topsort's privacy policy, fair use policy, SaaS terms, and data management practices.
+
+/resources
+Title: Press Room: Retail Media Case Studies, Research & Insights | Topsort
+Description: Retail media case studies from DoorDash, Coles and more, plus research, product updates, events and press coverage from Topsort.
+
+/solutions
+Title: Commerce AI Solutions for Retailers & Marketplaces | Topsort
+Description: Launch, scale, optimize and expand a retail media network for retailers, marketplaces, delivery apps and B2B commerce with Topsort.
+
+/solutions/launch
+Title: Go live in weeks, not quarters | Topsort
+Description: Launch your commerce media business with production-ready infrastructure: auctions, APIs, advertiser tools and measurement, ready from day one.
+
+/solutions/scale
+Title: Scale without breaking what works | Topsort
+Description: Grow from hundreds to millions of daily auctions on infrastructure that scales with you. No re-architecture, no downtime.
+
+/solutions/optimize
+Title: Optimize Retail Media Yield & ROAS | Topsort
+Description: Improve yield, advertiser ROAS, pacing, relevance and auction efficiency with AI optimization built into every commerce media decision.
+
+/solutions/expand
+Title: Take your commerce media beyond your own surfaces | Topsort
+Description: Expand across offsite channels, new formats and partner networks, powered by your first-party commerce data and unified measurement.
+
+/products/offsite-ads (source: /solutions/offsite-advertising)
+Title: Offsite Advertising — Demand Orchestration | Topsort
+Description: Extend retail media beyond owned surfaces with offsite demand orchestration infrastructure.
+
+/products/in-store-journey (source: /solutions/in-store)
+Title: In-Store Retail Media | Topsort
+Description: Activate in-store retail media — screens, shelf, and point-of-sale monetization integrated with your retail media stack.
+
+/solutions/sponsored-listings
+Title: Sponsored listings that feel native | Topsort
+Description: Use AI-powered ranking and auction intelligence to place the right products across search and category experiences while protecting relevance and conver...
+
+/solutions/sponsored-brands
+Title: Elevate brands at the top of the funnel | Topsort
+Description: Premium brand placements that drive awareness, consideration, and conversion across your commerce platform.
+
+/solutions/display-banner
+Title: Display ads, reimagined for commerce | Topsort
+Description: High-impact banner and display placements powered by commerce data, auction mechanics, and real-time optimization.
+
+/solutions/native-placements
+Title: Ads that don't feel like ads | Topsort
+Description: Native placements that match the look, feel, and function of the surrounding content. Higher engagement, better experience.
+
+/solutions/video-ads
+Title: Shoppable video for commerce platforms | Topsort
+Description: Engage shoppers with rich video experiences. Product demos, brand stories, and interactive content powered by commerce data.
+
+/solutions/marketplaces
+Title: AI commerce infrastructure for modern marketplaces | Topsort
+Description: Turn marketplace traffic, seller demand, and commerce signals into an intelligent monetization business built to grow.
+
+/solutions/retailers
+Title: AI commerce infrastructure for modern retailers | Topsort
+Description: Turn your commerce data, inventory, and brand relationships into an intelligent monetization business built to grow.
+
+/solutions/delivery-apps
+Title: AI commerce infrastructure for delivery platforms | Topsort
+Description: Turn real-time ordering signals into intelligent advertising, discovery, and monetization across every delivery experience.
+
+/solutions/travel-platforms
+Title: Intelligent commerce for travel and hospitality | Topsort
+Description: Turn high-intent travel signals into smarter discovery, advertising, and monetization across every booking experience.
+
+/solutions/financial-platforms
+Title: Intelligent commerce for financial platforms | Topsort
+Description: Turn financial product discovery into personalized experiences that connect customers with relevant products and create new revenue.
+
+/solutions/classifieds
+Title: Classifieds Advertising & Listing Promotion | Topsort
+Description: Monetize classifieds with auction-based listing promotion, featured placements and revenue intelligence across jobs, real estate, automotive and services.
+
+/solutions/migrations
+Title: Migrations to Topsort | Commerce Media Ad Server Migration
+Description: Phased migration paths from legacy ad servers and retail media platforms to Topsort's commerce-native infrastructure.
+
+/solutions/migrations/google-ad-manager
+Title: Migrate from Google Ad Manager to Topsort | GAM Migration
+Description: Migrate from Google Ad Manager to Topsort. Map GAM line items, ad units, creatives, targeting, and reporting to commerce-native retail media infrastructure with a phased migration plan.
+
+/solutions/migrations/kevel
+Title: Migrate from Kevel to Topsort | Kevel Migration
+Description: Migrate from Kevel to Topsort with a mapped, validated migration: advertisers to vendors, flights to campaigns, ads to bids, creatives to assets, and zones to slots.
+
+/compare
+Title: Topsort vs. Legacy Retail Media Platforms | Comparison Hub
+Description: Compare Topsort's commerce intelligence infrastructure with Criteo, CitrusAd, Kevel, Pentaleap, Zitcha, and VTEX Ads — plus a phased, low-risk migration path.
+
+/compare/topsort-vs-kevel (source: /compare/kevel)
+Title: Topsort vs. Kevel | Commerce Media vs. Ad Infrastructure
+Description: Compare Topsort and Kevel: commerce-native auctions, AI optimization, attribution and omnichannel monetization versus configurable ad-serving infrastructure.
+
+/compare/topsort-vs-cireto (source: /compare/criteo)
+Title: Topsort vs. Criteo | Own the Retail Media Engine
+Description: Compare Topsort and Criteo: retailer-owned commerce media infrastructure with AI-native auctions and demand mediation versus an established commerce media network.
+
+/compare/topsort-vs-google-ad-manager (source: /compare/google-ad-manager)
+Title: Topsort vs. Google Ad Manager | Commerce Media vs. Ad Serving
+Description: Compare Topsort and Google Ad Manager: commerce-native auctions, catalog intelligence, purchase attribution and AI optimization versus publisher ad inventory management.
+
+/compare/topsort-vs-vtex (source: /compare/vtex-ads)
+Title: Topsort vs. VTEX Ads | Independent Commerce Media Infrastructure
+Description: Compare Topsort and VTEX Ads: independent commerce media infrastructure with commerce-native auctions, AI optimization and attribution versus retail media inside the VTEX commerce ecosystem.
+
+/post/topsort-vs-citrusad (source: /compare/citrusad)
+Title: Topsort vs. CitrusAd / Epsilon Retail Media
+Description: Compare Topsort and CitrusAd / Epsilon Retail Media: commerce-native auctions, AI optimization and operator-owned monetization versus ecosystem-led media activation.
+
+/compare/topsort-vs-moloco (source: /compare/moloco)
+Title: Topsort vs. Moloco | Commerce Media Comparison
+Description: Compare Topsort and Moloco: commerce media infrastructure with auctions, relevance, advertiser workflows, and omnichannel monetization versus AI-powered performance advertising.
+
+ADDITIONAL SOURCE PAGES (no matching updated embed; source routes shown)
+
+/platform/onsite
+Title: Onsite Retail Media Advertising | Topsort
+Description: Monetize search, category, PDP and homepage with sponsored listings and display that rank on relevance, not just bid.
+
+/solutions/launch-retail-media
+Title: Launch a Retail Media Network | Topsort
+Description: Launch a retail media network with sponsored listings, advertiser self-service, billing and measurement — live in weeks, not quarters.
+
+/solutions/grow-advertiser-participation
+Title: Grow Advertiser Participation | Topsort
+Description: Increase the number of active advertisers on your retail media network with self-service, free brand tooling and AI campaign operations.
+
+/solutions/monetize-onsite
+Title: Monetize Onsite | Topsort
+Description: Turn search, category and product pages into retail media revenue without degrading the shopping experience.
+
+/solutions/activate-offsite
+Title: Activate Offsite | Topsort
+Description: Extend retail media budgets beyond your properties with commerce audiences and closed-loop measurement.
+
+/solutions/monetize-in-store
+Title: Monetize In-Store | Topsort
+Description: Bring physical stores into your retail media network with screens, store-level assortment and transaction feedback.
+
+/solutions/catalog-and-discovery
+Title: Improve Catalog and Discovery | Topsort
+Description: Fix catalog quality and improve search and recommendations so products are easier to understand, find and monetize.
+
+/solutions/automate-campaign-operations
+Title: Automate Campaign Operations | Topsort
+Description: Reduce manual retail media campaign work with AI-driven creation, pacing, diagnosis and optimization.
+
+/solutions/unify-commerce-data
+Title: Unify Commerce Data | Topsort
+Description: Connect catalog, shopper, campaign and transaction data so every commerce surface decides from the same understanding.
+
+/audiences/retailers-and-marketplaces
+Title: Retailers and Marketplaces | Topsort
+Description: Retail media, discovery and commerce intelligence for retailers and marketplaces running monetization at scale.
+
+/audiences/brands
+Title: Brands | Topsort
+Description: Plan, launch and optimize retail media campaigns across every connected retailer from one free workspace.
+
+/audiences/agencies
+Title: Agencies | Topsort
+Description: Manage retail media for multiple clients and retailers with shared workspaces, permissions and consistent reporting.
+
+/audiences/partners
+Title: Technology Partners | Topsort
+Description: Build with Topsort: technology, in-store, agency and implementation partnerships across the commerce ecosystem.
+
+/why-topsort/migration
+Title: Why Migrate to Topsort | Retail Media Platform Migration
+Description: Migrate from your current retail media platform or ad server with no cutover risk: integrate, shadow on live traffic, shift surface by surface, then decommission.
+
+/why-topsort/architecture
+Title: Commerce-Native Architecture | Topsort
+Description: How Topsort is built: one decisioning system across surfaces, low-latency inference and outcome feedback in the request path.
+
+/why-topsort/security
+Title: Security and Trust | Topsort
+Description: How Topsort protects commerce data: encryption, tenant isolation, SSO and role-based access, audit logging, privacy-by-design retail media and reliability at commerce peak traffic.
+
+/customers
+Title: Customer Stories | Topsort
+Description: How retailers, marketplaces, brands and agencies build, migrate and scale retail media with Topsort — filterable by region, country, product and use case.
+
+/resources/guides
+Title: Retail Media Guides | Topsort
+Description: Practical guides on launching, operating, migrating and scaling a retail media network.
+
+/resources/research
+Title: Research and Benchmarks | Topsort
+Description: Retail media benchmarks, category research and market analysis from Topsort.
+
+/resources/events
+Title: Events and Webinars | Topsort
+Description: Topsort events, webinars and industry sessions for retail media teams.
+
+/resources/documentation
+Title: Product Documentation | Topsort
+Description: Product documentation for retailers, advertisers and operators using Topsort.
+
+/resources/api
+Title: API Documentation | Topsort
+Description: Topsort commerce APIs: auction, events, catalog, campaign, reporting and embeddings endpoints.
+
+/resources/trust-center
+Title: Security and Trust Center | Topsort
+Description: Security practices, data handling and compliance information for teams evaluating Topsort.
+
+/pricing
+Title: Pricing | Topsort
+Description: Topsort pricing: free for brands and agencies, and a commercial model for retailers and marketplaces aligned to network growth.
+
+/partners
+Title: Partners | Topsort
+Description: The Topsort partner ecosystem: technology, in-store, agency and implementation partners.
+
+/company/careers
+Title: Careers | Topsort
+Description: Join Topsort and build commerce intelligence infrastructure used by retailers and marketplaces worldwide.
+
+/company/contact
+Title: Contact | Topsort
+Description: Contact Topsort for sales, partnerships, support, press or security enquiries.
+
+/privacy
+Title: Legal Center | Topsort
+Description: Topsort's privacy policy, fair use policy, SaaS terms, and data management practices.
+
+/terms
+Title: Terms | Topsort
+Description: Terms of use for the Topsort website and platform.
+
+/start-free
+Title: Start free | Topsort
+Description: Start free with Toppie: one workspace for brands and agencies to run retail media campaigns across retailers.
+
+/submit-rfp
+Title: RFP | Topsort
+Description: Submit a retail media platform RFP to Topsort and receive a structured response.
+
+/privacy-and-security
+Title: Privacy & Security | Topsort
+Description: GDPR and SOC2 Type 2 compliant, third-party cookie-free, no PII required.
+
+/regions
+Title: Topsort by Region | Global commerce media infrastructure
+Description: Explore Topsort's regional experiences across Latin America, Australia and New Zealand, Europe, DACH and the Middle East.
+
+/regions/latin-america
+Title: Retail Media in Latin America | Topsort LATAM
+Description: Topsort helps Latin American retailers and marketplaces build, operate and expand retail media networks across onsite, offsite and in-store commerce.
+
+/regions/latin-america/brazil
+Title: Topsort no Brasil | Infraestrutura de retail media
+Description: Infraestrutura de retail media para varejistas, marketplaces, marcas e agências no Brasil: leilões, autoatendimento, carteiras, offsite e loja física.
+
+/regions/latin-america/spanish-latam
+Title: Topsort en América Latina | Retail media regional
+Description: Infraestructura de retail media para retailers y marketplaces hispanohablantes: operación multi-país, múltiples monedas, autoservicio y reporting regional.
+
+/regions/united-states
+Title: Retail Media in the United States | Topsort
+Description: Retail media infrastructure for US marketplaces, delivery apps and retailers: auctions, advertiser self-service, offsite activation and closed-loop measurement.
+
+/regions/australia-new-zealand
+Title: Retail Media in Australia and New Zealand | Topsort
+Description: Retail media infrastructure for Australian and New Zealand retailers and marketplaces: auctions, supplier self-service, in-store media and measurement.
+
+/regions/europe
+Title: Retail Media in Europe | Topsort
+Description: Retail media infrastructure for European retailers and marketplaces: cross-border operations, multi-language catalogs, data governance and offsite activation.
+
+/regions/europe/dach
+Title: Retail Media in DACH | Topsort Germany, Austria, Switzerland
+Description: Retail media infrastructure for German, Austrian and Swiss retailers: governance-first architecture, catalog quality, auctions and measurement.
+
+/regions/middle-east
+Title: Retail Media in the Middle East | Topsort
+Description: Retail media infrastructure for Middle East retailers and marketplaces: bilingual catalog and search, auctions, advertiser self-service and measurement.
+
+/why-topsort
+Title: Why Topsort | The Commerce Media Operating System
+Description: Why 100+ retail media networks in 40+ countries choose Topsort: one commerce-native system for auctions, relevance, optimization and measurement across onsite, offsite and in-store.
+
+/why-topsort/make-commerce-natural
+Title: Make Commerce Natural Again | Topsort
+Description: Natural commerce means discovery follows intent, advertising adds relevance, and every interaction improves the next one. The belief behind Topsort.
+
+/why-topsort/pan-commerce-intelligence
+Title: AI Commerce Intelligence | Topsort
+Description: AI Commerce Intelligence connects product, shopper, transaction and commercial signals so every commerce surface can understand what people want and respond naturally.
+
+/why-topsort/retail-media-3
+Title: Retail Media 3.0 | Topsort
+Description: Retail Media 3.0 is one adaptive system connecting discovery, monetization, demand and AI across onsite, offsite and in-store. See where your network stands.
+
+/case-study/obi
+Title: OBI Case Study: +93% ROAS with AI-Powered Auctions | Topsort
+Description: How OBI, one of Europe's largest home improvement retailers, grew attributed sales 136% and ROAS 93% with Topsort's real-time auction infrastructure.
+
+/developers
+Title: Developers — Topsort APIs & SDKs
+Description: Topsort developer hub: APIs, SDKs, and integration guides for retail media and commerce monetization.
+
+/compare/pentaleap
+Title: Topsort vs. Pentaleap | Retail Media Platform Comparison
+Description: Compare Topsort and Pentaleap for retail media: onsite sponsored product relevance versus a full commerce media operating system covering onsite, offsite, in-store and advertiser demand.
+
+/compare/zitcha
+Title: Topsort vs. Zitcha | Retail Media Platform Comparison
+Description: Compare Topsort and Zitcha for retail media: retail media workflow and operations management versus the commerce media infrastructure that runs auctions, relevance, demand and measurement.
+
+/developer-day-2026
+Title: Topsort Fall 26 Update — Save the Date | Boston
+Description: Topsort Fall 26 Update: Sept 29 – Oct 1, 2026 in Boston, Massachusetts. Three days of keynotes, customer stories, product innovation, and hands-on Commerce AI experiences.
+
+/developer-day
+Title: Topsort Fall 26 Update — Save the Date | Boston
+Description: Topsort Fall 26 Update: Sept 29 – Oct 1, 2026 in Boston, Massachusetts. Three days of keynotes, customer stories, product innovation, and hands-on Commerce AI experiences.

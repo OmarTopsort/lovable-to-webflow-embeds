@@ -1,0 +1,54 @@
+Updated from /source on October 7, 2026.
+
+INSTALL
+Replace the shared navbar.html and footer.html, then replace each page's embed.
+Every page is one file with numbered PART blocks. Paste each PART into its own
+Webflow HTML Embed, in order; every block stays below 49,000 characters.
+Keep global-head.html in Site Settings > Custom Code > Head.
+
+NEW WEBFLOW PAGES
+/platform/agentic-traffic-control-room -> products/agentic-traffic-control-room.html
+/company/news -> company-news.html
+Create these paths in Webflow before publishing the updated navigation.
+
+CURRENT PAGE FILES
+Home: home-v3.html (homepage.html and homepage-new.html are identical aliases)
+Press Room (/resources): resources.html (resources-v3.html and resources-content.html are aliases)
+Products: products/*.html
+Solutions: solutions/*.html and solutions/migrations/*.html
+Comparisons: compare/*.html (styles are now included inside every file)
+About: about.html
+Demo: new-book-a-demo-and-new-nav/book-a-demo.html
+Legal: legals.html
+Legacy retail-media filenames: t-retail.html and t-retail-new.html use the current
+Core Platform design, matching the source redirect from /retail-media-platform.
+
+CMS
+Keep the existing hidden CMS Collection Lists on Press Room. Its customer cards
+use company logos on gradients; unrecognized companies show their names instead
+of story photos. Company News uses the existing published news/product-update
+snapshot, styled as the new source's minimal list. Add the same hidden .cms-updates
+and/or .cms-opinions lists to Company News for live CMS updates.
+The demo form retains its existing webhook, tracking and scheduler integrations.
+
+LOGINS
+Copied exactly from the current source:
+Default: https://accounts.app.staging.topsort.ai/
+T-Brain: https://tbrain.staging.topsort.ai
+Tomi: https://tomi.staging.topsort.com
+Toppie: https://toppie.staging.topsort.com
+Core Platform: https://app.topsort.com
+
+SEO
+seo-meta.text contains existing page titles and descriptions from the source.
+Paste them into Webflow page settings. The source page path is shown when it
+maps to a different Webflow path. Source-only routes are included for reference.
+
+REBUILD
+Build /source with its Vite binary, serve its dev app on localhost ports 4173
+and 4174, run the capture-*.mjs scripts, then the corresponding generate-*.mjs
+scripts, export-seo.mjs and sync-embed-aliases.mjs. The captures, CMS snapshot,
+scoped CSS rules and browser behavior live in scripts/embed-src/.
+
+Other event source folders, old standalone dropdowns, and .bak.html snapshots
+are outside this source sync. The current navbar replaces the old dropdowns.

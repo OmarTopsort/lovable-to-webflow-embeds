@@ -1,0 +1,2111 @@
+[
+  {
+    "route": "/solutions",
+    "publishedPath": "/solutions",
+    "reference": "index.html",
+    "sectionCharacters": {
+      "css": 40668,
+      "html": 50395,
+      "js": 17121
+    },
+    "files": [
+      {
+        "file": "index.html",
+        "characters": 109227
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 40812
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 48771
+      },
+      {
+        "index": 3,
+        "kind": "HTML",
+        "characters": 1624
+      },
+      {
+        "index": 4,
+        "kind": "JS",
+        "characters": 17138
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "#by-goal",
+        "to": "#ts-sol-index-by-goal"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "01LaunchStart a new commerce media business with production-ready infrastructure.Read more",
+        "from": "/solutions/launch",
+        "to": "https://www.topsort.com/solutions/launch"
+      },
+      {
+        "label": "02ScaleGrow advertisers, inventory, formats and markets without rebuilding your infrastructure.Read more",
+        "from": "/solutions/scale",
+        "to": "https://www.topsort.com/solutions/scale"
+      },
+      {
+        "label": "03OptimizeImprove yield, ROAS, pacing and relevance.Read more",
+        "from": "/solutions/optimize",
+        "to": "https://www.topsort.com/solutions/optimize"
+      },
+      {
+        "label": "04ExpandMove into new channels, formats and demand.Read more",
+        "from": "/solutions/expand",
+        "to": "https://www.topsort.com/solutions/expand"
+      },
+      {
+        "label": "Explore onsite",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Sponsored Listings",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Sponsored Brands",
+        "from": "/solutions/sponsored-brands",
+        "to": "https://www.topsort.com/solutions/sponsored-brands"
+      },
+      {
+        "label": "Display & Banners",
+        "from": "/solutions/display-banner",
+        "to": "https://www.topsort.com/solutions/display-banner"
+      },
+      {
+        "label": "Native Placements",
+        "from": "/solutions/native-placements",
+        "to": "https://www.topsort.com/solutions/native-placements"
+      },
+      {
+        "label": "Video Ads",
+        "from": "/solutions/video-ads",
+        "to": "https://www.topsort.com/solutions/video-ads"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences and first-party signals across external media channels.Learn more",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaConnect digital screens and physical shopping experiences to your commerce media business.Learn more",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "Sponsored ListingsPromote products directly within search, browse and recommendation experiences.Read more",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Sponsored BrandsGive brands premium visibility across high-intent commerce surfaces.Read more",
+        "from": "/solutions/sponsored-brands",
+        "to": "https://www.topsort.com/solutions/sponsored-brands"
+      },
+      {
+        "label": "Display & BannersTurn premium commerce inventory into measurable brand advertising.Read more",
+        "from": "/solutions/display-banner",
+        "to": "https://www.topsort.com/solutions/display-banner"
+      },
+      {
+        "label": "Native PlacementsCreate sponsored experiences that naturally match the surrounding product experience.Read more",
+        "from": "/solutions/native-placements",
+        "to": "https://www.topsort.com/solutions/native-placements"
+      },
+      {
+        "label": "Video AdsBring video storytelling into commerce experiences.Read more",
+        "from": "/solutions/video-ads",
+        "to": "https://www.topsort.com/solutions/video-ads"
+      },
+      {
+        "label": "01RetailersTurn existing shopper traffic into a high-margin media business.",
+        "from": "/solutions/retailers",
+        "to": "https://www.topsort.com/solutions/retailers"
+      },
+      {
+        "label": "02MarketplacesMonetize seller demand at scale with self-serve auctions.",
+        "from": "/solutions/marketplaces",
+        "to": "https://www.topsort.com/solutions/marketplaces"
+      },
+      {
+        "label": "03Delivery AppsMonetize high-frequency ordering moments without hurting conversion.",
+        "from": "/solutions/delivery-apps",
+        "to": "https://www.topsort.com/solutions/delivery-apps"
+      },
+      {
+        "label": "04Travel PlatformsTurn high-intent trip planning into sponsored discovery.",
+        "from": "/solutions/travel-platforms",
+        "to": "https://www.topsort.com/solutions/travel-platforms"
+      },
+      {
+        "label": "05Financial PlatformsMonetize commerce intent inside banking and fintech experiences.",
+        "from": "/solutions/financial-platforms",
+        "to": "https://www.topsort.com/solutions/financial-platforms"
+      },
+      {
+        "label": "06ClassifiedsGive sellers premium visibility across listings and search.",
+        "from": "/solutions/classifieds",
+        "to": "https://www.topsort.com/solutions/classifieds"
+      },
+      {
+        "label": "Explore Core Platform",
+        "from": "/platform/core-platform",
+        "to": "https://www.topsort.com/products/t-platform"
+      },
+      {
+        "label": "Read the docs",
+        "from": "https://docs.topsort.com",
+        "to": "https://docs.topsort.com"
+      },
+      {
+        "label": "Retailers",
+        "from": "/solutions/retailers",
+        "to": "https://www.topsort.com/solutions/retailers"
+      },
+      {
+        "label": "Marketplaces",
+        "from": "/solutions/marketplaces",
+        "to": "https://www.topsort.com/solutions/marketplaces"
+      },
+      {
+        "label": "Delivery Apps",
+        "from": "/solutions/delivery-apps",
+        "to": "https://www.topsort.com/solutions/delivery-apps"
+      },
+      {
+        "label": "Travel Platforms",
+        "from": "/solutions/travel-platforms",
+        "to": "https://www.topsort.com/solutions/travel-platforms"
+      },
+      {
+        "label": "Financial Platforms",
+        "from": "/solutions/financial-platforms",
+        "to": "https://www.topsort.com/solutions/financial-platforms"
+      },
+      {
+        "label": "Classifieds",
+        "from": "/solutions/classifieds",
+        "to": "https://www.topsort.com/solutions/classifieds"
+      },
+      {
+        "label": "Plan your migration",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Migration guide",
+        "from": "/solutions/migrations",
+        "to": "https://www.topsort.com/post/migrate-from-legacy-ad-server-to-topsort"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore the API",
+        "from": "https://docs.topsort.com",
+        "to": "https://docs.topsort.com"
+      }
+    ],
+    "sections": 8,
+    "animations": 0,
+    "reveals": 29,
+    "timelines": 0
+  },
+  {
+    "route": "/solutions/launch",
+    "publishedPath": "/solutions/launch",
+    "reference": "launch.html",
+    "sectionCharacters": {
+      "css": 34281,
+      "html": 22069,
+      "js": 17104
+    },
+    "files": [
+      {
+        "file": "launch.html",
+        "characters": 74381
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 34425
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 22069
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17121
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore commerce media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/scale",
+    "publishedPath": "/solutions/scale",
+    "reference": "scale.html",
+    "sectionCharacters": {
+      "css": 34277,
+      "html": 22179,
+      "js": 17103
+    },
+    "files": [
+      {
+        "file": "scale.html",
+        "characters": 74485
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 34421
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 22179
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17120
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore commerce media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/optimize",
+    "publishedPath": "/solutions/optimize",
+    "reference": "optimize.html",
+    "sectionCharacters": {
+      "css": 34285,
+      "html": 22235,
+      "js": 17106
+    },
+    "files": [
+      {
+        "file": "optimize.html",
+        "characters": 74555
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 34429
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 22235
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17123
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore commerce media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/expand",
+    "publishedPath": "/solutions/expand",
+    "reference": "expand.html",
+    "sectionCharacters": {
+      "css": 34280,
+      "html": 22077,
+      "js": 17104
+    },
+    "files": [
+      {
+        "file": "expand.html",
+        "characters": 74388
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 34424
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 22077
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17121
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore commerce media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/offsite-advertising",
+    "publishedPath": "/products/offsite-ads",
+    "reference": "offsite-advertising.html",
+    "sectionCharacters": {
+      "css": 36395,
+      "html": 24153,
+      "js": 17117
+    },
+    "files": [
+      {
+        "file": "offsite-advertising.html",
+        "characters": 78605
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 36539
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 24153
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17134
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Explore Offsite",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "See customer stories",
+        "from": "/resources/customers",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 12,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/in-store",
+    "publishedPath": "/products/in-store-journey",
+    "reference": "in-store.html",
+    "sectionCharacters": {
+      "css": 36372,
+      "html": 21653,
+      "js": 17106
+    },
+    "files": [
+      {
+        "file": "in-store.html",
+        "characters": 76060
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 36516
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 21653
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17123
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "See customer case studies",
+        "from": "/resources/customers",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 12,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/sponsored-listings",
+    "publishedPath": "/solutions/sponsored-listings",
+    "reference": "sponsored-listings.html",
+    "sectionCharacters": {
+      "css": 36390,
+      "html": 21403,
+      "js": 17116
+    },
+    "files": [
+      {
+        "file": "sponsored-listings.html",
+        "characters": 75848
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 36534
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 21403
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17133
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore commerce media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 12,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/sponsored-brands",
+    "publishedPath": "/solutions/sponsored-brands",
+    "reference": "sponsored-brands.html",
+    "sectionCharacters": {
+      "css": 36512,
+      "html": 22620,
+      "js": 17114
+    },
+    "files": [
+      {
+        "file": "sponsored-brands.html",
+        "characters": 77183
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 36656
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 22620
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17131
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore retail media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/display-banner",
+    "publishedPath": "/solutions/display-banner",
+    "reference": "display-banner.html",
+    "sectionCharacters": {
+      "css": 36506,
+      "html": 22581,
+      "js": 17112
+    },
+    "files": [
+      {
+        "file": "display-banner.html",
+        "characters": 77134
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 36650
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 22581
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17129
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore retail media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/native-placements",
+    "publishedPath": "/solutions/native-placements",
+    "reference": "native-placements.html",
+    "sectionCharacters": {
+      "css": 36511,
+      "html": 22729,
+      "js": 17115
+    },
+    "files": [
+      {
+        "file": "native-placements.html",
+        "characters": 77293
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 36655
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 22729
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17132
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore retail media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/video-ads",
+    "publishedPath": "/solutions/video-ads",
+    "reference": "video-ads.html",
+    "sectionCharacters": {
+      "css": 36499,
+      "html": 22570,
+      "js": 17107
+    },
+    "files": [
+      {
+        "file": "video-ads.html",
+        "characters": 77106
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 36643
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 22570
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17124
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore retail media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/marketplaces",
+    "publishedPath": "/solutions/marketplaces",
+    "reference": "marketplaces.html",
+    "sectionCharacters": {
+      "css": 37002,
+      "html": 24178,
+      "js": 17110
+    },
+    "files": [
+      {
+        "file": "marketplaces.html",
+        "characters": 79223
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 37146
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 24178
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17127
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore commerce media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/retailers",
+    "publishedPath": "/solutions/retailers",
+    "reference": "retailers.html",
+    "sectionCharacters": {
+      "css": 36997,
+      "html": 23970,
+      "js": 17107
+    },
+    "files": [
+      {
+        "file": "retailers.html",
+        "characters": 79004
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 37141
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 23970
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17124
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore commerce media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/delivery-apps",
+    "publishedPath": "/solutions/delivery-apps",
+    "reference": "delivery-apps.html",
+    "sectionCharacters": {
+      "css": 37054,
+      "html": 23794,
+      "js": 17111
+    },
+    "files": [
+      {
+        "file": "delivery-apps.html",
+        "characters": 78893
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 37198
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 23794
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17128
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore commerce media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/travel-platforms",
+    "publishedPath": "/solutions/travel-platforms",
+    "reference": "travel-platforms.html",
+    "sectionCharacters": {
+      "css": 37059,
+      "html": 23329,
+      "js": 17114
+    },
+    "files": [
+      {
+        "file": "travel-platforms.html",
+        "characters": 78439
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 37203
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 23329
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17131
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore retail media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/financial-platforms",
+    "publishedPath": "/solutions/financial-platforms",
+    "reference": "financial-platforms.html",
+    "sectionCharacters": {
+      "css": 36616,
+      "html": 23405,
+      "js": 17117
+    },
+    "files": [
+      {
+        "file": "financial-platforms.html",
+        "characters": 78078
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 36760
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 23405
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17134
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore commerce insights",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/classifieds",
+    "publishedPath": "/solutions/classifieds",
+    "reference": "classifieds.html",
+    "sectionCharacters": {
+      "css": 37050,
+      "html": 23625,
+      "js": 17109
+    },
+    "files": [
+      {
+        "file": "classifieds.html",
+        "characters": 78716
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 37194
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 23625
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17126
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore commerce insights",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 6,
+    "animations": 0,
+    "reveals": 13,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/migrations",
+    "publishedPath": null,
+    "reference": "migrations/index.html",
+    "sectionCharacters": {
+      "css": 36477,
+      "html": 31141,
+      "js": 17108
+    },
+    "files": [
+      {
+        "file": "migrations/index.html",
+        "characters": 85663
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 36621
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 31141
+      },
+      {
+        "index": 3,
+        "kind": "JS",
+        "characters": 17125
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Use Cases",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore solutions",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      },
+      {
+        "label": "See migration plan",
+        "from": "/solutions/migrations/google-ad-manager",
+        "to": "https://www.topsort.com/solutions/migrations/google-ad-manager"
+      },
+      {
+        "label": "Compare Topsort vs. Google Ad Manager",
+        "from": "/compare/google-ad-manager",
+        "to": "https://www.topsort.com/compare/topsort-vs-google-ad-manager"
+      },
+      {
+        "label": "See migration plan",
+        "from": "/solutions/migrations/kevel",
+        "to": "https://www.topsort.com/book-a-demo?source=kevel-migration"
+      },
+      {
+        "label": "Compare Topsort vs. Kevel",
+        "from": "/compare/kevel",
+        "to": "https://www.topsort.com/compare/topsort-vs-kevel"
+      },
+      {
+        "label": "Compare Topsort vs. Criteo",
+        "from": "/compare/criteo",
+        "to": "https://www.topsort.com/compare/topsort-vs-cireto"
+      },
+      {
+        "label": "Compare Topsort vs. CitrusAd",
+        "from": "/compare/citrusad",
+        "to": "https://www.topsort.com/post/topsort-vs-citrusad"
+      },
+      {
+        "label": "Compare Topsort vs. Moloco",
+        "from": "/compare/moloco",
+        "to": "https://www.topsort.com/compare/topsort-vs-moloco"
+      },
+      {
+        "label": "Compare Topsort vs. VTEX Ads",
+        "from": "/compare/vtex-ads",
+        "to": "https://www.topsort.com/compare/topsort-vs-vtex"
+      },
+      {
+        "label": "Compare Topsort vs. Pentaleap",
+        "from": "/compare/pentaleap",
+        "to": "https://www.topsort.com/post/topsort-vs-pentaleap"
+      },
+      {
+        "label": "Compare Topsort vs. Zitcha",
+        "from": "/compare/zitcha",
+        "to": "https://www.topsort.com/post/topsort-vs-zitcha"
+      },
+      {
+        "label": "Book a demo",
+        "from": "/talk-to-sales",
+        "to": "https://www.topsort.com/book-a-demo"
+      },
+      {
+        "label": "Explore commerce media resources",
+        "from": "/resources",
+        "to": "https://www.topsort.com/resources"
+      },
+      {
+        "label": "Onsite: Sponsored ListingsMonetize search, browse and discovery inside your platform.Explore",
+        "from": "/solutions/sponsored-listings",
+        "to": "https://www.topsort.com/solutions/sponsored-listings"
+      },
+      {
+        "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
+        "from": "/solutions/offsite-advertising",
+        "to": "https://www.topsort.com/products/offsite-ads"
+      },
+      {
+        "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
+        "from": "/solutions/in-store",
+        "to": "https://www.topsort.com/products/in-store-journey"
+      },
+      {
+        "label": "All solutionsExplore every goal, channel and industry we support.Explore",
+        "from": "/solutions",
+        "to": "https://www.topsort.com/solutions"
+      }
+    ],
+    "sections": 7,
+    "animations": 0,
+    "reveals": 21,
+    "timelines": 1
+  },
+  {
+    "route": "/solutions/migrations/google-ad-manager",
+    "publishedPath": "/solutions/migrations/google-ad-manager",
+    "reference": "migrations/google-ad-manager.html",
+    "sectionCharacters": {
+      "css": 38769,
+      "html": 73839,
+      "js": 17167
+    },
+    "files": [
+      {
+        "file": "migrations/google-ad-manager.html",
+        "characters": 130842
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 38913
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 46974
+      },
+      {
+        "index": 3,
+        "kind": "HTML",
+        "characters": 26865
+      },
+      {
+        "index": 4,
+        "kind": "JS",
+        "characters": 17184
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Migration guide",
+        "from": "/solutions/migrations",
+        "to": "https://www.topsort.com/post/migrate-from-legacy-ad-server-to-topsort"
+      },
+      {
+        "label": "Talk to a migration expert",
+        "from": "/book-a-demo?source=gam-migration",
+        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+      },
+      {
+        "label": "See the Migration Plan",
+        "from": "#migration-plan",
+        "to": "#ts-sol-migrations-google-ad-manager-migration-plan"
+      },
+      {
+        "label": "Talk to a migration expert",
+        "from": "/book-a-demo?source=gam-migration",
+        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+      },
+      {
+        "label": "See the Migration Plan",
+        "from": "#migration-plan",
+        "to": "#ts-sol-migrations-google-ad-manager-migration-plan"
+      },
+      {
+        "label": "Talk to a migration expert",
+        "from": "/book-a-demo?source=gam-migration",
+        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+      },
+      {
+        "label": "See object mapping",
+        "from": "#mapping",
+        "to": "#ts-sol-migrations-google-ad-manager-mapping"
+      },
+      {
+        "label": "Talk to a migration expert",
+        "from": "/book-a-demo?source=gam-migration",
+        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+      },
+      {
+        "label": "Talk to a migration expert",
+        "from": "/book-a-demo?source=gam-migration",
+        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+      },
+      {
+        "label": "Read the Falabella story",
+        "from": "/casestudy/falabella-story",
+        "to": "https://www.topsort.com/casestudy/falabella-story"
+      },
+      {
+        "label": "Read the Sodimac story",
+        "from": "/casestudy/sodimac1",
+        "to": "https://www.topsort.com/casestudy/sodimac1"
+      },
+      {
+        "label": "How to Migrate From a Legacy Ad Server to Topsort",
+        "from": "/post/migrate-from-legacy-ad-server-to-topsort",
+        "to": "https://www.topsort.com/post/migrate-from-legacy-ad-server-to-topsort"
+      },
+      {
+        "label": "Flawless Migrations: Topsort's Zero-Downtime Onboarding",
+        "from": "/post/engineering-for-flawless-migrations-the-topsort-approach-to-zero-downtime-zero-data-loss-onboarding",
+        "to": "https://www.topsort.com/post/engineering-for-flawless-migrations-the-topsort-approach-to-zero-downtime-zero-data-loss-onboarding"
+      },
+      {
+        "label": "Google Ad Manager Alternative for Retail Media",
+        "from": "/post/google-ad-manager-alternative-retail-media",
+        "to": "https://www.topsort.com/post/google-ad-manager-alternative-retail-media"
+      },
+      {
+        "label": "Display & Banner Ads on Topsort",
+        "from": "/solutions/display-banner",
+        "to": "https://www.topsort.com/solutions/display-banner"
+      },
+      {
+        "label": "Talk to a migration expert",
+        "from": "/book-a-demo?source=gam-migration",
+        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+      },
+      {
+        "label": "See the Migration Plan",
+        "from": "#migration-plan",
+        "to": "#ts-sol-migrations-google-ad-manager-migration-plan"
+      },
+      {
+        "label": "T-ZeroLightweight ad server API for sponsored listings and display.",
+        "from": "/products/t-zero",
+        "to": "https://www.topsort.com/products/t-zero"
+      },
+      {
+        "label": "T-EngineAuctions, pacing, attribution, and optimization engine.",
+        "from": "/products/t-engine",
+        "to": "https://www.topsort.com/products/t-engine"
+      },
+      {
+        "label": "Data GenieEvent reporting, analytics, and data warehouse access.",
+        "from": "/products/data-genie",
+        "to": "https://www.topsort.com/products/data-genie"
+      },
+      {
+        "label": "Talk to a migration expert",
+        "from": "/book-a-demo?source=gam-migration",
+        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+      },
+      {
+        "label": "See the Migration Plan",
+        "from": "#migration-plan",
+        "to": "#ts-sol-migrations-google-ad-manager-migration-plan"
+      }
+    ],
+    "sections": 12,
+    "animations": 34,
+    "reveals": 0,
+    "timelines": 0
+  },
+  {
+    "route": "/solutions/migrations/kevel",
+    "publishedPath": null,
+    "reference": "migrations/kevel.html",
+    "sectionCharacters": {
+      "css": 37579,
+      "html": 74992,
+      "js": 17172
+    },
+    "files": [
+      {
+        "file": "migrations/kevel.html",
+        "characters": 130910
+      }
+    ],
+    "embedParts": [
+      {
+        "index": 1,
+        "kind": "CSS",
+        "characters": 37723
+      },
+      {
+        "index": 2,
+        "kind": "HTML",
+        "characters": 15226
+      },
+      {
+        "index": 3,
+        "kind": "HTML",
+        "characters": 47688
+      },
+      {
+        "index": 4,
+        "kind": "HTML",
+        "characters": 12078
+      },
+      {
+        "index": 5,
+        "kind": "JS",
+        "characters": 17189
+      }
+    ],
+    "links": [
+      {
+        "label": "Home",
+        "from": "/",
+        "to": "https://www.topsort.com"
+      },
+      {
+        "label": "Migration guide",
+        "from": "/solutions/migrations",
+        "to": "https://www.topsort.com/post/migrate-from-legacy-ad-server-to-topsort"
+      },
+      {
+        "label": "Plan your migration",
+        "from": "/book-a-demo?source=kevel-migration",
+        "to": "https://www.topsort.com/book-a-demo?source=kevel-migration"
+      },
+      {
+        "label": "Already evaluating? Compare Topsort vs. Kevel",
+        "from": "/compare/kevel",
+        "to": "https://www.topsort.com/compare/topsort-vs-kevel"
+      },
+      {
+        "label": "Talk to Topsort about migration",
+        "from": "/book-a-demo?source=kevel-migration",
+        "to": "https://www.topsort.com/book-a-demo?source=kevel-migration"
+      },
+      {
+        "label": "Compare Topsort vs. Kevel",
+        "from": "/compare/kevel",
+        "to": "https://www.topsort.com/compare/topsort-vs-kevel"
+      }
+    ],
+    "sections": 8,
+    "animations": 26,
+    "reveals": 1,
+    "timelines": 0
+  }
+]

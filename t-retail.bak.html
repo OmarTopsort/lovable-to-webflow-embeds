@@ -1,0 +1,3002 @@
+<style>
+  /* ============================================
+   Topsort T-Platform - Pure HTML/CSS
+   Design System & Styles
+   ============================================ */
+
+  /* Import Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+  /* ============================================
+   CSS Variables - Topsort Design System
+   ============================================ */
+  :root {
+    /* Colors */
+    --primary: #4A6CF7 !important;
+    --primary-foreground: #ffffff !important;
+    --background: #F5F6F8 !important;
+    --foreground: #252830 !important;
+    --ink: #111418 !important;
+    --ink-foreground: #ffffff !important;
+    --card: #ffffff !important;
+    --card-foreground: #252830 !important;
+    --border: #E2E5EA !important;
+    --border-light: rgba(255, 255, 255, 0.15) !important;
+    --muted-foreground: #6B7280 !important;
+    --secondary: #E8EAED !important;
+    --signal-orange: #FF4D1A !important;
+
+    /* Typography */
+    --font-heading: 'Inter', system-ui, sans-serif !important;
+    --font-body: 'Inter', system-ui, sans-serif !important;
+    --font-serif: 'Instrument Serif', Georgia, serif !important;
+    --font-mono: 'JetBrains Mono', monospace !important;
+
+    /* Spacing */
+    --radius: 0.625rem !important;
+    --radius-sm: 0.375rem !important;
+    --radius-lg: 0.875rem !important;
+    --radius-xl: 1rem !important;
+
+    /* Layout */
+    --max-width: 1400px !important;
+    --max-width-content: 1200px !important;
+    --max-width-narrow: 900px !important;
+  }
+
+  /* ============================================
+   CSS Reset & Base Styles
+   ============================================ */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  html {
+    scroll-behavior: smooth !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    background-color: #F5F6F8 !important;
+    color: #252830 !important;
+    line-height: 1.5 !important;
+    min-height: 100vh !important;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block !important;
+    max-width: 100% !important;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit !important;
+  }
+
+  input[type="email"] {
+    padding: 0.75rem 1rem !important;
+    border: 1px solid #E2E5EA !important;
+    border-radius: 0.625rem !important;
+    background-color: white !important;
+    color: #252830 !important;
+    font-size: 0.875rem !important;
+    width: 100% !important;
+    transition: border-color 0.2s ease !important;
+  }
+
+  input[type="email"]::placeholder {
+    color: #6B7280 !important;
+  }
+
+  input[type="email"]:focus {
+    outline: none !important;
+    border-color: #4A6CF7 !important;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+
+  button {
+    cursor: pointer !important;
+    border: none !important;
+    background: none !important;
+  }
+
+  ul,
+  ol {
+    list-style: none !important;
+  }
+
+  /* ============================================
+   Typography Utilities
+   ============================================ */
+  .font-serif {
+    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Monaco, monospace !important;
+  }
+
+  .text-xs {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+  }
+
+  .text-10px {
+    font-size: 10px !important;
+  }
+
+  .text-11px {
+    font-size: 11px !important;
+  }
+
+  .text-12px {
+    font-size: 12px !important;
+  }
+
+  .text-sm {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+  }
+
+  .text-base {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+  }
+
+  .text-lg {
+    font-size: 1.125rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  .text-xl {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  .text-2xl {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  .text-3xl {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+  }
+
+  .text-4xl {
+    font-size: clamp(1.875rem, 5vw, 2.25rem) !important;
+    line-height: 2.5rem !important;
+  }
+
+  .text-5xl {
+    font-size: clamp(2.25rem, 6vw, 3rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  .text-6xl {
+    font-size: clamp(2.5rem, 7vw, 3.75rem) !important;
+    line-height: 1 !important;
+  }
+
+  .text-7xl {
+    font-size: clamp(3rem, 8vw, 4.5rem) !important;
+    line-height: 1 !important;
+  }
+
+  /* Hero title with clamp for responsive scaling */
+  .hero-title {
+    font-size: clamp(2.5rem, 6.4vw, 5.5rem) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.035em !important;
+    font-weight: 700 !important;
+  }
+
+  .font-light {
+    font-weight: 300 !important;
+  }
+
+  .font-normal {
+    font-weight: 400 !important;
+  }
+
+  .font-medium {
+    font-weight: 500 !important;
+  }
+
+  .font-semibold {
+    font-weight: 600 !important;
+  }
+
+  .font-bold {
+    font-weight: 700 !important;
+  }
+
+  .tracking-tight {
+    letter-spacing: -0.035em !important;
+  }
+
+  .tracking-wide {
+    letter-spacing: 0.22em !important;
+  }
+
+  .tracking-wider {
+    letter-spacing: 0.18em !important;
+  }
+
+  /* Eyebrow text style */
+  .eyebrow-text {
+    font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, monospace !important;
+    font-size: 10.5px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.22em !important;
+  }
+
+  /* ============================================
+   Layout Utilities
+   ============================================ */
+  .container {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  .container-content {
+    max-width: 1200px !important;
+  }
+
+  .container-narrow {
+    max-width: 900px !important;
+  }
+
+  /* Flexbox */
+  .flex {
+    display: flex !important;
+  }
+
+  .flex-col {
+    flex-direction: column !important;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap !important;
+  }
+
+  .items-center {
+    align-items: center !important;
+  }
+
+  .items-start {
+    align-items: flex-start !important;
+  }
+
+  .items-baseline {
+    align-items: baseline !important;
+  }
+
+  .justify-center {
+    justify-content: center !important;
+  }
+
+  .justify-between {
+    justify-content: space-between !important;
+  }
+
+  .gap-1 {
+    gap: 0.25rem !important;
+  }
+
+  .gap-2 {
+    gap: 0.5rem !important;
+  }
+
+  .gap-2-5 {
+    gap: 0.625rem !important;
+  }
+
+  .gap-3 {
+    gap: 0.75rem !important;
+  }
+
+  .gap-4 {
+    gap: 1rem !important;
+  }
+
+  .gap-5 {
+    gap: 1.25rem !important;
+  }
+
+  .gap-6 {
+    gap: 1.5rem !important;
+  }
+
+  .gap-8 {
+    gap: 2rem !important;
+  }
+
+  .gap-10 {
+    gap: 2.5rem !important;
+  }
+
+  .gap-12 {
+    gap: 3rem !important;
+  }
+
+  /* Space Y utilities */
+  .space-y-2>*+* {
+    margin-top: 0.5rem !important;
+  }
+
+  .space-y-4>*+* {
+    margin-top: 1rem !important;
+  }
+
+  .space-y-6>*+* {
+    margin-top: 1.5rem !important;
+  }
+
+  .space-y-8>*+* {
+    margin-top: 2rem !important;
+  }
+
+  /* Grid */
+  .grid {
+    display: grid !important;
+  }
+
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .grid-cols-6 {
+    grid-template-columns: repeat(6, 1fr) !important;
+  }
+
+  /* Spacing - Padding */
+  .p-2 {
+    padding: 0.5rem !important;
+  }
+
+  .p-3 {
+    padding: 0.75rem !important;
+  }
+
+  .p-4 {
+    padding: 1rem !important;
+  }
+
+  .p-5 {
+    padding: 1.25rem !important;
+  }
+
+  .p-6 {
+    padding: 1.5rem !important;
+  }
+
+  .p-7 {
+    padding: 1.75rem !important;
+  }
+
+  .p-8 {
+    padding: 2rem !important;
+  }
+
+  .p-10 {
+    padding: 2.5rem !important;
+  }
+
+  .px-3 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .px-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .px-5 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .px-6 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  .px-7 {
+    padding-left: 1.75rem !important;
+    padding-right: 1.75rem !important;
+  }
+
+  .py-2 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .py-3 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  .py-3-5 {
+    padding-top: 0.875rem !important;
+    padding-bottom: 0.875rem !important;
+  }
+
+  .py-4 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .py-5 {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+
+  .py-6 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .py-7 {
+    padding-top: 1.75rem !important;
+    padding-bottom: 1.75rem !important;
+  }
+
+  .py-8 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .py-20 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+
+  .py-24 {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+
+  .py-28 {
+    padding-top: 7rem !important;
+    padding-bottom: 7rem !important;
+  }
+
+  .py-32 {
+    padding-top: 8rem !important;
+    padding-bottom: 8rem !important;
+  }
+
+  /* Spacing - Margin */
+  .mt-1 {
+    margin-top: 0.25rem !important;
+  }
+
+  .mt-2 {
+    margin-top: 0.5rem !important;
+  }
+
+  .mt-3 {
+    margin-top: 0.75rem !important;
+  }
+
+  .mt-4 {
+    margin-top: 1rem !important;
+  }
+
+  .mt-5 {
+    margin-top: 1.25rem !important;
+  }
+
+  .mt-6 {
+    margin-top: 1.5rem !important;
+  }
+
+  .mt-7 {
+    margin-top: 1.75rem !important;
+  }
+
+  .mt-8 {
+    margin-top: 2rem !important;
+  }
+
+  .mt-10 {
+    margin-top: 2.5rem !important;
+  }
+
+  .mt-12 {
+    margin-top: 3rem !important;
+  }
+
+  .mt-14 {
+    margin-top: 3.5rem !important;
+  }
+
+  .mt-16 {
+    margin-top: 4rem !important;
+  }
+
+  .mb-2 {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .mb-3 {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .mb-4 {
+    margin-bottom: 1rem !important;
+  }
+
+  .mb-5 {
+    margin-bottom: 1.25rem !important;
+  }
+
+  .mb-6 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .mb-8 {
+    margin-bottom: 2rem !important;
+  }
+
+  .mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* ============================================
+   Colors & Backgrounds
+   ============================================ */
+  .bg-background {
+    background-color: #F5F6F8 !important;
+  }
+
+  .bg-card {
+    background-color: #ffffff !important;
+  }
+
+  .bg-ink {
+    background-color: #111418 !important;
+    color: #ffffff !important;
+  }
+
+  .bg-primary {
+    background-color: #4A6CF7 !important;
+    color: #ffffff !important;
+  }
+
+  .bg-secondary {
+    background-color: #E8EAED !important;
+  }
+
+  .bg-white {
+    background-color: #ffffff !important;
+  }
+
+  .bg-transparent {
+    background-color: transparent !important;
+  }
+
+  /* Semi-transparent backgrounds */
+  .bg-white-4 {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+  }
+
+  .bg-white-6 {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+  }
+
+  .bg-white-8 {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .bg-primary-6 {
+    background-color: rgba(74, 108, 247, 0.06) !important;
+  }
+
+  .bg-primary-8 {
+    background-color: rgba(74, 108, 247, 0.08) !important;
+  }
+
+  .bg-primary-10 {
+    background-color: rgba(74, 108, 247, 0.10) !important;
+  }
+
+  .bg-signal-25 {
+    background-color: rgba(74, 108, 247, 0.25) !important;
+  }
+
+  .bg-signal-10 {
+    background-color: rgba(74, 108, 247, 0.10) !important;
+  }
+
+  /* Text colors */
+  .text-white {
+    color: #ffffff !important;
+  }
+
+  .text-white-55 {
+    color: rgba(255, 255, 255, 0.55) !important;
+  }
+
+  .text-white-60 {
+    color: rgba(255, 255, 255, 0.60) !important;
+  }
+
+  .text-white-65 {
+    color: rgba(255, 255, 255, 0.65) !important;
+  }
+
+  .text-white-70 {
+    color: rgba(255, 255, 255, 0.70) !important;
+  }
+
+  .text-white-75 {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
+
+  .text-white-85 {
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+
+  .text-white-90 {
+    color: rgba(255, 255, 255, 0.90) !important;
+  }
+
+  .text-white-40 {
+    color: rgba(255, 255, 255, 0.40) !important;
+  }
+
+  .text-white-95 {
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .text-foreground {
+    color: #252830 !important;
+  }
+
+  .text-muted {
+    color: #6B7280 !important;
+  }
+
+  .text-muted-foreground {
+    color: #6B7280 !important;
+  }
+
+  .bg-foreground {
+    background-color: #252830 !important;
+  }
+
+  .text-primary {
+    color: #4A6CF7 !important;
+  }
+
+  .text-ink {
+    color: #111418 !important;
+  }
+
+  /* Border colors */
+  .border {
+    border-width: 1px !important;
+    border-style: solid !important;
+  }
+
+  .border-border {
+    border-color: #E2E5EA !important;
+  }
+
+  .border-white-10 {
+    border-color: rgba(255, 255, 255, 0.10) !important;
+  }
+
+  .border-white-15 {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .border-white-20 {
+    border-color: rgba(255, 255, 255, 0.20) !important;
+  }
+
+  .border-primary-40 {
+    border-color: rgba(74, 108, 247, 0.40) !important;
+  }
+
+  .border-transparent {
+    border-color: transparent !important;
+  }
+
+  /* Border radius */
+  .rounded-sm {
+    border-radius: 0.375rem !important;
+  }
+
+  .rounded-md {
+    border-radius: 0.625rem !important;
+  }
+
+  .rounded-lg {
+    border-radius: 0.875rem !important;
+  }
+
+  .rounded-xl {
+    border-radius: 1rem !important;
+  }
+
+  .rounded-full {
+    border-radius: 9999px !important;
+  }
+
+  /* ============================================
+   Background Effects
+   ============================================ */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(37, 40, 48, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(37, 40, 48, 0.045) 1px, transparent 1px);
+    background-size: 56px 56px !important;
+  }
+
+  .bg-grid-fine {
+    background-image:
+      linear-gradient(to right, rgba(37, 40, 48, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(37, 40, 48, 0.035) 1px, transparent 1px);
+    background-size: 24px 24px !important;
+  }
+
+  /* White version for dark backgrounds */
+  .bg-grid-white {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 56px 56px !important;
+  }
+
+  .bg-grid-fine-white {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 24px 24px !important;
+  }
+
+  /* Radial fade mask */
+  .mask-radial-fade {
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 35%, transparent 80%) !important;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 35%, transparent 80%) !important;
+  }
+
+  .mask-radial-fade-light {
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 85%) !important;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 85%) !important;
+  }
+
+  /* ============================================
+   Blur & Effects
+   ============================================ */
+  .blur-glow-sm {
+    filter: blur(80px) !important;
+  }
+
+  .blur-glow-md {
+    filter: blur(120px) !important;
+  }
+
+  .blur-glow-lg {
+    filter: blur(140px) !important;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  /* ============================================
+   Component Styles
+   ============================================ */
+
+  /* Eyebrow component */
+  .eyebrow {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, monospace !important;
+    font-size: 10.5px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.22em !important;
+    color: #6B7280 !important;
+  }
+
+  .eyebrow-light {
+    color: rgba(255, 255, 255, 0.60) !important;
+  }
+
+  .eyebrow::before {
+    content: '' !important;
+    display: block !important;
+    width: 1.5rem !important;
+    height: 1px !important;
+    background-color: #4A6CF7 !important;
+  }
+
+  .eyebrow-light::before {
+    background-color: rgba(255, 255, 255, 0.70) !important;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    padding: 0.875rem 1.5rem !important;
+    border-radius: 0.625rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+  }
+
+  .btn-primary {
+    background-color: #ffffff !important;
+    color: #111418 !important;
+  }
+
+  .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.90) !important;
+  }
+
+  .btn-primary.bg-ink {
+    background-color: #111418 !important;
+    color: #ffffff !important;
+  }
+
+  .btn-primary.bg-ink:hover {
+    background-color: rgba(17, 20, 24, 0.90) !important;
+  }
+
+  .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.10) !important;
+  }
+
+  .btn-secondary-light {
+    background-color: transparent !important;
+    color: #252830 !important;
+    border: 1px solid #E2E5EA !important;
+  }
+
+  .btn-secondary-light:hover {
+    background-color: #E8EAED !important;
+  }
+
+  /* Pill buttons for CTA section */
+  .btn-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1rem 2.5rem !important;
+    border-radius: 9999px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .btn-pill-dark {
+    background-color: #111418 !important;
+    color: #ffffff !important;
+  }
+
+  .btn-pill-dark:hover {
+    background-color: rgba(17, 20, 24, 0.85) !important;
+  }
+
+  .btn-pill-light {
+    background-color: #E8EAED !important;
+    color: #252830 !important;
+  }
+
+  .btn-pill-light:hover {
+    background-color: #D1D5DB !important;
+  }
+
+  /* Cards */
+  .card {
+    background-color: #ffffff !important;
+    border: 1px solid #E2E5EA !important;
+    border-radius: 1rem !important;
+    transition: border-color 0.2s ease !important;
+  }
+
+  .card:hover {
+    border-color: rgba(74, 108, 247, 0.40) !important;
+  }
+
+  .card-dark {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border-color: rgba(255, 255, 255, 0.10) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+
+  /* Capability card */
+  .capability-card {
+    padding: 2rem !important;
+    background-color: #ffffff !important;
+    transition: background-color 0.2s ease !important;
+  }
+
+  .capability-card:hover {
+    background-color: rgba(74, 108, 247, 0.03) !important;
+  }
+
+  .capability-card .icon-wrapper {
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: rgba(74, 108, 247, 0.10) !important;
+    color: #4A6CF7 !important;
+    border-radius: 0.625rem !important;
+    margin-bottom: 1.25rem !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .capability-card:hover .icon-wrapper {
+    background-color: #4A6CF7 !important;
+    color: #ffffff !important;
+  }
+
+  /* Channel card */
+  .channel-card {
+    position: relative !important;
+    padding: 2.5rem !important;
+    background-color: #ffffff !important;
+    border: 1px solid #E2E5EA !important;
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+    transition: border-color 0.2s ease !important;
+  }
+
+  .channel-card:hover {
+    border-color: rgba(74, 108, 247, 0.40) !important;
+  }
+
+  .channel-card .glow {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 12rem !important;
+    height: 12rem !important;
+    background-color: rgba(74, 108, 247, 0.05) !important;
+    border-radius: 50% !important;
+    filter: blur(50px) !important;
+    pointer-events: none !important;
+  }
+
+  /* Audience card */
+  .audience-card {
+    display: block !important;
+    padding: 1.75rem !important;
+    background-color: #ffffff !important;
+    border: 1px solid #E2E5EA !important;
+    border-radius: 1rem !important;
+    transition: border-color 0.2s ease !important;
+  }
+
+  .audience-card:hover {
+    border-color: rgba(74, 108, 247, 0.40) !important;
+  }
+
+  .audience-card:hover h3 {
+    color: #4A6CF7 !important;
+  }
+
+  .audience-card .icon-wrapper {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: rgba(74, 108, 247, 0.10) !important;
+    color: #4A6CF7 !important;
+    border-radius: 0.625rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Link card for internal links */
+  .link-card {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+    padding: 1rem 1.25rem !important;
+    background-color: #ffffff !important;
+    border: 1px solid #E2E5EA !important;
+    border-radius: 0.625rem !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .link-card:hover {
+    border-color: rgba(74, 108, 247, 0.40) !important;
+    background-color: rgba(74, 108, 247, 0.05) !important;
+  }
+
+  .link-card:hover span {
+    color: #4A6CF7 !important;
+  }
+
+  .link-card:hover svg {
+    color: #4A6CF7 !important;
+  }
+
+  /* FAQ accordion */
+  .faq-item {
+    border-bottom: 1px solid #E2E5EA !important;
+  }
+
+  .faq-trigger {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 1.5rem 0 !important;
+    text-align: left !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #252830 !important;
+    cursor: pointer !important;
+  }
+
+  .faq-trigger:hover {
+    text-decoration: none !important;
+  }
+
+  .faq-trigger svg {
+    width: 1rem !important;
+    height: 1rem !important;
+    transition: transform 0.2s ease !important;
+    flex-shrink: 0 !important;
+  }
+
+  .faq-item.active .faq-trigger svg {
+    transform: rotate(180deg) !important;
+  }
+
+  .faq-content {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height 0.3s ease, padding 0.3s ease !important;
+  }
+
+  .faq-item.active .faq-content {
+    max-height: 500px !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .faq-content p {
+    color: #6B7280 !important;
+    line-height: 1.625 !important;
+  }
+
+  /* Comparison table */
+  .comparison-table {
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+  }
+
+  .comparison-header {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, monospace !important;
+    font-size: 10.5px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.22em !important;
+  }
+
+  .comparison-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.10) !important;
+  }
+
+  .comparison-row:first-child {
+    border-top: none !important;
+  }
+
+  .comparison-header>div,
+  .comparison-row>div {
+    padding: 1.25rem 1.5rem !important;
+  }
+
+  .comparison-header>div:first-child,
+  .comparison-row>div:first-child {
+    color: rgba(255, 255, 255, 0.50) !important;
+  }
+
+  .comparison-row>div:first-child {
+    text-decoration: line-through !important;
+    text-decoration-color: rgba(255, 255, 255, 0.20) !important;
+  }
+
+  .comparison-row>div:last-child {
+    background-color: rgba(74, 108, 247, 0.10) !important;
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+  }
+
+  .comparison-row>div:last-child::before {
+    content: '' !important;
+    width: 6px !important;
+    height: 6px !important;
+    background-color: #4A6CF7 !important;
+    border-radius: 50% !important;
+    margin-top: 0.5rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Navbar */
+  .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 50 !important;
+    padding: 1rem 1.5rem !important;
+    background-color: rgba(17, 20, 24, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .navbar-content {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .navbar-logo {
+    font-weight: 700 !important;
+    font-size: 1.25rem !important;
+    color: #ffffff !important;
+  }
+
+  .navbar-links {
+    display: none !important;
+    gap: 2rem !important;
+  }
+
+  .navbar-links a {
+    font-size: 0.875rem !important;
+    color: rgba(255, 255, 255, 0.70) !important;
+    transition: color 0.2s ease !important;
+  }
+
+  .navbar-links a:hover {
+    color: #ffffff !important;
+  }
+
+  .navbar-cta {
+    display: none !important;
+    padding: 0.5rem 1rem !important;
+    background-color: #ffffff !important;
+    color: #111418 !important;
+    border-radius: 0.625rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+  }
+
+  @media (min-width: 768px) {
+
+    .navbar-links,
+    .navbar-cta {
+      display: flex !important;
+    }
+  }
+
+  /* Footer */
+  .footer {
+    padding: 4rem 1.5rem 2rem !important;
+    background-color: #111418 !important;
+    color: rgba(255, 255, 255, 0.60) !important;
+  }
+
+  .footer-content {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3rem !important;
+  }
+
+  .footer-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+  }
+
+  @media (min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1.5fr repeat(4, 1fr) !important;
+    }
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1 !important;
+  }
+
+  @media (min-width: 768px) {
+    .footer-brand {
+      grid-column: auto !important;
+    }
+  }
+
+  .footer-brand p {
+    max-width: 280px !important;
+  }
+
+  .footer-column h4 {
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    color: rgba(255, 255, 255, 0.40) !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .footer-column ul {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+
+  .footer-column a {
+    font-size: 0.875rem !important;
+    color: rgba(255, 255, 255, 0.60) !important;
+    transition: color 0.2s ease !important;
+  }
+
+  .footer-column a:hover {
+    color: #ffffff !important;
+  }
+
+  .text-white-60 {
+    color: rgba(255, 255, 255, 0.60) !important;
+  }
+
+  .footer-bottom {
+    padding-top: 2rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.10) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  @media (min-width: 768px) {
+    .footer-bottom {
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
+  }
+
+  /* ============================================
+   Section Specific Styles
+   ============================================ */
+
+  /* Hero section */
+  .hero {
+    position: relative !important;
+    overflow: hidden !important;
+    background-color: #111418 !important;
+    color: #ffffff !important;
+    padding-top: 8rem !important;
+    padding-bottom: 6rem !important;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      padding-top: 10rem !important;
+      padding-bottom: 8rem !important;
+    }
+  }
+
+  .hero .bg-grid {
+    opacity: 0.90 !important;
+  }
+
+  .hero-glow-top {
+    position: absolute !important;
+    top: -10rem !important;
+    right: -10rem !important;
+    width: 700px !important;
+    height: 700px !important;
+    background-color: rgba(74, 108, 247, 0.25) !important;
+    border-radius: 50% !important;
+    filter: blur(140px) !important;
+  }
+
+  .hero-glow-bottom {
+    position: absolute !important;
+    bottom: -10rem !important;
+    left: 25% !important;
+    width: 520px !important;
+    height: 520px !important;
+    background-color: rgba(74, 108, 247, 0.10) !important;
+    border-radius: 50% !important;
+    filter: blur(120px) !important;
+  }
+
+  /* Infrastructure diagram */
+  .diagram-label {
+    font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, monospace !important;
+    font-size: 10.5px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.22em !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .diagram-box {
+    padding: 0.75rem !important;
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: 0.625rem !important;
+    text-align: center !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+
+  .diagram-platform {
+    position: relative !important;
+    padding: 1.25rem !important;
+    background-color: rgba(74, 108, 247, 0.08) !important;
+    border: 1px solid rgba(74, 108, 247, 0.40) !important;
+    border-radius: 1rem !important;
+  }
+
+  @media (min-width: 768px) {
+    .diagram-platform {
+      padding: 1.75rem !important;
+    }
+  }
+
+  .diagram-platform .badge {
+    position: absolute !important;
+    top: -0.75rem !important;
+    left: 1.25rem !important;
+    padding: 0.25rem 0.75rem !important;
+    background-color: #ffffff !important;
+    color: #111418 !important;
+    font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, monospace !important;
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.18em !important;
+    border-radius: 0.625rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .diagram-platform-item {
+    padding: 0.75rem !important;
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 0.625rem !important;
+    text-align: center !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+  }
+
+  /* Stitched tools with rotation */
+  .stitched-tool {
+    padding: 1rem !important;
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: 0.625rem !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
+
+  .stitched-tool:nth-child(1) {
+    transform: rotate(-1.2deg) translateY(-4px) !important;
+  }
+
+  .stitched-tool:nth-child(2) {
+    transform: rotate(0.8deg) translateY(4px) !important;
+  }
+
+  .stitched-tool:nth-child(3) {
+    transform: rotate(-0.8deg) translateY(-2px) !important;
+  }
+
+  .stitched-tool:nth-child(4) {
+    transform: rotate(1.2deg) translateY(2px) !important;
+  }
+
+  .stitched-tool:nth-child(5) {
+    transform: rotate(-0.4deg) translateY(0px) !important;
+  }
+
+  .stitched-tool:nth-child(6) {
+    transform: rotate(0.4deg) translateY(-2px) !important;
+  }
+
+  /* Stats section */
+  .stat-card {
+    padding: 2.5rem !important;
+    background-color: #111418 !important;
+  }
+
+  .stat-value {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    font-size: 3.5rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.04em !important;
+    line-height: 1 !important;
+    color: #ffffff !important;
+  }
+
+  /* Answer block */
+  .answer-block {
+    padding: 2rem !important;
+    background-color: #ffffff !important;
+    border: 1px solid #E2E5EA !important;
+    border-radius: 1rem !important;
+    transition: border-color 0.2s ease !important;
+  }
+
+  .answer-block:hover {
+    border-color: rgba(74, 108, 247, 0.40) !important;
+  }
+
+  .answer-badge {
+    display: inline-block !important;
+    padding: 0.25rem 0.625rem !important;
+    background-color: #4A6CF7 !important;
+    color: #ffffff !important;
+    font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, monospace !important;
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.18em !important;
+    border-radius: 0.625rem !important;
+    margin-bottom: 1.25rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* ============================================
+   Responsive Utilities
+   ============================================ */
+  @media (min-width: 768px) {
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .md\:grid-cols-3 {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .md\:grid-cols-4 {
+      grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    .md\:grid-cols-6 {
+      grid-template-columns: repeat(6, 1fr) !important;
+    }
+
+    .md\:flex {
+      display: flex !important;
+    }
+
+    .md\:hidden {
+      display: none !important;
+    }
+
+    .md\:flex-row {
+      flex-direction: row !important;
+    }
+
+    .md\:flex-col {
+      flex-direction: column !important;
+    }
+
+    .md\:p-10 {
+      padding: 2.5rem !important;
+    }
+
+    .md\:px-10 {
+      padding-left: 2.5rem !important;
+      padding-right: 2.5rem !important;
+    }
+
+    .md\:py-36 {
+      padding-top: 9rem !important;
+      padding-bottom: 9rem !important;
+    }
+
+    .md\:text-2xl {
+      font-size: 1.5rem !important;
+      line-height: 2rem !important;
+    }
+
+    .md\:text-3xl {
+      font-size: 1.875rem !important;
+      line-height: 2.25rem !important;
+    }
+
+    .md\:text-5xl {
+      font-size: 3rem !important;
+      line-height: 1 !important;
+    }
+
+    .md\:text-6xl {
+      font-size: 3.75rem !important;
+      line-height: 1 !important;
+    }
+
+    .md\:text-7xl {
+      font-size: 4.5rem !important;
+      line-height: 1 !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .lg\:grid-cols-2 {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .lg\:grid-cols-3 {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .lg\:grid-cols-4 {
+      grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    .lg\:grid-cols-6 {
+      grid-template-columns: repeat(6, 1fr) !important;
+    }
+
+    .lg\:grid-cols-comparison {
+      grid-template-columns: 1fr auto 1fr !important;
+    }
+  }
+
+  /* ============================================
+   Transitions & Animations
+   ============================================ */
+  .transition-colors {
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  .transition-all {
+    transition: all 0.2s ease !important;
+  }
+
+  /* Fade in animation for sections */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0 !important;
+      transform: translateY(20px) !important;
+    }
+
+    to {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeInUp 0.6s ease forwards !important;
+  }
+
+  /* ============================================
+   Utility Classes
+   ============================================ */
+  .relative {
+    position: relative !important;
+  }
+
+  .absolute {
+    position: absolute !important;
+  }
+
+  .inset-0 {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+  }
+
+  .z-10 {
+    z-index: 10 !important;
+  }
+
+  .pointer-events-none {
+    pointer-events: none !important;
+  }
+
+  .overflow-hidden {
+    overflow: hidden !important;
+  }
+
+  .line-through {
+    text-decoration: line-through !important;
+  }
+
+  .hover\:underline:hover {
+    text-decoration: underline !important;
+  }
+
+  .underline {
+    text-decoration: underline !important;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  .text-left {
+    text-align: left !important;
+  }
+
+  .w-3 {
+    width: 0.75rem !important;
+  }
+
+  .w-4 {
+    width: 1rem !important;
+  }
+
+  .w-5 {
+    width: 1.25rem !important;
+  }
+
+  .w-6 {
+    width: 1.5rem !important;
+  }
+
+  .w-8 {
+    width: 2rem !important;
+  }
+
+  .w-10 {
+    width: 2.5rem !important;
+  }
+
+  .w-11 {
+    width: 2.75rem !important;
+  }
+
+  .w-12 {
+    width: 3rem !important;
+  }
+
+  .w-px {
+    width: 1px !important;
+  }
+
+  .w-full {
+    width: 100% !important;
+  }
+
+  /* Pixel width classes for glows */
+  .w-500px {
+    width: 500px !important;
+  }
+
+  .w-520px {
+    width: 520px !important;
+  }
+
+  .w-600px {
+    width: 600px !important;
+  }
+
+  .h-3 {
+    height: 0.75rem !important;
+  }
+
+  .h-4 {
+    height: 1rem !important;
+  }
+
+  .h-5 {
+    height: 1.25rem !important;
+  }
+
+  .h-6 {
+    height: 1.5rem !important;
+  }
+
+  .h-8 {
+    height: 2rem !important;
+  }
+
+  .h-10 {
+    height: 2.5rem !important;
+  }
+
+  .h-11 {
+    height: 2.75rem !important;
+  }
+
+  .h-12 {
+    height: 3rem !important;
+  }
+
+  .h-px {
+    height: 1px !important;
+  }
+
+  /* Pixel height classes for glows */
+  .h-500px {
+    height: 500px !important;
+  }
+
+  .h-520px {
+    height: 520px !important;
+  }
+
+  .h-600px {
+    height: 600px !important;
+  }
+
+  .max-w-3xl {
+    max-width: 48rem !important;
+  }
+
+  .max-w-18ch {
+    max-width: 18ch !important;
+  }
+
+  .max-w-20ch {
+    max-width: 20ch !important;
+  }
+
+  .max-w-22ch {
+    max-width: 22ch !important;
+  }
+
+  .max-w-24ch {
+    max-width: 24ch !important;
+  }
+
+  .leading-none {
+    line-height: 1 !important;
+  }
+
+  .leading-snug {
+    line-height: 1.375 !important;
+  }
+
+  .leading-relaxed {
+    line-height: 1.625 !important;
+  }
+
+  .block {
+    display: block !important;
+  }
+
+  .inline-block {
+    display: inline-block !important;
+  }
+
+  .inline-flex {
+    display: inline-flex !important;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .shrink-0 {
+    flex-shrink: 0 !important;
+  }
+
+  .flex-1 {
+    flex: 1 !important;
+  }
+</style>
+
+<body>
+  <!-- SVG Icon Definitions -->
+  <svg style="display: none;">
+    <defs>
+      <!-- Server Icon -->
+      <symbol id="icon-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+        <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+        <line x1="6" y1="6" x2="6.01" y2="6" />
+        <line x1="6" y1="18" x2="6.01" y2="18" />
+      </symbol>
+
+      <!-- Gavel Icon -->
+      <symbol id="icon-gavel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="m14 13-7.5 7.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0 0 0 0 0 0 0-.83-.83-.83-2.17 0-3L11 10" />
+        <path d="m16 16 6-6" />
+        <path d="m8 8 6-6" />
+        <path d="m9 7 8 8" />
+        <path d="m21 3-6.5 6.5L21 3z" />
+      </symbol>
+
+      <!-- Users Icon -->
+      <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </symbol>
+
+      <!-- BarChart3 Icon -->
+      <symbol id="icon-barchart3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+        <path d="M18 17V9" />
+        <path d="M13 17V5" />
+        <path d="M8 17v-3" />
+      </symbol>
+
+      <!-- Sparkles Icon -->
+      <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+        <path d="M5 3v4" />
+        <path d="M19 17v4" />
+        <path d="M3 5h4" />
+        <path d="M17 19h4" />
+      </symbol>
+
+      <!-- Code2 Icon -->
+      <symbol id="icon-code2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="m18 16 4-4-4-4" />
+        <path d="m6 8-4 4 4 4" />
+        <path d="m14.5 4-5 16" />
+      </symbol>
+
+      <!-- Globe Icon -->
+      <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="2" y1="12" x2="22" y2="12" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </symbol>
+
+      <!-- Layers Icon -->
+      <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+        <polyline points="2 17 12 22 22 17" />
+        <polyline points="2 12 12 17 22 12" />
+      </symbol>
+
+      <!-- Building2 Icon -->
+      <symbol id="icon-building2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 12h4" />
+        <path d="M10 8h4" />
+        <path d="M10 16h4" />
+        <path d="M6 20V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" />
+        <path d="M2 20h20" />
+        <path d="M4 10h2" />
+        <path d="M4 14h2" />
+        <path d="M4 6h2" />
+        <path d="M18 10h2" />
+        <path d="M18 14h2" />
+        <path d="M18 6h2" />
+      </symbol>
+
+      <!-- Cpu Icon -->
+      <symbol id="icon-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 20v2" />
+        <path d="M12 2v2" />
+        <path d="M17 20v2" />
+        <path d="M17 2v2" />
+        <path d="M2 12h2" />
+        <path d="M2 17h2" />
+        <path d="M2 7h2" />
+        <path d="M20 12h2" />
+        <path d="M20 17h2" />
+        <path d="M20 7h2" />
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <rect x="8" y="8" width="8" height="8" rx="1" />
+      </symbol>
+
+      <!-- Box Icon -->
+      <symbol id="icon-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+        <path d="m3.3 7 8.7 5 8.7-5" />
+        <path d="M12 22V12" />
+      </symbol>
+
+      <!-- Store Icon -->
+      <symbol id="icon-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z" />
+        <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9" />
+        <path d="M12 3v13" />
+        <path d="M12 13v7" />
+        <path d="m9 13 3-3 3 3" />
+      </symbol>
+
+      <!-- ShoppingBag Icon -->
+      <symbol id="icon-shoppingbag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+        <path d="M3 6h18" />
+        <path d="M16 10a4 4 0 0 1-8 0" />
+      </symbol>
+
+      <!-- Truck Icon -->
+      <symbol id="icon-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 17h4V5H2v12h3" />
+        <path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5" />
+        <path d="M14 17h1" />
+        <circle cx="7.5" cy="17.5" r="2.5" />
+        <circle cx="17.5" cy="17.5" r="2.5" />
+      </symbol>
+
+      <!-- Plane Icon -->
+      <symbol id="icon-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 12h20" />
+        <path d="M13 2 4.1 12.7a1.5 1.5 0 0 0 0 2.2l8.7 8.7" />
+        <path d="m13 22 8.9-10.7a1.5 1.5 0 0 0 0-2.2L13 2" />
+      </symbol>
+
+      <!-- Wallet Icon -->
+      <symbol id="icon-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+        <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
+      </symbol>
+
+      <!-- Newspaper Icon -->
+      <symbol id="icon-newspaper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+        <path d="M18 14h-8" />
+        <path d="M15 18h-5" />
+        <path d="M10 6h8v4h-8V6Z" />
+      </symbol>
+
+      <!-- ArrowRight Icon -->
+      <symbol id="icon-arrowright" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14" />
+        <path d="m12 5 7 7-7 7" />
+      </symbol>
+
+      <!-- ArrowDown Icon -->
+      <symbol id="icon-arrowdown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14" />
+        <path d="m19 12-7 7-7-7" />
+      </symbol>
+
+      <!-- ChevronDown Icon for FAQ -->
+      <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="m6 9 6 6 6-6" />
+      </symbol>
+
+      <!-- Menu Icon -->
+      <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="18" x2="20" y2="18" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <!-- Background grid -->
+      <div class="absolute inset-0 bg-grid-white mask-radial-fade"></div>
+
+      <!-- Glow effects -->
+      <div class="hero-glow-top"></div>
+      <div class="hero-glow-bottom"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 container animate-fade-in">
+        <div class="eyebrow eyebrow-light">
+          <svg class="w-3 h-3">
+            <use href="#icon-box" />
+          </svg>
+          <span>Topsort T-Platform</span>
+        </div>
+
+        <h1 class="hero-title text-white mt-7 max-w-18ch">
+          The Operating System<br>for Modern <span
+            class="font-serif italic font-normal text-white-95">Retail&nbsp;Media</span>
+        </h1>
+
+        <p class="mt-7 text-xl md:text-2xl font-medium text-white-90 max-w-3xl leading-snug">
+          Your entire retail media empire. <span class="font-serif italic font-normal text-white">Boxed.</span>
+        </p>
+
+        <p class="mt-6 text-base md:text-lg text-white-65 max-w-3xl leading-relaxed">
+          T-Platform gives commerce companies the infrastructure to launch, run, and optimize a full retail media
+          business — with ad serving, real-time auctions, advertiser workflows, analytics, APIs, and AI optimization in
+          one system.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a href="/book-a-demo" class="btn btn-primary">
+            Launch Your Network
+            <svg class="w-4 h-4">
+              <use href="#icon-arrowright" />
+            </svg>
+          </a>
+          <a href="/book-a-demo" class="btn btn-secondary">See the Platform</a>
+        </div>
+
+        <!-- Infrastructure Diagram -->
+        <div class="mt-16 md:mt-20" role="img"
+          aria-label="Topsort T-Platform retail media infrastructure: verticals on top, platform layers in the middle, commerce surfaces below">
+          <!-- Verticals -->
+          <p class="diagram-label">Commerce companies</p>
+          <div class="grid grid-cols-3 md:grid-cols-6 gap-2">
+            <div class="diagram-box">Retailer</div>
+            <div class="diagram-box">Marketplace</div>
+            <div class="diagram-box">Travel</div>
+            <div class="diagram-box">Delivery</div>
+            <div class="diagram-box">Finance</div>
+            <div class="diagram-box">Classifieds</div>
+          </div>
+
+          <div class="flex justify-center my-3">
+            <svg class="w-4 h-4 text-white-40">
+              <use href="#icon-arrowdown" />
+            </svg>
+          </div>
+
+          <!-- T-Platform core -->
+          <div class="diagram-platform">
+            <div class="badge">T-Platform</div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2-5 mt-2">
+              <div class="diagram-platform-item">Ad Serving</div>
+              <div class="diagram-platform-item">Auctions</div>
+              <div class="diagram-platform-item">Advertiser Portal</div>
+              <div class="diagram-platform-item">Analytics</div>
+              <div class="diagram-platform-item">AI Optimization</div>
+              <div class="diagram-platform-item">APIs</div>
+            </div>
+          </div>
+
+          <div class="flex justify-center my-3">
+            <svg class="w-4 h-4 text-white-40">
+              <use href="#icon-arrowdown" />
+            </svg>
+          </div>
+
+          <!-- Surfaces -->
+          <p class="diagram-label">Commerce surfaces</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+            <div class="diagram-box">Onsite</div>
+            <div class="diagram-box">Offsite</div>
+            <div class="diagram-box">In-store</div>
+            <div class="diagram-box">AI-native</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section class="relative overflow-hidden bg-ink text-white py-28 md:py-36 px-6">
+      <div class="absolute inset-0 bg-grid-white mask-radial-fade opacity-80"></div>
+      <div class="absolute -top-20 left-1/3 w-500px h-500px rounded-full bg-signal-25 blur-glow-lg"></div>
+
+      <div class="relative z-10 container container-content">
+        <div class="eyebrow eyebrow-light">Manifesto</div>
+        <h2 class="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none max-w-18ch">
+          Retail media is becoming <span class="font-serif italic font-normal text-white-95">infrastructure.</span>
+        </h2>
+        <p class="mt-8 text-lg md:text-2xl text-white-65 max-w-3xl leading-snug font-light">
+          The next generation of commerce companies will not win by stitching together ad servers, dashboards, bidders,
+          and reporting tools. They will win with one infrastructure layer built to monetize every commerce moment.
+        </p>
+      </div>
+    </section>
+
+    <!-- AEO Answer Blocks Section -->
+    <section class="relative py-24 px-6">
+      <div class="absolute inset-0 bg-grid-fine mask-radial-fade opacity-60 pointer-events-none"></div>
+
+      <div class="relative container container-content">
+        <div class="eyebrow">Answers</div>
+        <h2 class="mt-5 text-3xl md:text-5xl font-bold text-foreground tracking-tight max-w-20ch leading-snug">
+          Clear answers for modern <span class="font-serif italic font-normal">retail media teams</span>
+        </h2>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-6">
+          <div class="answer-block">
+            <span class="answer-badge">Answer</span>
+            <h3 class="text-xl md:text-2xl font-semibold text-foreground mb-4 leading-snug">What is Topsort T-Platform?
+            </h3>
+            <p class="text-base text-muted leading-relaxed">
+              Topsort T-Platform is a complete <a href="/products/t-platform" class="text-primary underline">retail media platform</a>
+              infrastructure layer that helps commerce companies launch, manage, and optimize their own retail media
+              networks. It combines ad serving, real-time auctions, advertiser tools, campaign management, analytics,
+              attribution, APIs, and AI-powered optimization in one integrated system.
+            </p>
+          </div>
+
+          <div class="answer-block">
+            <span class="answer-badge">Answer</span>
+            <h3 class="text-xl md:text-2xl font-semibold text-foreground mb-4 leading-snug">Is T-Platform an ad server
+              or a retail media platform?</h3>
+            <p class="text-base text-muted leading-relaxed">
+              T-Platform includes ad serving, but it is more than an ad server. It is a <a href="/products/t-engine"
+                class="text-primary underline">retail media infrastructure</a> layer for auctions, sponsored listings,
+              display, video, advertiser workflows, reporting, attribution, and optimization across commerce channels.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="relative py-24 px-6 bg-secondary">
+      <div class="absolute inset-0 bg-grid-fine mask-radial-fade opacity-50 pointer-events-none"></div>
+
+      <div class="relative container">
+        <div class="max-w-3xl">
+          <div class="eyebrow">Capabilities</div>
+          <h2 class="mt-5 text-3xl md:text-5xl font-bold text-foreground tracking-tight leading-snug">
+            Everything your retail media business <span class="font-serif italic font-normal">needs to run</span>
+          </h2>
+          <p class="mt-6 text-lg text-muted leading-relaxed">
+            One platform for ad serving, auctions, advertiser workflows, analytics, APIs, and AI-powered optimization.
+          </p>
+        </div>
+
+        <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 rounded-xl overflow-hidden border border-border">
+          <!-- Serve -->
+          <div class="capability-card border-r border-b border-border">
+            <div class="icon-wrapper">
+              <svg class="w-5 h-5">
+                <use href="#icon-server" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-foreground tracking-tight mb-2">Serve</h3>
+            <p class="text-sm text-muted leading-relaxed">Ad serving for sponsored listings, display, video, native
+              placements, and emerging commerce media formats.</p>
+          </div>
+
+          <!-- Auction -->
+          <div class="capability-card border-r border-b border-border">
+            <div class="icon-wrapper">
+              <svg class="w-5 h-5">
+                <use href="#icon-gavel" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-foreground tracking-tight mb-2">Auction</h3>
+            <p class="text-sm text-muted leading-relaxed">Real-time auction infrastructure built for high-intent
+              commerce moments.</p>
+          </div>
+
+          <!-- Sell -->
+          <div class="capability-card border-b border-border">
+            <div class="icon-wrapper">
+              <svg class="w-5 h-5">
+                <use href="#icon-users" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-foreground tracking-tight mb-2">Sell</h3>
+            <p class="text-sm text-muted leading-relaxed">Advertiser self-service workflows for campaigns, budgets,
+              permissions, and reporting.</p>
+          </div>
+
+          <!-- Measure -->
+          <div class="capability-card border-r border-b border-border">
+            <div class="icon-wrapper">
+              <svg class="w-5 h-5">
+                <use href="#icon-barchart3" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-foreground tracking-tight mb-2">Measure</h3>
+            <p class="text-sm text-muted leading-relaxed">Revenue, fill, attribution, and campaign analytics connected
+              to commerce outcomes.</p>
+          </div>
+
+          <!-- Optimize -->
+          <div class="capability-card border-r border-b border-border">
+            <div class="icon-wrapper">
+              <svg class="w-5 h-5">
+                <use href="#icon-sparkles" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-foreground tracking-tight mb-2">Optimize</h3>
+            <p class="text-sm text-muted leading-relaxed">AI-powered bidding, pacing, quality, relevance, and yield
+              optimization.</p>
+          </div>
+
+          <!-- Build -->
+          <div class="capability-card border-b border-border">
+            <div class="icon-wrapper">
+              <svg class="w-5 h-5">
+                <use href="#icon-code2" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-foreground tracking-tight mb-2">Build</h3>
+            <p class="text-sm text-muted leading-relaxed">APIs and developer infrastructure for custom retail media
+              experiences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stop Stitching Section -->
+    <section class="relative overflow-hidden bg-ink text-white py-28 px-6">
+      <div class="absolute inset-0 bg-grid-white mask-radial-fade opacity-80"></div>
+      <div class="absolute -top-32 -right-32 w-600px h-600px rounded-full bg-signal-25 blur-glow-lg"></div>
+
+      <div class="relative z-10 container container-content">
+        <div class="eyebrow eyebrow-light">Before / After</div>
+        <h2 class="mt-6 text-4xl md:text-6xl font-bold tracking-tight leading-snug max-w-18ch">
+          Stop stitching. <span class="font-serif italic font-normal text-white-55">Start scaling.</span>
+        </h2>
+        <p class="mt-7 text-lg md:text-xl text-white-70 max-w-3xl leading-relaxed">
+          Ad servers do not create a retail media business. Dashboards do not optimize yield. Manual campaign tools do
+          not scale across channels.
+        </p>
+
+        <!-- Before/After Comparison -->
+        <div class="mt-16 grid lg:grid-cols-comparison gap-10 lg:gap-6 items-center">
+          <!-- Before -->
+          <div>
+            <p class="diagram-label">Before — fragmented stack</p>
+            <div class="grid grid-cols-2 gap-2-5">
+              <div class="stitched-tool">Ad Server</div>
+              <div class="stitched-tool">Bidder</div>
+              <div class="stitched-tool">Dashboard</div>
+              <div class="stitched-tool">Portal</div>
+              <div class="stitched-tool">Data Pipeline</div>
+              <div class="stitched-tool">Manual Ops</div>
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <div class="flex lg:flex-col items-center justify-center gap-3 py-4">
+            <div class="hidden lg:block w-px h-12 bg-white-15"></div>
+            <div class="w-11 h-11 rounded-md flex items-center justify-center bg-white text-ink">
+              <svg class="w-5 h-5 lg:hidden">
+                <use href="#icon-arrowright" />
+              </svg>
+              <svg class="w-5 h-5 hidden lg:block">
+                <use href="#icon-arrowdown" />
+              </svg>
+            </div>
+            <div class="hidden lg:block w-px h-12 bg-white-15"></div>
+          </div>
+
+          <!-- After -->
+          <div>
+            <p class="diagram-label">After — one infrastructure layer</p>
+            <div class="relative rounded-xl bg-white text-ink p-8 shadow-soft border border-white-20">
+              <div class="flex items-center gap-3 mb-5">
+                <svg class="w-6 h-6 text-primary">
+                  <use href="#icon-box" />
+                </svg>
+                <span class="text-2xl font-bold tracking-tight">T-Platform</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="px-3 py-2 rounded-md bg-primary-6 text-xs font-medium text-foreground">ad serving</div>
+                <div class="px-3 py-2 rounded-md bg-primary-6 text-xs font-medium text-foreground">auctions</div>
+                <div class="px-3 py-2 rounded-md bg-primary-6 text-xs font-medium text-foreground">advertiser workflows
+                </div>
+                <div class="px-3 py-2 rounded-md bg-primary-6 text-xs font-medium text-foreground">analytics</div>
+                <div class="px-3 py-2 rounded-md bg-primary-6 text-xs font-medium text-foreground">attribution</div>
+                <div class="px-3 py-2 rounded-md bg-primary-6 text-xs font-medium text-foreground">AI optimization</div>
+                <div class="px-3 py-2 rounded-md bg-primary-6 text-xs font-medium text-foreground col-span-2">APIs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-16 text-2xl md:text-3xl font-semibold tracking-tight max-w-3xl">
+          One platform. One infrastructure layer. <span class="font-serif italic font-normal text-white-60">One way to
+            scale.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Channel Coverage Section -->
+    <section class="relative py-24 px-6">
+      <div class="absolute inset-0 bg-grid-fine mask-radial-fade opacity-50 pointer-events-none"></div>
+
+      <div class="relative container">
+        <div class="eyebrow">Surfaces</div>
+        <h2 class="mt-5 text-3xl md:text-5xl font-bold text-foreground tracking-tight leading-snug max-w-20ch">
+          Built for every <span class="font-serif italic font-normal">commerce media surface</span>
+        </h2>
+
+        <div class="mt-14 grid md:grid-cols-2 gap-5">
+          <!-- Onsite commerce -->
+          <div class="channel-card">
+            <div class="glow"></div>
+            <div class="relative">
+              <div class="flex items-baseline gap-3 mb-5">
+                <span class="eyebrow-text text-muted">01</span>
+                <div class="flex-1 h-px bg-border"></div>
+                <div class="w-10 h-10 rounded-md bg-primary-10 text-primary flex items-center justify-center">
+                  <svg class="w-5 h-5">
+                    <use href="#icon-globe" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-3">Onsite commerce</h3>
+              <p class="text-base text-muted leading-relaxed">Monetize high-intent moments across search, browse,
+                category pages, product pages, cart, and checkout.</p>
+            </div>
+          </div>
+
+          <!-- Offsite media -->
+          <div class="channel-card">
+            <div class="glow"></div>
+            <div class="relative">
+              <div class="flex items-baseline gap-3 mb-5">
+                <span class="eyebrow-text text-muted">02</span>
+                <div class="flex-1 h-px bg-border"></div>
+                <div class="w-10 h-10 rounded-md bg-primary-10 text-primary flex items-center justify-center">
+                  <svg class="w-5 h-5">
+                    <use href="#icon-layers" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-3">Offsite media</h3>
+              <p class="text-base text-muted leading-relaxed">Extend campaigns beyond your owned properties while
+                keeping commerce measurement and controls connected.</p>
+            </div>
+          </div>
+
+          <!-- In-store networks -->
+          <div class="channel-card">
+            <div class="glow"></div>
+            <div class="relative">
+              <div class="flex items-baseline gap-3 mb-5">
+                <span class="eyebrow-text text-muted">03</span>
+                <div class="flex-1 h-px bg-border"></div>
+                <div class="w-10 h-10 rounded-md bg-primary-10 text-primary flex items-center justify-center">
+                  <svg class="w-5 h-5">
+                    <use href="#icon-building2" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-3">In-store networks</h3>
+              <p class="text-base text-muted leading-relaxed">Connect digital screens, physical placements, and offline
+                commerce moments into one retail media strategy.</p>
+            </div>
+          </div>
+
+          <!-- AI-native experiences -->
+          <div class="channel-card">
+            <div class="glow"></div>
+            <div class="relative">
+              <div class="flex items-baseline gap-3 mb-5">
+                <span class="eyebrow-text text-muted">04</span>
+                <div class="flex-1 h-px bg-border"></div>
+                <div class="w-10 h-10 rounded-md bg-primary-10 text-primary flex items-center justify-center">
+                  <svg class="w-5 h-5">
+                    <use href="#icon-cpu" />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-3">AI-native experiences</h3>
+              <p class="text-base text-muted leading-relaxed">Prepare for sponsored recommendations, shopping
+                assistants, chatbots, sponsored prompts, and personalized commerce journeys where the line between
+                content, commerce, and advertising gets blurrier.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="relative py-24 px-6 bg-ink text-white overflow-hidden">
+      <div class="absolute inset-0 bg-grid-white mask-radial-fade opacity-70"></div>
+
+      <div class="relative container container-content">
+        <div class="eyebrow eyebrow-light">Legacy vs. Topsort</div>
+        <h2 class="mt-6 text-3xl md:text-5xl font-bold tracking-tight leading-snug max-w-24ch">
+          Legacy tools were built for <span class="font-serif italic font-normal text-white-85">yesterday's media
+            networks.</span>
+        </h2>
+        <p class="mt-6 text-lg md:text-xl text-white-60 max-w-3xl leading-relaxed">
+          T-Platform is built for commerce companies that need infrastructure, automation, and scale.
+        </p>
+
+        <div class="mt-14 comparison-table">
+          <div class="comparison-header">
+            <div>Legacy tools</div>
+            <div class="font-bold text-white">Topsort T-Platform</div>
+          </div>
+
+          <div class="comparison-row">
+            <div>Fragmented stack</div>
+            <div>Integrated infrastructure</div>
+          </div>
+
+          <div class="comparison-row">
+            <div>Publisher ad serving</div>
+            <div>Commerce-native ad serving</div>
+          </div>
+
+          <div class="comparison-row">
+            <div>Manual optimization</div>
+            <div>AI-powered optimization</div>
+          </div>
+
+          <div class="comparison-row">
+            <div>Services-heavy workflows</div>
+            <div>Self-service advertiser tools</div>
+          </div>
+
+          <div class="comparison-row">
+            <div>Channel silos</div>
+            <div>Onsite, offsite, in-store, and AI-native</div>
+          </div>
+
+          <div class="comparison-row">
+            <div>Slow implementation</div>
+            <div>API-first launch</div>
+          </div>
+
+          <div class="comparison-row">
+            <div>Reporting after the fact</div>
+            <div>Measurement connected to commerce outcomes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof / Stats Section -->
+    <section class="relative overflow-hidden bg-ink text-white py-28 px-6">
+      <div class="absolute inset-0 bg-grid-white mask-radial-fade opacity-75"></div>
+      <div class="absolute -bottom-32 left-1/3 w-520px h-520px rounded-full bg-signal-25 blur-glow-lg"></div>
+
+      <div class="relative z-10 container container-content">
+        <div class="eyebrow eyebrow-light">Proof</div>
+        <h2 class="mt-6 text-3xl md:text-5xl font-bold tracking-tight leading-snug max-w-20ch">
+          Built to launch fast. <span class="font-serif italic font-normal text-white-85">Built to scale
+            globally.</span>
+        </h2>
+
+        <div
+          class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white-10 rounded-xl overflow-hidden border border-white-10">
+          <div class="stat-card">
+            <div class="stat-value">&lt; 30 days</div>
+            <p class="mt-5 text-sm md:text-base text-white-65 leading-snug">Live retail media launch</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-value">3</div>
+            <p class="mt-5 text-sm md:text-base text-white-65 leading-snug">API calls to start serving and measuring ads
+            </p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-value">&lt; 10ms</div>
+            <p class="mt-5 text-sm md:text-base text-white-65 leading-snug">Auction latency</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-value">Global</div>
+            <p class="mt-5 text-sm md:text-base text-white-65 leading-snug">Built for multi-market commerce networks</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audiences Section -->
+    <section class="relative py-24 px-6">
+      <div class="absolute inset-0 bg-grid-fine mask-radial-fade opacity-50 pointer-events-none"></div>
+
+      <div class="relative container">
+        <div class="eyebrow">Audiences</div>
+        <h2 class="mt-5 text-3xl md:text-5xl font-bold text-foreground tracking-tight leading-snug max-w-22ch">
+          Built for commerce companies <span class="font-serif italic font-normal">turning attention into revenue</span>
+        </h2>
+
+        <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Retailers -->
+          <a href="/solutions/retailers" class="audience-card">
+            <div class="icon-wrapper">
+              <svg class="w-5 h-5">
+                <use href="#icon-shoppingbag" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-foreground mb-2 transition-colors">Retailers</h3>
+            <p class="text-sm text-muted leading-relaxed">Launch and scale owned retail media networks across ecommerce,
+              stores, and offsite channels.</p>
+          </a>
+
+          <!-- Marketplaces -->
+          <a href="/solutions/marketplaces" class="audience-card">
+            <div class="icon-wrapper">
+              <svg class="w-5 h-5">
+                <use href="#icon-store" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-foreground mb-2 transition-colors">Marketplaces</h3>
+            <p class="text-sm text-muted leading-relaxed">Monetize seller demand across search, browse, category, and
+              native marketplace experiences.</p>
+          </a>
+
+          <!-- Delivery Apps -->
+          <a href="/solutions/delivery-apps" class="audience-card">
+            <div class="icon-wrapper">
+              <svg class="w-5 h-5">
+                <use href="#icon-truck" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-foreground mb-2 transition-colors">Delivery Apps</h3>
+            <p class="text-sm text-muted leading-relaxed">Turn high-frequency ordering moments into sponsored placements
+              and brand-funded growth.</p>
+          </a>
+
+          <!-- Travel Platforms -->
+          <a href="/solutions/travel-platforms" class="audience-card">
+            <div class="icon-wrapper">
+              <svg class="w-5 h-5">
+                <use href="#icon-plane" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-foreground mb-2 transition-colors">Travel Platforms</h3>
+            <p class="text-sm text-muted leading-relaxed">Build commerce media experiences for hotels, airlines,
+              destinations, duty-free, and travel retail.</p>
+          </a>
+
+          <!-- Financial Platforms -->
+          <a href="/solutions/financial-platforms" class="audience-card">
+            <div class="icon-wrapper">
+              <svg class="w-5 h-5">
+                <use href="#icon-wallet" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-foreground mb-2 transition-colors">Financial Platforms</h3>
+            <p class="text-sm text-muted leading-relaxed">Create relevant sponsored offers and monetization experiences
+              inside financial ecosystems.</p>
+          </a>
+
+          <!-- Classifieds -->
+          <a href="/solutions/classifieds" class="audience-card">
+            <div class="icon-wrapper">
+              <svg class="w-5 h-5">
+                <use href="#icon-newspaper" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-foreground mb-2 transition-colors">Classifieds & Networks</h3>
+            <p class="text-sm text-muted leading-relaxed">Monetize listings, leads, promoted placements, and marketplace
+              demand.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internal Links Section -->
+    <section class="py-20 px-6 bg-secondary">
+      <div class="container container-content">
+        <div class="eyebrow">Explore</div>
+        <h2 class="mt-5 text-2xl md:text-3xl font-bold text-foreground tracking-tight">
+          Explore the infrastructure behind <span class="font-serif italic font-normal">T-Platform</span>
+        </h2>
+
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <a href="/products/t-platform" class="link-card">
+            <span class="text-sm font-medium text-foreground">Complete retail media platform</span>
+            <svg class="w-4 h-4 text-muted transition-colors">
+              <use href="#icon-arrowright" />
+            </svg>
+          </a>
+
+          <a href="/solutions/sponsored-listings" class="link-card">
+            <span class="text-sm font-medium text-foreground">Sponsored listings for retail media</span>
+            <svg class="w-4 h-4 text-muted transition-colors">
+              <use href="#icon-arrowright" />
+            </svg>
+          </a>
+
+          <a href="/solutions/display-banner" class="link-card">
+            <span class="text-sm font-medium text-foreground">Display ads for commerce media</span>
+            <svg class="w-4 h-4 text-muted transition-colors">
+              <use href="#icon-arrowright" />
+            </svg>
+          </a>
+
+          <a href="/solutions/video-ads" class="link-card">
+            <span class="text-sm font-medium text-foreground">Video ads for retail media</span>
+            <svg class="w-4 h-4 text-muted transition-colors">
+              <use href="#icon-arrowright" />
+            </svg>
+          </a>
+
+          <a href="https://www.topsort.com/products/offsite-ads" class="link-card">
+            <span class="text-sm font-medium text-foreground">Offsite retail media advertising</span>
+            <svg class="w-4 h-4 text-muted transition-colors">
+              <use href="#icon-arrowright" />
+            </svg>
+          </a>
+
+          <a href="/solutions/in-store" class="link-card">
+            <span class="text-sm font-medium text-foreground">In-store retail media</span>
+            <svg class="w-4 h-4 text-muted transition-colors">
+              <use href="#icon-arrowright" />
+            </svg>
+          </a>
+
+          <a href="/products/data-genie" class="link-card">
+            <span class="text-sm font-medium text-foreground">Retail media analytics and reporting</span>
+            <svg class="w-4 h-4 text-muted transition-colors">
+              <use href="#icon-arrowright" />
+            </svg>
+          </a>
+
+          <a href="/products/t-brain" class="link-card">
+            <span class="text-sm font-medium text-foreground">AI optimization for retail media</span>
+            <svg class="w-4 h-4 text-muted transition-colors">
+              <use href="#icon-arrowright" />
+            </svg>
+          </a>
+
+          <a href="/products/t-engine" class="link-card">
+            <span class="text-sm font-medium text-foreground">Retail media ad server</span>
+            <svg class="w-4 h-4 text-muted transition-colors">
+              <use href="#icon-arrowright" />
+            </svg>
+          </a>
+
+          <a href="/products/genie-copilot" class="link-card">
+            <span class="text-sm font-medium text-foreground">Commerce intelligence for retail media</span>
+            <svg class="w-4 h-4 text-muted transition-colors">
+              <use href="#icon-arrowright" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="relative py-24 px-6">
+      <div class="absolute inset-0 bg-grid-fine mask-radial-fade opacity-50 pointer-events-none"></div>
+
+      <div class="relative container container-narrow">
+        <div class="text-center">
+          <div class="eyebrow">FAQ</div>
+        </div>
+        <h2 class="mt-5 text-3xl md:text-5xl font-bold text-foreground tracking-tight text-center">
+          Frequently asked <span class="font-serif italic font-normal">questions</span>
+        </h2>
+
+        <div class="mt-12 faq-accordion">
+          <div class="faq-item">
+            <button class="faq-trigger">
+              What is Topsort T-Platform?
+              <svg class="text-muted">
+                <use href="#icon-chevron-down" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>Topsort T-Platform is the operating system for modern retail media — a complete infrastructure layer
+                that helps commerce companies launch, manage, and optimize retail media networks.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Is T-Platform an ad server?
+              <svg class="text-muted">
+                <use href="#icon-chevron-down" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>T-Platform includes ad serving, but it is more than an ad server. It also includes real-time auctions,
+                advertiser workflows, analytics, attribution, APIs, and AI optimization.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Who is T-Platform for?
+              <svg class="text-muted">
+                <use href="#icon-chevron-down" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>T-Platform is built for retailers, marketplaces, delivery apps, travel platforms, financial platforms,
+                classifieds businesses, and commerce companies that want to monetize digital or physical properties with
+                advertising.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              What ad formats does T-Platform support?
+              <svg class="text-muted">
+                <use href="#icon-chevron-down" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>T-Platform can support sponsored listings, sponsored brands, display ads, banner ads, video ads, native
+                placements, offsite ads, in-store ads, and emerging AI-native sponsored experiences.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              How fast can a company launch with T-Platform?
+              <svg class="text-muted">
+                <use href="#icon-chevron-down" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>Launch timelines depend on integration complexity, but T-Platform is built for API-first
+                implementation. Many teams move from first API call to production retail media in under a month.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              How is T-Platform different from stitching together an ad server and reporting tools?
+              <svg class="text-muted">
+                <use href="#icon-chevron-down" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>T-Platform integrates ad serving, auctions, campaign management, advertiser workflows, measurement, and
+                optimization in one infrastructure layer. This reduces operational complexity and makes retail media
+                easier to scale.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              Does T-Platform support AI-powered retail media optimization?
+              <svg class="text-muted">
+                <use href="#icon-chevron-down" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>Yes. T-Platform includes AI-powered optimization for bidding, pacing, relevance, quality,
+                recommendations, and yield improvement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Started Free Section -->
+    <section class="relative py-24 px-6 bg-secondary">
+      <div class="absolute inset-0 bg-grid-fine mask-radial-fade opacity-50 pointer-events-none"></div>
+
+      <div class="relative container">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left: Form -->
+          <div>
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-10 text-primary text-11px font-mono uppercase tracking-wider mb-6">
+              Get Started Free
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-4">
+              Start building in<br>minutes, not months.
+            </h2>
+            <p class="text-muted leading-relaxed mb-8">
+              Book a demo and we'll set you up with API access, a sandbox environment, and a personalized onboarding call.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-3 mb-4"><a class="btn btn-primary ts-bad-cta" href="https://www.topsort.com/book-a-demo">Book a demo <svg class="w-4 h-4">
+                  <use href="#icon-arrowright" />
+                </svg></a></div>
+
+            <p class="text-xs text-muted">No credit card · Free sandbox · Live in < 30 days</p>
+          </div>
+
+          <!-- Right: Features -->
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-md bg-primary-10 text-primary flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5">
+                  <use href="#icon-barchart3" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-foreground mb-1">Live in < 30 days</h3>
+                    <p class="text-sm text-muted">From first API call to production ads, most teams launch in under a
+                      month.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-md bg-primary-10 text-primary flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5">
+                  <use href="#icon-code2" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-foreground mb-1">3 API calls to start</h3>
+                <p class="text-sm text-muted">Run an auction, serve an ad, track a click. That's it. You're monetizing.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-md bg-primary-10 text-primary flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5">
+                  <use href="#icon-sparkles" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-foreground mb-1">
+                  < 10ms auction latency</h3>
+                    <p class="text-sm text-muted">Real-time ML-powered auctions that don't slow down your user
+                      experience.</p>
+              </div>
+            </div>
+
+            <div class="pt-4">
+              <a href="/book-a-demo" class="text-primary text-sm font-medium inline-flex items-center gap-2 hover:underline">
+                Or book a personalized demo
+                <svg class="w-4 h-4">
+                  <use href="#icon-arrowright" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ready to see Topsort Section -->
+    <section class="py-20 px-6 bg-background">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+          Ready to see Topsort in action?
+        </h2>
+        <p class="text-muted text-base mt-4 max-w-md mx-auto">
+          Book a personalized demo and discover how Topsort powers retail media at scale.
+        </p>
+        <div class="flex items-center justify-center gap-3 mt-8">
+          <a href="/book-a-demo"
+            class="inline-flex items-center gap-2 px-7 py-3 bg-foreground text-white font-semibold rounded-full text-sm hover:opacity-90 transition-opacity">
+            See a Demo
+          </a>
+          <a href="https://docs.topsort.com/"
+            class="inline-flex items-center gap-2 px-7 py-3 border border-border text-foreground font-medium rounded-full text-sm hover:bg-foreground/5 transition-colors">
+            Explore the API
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="relative overflow-hidden bg-ink text-white py-32 px-6">
+      <div class="absolute inset-0 bg-grid-white mask-radial-fade opacity-80"></div>
+      <div class="absolute -top-32 left-1/4 w-600px h-600px rounded-full bg-signal-25 blur-glow-lg"></div>
+      <div class="absolute -bottom-40 -right-40 w-600px h-600px rounded-full bg-signal-10 blur-glow-lg"></div>
+
+      <div class="relative z-10 container container-narrow text-center">
+        <div class="flex justify-center mb-6">
+          <div class="eyebrow eyebrow-light">Get started</div>
+        </div>
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tight leading-snug">
+          Build the infrastructure behind your <span class="font-serif italic font-normal text-white-95">retail media
+            empire.</span>
+        </h2>
+        <p class="mt-7 text-lg md:text-xl text-white-70 leading-relaxed">
+          T-Platform gives commerce companies the system to launch, run, and scale their own media business — without
+          stitching together legacy tools.
+        </p>
+        <div class="mt-10 flex flex-wrap justify-center gap-3">
+          <a href="/book-a-demo" class="btn btn-primary text-base px-7">
+            Launch Your Network
+            <svg class="w-4 h-4">
+              <use href="#icon-arrowright" />
+            </svg>
+          </a>
+          <a href="/book-a-demo" class="btn btn-secondary text-base px-7">Book a Demo</a>
+        </div>
+        <p class="mt-10 text-base md:text-lg text-white-65 font-serif italic">Your entire retail media empire. Boxed.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FAQ Accordion JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+
+        trigger.addEventListener('click', function () {
+          // Close other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+            }
+          });
+
+          // Toggle current item
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+<style>
+a.ts-bad-cta{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;text-decoration:none!important;cursor:pointer!important}
+</style>

@@ -1,0 +1,278 @@
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-583GSTT" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Mixpanel function for on click events -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        function parseTagData(data) {
+            var tmpData = data.split('|');
+            if (tmpData.length !== 2) { return ''; }
+            return { 'action': tmpData[0], 'label': tmpData[1] };
+        }
+
+        $(document).on('click', '[data-tracker]', function (e) {
+            var trackData = $(this).data('tracker');
+            if (!trackData) { return; }
+            var tagData = parseTagData(trackData);
+            if (!tagData.action || !tagData.label) { return; }
+            var categoryDiv = $(this).find('.mx-event-prop');
+            if (categoryDiv && categoryDiv.text()) {
+                mixpanel.track(tagData.action, { 'category': categoryDiv.text() });
+            } else {
+                mixpanel.track(tagData.action, JSON.parse(tagData.label.replaceAll("'", "\"")));
+            }
+        });
+    });
+</script>
+<script>
+    let clicked = false;
+
+    window.addEventListener('scroll', () => {
+        if (!clicked && (window.scrollY || window.pageYOffset) >= (document.documentElement.scrollHeight - window.innerHeight) * 0.35) {
+            document.querySelector('#demo_popup')?.click();
+            clicked = true;
+        }
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        const invalidDomains = ['gmail.com', 'yahoo.com', 'msn.com', 'hotmail.com', 'outlook.com', 'aol.com', 'live.com', 'icloud.com', 'mail.com', 'zoho.com', 'yandex.com', 'protonmail.com', 'gmx.com', 'qq.com', 'naver.com', 'rediffmail.com', 'rocketmail.com', 'mail.ru', 'me.com', 'inbox.com'];
+        $('form input[type="submit"]').click(function (event) {
+            const email = $('form input[type="email"]');
+            const domainPart = email.val().split('@')[1];
+            if (invalidDomains.indexOf(domainPart) !== -1) {
+                email[0].setCustomValidity('Please use a business email');
+                email[0].reportValidity();
+                event.preventDefault();
+            } else {
+                email[0].setCustomValidity('');
+            }
+        });
+    });
+</script>
+
+<script>
+    $('.calendly-close-button').click(() => $('.calendly_bg-overlay').click())
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const storedEmail = localStorage.getItem('email')
+        if (storedEmail)
+            document.querySelectorAll('input[type="email"]').forEach(input => input.value = storedEmail)
+
+        document.querySelectorAll('form[capture="email"]').forEach(form =>
+            form.addEventListener('submit', () => {
+                const emailInput = form.querySelector('input[type="email"]')
+                if (emailInput) localStorage.setItem('email', emailInput.value)
+            })
+        )
+    })
+
+</script>
+
+
+<style>
+    .navbar {
+        transition: box-shadow .3s ease
+    }
+
+    .navbar.shadow {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    }
+</style>
+<script>
+    window.addEventListener("scroll", () => { document.querySelector(".navbar").classList.toggle("shadow", window.scrollY > 50) });
+</script>
+
+<script>
+
+    let visitorCountry;
+
+
+
+    fetch('https://ipapi.co/json/')
+
+        .then(response => response.json())
+
+        .then(data => visitorCountry = data.country_name || 'N/A')
+
+        .catch(() => visitorCountry = 'N/A');
+
+
+
+    setInterval(() => {
+
+        const pageUrl = location.host + location.pathname.replace(/\/$/, '');
+
+        if (location.pathname.indexOf('/book-a-demo') === -1) {
+
+        document.querySelectorAll('form:not([data-fields-added])').forEach(form => {
+
+            let pageInput = document.createElement('input');
+
+            let countryInput = document.createElement('input');
+
+
+
+            pageInput.type = countryInput.type = 'hidden';
+
+
+
+            pageInput.name = 'page_link';
+
+            pageInput.value = pageUrl;
+
+
+
+            countryInput.name = 'country';
+
+
+
+            form.append(pageInput, countryInput);
+
+            form.setAttribute('data-fields-added', 'true');
+
+        });
+
+        }
+
+
+
+        if (visitorCountry) {
+
+            document.querySelectorAll('input[name="country"]:not([value])').forEach(field => {
+
+                field.value = visitorCountry;
+
+            });
+
+        }
+
+    }, 500);
+
+</script>
+
+<script>
+    const WEBHOOK = "https://hook.us1.make.com/o0o9b48cm4d3wpt6vabbujcd0b1e5dbj";
+
+    // 1. Set a default value, then fetch the country immediately on page load
+    let userCountry = "Unknown";
+    fetch('https://get.geojs.io/v1/ip/country.json')
+        .then(response => response.json())
+        .then(data => {
+            userCountry = data.name;
+        })
+        .catch(() => console.warn("Could not detect country."));
+
+    const SUCCESS_HTML =
+        `<div class="ts-plg-success" style="display:flex!important">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+        <path d="m9 11 3 3L22 4"/>
+      </svg>
+      <div>
+        <div class="ts-plg-success-title">You're in!</div>
+        <div class="ts-plg-success-desc">Check your inbox — we'll have you live in no time.</div>
+      </div>
+    </div>`;
+
+    function showSuccess(form) {
+        const wrap = form.closest("[id$=form-wrap]");
+        if (wrap) {
+            wrap.innerHTML = SUCCESS_HTML;
+        } else {
+            form.style.setProperty("display", "none", "important");
+            const s = form.parentElement?.querySelector(".ts-plg-success, .ts-pfo2-success");
+            if (s) s.style.setProperty("display", "flex", "important");
+        }
+    }
+
+    function getPageTitle() {
+        return window.location.pathname === '/' ? 'Home' : document.title;
+    }
+
+    function isDataReady() {
+        const title = getPageTitle();
+        return userCountry !== 'Unknown' && title && title.trim() !== '';
+    }
+
+    function sendToWebhook(email, cleanUrl) {
+        fetch(WEBHOOK, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                email: email,
+                page: cleanUrl,
+                page_title: getPageTitle(),
+                country: userCountry,
+                timestamp: new Date().toISOString()
+            }),
+            keepalive: true
+        }).catch(() => { });
+    }
+
+    function handleSubmit(form, e) {
+        e.preventDefault();
+
+        const input = form.querySelector("input[type=email]");
+        const email = input ? input.value.trim() : "";
+        if (!email) return;
+
+        // Force the URL to snap off at the ? or # so absolutely no parameters are sent to the webhook
+        const cleanUrl = window.location.href.split('?')[0].split('#')[0].replace(/\/$/, '');
+
+        // Wait for country & title to be ready — retry up to 2 times (1s each)
+        let attempts = 0;
+        function trySend() {
+            if (isDataReady() || attempts >= 2) {
+                sendToWebhook(email, cleanUrl);
+            } else {
+                attempts++;
+                setTimeout(trySend, 1000);
+            }
+        }
+        trySend();
+
+        // Show success message immediately (don't block the user)
+        showSuccess(form);
+
+        // Wait 2 seconds, then redirect with the email parameter
+        setTimeout(() => {
+            window.location.href = `/book-a-demo?email=${encodeURIComponent(email)}`;
+        }, 2000);
+    }
+
+    (function () {
+        function attachLogic(form) {
+            if (form.dataset.redirectAttached) return; // Prevent double-firing
+
+            form.addEventListener('submit', function (e) {
+                handleSubmit(form, e);
+            });
+            form.dataset.redirectAttached = "true";
+        }
+
+        // Attach to existing forms
+        document.querySelectorAll("form.ts-plg-form, form.ts-pfo2, form#ts-plg-form, form#ts-pfo2")
+            .forEach(attachLogic);
+
+        // Watch for dynamically added forms
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (m) {
+                m.addedNodes.forEach(function (node) {
+                    if (node.nodeType !== 1) return;
+                    if (node.matches && node.matches('form.ts-plg-form, form.ts-pfo2, form#ts-plg-form, form#ts-pfo2')) {
+                        attachLogic(node);
+                    }
+                    node.querySelectorAll && node.querySelectorAll('form.ts-plg-form, form.ts-pfo2, form#ts-plg-form, form#ts-pfo2')
+                        .forEach(attachLogic);
+                });
+            });
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+    })();
+</script>

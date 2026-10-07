@@ -1,0 +1,182 @@
+{
+  "source": "https://www.topsort.com/sitemap.xml",
+  "checkedAt": "2026-09-20T21:38:46.515Z",
+  "method": "Exact published sitemap membership; external documentation links retained.",
+  "destinations": [
+    {
+      "href": "https://docs.topsort.com",
+      "marketing": false,
+      "inSitemap": null
+    },
+    {
+      "href": "https://www.topsort.com",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/book-a-demo",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/book-a-demo?source=gam-migration",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/book-a-demo?source=kevel-migration",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/casestudy/falabella-story",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/casestudy/sodimac1",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/compare/topsort-vs-google-ad-manager",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/compare/topsort-vs-kevel",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/post/engineering-for-flawless-migrations-the-topsort-approach-to-zero-downtime-zero-data-loss-onboarding",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/post/migrate-from-legacy-ad-server-to-topsort",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/products/data-genie",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/products/in-store-journey",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/products/offsite-ads",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/products/t-engine",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/products/t-platform",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/products/t-zero",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/resources",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/retail-media",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/classifieds",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/delivery-apps",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/display-banner",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/expand",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/financial-platforms",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/launch",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/marketplaces",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/migrations/google-ad-manager",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/native-placements",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/optimize",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/retailers",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/scale",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/sponsored-brands",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/sponsored-listings",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/travel-platforms",
+      "marketing": true,
+      "inSitemap": true
+    },
+    {
+      "href": "https://www.topsort.com/solutions/video-ads",
+      "marketing": true,
+      "inSitemap": true
+    }
+  ]
+}

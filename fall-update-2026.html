@@ -1,0 +1,650 @@
+<!-- Topsort Fall Update 2026 recap · paste this entire file into one Webflow HTML Embed.
+     Uses the site's shared navbar/footer. Source: fall-update-2026-source/src/routes/index.tsx. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;800&amp;family=Poppins:wght@300;400;500;600;700;800&amp;display=swap">
+<style>
+    #topsort-fall-update {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        color: #3e5a73 !important;
+        font-family: Poppins, Arial, sans-serif !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        -webkit-font-smoothing: antialiased !important;
+    }
+    #topsort-fall-update,
+    #topsort-fall-update *,
+    #topsort-fall-update *::before,
+    #topsort-fall-update *::after { box-sizing: border-box !important; }
+    #topsort-fall-update h1,
+    #topsort-fall-update h2,
+    #topsort-fall-update h3,
+    #topsort-fall-update p { margin: 0 !important; padding: 0 !important; }
+    #topsort-fall-update h1,
+    #topsort-fall-update h2,
+    #topsort-fall-update h3 {
+        font-family: Outfit, Arial, sans-serif !important;
+        letter-spacing: -.02em !important;
+    }
+    #topsort-fall-update button {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        font: inherit !important;
+        cursor: pointer !important;
+        appearance: none !important;
+        -webkit-appearance: none !important;
+    }
+    #topsort-fall-update a { text-decoration: none !important; }
+    #topsort-fall-update [hidden][hidden] { display: none !important; }
+    #topsort-fall-update :is(a, button):focus-visible {
+        outline: 3px solid #529bfb !important;
+        outline-offset: 5px !important;
+    }
+    #topsort-fall-update .tfe-recap-hero { overflow: hidden !important; background: #fff !important; }
+    #topsort-fall-update .tfe-recap-hero-inner {
+        width: 100% !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding: 64px 24px !important;
+        text-align: center !important;
+    }
+    #topsort-fall-update .tfe-recap-label {
+        color: #566e81 !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        letter-spacing: .24em !important;
+        text-align: center !important;
+        text-transform: uppercase !important;
+    }
+    #topsort-fall-update .tfe-recap-label > span { color: #9cf1ff !important; }
+    #topsort-fall-update .tfe-recap-title { margin-top: 20px !important; }
+    #topsort-fall-update .tfe-recap-event {
+        display: block !important;
+        color: #080c18 !important;
+        font-size: 24px !important;
+        font-weight: 700 !important;
+        line-height: 1.3333 !important;
+    }
+    #topsort-fall-update .tfe-recap-headline {
+        display: block !important;
+        margin-top: 12px !important;
+        background: linear-gradient(100deg, oklch(.82 .155 214), oklch(.68 .16 288) 55%, oklch(.74 .16 350)) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        color: transparent !important;
+        -webkit-text-fill-color: transparent !important;
+        font-size: clamp(3rem, 7.5vw, 6.5rem) !important;
+        font-weight: 800 !important;
+        line-height: .92 !important;
+        overflow-wrap: anywhere !important;
+    }
+    #topsort-fall-update .tfe-recap-explore {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-top: 32px !important;
+        padding: 14px 32px !important;
+        border-radius: 999px !important;
+        background: #529bfb !important;
+        box-shadow: 0 10px 30px rgba(46, 144, 250, .3) !important;
+        color: #fff !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        transition: opacity .2s ease !important;
+    }
+    #topsort-fall-update .tfe-recap-explore:hover { opacity: .9 !important; }
+    #topsort-fall-update .tfe-recap-video-ring {
+        max-width: 1040px !important;
+        margin: 48px auto 0 !important;
+        padding: 2px !important;
+        border-radius: 28px !important;
+        background: linear-gradient(90deg, #7dd8f0, #a9a7ee, #f2a9c8, #7dd8f0) !important;
+        background-size: 300% 100% !important;
+        box-shadow: 0 30px 80px -30px rgba(120, 130, 240, .55) !important;
+        animation: tfe-recap-ring 6s linear infinite !important;
+    }
+    #topsort-fall-update .tfe-recap-video {
+        position: relative !important;
+        aspect-ratio: 16 / 9 !important;
+        overflow: hidden !important;
+        border-radius: 26px !important;
+        background: #000 !important;
+    }
+    #topsort-fall-update .tfe-recap-video iframe {
+        position: absolute !important;
+        inset: 0 !important;
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        border: 0 !important;
+    }
+    #topsort-fall-update .tfe-recap-watch {
+        display: inline-flex !important;
+        margin-top: 24px !important;
+        color: #357aca !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+    }
+    #topsort-fall-update .tfe-recap-watch:hover { text-decoration: underline !important; }
+    #topsort-fall-update .tfe-recap-highlights {
+        padding: 40px 24px 140px !important;
+        background: #fff !important;
+    }
+    #topsort-fall-update .tfe-recap-highlights-inner { max-width: 1100px !important; margin: 0 auto !important; }
+    #topsort-fall-update .tfe-recap-section-title {
+        max-width: 760px !important;
+        margin: 16px auto 0 !important;
+        color: #3e5a73 !important;
+        font-size: 28px !important;
+        font-weight: 300 !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+    }
+    #topsort-fall-update .tfe-recap-cards { display: grid !important; gap: 24px !important; margin-top: 56px !important; }
+    #topsort-fall-update .tfe-recap-card {
+        display: block !important;
+        min-width: 0 !important;
+        padding: 32px !important;
+        border: 1px solid #e6eef5 !important;
+        border-radius: 24px !important;
+        background: linear-gradient(180deg, #fff, #f5f9fe) !important;
+        transition: transform .25s ease, box-shadow .25s ease !important;
+    }
+    #topsort-fall-update .tfe-recap-card:hover {
+        transform: translateY(-4px) !important;
+        box-shadow: 0 24px 60px -30px rgba(82, 155, 251, .5) !important;
+    }
+    #topsort-fall-update .tfe-recap-card img { display: block !important; width: 64px !important; height: 64px !important; border-radius: 16px !important; }
+    #topsort-fall-update .tfe-recap-card h3 { margin-top: 24px !important; color: #080c18 !important; font-size: 26px !important; font-weight: 700 !important; line-height: 1.5 !important; }
+    #topsort-fall-update .tfe-recap-card p { margin-top: 8px !important; color: #3e5a73 !important; font-size: 16px !important; font-weight: 300 !important; line-height: 1.5 !important; }
+    #topsort-fall-update .tfe-recap-card > span { display: inline-block !important; margin-top: 24px !important; color: #529bfb !important; font-size: 14px !important; font-weight: 600 !important; }
+    #topsort-fall-update .tfe-recap-gallery { padding: 0 24px 140px !important; background: #fff !important; }
+    #topsort-fall-update .tfe-recap-gallery-inner { max-width: 1200px !important; margin: 0 auto !important; }
+    #topsort-fall-update .tfe-recap-grid { margin-top: 56px !important; columns: 2 !important; column-gap: 16px !important; }
+    #topsort-fall-update .tfe-recap-photo {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 16px !important;
+        break-inside: avoid !important;
+        overflow: hidden !important;
+        border-radius: 18px !important;
+        background: #f5f9fe !important;
+    }
+    #topsort-fall-update .tfe-recap-photo img {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 18px !important;
+        transition: transform .5s ease !important;
+    }
+    #topsort-fall-update .tfe-recap-photo:hover img { transform: scale(1.04) !important; }
+    #topsort-fall-update .tfe-recap-more-wrap { display: flex !important; justify-content: center !important; margin-top: 40px !important; }
+    #topsort-fall-update .tfe-recap-more {
+        padding: 14px 32px !important;
+        border-radius: 999px !important;
+        background: #529bfb !important;
+        box-shadow: 0 10px 30px rgba(46, 144, 250, .3) !important;
+        color: #fff !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        transition: opacity .2s ease !important;
+    }
+    #topsort-fall-update .tfe-recap-more:hover { opacity: .9 !important; }
+    #topsort-fall-update .tfe-recap-lightbox {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: 100% !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 16px !important;
+        border: 0 !important;
+        background: rgba(8, 12, 24, .9) !important;
+        color: #fff !important;
+        overflow: hidden !important;
+        backdrop-filter: blur(14px) !important;
+        -webkit-backdrop-filter: blur(14px) !important;
+    }
+    #topsort-fall-update .tfe-recap-lightbox[open] { display: flex !important; align-items: center !important; justify-content: center !important; }
+    #topsort-fall-update .tfe-recap-lightbox::backdrop { background: transparent !important; }
+    #topsort-fall-update .tfe-recap-lens { position: relative !important; display: flex !important; max-width: 100% !important; max-height: 100% !important; align-items: center !important; justify-content: center !important; }
+    #topsort-fall-update .tfe-recap-full-photo {
+        display: block !important;
+        max-width: 100% !important;
+        max-height: 86vh !important;
+        max-height: 86dvh !important;
+        width: auto !important;
+        height: auto !important;
+        border-radius: 14px !important;
+        object-fit: contain !important;
+        box-shadow: 0 40px 120px -30px rgba(0, 0, 0, .7) !important;
+        touch-action: pan-y !important;
+        user-select: none !important;
+        -webkit-user-select: none !important;
+        cursor: grab !important;
+    }
+    #topsort-fall-update .tfe-recap-full-photo:active { cursor: grabbing !important; }
+    #topsort-fall-update .tfe-recap-flash { position: absolute !important; inset: 0 !important; border-radius: 14px !important; pointer-events: none !important; opacity: 0; background: radial-gradient(circle at 50% 45%, rgba(255,255,255,.55), transparent 70%) !important; }
+    #topsort-fall-update .tfe-recap-corner { position: absolute !important; width: 24px !important; height: 24px !important; border: solid rgba(255,255,255,.8) !important; pointer-events: none !important; opacity: 0; }
+    #topsort-fall-update .tfe-recap-corner-tl { top: 12px !important; left: 12px !important; border-width: 1px 0 0 1px !important; }
+    #topsort-fall-update .tfe-recap-corner-tr { top: 12px !important; right: 12px !important; border-width: 1px 1px 0 0 !important; }
+    #topsort-fall-update .tfe-recap-corner-bl { bottom: 12px !important; left: 12px !important; border-width: 0 0 1px 1px !important; }
+    #topsort-fall-update .tfe-recap-corner-br { bottom: 12px !important; right: 12px !important; border-width: 0 1px 1px 0 !important; }
+    #topsort-fall-update .tfe-recap-control {
+        position: absolute !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 48px !important;
+        height: 48px !important;
+        border-radius: 50% !important;
+        background: rgba(255, 255, 255, .1) !important;
+        color: #fff !important;
+        font-size: 28px !important;
+        line-height: 1 !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+    }
+    #topsort-fall-update .tfe-recap-control:hover { background: rgba(255, 255, 255, .2) !important; }
+    #topsort-fall-update .tfe-recap-close { top: 20px !important; right: 20px !important; width: 44px !important; height: 44px !important; }
+    #topsort-fall-update .tfe-recap-prev { top: 50% !important; left: 16px !important; transform: translateY(-50%) !important; }
+    #topsort-fall-update .tfe-recap-next { top: 50% !important; right: 16px !important; transform: translateY(-50%) !important; }
+    #topsort-fall-update .tfe-recap-count { position: absolute !important; bottom: 20px !important; left: 50% !important; transform: translateX(-50%) !important; color: rgba(255,255,255,.7) !important; font-size: 13px !important; letter-spacing: .2em !important; white-space: nowrap !important; }
+    @keyframes tfe-recap-ring { to { background-position: 300% 0; } }
+    @media (min-width: 768px) {
+        #topsort-fall-update .tfe-recap-hero-inner { padding-top: 96px !important; }
+        #topsort-fall-update .tfe-recap-label { font-size: 13px !important; }
+        #topsort-fall-update .tfe-recap-event { font-size: 36px !important; line-height: 1.1111 !important; }
+        #topsort-fall-update .tfe-recap-section-title { font-size: 38px !important; }
+        #topsort-fall-update .tfe-recap-cards { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+        #topsort-fall-update .tfe-recap-grid { columns: 3 !important; }
+        #topsort-fall-update .tfe-recap-lightbox { padding: 48px !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #topsort-fall-update *,
+        #topsort-fall-update *::before,
+        #topsort-fall-update *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+        #topsort-fall-update .tfe-recap-card:hover,
+        #topsort-fall-update .tfe-recap-photo:hover img { transform: none !important; }
+    }
+</style>
+
+<div id="topsort-fall-update" class="ts-root">
+    <main data-tfe-content>
+        <section class="tfe-recap-hero" aria-labelledby="tfe-recap-title">
+            <div class="tfe-recap-hero-inner">
+                <p class="tfe-recap-label" data-tfe-reveal><span aria-hidden="true">/</span> Recap · Boston · Sept 29 – Oct 1, 2026</p>
+                <h1 id="tfe-recap-title" class="tfe-recap-title" data-tfe-reveal>
+                    <span class="tfe-recap-event">Topsort Fall Update 2026</span>
+                    <span class="tfe-recap-headline">Commerce—Evolved</span>
+                </h1>
+                <a class="tfe-recap-explore" href="https://www.topsort.com/newsroom/topsort-fall-update-2026-recap" data-tfe-reveal>Explore more</a>
+                <div class="tfe-recap-video-ring" data-tfe-reveal>
+                    <div class="tfe-recap-video">
+                        <iframe src="https://www.youtube.com/embed/gEMLhBSG3eU?rel=0&amp;playsinline=1"
+                            title="Topsort Fall Update 2026 recap"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <a class="tfe-recap-watch" href="https://www.youtube.com/watch?v=gEMLhBSG3eU&amp;source_ve_path=MjM4NTE&amp;embeds_referring_euri=https%3A%2F%2Fwww.topsort.com%2F" target="_blank" rel="noopener noreferrer">Watch recap on YouTube ↗</a>
+            </div>
+        </section>
+        <section class="tfe-recap-highlights" aria-labelledby="tfe-highlights-title">
+            <div class="tfe-recap-highlights-inner">
+                <p class="tfe-recap-label"><span aria-hidden="true">/</span> Highlights</p>
+                <h2 id="tfe-highlights-title" class="tfe-recap-section-title">What we unveiled in Boston</h2>
+                <div class="tfe-recap-cards">
+                    <a class="tfe-recap-card" href="https://www.topsort.com/products/tomi" data-tfe-reveal>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/42dc1042-64c1-486a-a98b-3a7940ea66f7/icon_tomi.png" width="64" height="64" alt="" aria-hidden="true" loading="lazy">
+                        <h3>Tomi</h3>
+                        <p>Put campaign operations on autopilot</p>
+                        <span>Learn more →</span>
+                    </a>
+                    <a class="tfe-recap-card" href="https://www.topsort.com/products/t-brain" data-tfe-reveal>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/e9da27a4-13b2-4bb1-a745-b59bc58606fd/icon_tbrain.png" width="64" height="64" alt="" aria-hidden="true" loading="lazy">
+                        <h3>T-brain</h3>
+                        <p>Give commerce a shared understanding</p>
+                        <span>Learn more →</span>
+                    </a>
+                    <a class="tfe-recap-card" href="https://www.topsort.com/products/data-genie" data-tfe-reveal>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/b58b9cd1-3c48-4442-a487-69e283ae812a/icon_Data_Genie.png" width="64" height="64" alt="" aria-hidden="true" loading="lazy">
+                        <h3>Data Genie</h3>
+                        <p>Ask your commerce data anything</p>
+                        <span>Learn more →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="tfe-recap-gallery" aria-labelledby="tfe-gallery-title">
+            <div class="tfe-recap-gallery-inner">
+                <p class="tfe-recap-label"><span aria-hidden="true">/</span> Gallery</p>
+                <h2 id="tfe-gallery-title" class="tfe-recap-section-title">Three days in Boston</h2>
+                <div class="tfe-recap-grid" id="tfe-recap-grid">
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="0" data-tfe-reveal aria-label="Open photo 1" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/c561e45d-0611-4d39-91e3-65259312a082/fall26-01.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 1" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="1" data-tfe-reveal aria-label="Open photo 2" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/0ae81757-a010-4dfb-bace-4091346903c4/fall26-02.jpg" width="1400" height="933" alt="Topsort Fall Update 2026 photo 2" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="2" data-tfe-reveal aria-label="Open photo 3" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/619be593-5520-4391-bc77-4ae56e51be42/fall26-03.jpg" width="1400" height="933" alt="Topsort Fall Update 2026 photo 3" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="3" data-tfe-reveal aria-label="Open photo 4" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/adf6cd5b-f657-439d-885b-ac22ec5349fe/fall26-04.jpg" width="934" height="1400" alt="Topsort Fall Update 2026 photo 4" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="4" data-tfe-reveal aria-label="Open photo 5" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/9c00537c-c0d7-45e6-b9e4-485d19a4884c/fall26-05.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 5" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="5" data-tfe-reveal aria-label="Open photo 6" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/0a1931f0-c1d8-48b2-af83-c66e722b8abd/fall26-06.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 6" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="6" data-tfe-reveal aria-label="Open photo 7" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/46076c67-38e8-4539-b593-2dbea973db06/fall26-07.jpg" width="934" height="1400" alt="Topsort Fall Update 2026 photo 7" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="7" data-tfe-reveal aria-label="Open photo 8" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/c66bfbb4-6674-46a8-80aa-d16f96193ffb/fall26-08.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 8" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="8" data-tfe-reveal aria-label="Open photo 9" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/2df78f0f-c2ce-456e-ac3b-7a81123d7b00/fall26-09.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 9" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="9" data-tfe-reveal aria-label="Open photo 10" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/482377d2-13e3-4c90-ae2d-77cd2caf2a01/fall26-10.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 10" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="10" data-tfe-reveal aria-label="Open photo 11" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/d7cc945f-87ec-4436-816f-a190c3f26dd6/fall26-11.jpg" width="934" height="1400" alt="Topsort Fall Update 2026 photo 11" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="11" data-tfe-reveal aria-label="Open photo 12" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/47701806-fe1a-40ab-ae86-2268c5caab66/fall26-12.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 12" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="12" data-tfe-reveal aria-label="Open photo 13" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/21ffbe11-53e1-4e93-958c-7715ac14dec2/fall26-13.jpg" width="934" height="1400" alt="Topsort Fall Update 2026 photo 13" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="13" data-tfe-reveal aria-label="Open photo 14" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/cd44172e-6b5d-460c-967c-5b645fed2114/fall26-14.jpg" width="934" height="1400" alt="Topsort Fall Update 2026 photo 14" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="14" data-tfe-reveal aria-label="Open photo 15" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/5a4643cf-23b7-4c02-9309-1b0b9368a457/fall26-15.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 15" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="15" data-tfe-reveal aria-label="Open photo 16" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/6bb522c4-70c0-4f6f-9919-263394d81aa4/fall26-16.jpg" width="934" height="1400" alt="Topsort Fall Update 2026 photo 16" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="16" data-tfe-reveal aria-label="Open photo 17" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/91c0b722-ef11-4564-af4b-f7597da43925/fall26-17.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 17" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="17" data-tfe-reveal aria-label="Open photo 18" aria-haspopup="dialog">
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/69889cc1-ea91-4254-929c-6fb729a52930/fall26-18.jpg" width="1400" height="933" alt="Topsort Fall Update 2026 photo 18" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="18" data-tfe-reveal aria-label="Open photo 19" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/764d9028-8e1e-4fdb-93ca-4f99539d6155/fall26-19.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 19" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="19" data-tfe-reveal aria-label="Open photo 20" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/68a3ee19-23d6-4221-9202-920686d35b17/fall26-20.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 20" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="20" data-tfe-reveal aria-label="Open photo 21" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/1a78c4a8-bc02-4ce2-bf9f-549e51004621/fall26-21.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 21" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="21" data-tfe-reveal aria-label="Open photo 22" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/14817fee-cef5-4c5f-90cf-6a61996a9bab/fall26-22.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 22" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="22" data-tfe-reveal aria-label="Open photo 23" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/8128671c-6069-49fa-a1ea-577b1dc014a0/fall26-23.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 23" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="23" data-tfe-reveal aria-label="Open photo 24" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/041e76ac-ddfb-4647-b21d-509dd7a19be1/fall26-24.jpg" width="1400" height="933" alt="Topsort Fall Update 2026 photo 24" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="24" data-tfe-reveal aria-label="Open photo 25" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/4f768974-6f77-4b2c-b7aa-8148cdc6ba8f/fall26-25.jpg" width="1400" height="933" alt="Topsort Fall Update 2026 photo 25" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="25" data-tfe-reveal aria-label="Open photo 26" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/09225727-41f3-4b47-997b-1202b8ab2066/fall26-26.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 26" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="26" data-tfe-reveal aria-label="Open photo 27" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/f0f072e7-5d79-417d-b256-d8e6a78e7300/fall26-27.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 27" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="27" data-tfe-reveal aria-label="Open photo 28" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/fc959bad-0d1b-432f-9d42-84f5d58ec970/fall26-28.jpg" width="1400" height="933" alt="Topsort Fall Update 2026 photo 28" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="28" data-tfe-reveal aria-label="Open photo 29" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/4afe8a25-dbf1-4b03-8798-d565680de44d/fall26-29.jpg" width="1400" height="933" alt="Topsort Fall Update 2026 photo 29" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="29" data-tfe-reveal aria-label="Open photo 30" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/0ed85278-b7c3-4514-8952-312c88fe526c/fall26-30.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 30" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="30" data-tfe-reveal aria-label="Open photo 31" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/dbfddc27-a2d5-4bbb-b109-62e53155c80a/fall26-31.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 31" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="31" data-tfe-reveal aria-label="Open photo 32" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/c59689ee-7eaf-47b2-a4be-92b4534c1014/fall26-32.jpg" width="1400" height="933" alt="Topsort Fall Update 2026 photo 32" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="32" data-tfe-reveal aria-label="Open photo 33" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/c7613695-54d4-4150-89f8-76658f6ebbbb/fall26-33.jpg" width="1400" height="933" alt="Topsort Fall Update 2026 photo 33" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="33" data-tfe-reveal aria-label="Open photo 34" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/4df59a03-331c-4976-a1fb-5119e441c7ca/fall26-34.jpg" width="1400" height="933" alt="Topsort Fall Update 2026 photo 34" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="34" data-tfe-reveal aria-label="Open photo 35" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/aeadf1de-ba74-4475-bd8f-7c552663a9bb/fall26-35.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 35" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="35" data-tfe-reveal aria-label="Open photo 36" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/c6346708-a1ab-467d-a8c2-8ddf902b0349/fall26-36.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 36" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="36" data-tfe-reveal aria-label="Open photo 37" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/8522c331-7bb3-4bc5-b50f-4e6afc5ded25/fall26-37.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 37" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="37" data-tfe-reveal aria-label="Open photo 38" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/dfc77d13-b502-4781-8e28-8705c6e170d1/fall26-38.jpg" width="1400" height="933" alt="Topsort Fall Update 2026 photo 38" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="38" data-tfe-reveal aria-label="Open photo 39" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/fcb4884e-8833-419c-9eaf-705fda006a76/fall26-39.jpg" width="934" height="1400" alt="Topsort Fall Update 2026 photo 39" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="39" data-tfe-reveal aria-label="Open photo 40" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/ad593dc0-116f-4db3-a26e-e57356c6ab98/fall26-40.jpg" width="934" height="1400" alt="Topsort Fall Update 2026 photo 40" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="40" data-tfe-reveal aria-label="Open photo 41" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/4d9991e8-7d43-446e-be2f-b3119904af73/fall26-41.jpg" width="934" height="1400" alt="Topsort Fall Update 2026 photo 41" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="41" data-tfe-reveal aria-label="Open photo 42" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/e80b9267-b018-4c9c-b117-efb104b00041/fall26-42.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 42" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="42" data-tfe-reveal aria-label="Open photo 43" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/609991de-0828-4ccc-86d3-97b40b4f9e31/fall26-43.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 43" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="43" data-tfe-reveal aria-label="Open photo 44" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/b78fad53-dbc4-48f0-9a17-975e7ae1044f/fall26-44.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 44" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="44" data-tfe-reveal aria-label="Open photo 45" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/87fe17e6-147f-4df2-9208-93f94ca9618e/fall26-45.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 45" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="45" data-tfe-reveal aria-label="Open photo 46" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/968ce1df-e5ff-4400-92cb-1083c09268ba/fall26-46.jpg" width="1400" height="934" alt="Topsort Fall Update 2026 photo 46" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="46" data-tfe-reveal aria-label="Open photo 47" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/b142ca5d-7af1-4653-96f8-f89ff4f6adc2/fall26-47.jpg" width="1400" height="1400" alt="Topsort Fall Update 2026 photo 47" loading="lazy" decoding="async">
+                    </button>
+                    <button class="tfe-recap-photo" type="button" data-tfe-photo="47" data-tfe-reveal aria-label="Open photo 48" aria-haspopup="dialog" hidden>
+                        <img src="https://postcard-reveal-event.lovable.app/__l5e/assets-v1/6fed8faa-49f0-475c-b4a3-932819744f22/fall26-48.jpg" width="1400" height="933" alt="Topsort Fall Update 2026 photo 48" loading="lazy" decoding="async">
+                    </button>
+                </div>
+                <div class="tfe-recap-more-wrap" data-tfe-more-wrap>
+                    <button class="tfe-recap-more" type="button" data-tfe-show-all aria-controls="tfe-recap-grid" aria-expanded="false">Show all 48 photos</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <dialog class="tfe-recap-lightbox" data-tfe-lightbox aria-label="Topsort Fall Update 2026 photo gallery" aria-modal="true" aria-describedby="tfe-recap-count">
+        <div class="tfe-recap-lens">
+            <img class="tfe-recap-full-photo" data-tfe-full-photo alt="" draggable="false">
+            <span class="tfe-recap-flash" data-tfe-flash aria-hidden="true"></span>
+            <span class="tfe-recap-corner tfe-recap-corner-tl" aria-hidden="true"></span>
+            <span class="tfe-recap-corner tfe-recap-corner-tr" aria-hidden="true"></span>
+            <span class="tfe-recap-corner tfe-recap-corner-bl" aria-hidden="true"></span>
+            <span class="tfe-recap-corner tfe-recap-corner-br" aria-hidden="true"></span>
+        </div>
+        <button class="tfe-recap-control tfe-recap-close" type="button" data-tfe-close aria-label="Close photo gallery" autofocus>×</button>
+        <button class="tfe-recap-control tfe-recap-prev" type="button" data-tfe-prev aria-label="Previous photo">‹</button>
+        <button class="tfe-recap-control tfe-recap-next" type="button" data-tfe-next aria-label="Next photo">›</button>
+        <span class="tfe-recap-count" id="tfe-recap-count" data-tfe-count role="status" aria-live="polite" aria-atomic="true"></span>
+    </dialog>
+</div>
+
+<script>
+    (() => {
+        const root = document.getElementById('topsort-fall-update');
+        if (!root || root.dataset.initialized === 'true') return;
+        root.dataset.initialized = 'true';
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const photoButtons = Array.from(root.querySelectorAll('[data-tfe-photo]'));
+        const photos = photoButtons.map(button => button.querySelector('img'));
+        const dialog = root.querySelector('[data-tfe-lightbox]');
+        const fullPhoto = root.querySelector('[data-tfe-full-photo]');
+        const count = root.querySelector('[data-tfe-count]');
+        const closeButton = root.querySelector('[data-tfe-close]');
+        const showAll = root.querySelector('[data-tfe-show-all]');
+        let active = 0;
+        let opener = null;
+        let scrollLock = null;
+        let pointerStart = null;
+        let suppressClick = false;
+        let photoAnimation = null;
+        let decorations = [];
+
+        // Animate only when visible; content stays readable without JS or Motion.
+        let revealObserver;
+        if ('IntersectionObserver' in window && !reducedMotion.matches && Element.prototype.animate) {
+            revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    revealObserver.unobserve(entry.target);
+                    entry.target.animate([
+                        { opacity: 0, transform: 'translateY(24px)' },
+                        { opacity: 1, transform: 'translateY(0)' }
+                    ], { duration: 650, easing: 'cubic-bezier(.22,1,.36,1)' });
+                });
+            }, { threshold: .2 });
+            root.querySelectorAll('[data-tfe-reveal]:not([hidden])').forEach(item => revealObserver.observe(item));
+        }
+        showAll.addEventListener('click', () => {
+            const remaining = photoButtons.filter(button => button.hidden);
+            remaining.forEach(button => {
+                button.hidden = false;
+                if (revealObserver) revealObserver.observe(button);
+            });
+            showAll.setAttribute('aria-expanded', 'true');
+            root.querySelector('[data-tfe-more-wrap]').hidden = true;
+            if (remaining[0]) remaining[0].focus({ preventScroll: true });
+        });
+
+        const animatePhoto = direction => {
+            if (photoAnimation) photoAnimation.cancel();
+            decorations.forEach(animation => animation.cancel());
+            decorations = [];
+            if (reducedMotion.matches || !fullPhoto.animate) return;
+            const frames = direction === 0 ? [
+                { opacity: .2, filter: 'blur(6px) brightness(1.08)', transform: 'scale(1.04)' },
+                { opacity: 1, filter: 'blur(0) brightness(1)', transform: 'scale(1)' }
+            ] : [
+                { opacity: 0, transform: 'translateX(' + direction * 120 + 'px)' },
+                { opacity: 1, transform: 'translateX(0)' }
+            ];
+            photoAnimation = fullPhoto.animate(frames, { duration: direction === 0 ? 750 : 550, easing: 'cubic-bezier(.22,1,.36,1)' });
+            if (direction === 0) {
+                decorations.push(root.querySelector('[data-tfe-flash]').animate([
+                    { opacity: 0 }, { opacity: .7, offset: .35 }, { opacity: 0 }
+                ], { duration: 900, delay: 350, easing: 'ease-out' }));
+                root.querySelectorAll('.tfe-recap-corner').forEach(corner => {
+                    decorations.push(corner.animate([
+                        { opacity: 0, transform: 'scale(1.4)' },
+                        { opacity: 1, transform: 'scale(1)', offset: .4 },
+                        { opacity: 0, transform: 'scale(1)' }
+                    ], { duration: 1400, delay: 200, easing: 'cubic-bezier(.22,1,.36,1)' }));
+                });
+            }
+        };
+        const renderPhoto = direction => {
+            fullPhoto.src = photos[active].src;
+            fullPhoto.alt = photos[active].alt;
+            count.textContent = (active + 1) + ' / ' + photos.length;
+            animatePhoto(direction);
+        };
+        const step = direction => {
+            active = (active + direction + photos.length) % photos.length;
+            renderPhoto(direction);
+        };
+        photoButtons.forEach((button, index) => button.addEventListener('click', () => {
+            active = index;
+            opener = button;
+            scrollLock = {
+                value: document.body.style.getPropertyValue('overflow'),
+                priority: document.body.style.getPropertyPriority('overflow')
+            };
+            dialog.showModal();
+            document.body.style.setProperty('overflow', 'hidden', 'important');
+            renderPhoto(0);
+            closeButton.focus({ preventScroll: true });
+        }));
+        closeButton.addEventListener('click', () => dialog.close());
+        root.querySelector('[data-tfe-prev]').addEventListener('click', () => step(-1));
+        root.querySelector('[data-tfe-next]').addEventListener('click', () => step(1));
+        dialog.addEventListener('click', event => {
+            if (suppressClick) { suppressClick = false; return; }
+            if (event.target === dialog) dialog.close();
+        });
+        dialog.addEventListener('keydown', event => {
+            if (event.key === 'Tab') {
+                const controls = Array.from(dialog.querySelectorAll('button'));
+                const first = controls[0];
+                const last = controls[controls.length - 1];
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            }
+            if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+                event.preventDefault();
+                step(event.key === 'ArrowRight' ? 1 : -1);
+            }
+        });
+        dialog.addEventListener('close', () => {
+            pointerStart = null;
+            suppressClick = false;
+            if (photoAnimation) photoAnimation.cancel();
+            decorations.forEach(animation => animation.cancel());
+            if (scrollLock) {
+                if (scrollLock.value) document.body.style.setProperty('overflow', scrollLock.value, scrollLock.priority);
+                else document.body.style.removeProperty('overflow');
+                scrollLock = null;
+            }
+            if (opener && opener.isConnected) opener.focus({ preventScroll: true });
+        });
+        fullPhoto.addEventListener('pointerdown', event => {
+            if (!event.isPrimary || event.button !== 0) return;
+            pointerStart = { id: event.pointerId, x: event.clientX, y: event.clientY };
+            suppressClick = false;
+            fullPhoto.setPointerCapture(event.pointerId);
+        });
+        fullPhoto.addEventListener('pointerup', event => {
+            if (!pointerStart || pointerStart.id !== event.pointerId) return;
+            const dx = event.clientX - pointerStart.x;
+            const dy = event.clientY - pointerStart.y;
+            pointerStart = null;
+            if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) {
+                suppressClick = true;
+                step(dx < 0 ? 1 : -1);
+            }
+        });
+        fullPhoto.addEventListener('pointercancel', () => { pointerStart = null; });
+        reducedMotion.addEventListener('change', () => {
+            if (!reducedMotion.matches) return;
+            if (revealObserver) revealObserver.disconnect();
+            root.getAnimations({ subtree: true }).forEach(animation => animation.cancel());
+        });
+    })();
+</script>
