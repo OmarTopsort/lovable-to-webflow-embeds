@@ -85,7 +85,7 @@
     }
 </style>
 <script>
-    window.addEventListener("scroll", () => { document.querySelector(".navbar").classList.toggle("shadow", window.scrollY > 50) });
+    window.addEventListener("scroll", () => { document.querySelector(".navbar")?.classList.toggle("shadow", window.scrollY > 50) });
 </script>
 
 <script>
@@ -108,7 +108,7 @@
 
         const pageUrl = location.host + location.pathname.replace(/\/$/, '');
 
-        if (location.pathname.indexOf('/book-a-demo') === -1) {
+        if (!/^\/(?:talk-to-sales|book-a-demo)\/?$/.test(location.pathname)) {
 
         document.querySelectorAll('form:not([data-fields-added])').forEach(form => {
 
@@ -242,7 +242,7 @@
 
         // Wait 2 seconds, then redirect with the email parameter
         setTimeout(() => {
-            window.location.href = `/book-a-demo?email=${encodeURIComponent(email)}`;
+            window.location.href = `/talk-to-sales?email=${encodeURIComponent(email)}`;
         }, 2000);
     }
 

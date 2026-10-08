@@ -1,0 +1,397 @@
+TOPSORT WEBFLOW UPDATE — START HERE
+Prepared October 8, 2026. This is the implementation handoff for an AI or human
+updating the existing Topsort Webflow site with this directory.
+
+1. OBJECTIVE AND AUTHORITATIVE FILES
+
+Install the supplied source-based designs and content, migrate the supplied
+pages to their /source routes, preserve working integrations/CMS content, set
+page SEO, and verify the result in Webflow. Do not redesign or rewrite the pages.
+The source of route names is source/src/App.tsx and its Generic fallback data in
+source/src/pages/v3/pageData.ts, not the names of React component directories.
+
+Read these files before editing Webflow:
+- installation.text: implementation order and verification requirements.
+- page-map.json: exact page route -> HTML file, former URLs, paste part numbers,
+  character counts, hashes, root IDs, SEO and CMS requirements. This is the
+  authoritative inventory. It lists 46 pages and 5 shared/component files.
+- redirects.json: 35 explicit old-path -> new-path migrations to reconcile.
+- seo-meta.text: existing source titles and descriptions, with matching filenames.
+- fields.md: the exact hidden CMS markup/selectors the JavaScript consumes.
+- source-pages-without-embeds.text: source routes NOT implemented in this package.
+
+All delivery paths below are relative to this webflow-embed directory. Read the
+complete files from disk; long HTML includes inline image data and must not be
+copied from a truncated chat message or tool result. Preserve UTF-8 content.
+Use the JSON hashes to verify that uploaded/copied content matches these files.
+
+SCOPE AND LIMITS
+- The 46 delivered pages are ready to install; 45 are from /source and one is
+  the separate Fall Update event project. The five other HTML files are shared
+  chrome, site custom code, and an optional newsletter component, not new pages.
+- 61 other source routes have no converted embed here. Preserve their existing
+  Webflow pages, if any. An SEO entry alone does not mean an embed exists.
+  Do not create blank pages, invent content, or clone an unrelated page to fill
+  a missing route. Full source coverage requires converting that remaining list.
+- /privacy renders the same source Legal component as /legals. If retaining the
+  existing /privacy URL, reuse legals.html; do not invent a second legal text.
+- /fall-update-2026 comes from fall-update-2026-source/src/routes/index.tsx,
+  not the /source Developer Day page. Keep its existing event SEO unless a
+  separately approved replacement is available.
+- Do not remove CMS articles, event pages, locale pages, policies or integrations
+  just because they are outside this delivery. Local duplicate-file cleanup
+  was not an instruction to delete those live Webflow records.
+
+2. ROUTES AND FOLDERS
+
+The HTML paths mirror source routes. index.html represents the parent route:
+  index.html                          -> /
+  platform/core-platform.html         -> /platform/core-platform
+  platform/tomi.html                  -> /platform/tomi
+  platform/toppie.html                -> /platform/toppie
+  platform/t-brain.html               -> /platform/t-brain
+  platform/data-genie.html            -> /platform/data-genie
+  platform/offsite.html               -> /platform/offsite
+  platform/in-store.html              -> /platform/in-store
+  platform/agentic-traffic-control-room.html -> /platform/agentic-traffic-control-room
+  products/t-engine.html              -> /products/t-engine
+  products/t-zero.html                -> /products/t-zero
+  products/toptimize.html             -> /products/toptimize
+  company/about.html                  -> /company/about
+  company/news.html                   -> /company/news
+  talk-to-sales.html                  -> /talk-to-sales
+  resources.html                     -> /resources (visible name: Press Room)
+  legals.html                         -> /legals
+  solutions/index.html               -> /solutions
+  solutions/migrations/index.html    -> /solutions/migrations
+  compare/index.html                 -> /compare
+
+The complete mapping, including every solution/comparison child, is in section
+12 and page-map.json. Keep BOTH platform and products folders: /source still
+uses /products for T-Engine, T-Zero and Toptimize. Do not move those three into
+/platform merely for consistency. Offsite and In-store platform pages differ
+from their similarly named Solutions pages; install each at its own route.
+
+Create/reuse Webflow folders for platform, products, company, solutions,
+solutions/migrations and compare as needed. Give child pages their final slug.
+An index.html is a local file convention, never a literal /index URL. For a hub,
+configure the actual URL in Webflow to equal its route, alongside the folder
+that supplies child URLs. Verify the resulting path in Page settings.
+
+Moving a page to a folder changes its URL. Use explicit redirects and verify
+all resulting paths rather than relying on the page's display name.
+Reference: Webflow, Organize your site with page folders
+https://help.webflow.com/hc/en-us/articles/33961390398483-Organize-your-site-with-page-folders
+
+3. INVENTORY THE EXISTING WEBFLOW SITE FIRST
+
+Identify the correct Topsort site and custom domain. Record existing page IDs,
+slugs, folders, shared components, global/page custom code, SEO, redirect rules,
+CMS collection/list bindings, localization settings and current form handling.
+Use the project's normal Webflow backup/history mechanism before changing it.
+For each delivered route, record whether to update an existing page, move an old
+page, or create a new page. Reuse page IDs when moving existing pages where
+possible. Resolve slug conflicts before adding a competing page.
+
+Keep unrelated analytics, cookie/consent tooling, verification tags, tracking
+IDs, CMS bindings and site settings. Replacing a design does not require
+blanking the site's entire Head or Body custom-code fields.
+
+4. SHARED HEAD, NAVBAR, FOOTER AND BODY CODE
+
+Install each shared item once per applicable page/site:
+A. global-head.html -> Site Settings custom code, Head. This contains shared
+   CSS/fonts, not SEO page titles. Replace the previous Topsort CSS block,
+   preserve unrelated head code, and keep it before page-specific CSS.
+B. navbar.html -> one shared Webflow navbar component at the top of page body.
+   It has numbered CSS/HTML/JS PARTS; put each PART in a separate Code Embed,
+   in order, inside the shared component. It supplies its own nav spacer.
+C. Page HTML -> the ordered page PARTS after the shared navbar.
+D. footer.html -> one shared footer component after the page content, again
+   with each numbered PART in its own Code Embed in order.
+E. global-body.html -> Site Settings Body/footer custom code. Reconcile this
+   with existing site integrations so it runs ONCE, after the page DOM and
+   Webflow's jQuery. It contains existing GTM, Mixpanel click tracking, stored
+   email/country helpers and the newsletter handoff. Preserve working existing
+   integrations; remove duplicate copies of the same handlers/snippets.
+
+Do not use navbar.html or footer.html in the site custom-code text fields: their
+visible markup belongs in body components. Do not keep the old navbar, separate
+legacy dropdowns, or old footer behind the replacement. Check all instances,
+including CMS templates that should share the new site chrome.
+
+global-body.html depends on the site's existing jQuery and tracking setup; do
+not add a second jQuery loader. The legacy .navbar scroll helper now tolerates
+its absence, and the sales-route exclusion recognizes /talk-to-sales. Use the
+existing GTM container and conversion IDs already in the code; don't replace
+these with invented values. Verify the real site's consent/analytics behavior.
+
+5. EXACT PAGE EMBED INSTALLATION
+
+For every page in page-map.json:
+1) Open its HTML file and locate the numbered PART and END PART comments.
+2) Paste ONLY the code between each matching pair into one Webflow Code Embed.
+   Keep CSS first, then HTML, then JS, in exactly the supplied order. Do not
+   paste an entire large multi-part file into one Embed.
+3) Name the Embed elements descriptively, for example "Tomi — PART 1 CSS",
+   "Tomi — PART 2 HTML", etc., so later updates can replace the same elements.
+4) Keep all parts on the SAME Webflow page. Continuation root wrappers and IDs
+   are intentional. Do not remove them, merge parts, split a tag/function, or
+   rename CSS classes, IDs, data attributes, inline SVG IDs or JS root arrays.
+5) Keep the outer Webflow body/section wrappers full width, with no additional
+   max-width, top padding, transforms or overflow clipping imposed on embeds.
+   The embed supplies its own responsive layout. Do not add another H1 or hero.
+6) Put required hidden CMS Collection Lists before the page's JS parts (see
+   fields.md). They must exist when the scripts initialize; they cannot be
+   lazy-loaded after initialization without an implementation change.
+7) Remove the replaced content/old code once the correct new content is in place;
+   do not stack new and old designs. Retain required hidden CMS data lists.
+8) Files without PART markers are single snippets: global-head.html,
+   global-body.html, and fall-update-2026.html. Follow their placement rules.
+
+Each numbered part is checked below 49,000 characters. Webflow Code Embeds have
+an enforced 50,000-character limit; they support HTML/CSS/JS and must not include
+outer html/head/body tags. The provided page snippets already use fragments.
+Reference: Webflow, Custom code embed
+https://help.webflow.com/hc/en-us/articles/33961332238611-Custom-code-embed
+
+Images are already hosted (Lovable/Webflow/font hosts) or embedded as data URLs.
+There is no required upload folder or separate logo.svg. Do not replace data
+URLs with local filenames or delete the final JS parts that populate image src.
+All page CSS is inline; do not add relative ./style.css links or deploy /source's
+React bundle into Webflow. privacy-policy.docx is supporting source material,
+not an embed and not an instruction to upload a separate public document.
+
+newsletter-form.html is a reusable optional component, NOT a /newsletter-form
+page. Keep it only where the existing site needs it. Its global-body handler
+captures the email and then goes to /talk-to-sales?email=...; it is not an ESP
+subscription implementation. Do not add it to Press Room as a new newsletter.
+
+6. CMS: PRESS ROOM AND COMPANY NEWS
+
+Preserve the current collections and existing item URLs. Bind the exact classes
+and list structures documented in fields.md; do not assume collection labels
+alone are enough. Use a hidden wrapper, not removal from the DOM. Load the full
+intended records: search sees only records actually rendered into the page.
+
+/resources:
+- Hero is plain white, search light gray; cards use brand logos on gradients.
+- Customer cards use existing logos/names; Ambev can be text only. Do not
+  restore old customer photos just because thumbnail fields exist in the CMS.
+- Suggestions come from real loaded records. Check that every suggestion yields
+  results, both with real CMS lists and in fallback preview mode.
+- The former news section is removed. News belongs on /company/news.
+- Keep existing CMS content instead of replacing it with prototype examples.
+
+/company/news:
+- Uses the source's minimal list layout with existing published news/product
+  update records as a fallback.
+- Bind .cms-news and/or .cms-updates and relevant .cms-opinions records for live
+  data. Put all intended records on this page. When matching live rows exist,
+  they replace the fallback list; a partial live list is not auto-merged with
+  the complete fallback. Check newest-first order and dates.
+- The Resources menu and footer must contain both Press Room and Company News.
+
+7. FORMS, LOGIN ROUTING AND OTHER INTEGRATIONS
+
+/talk-to-sales is the delivered demo form. Preserve its actual code rather than
+rebuilding it as an unrelated Webflow form. It retains:
+- Work-email validation and personal-domain checks; interest chips, name, role
+  and notes; the single-step visual design and success/scheduler state.
+- Existing Make.com webhook; Early Capture and Full Form Submission payloads.
+- LinkedIn conversion ID 25067732.
+- ipapi.co country detection with geojs fallback and regional HubSpot meeting
+  schedulers embedded in the success state.
+- Existing ?email= prefill behavior. Merely opening a URL with that parameter
+  may trigger Early Capture, even without clicking Submit.
+No new backend, credentials or ChiliPiper integration is required for this
+current embed. The earlier project reference mentions ChiliPiper; this delivery
+uses HubSpot. Preserve the existing webhook/scheduler URLs already in the JS.
+
+Avoid sending fake leads to real endpoints during QA. Use request interception
+or the receiving task's established test environment; test real submission only
+under that task's authorized testing procedure. Do not double-bind the form
+through Webflow, another script, and this embed at the same time.
+
+LOGIN URLS CURRENTLY IN THE SOURCE AND DELIVERED NAVBAR
+Default: https://accounts.app.staging.topsort.ai/
+T-Brain: https://tbrain.staging.topsort.ai
+Tomi: https://tomi.staging.topsort.com
+Toppie: https://toppie.staging.topsort.com
+Core Platform: https://app.topsort.com
+
+These staging hosts are intentional copies of the supplied source, not verified
+production authentication destinations. Do not guess replacements by removing
+"staging". Report them in the deployment handoff; if the user supplies production
+URLs, update the navbar runtime and verify desktop/mobile routing. The navbar
+chooses the product login by route or preserved product root ID.
+
+8. URL MIGRATION AND REDIRECTS
+
+Use redirects.json after reconciling it with the current site. It covers old
+product URLs, /about, /book-a-demo and legacy comparison URLs, all pointing at
+supplied source-route destinations. No generic /products/* -> /platform/* rule:
+three real products remain under /products and some old names change too.
+
+Move/update the old page at its new route, then add the old-path 301. Keep the
+same query string/hash behavior where relevant, especially sales ?email= links.
+An existing page occupying an old path can prevent a redirect taking effect;
+move or draft that page as part of the migration rather than deleting unrelated
+content. Review Webflow's automatically added slug redirects for duplicates,
+chains, reverse redirects and loops. Each old path should reach its final new
+page directly, with a successful response there.
+
+Do not blanket-redirect /post or /casestudy records. A CMS article that once
+served as a fallback for a comparison is still distinct editorial content.
+Similarly, /solutions/migrations and its Kevel page now have their own delivered
+pages; do not send them to a generic blog post or demo page.
+
+Apply known migrations to other Webflow-owned links/buttons/components too,
+including links outside these embeds. Preserve anchor and query components.
+Keep locale slugs and hreflang accurate. English redirects do not automatically
+cover /es or /pt; reconcile localized equivalents without inventing translations.
+
+Webflow setup: Site settings > Publishing > 301 redirects. Slug changes can
+create redirects automatically; redirects must be published to take effect.
+Reference: Webflow, How do I set up redirects in Webflow?
+https://help.webflow.com/hc/en-us/articles/33961294898835-How-do-I-set-up-redirects-in-Webflow
+
+9. SEO, CANONICALS AND SOCIAL SETTINGS
+
+For each delivered page, use its exact title and description from page-map.json
+or the matching route in seo-meta.text. Paste into Pages > Page settings > SEO
+settings, not an HTML Embed and not one global title for the whole site. Preserve
+the source wording: Commerce AI is prominent while retail media remains part of
+the positioning. Do not invent SEO text for a page with no supplied metadata.
+
+Keep the actual public canonical URL consistent with the final route and live
+custom domain. Reconcile Webflow's existing canonical setup; do not add a second
+conflicting canonical tag. Remove obsolete page-specific tags for the old path.
+Check Open Graph/Twitter titles/descriptions and retain suitable existing images;
+this package does not supply a new social-image set. Preserve accurate locale
+alternates and established indexing policy, including source NOINDEX flags.
+
+The ADDITIONAL SOURCE PAGES section of seo-meta.text is reference only: don't
+create or overwrite missing pages just to consume those entries. The event
+/fall-update-2026 has no matching metadata in that source export; retain its own
+existing metadata instead of copying /developer-day-2026 metadata.
+
+SEO changes take effect on the site after publication; search results may lag.
+Reference: Webflow, Add SEO title and meta description
+https://help.webflow.com/hc/en-us/articles/33961237278611-Add-SEO-title-and-meta-description
+
+10. VERIFICATION IN THE TARGET WEBFLOW SITE
+
+Check on a published staging version where custom scripts can execute. A blank
+or static Designer canvas alone is not evidence that the embeds failed.
+Webflow allows publishing to the webflow.io staging subdomain separately from
+the custom domain. Select the intended publish targets explicitly.
+Reference: Webflow, How do I publish or unpublish a Webflow site?
+https://help.webflow.com/hc/en-us/articles/33961351954579-How-do-I-publish-or-unpublish-a-Webflow-site
+
+STAGING LINK DETAIL: embeds contain absolute https://www.topsort.com links.
+Clicking one on webflow.io may go to the current production site until rollout.
+Check the href against page-map.json, then test the corresponding path manually
+on the staging host. Do not rewrite production links to staging permanently.
+
+At approximately 1440px, 768px and 390px:
+- Every route renders the intended single page; one navbar, footer and H1.
+- No sideways overflow, clipped titles, missing continuation sections or blank
+  data images. Google fonts and hosted assets load successfully.
+- Navbar menus and mobile back/close interactions work. Resources looks like the
+  compact Developers menu; logo links go home from any page.
+- Correct product/default login URLs on desktop and mobile.
+- Home: centered title, Fall Update 2026 pill, blue primary CTA, white space,
+  bottom-rising circles; product section alone has its mostly white cloud sky.
+- Logos scroll more slowly and are light gray; card outlines are light gray;
+  slash-prefixed eyebrow text is hidden. Infrastructure cards have imagery.
+- Footer heading is exactly two lines without clipping; Company under Product,
+  Social under Developers; both Press Room and Company News links present.
+- Agentic: drawn dashboard, requested headline breaks, centered questions title,
+  tab clicks/keyboard arrows and FAQs work.
+- Press Room: white hero, logo/gradient customer cards, real search suggestions,
+  category/search/clear/load-more behavior, no old news block.
+- Company News: real records, valid links, newest-first order, complete live lists.
+- Product showcases, solution workflows/FAQ controls, About timeline and reduced
+  motion remain functional. Check scroll offsets under the fixed navbar.
+- Sales: validation, chips, prefill, state transitions and scheduler selection
+  work using intercepted/test requests; no duplicate webhook events.
+- No uncaught console errors from old scripts or duplicated handler installs.
+- Page metadata/canonicals are correct; old URLs redirect without loops/404s.
+
+Use the publish authorization provided in the receiving Webflow task. Complete
+staging checks, then publish the intended domains within that scope. Verify the
+same routes and redirects on the custom domain after publication; do not label
+unpublished changes as live. This package itself changes no Webflow site.
+
+11. COMPLETION REPORT AND REBUILD NOTES
+
+The receiving AI should return a page-by-page result: source route, actual
+Webflow page ID, action taken, file/part count installed, SEO status, CMS status,
+redirect status, staging result and production publication result. List any
+remaining missing-source conversions separately, plus concrete blockers such as
+slug conflicts, absent CMS bindings, unavailable assets or unresolved login URLs.
+A local file rename is not a completed Webflow page migration.
+
+For local maintainers: source capture is unnecessary for a pure folder rename.
+For content changes, build /source, run the appropriate capture and generate
+scripts, then export-seo.mjs and generate-webflow-handoff.mjs. Route/file rules
+live in scripts/embed-routes.mjs; generators must keep one canonical file per
+page. Internal source directories and DOM IDs can retain historical names.
+Run test-source-sync.mjs and test-embed-audit.mjs; product/company/chrome checks
+support STATIC_ONLY=1. Do not reintroduce versioned aliases or old dropdowns.
+
+Backup of the package before this route migration:
+../tmp/source-route-handoff-2026-10-08/
+Earlier removed optional files remain in ../tmp/embed-cleanup-2026-10-08/.
+These backups are outside the delivery directory and are not Webflow inputs.
+
+12. COMPLETE PAGE MAP
+
+Route | File | Number of paste parts | Former paths to reconcile
+/ | index.html | 10 | —
+/company/about | company/about.html | 5 | /about
+/company/news | company/news.html | 3 | —
+/talk-to-sales | talk-to-sales.html | 6 | /book-a-demo
+/resources | resources.html | 5 | —
+/legals | legals.html | 6 | —
+/platform/core-platform | platform/core-platform.html | 4 | /t-platform, /products/t-platform, /retail-media-platform, /retail-media
+/platform/t-brain | platform/t-brain.html | 4 | /t-brain, /products/t-brain
+/platform/tomi | platform/tomi.html | 4 | /tomi, /products/tomi
+/platform/toppie | platform/toppie.html | 4 | /private-toppie, /toppie-dsp, /products/private-toppie, /products/toppie-dsp
+/platform/data-genie | platform/data-genie.html | 3 | /data-genie, /genie-copilot, /products/data-genie, /products/genie-copilot
+/platform/offsite | platform/offsite.html | 3 | /products/offsite-ads
+/platform/in-store | platform/in-store.html | 3 | /products/in-store-journey
+/platform/agentic-traffic-control-room | platform/agentic-traffic-control-room.html | 3 | —
+/products/t-engine | products/t-engine.html | 4 | /t-engine
+/products/t-zero | products/t-zero.html | 3 | /t-zero
+/products/toptimize | products/toptimize.html | 3 | /toptimize, /toptimize-ssp, /products/toptimize-ssp
+/solutions | solutions/index.html | 4 | —
+/solutions/launch | solutions/launch.html | 3 | —
+/solutions/scale | solutions/scale.html | 3 | —
+/solutions/optimize | solutions/optimize.html | 3 | —
+/solutions/expand | solutions/expand.html | 3 | —
+/solutions/offsite-advertising | solutions/offsite-advertising.html | 3 | —
+/solutions/in-store | solutions/in-store.html | 3 | —
+/solutions/sponsored-listings | solutions/sponsored-listings.html | 3 | —
+/solutions/sponsored-brands | solutions/sponsored-brands.html | 3 | —
+/solutions/display-banner | solutions/display-banner.html | 3 | —
+/solutions/native-placements | solutions/native-placements.html | 3 | —
+/solutions/video-ads | solutions/video-ads.html | 3 | —
+/solutions/marketplaces | solutions/marketplaces.html | 3 | —
+/solutions/retailers | solutions/retailers.html | 3 | —
+/solutions/delivery-apps | solutions/delivery-apps.html | 3 | —
+/solutions/travel-platforms | solutions/travel-platforms.html | 3 | —
+/solutions/financial-platforms | solutions/financial-platforms.html | 3 | —
+/solutions/classifieds | solutions/classifieds.html | 3 | —
+/solutions/migrations | solutions/migrations/index.html | 3 | —
+/solutions/migrations/google-ad-manager | solutions/migrations/google-ad-manager.html | 4 | —
+/solutions/migrations/kevel | solutions/migrations/kevel.html | 5 | —
+/compare | compare/index.html | 3 | /compare/legacy-retail-media-platforms
+/compare/criteo | compare/criteo.html | 3 | /compare/topsort-vs-cireto, /compare/topsort-vs-criteo
+/compare/kevel | compare/kevel.html | 3 | /compare/topsort-vs-kevel
+/compare/google-ad-manager | compare/google-ad-manager.html | 3 | /compare/topsort-vs-google-ad-manager, /compare/gam
+/compare/moloco | compare/moloco.html | 3 | /compare/topsort-vs-moloco
+/compare/vtex-ads | compare/vtex-ads.html | 3 | /compare/topsort-vs-vtex, /compare/vtex
+/compare/citrusad | compare/citrusad.html | 3 | /compare/epsilon
+/fall-update-2026 | fall-update-2026.html | 1 | —

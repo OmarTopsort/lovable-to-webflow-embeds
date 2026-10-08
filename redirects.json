@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "preparedOn": "2026-10-08",
+  "note": "Explicit path migrations only; do not redirect /products/* as a whole. Existing CMS articles are preserved. Verify these paths in the target Webflow site before applying.",
+  "redirects": [
+    {
+      "oldPath": "/about",
+      "newPath": "/company/about",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/book-a-demo",
+      "newPath": "/talk-to-sales",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/t-platform",
+      "newPath": "/platform/core-platform",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/products/t-platform",
+      "newPath": "/platform/core-platform",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/retail-media-platform",
+      "newPath": "/platform/core-platform",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/retail-media",
+      "newPath": "/platform/core-platform",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/t-brain",
+      "newPath": "/platform/t-brain",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/products/t-brain",
+      "newPath": "/platform/t-brain",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/tomi",
+      "newPath": "/platform/tomi",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/products/tomi",
+      "newPath": "/platform/tomi",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/private-toppie",
+      "newPath": "/platform/toppie",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/toppie-dsp",
+      "newPath": "/platform/toppie",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/products/private-toppie",
+      "newPath": "/platform/toppie",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/products/toppie-dsp",
+      "newPath": "/platform/toppie",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/data-genie",
+      "newPath": "/platform/data-genie",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/genie-copilot",
+      "newPath": "/platform/data-genie",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/products/data-genie",
+      "newPath": "/platform/data-genie",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/products/genie-copilot",
+      "newPath": "/platform/data-genie",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/products/offsite-ads",
+      "newPath": "/platform/offsite",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/products/in-store-journey",
+      "newPath": "/platform/in-store",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/t-zero",
+      "newPath": "/products/t-zero",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/t-engine",
+      "newPath": "/products/t-engine",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/toptimize",
+      "newPath": "/products/toptimize",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/toptimize-ssp",
+      "newPath": "/products/toptimize",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/products/toptimize-ssp",
+      "newPath": "/products/toptimize",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/compare/topsort-vs-cireto",
+      "newPath": "/compare/criteo",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/compare/topsort-vs-criteo",
+      "newPath": "/compare/criteo",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/compare/topsort-vs-kevel",
+      "newPath": "/compare/kevel",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/compare/topsort-vs-google-ad-manager",
+      "newPath": "/compare/google-ad-manager",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/compare/topsort-vs-moloco",
+      "newPath": "/compare/moloco",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/compare/topsort-vs-vtex",
+      "newPath": "/compare/vtex-ads",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/compare/epsilon",
+      "newPath": "/compare/citrusad",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/compare/vtex",
+      "newPath": "/compare/vtex-ads",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/compare/gam",
+      "newPath": "/compare/google-ad-manager",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    },
+    {
+      "oldPath": "/compare/legacy-retail-media-platforms",
+      "newPath": "/compare",
+      "status": 301,
+      "condition": "Reconcile with existing pages and redirect rules; migrate the page first if the old path is currently occupied."
+    }
+  ]
+}

@@ -1,193 +1,101 @@
-# Resources Page — CMS Collection Fields
+# CMS bindings for Press Room and Company News
 
-Each section maps to a Webflow CMS Collection. The JS will query hidden CMS collection list items by class name to extract field values and render the cards dynamically.
+This reference matches `scripts/embed-src/resources-v3/cms-reader.js`. Keep existing collections and records; bind their fields to these elements instead of renaming collection IDs or rewriting published items. Read [installation.text](installation.text) for the overall update order.
 
----
+## Placement and list structure
 
-## How It Works
+Place the hidden CMS lists before the page's JavaScript Embed parts. They must be present in the DOM when initialization runs. Use Webflow's `display: none` on a parent wrapper; do not remove the elements or hide them using a condition that omits the entire list. The reader reads only rendered items: set the intended item limit and handle collection pagination so the page receives every record it needs. A Webflow pagination button that appends data after initialization does not automatically rebuild the embed's search index.
 
-In Webflow, create a **Collection List** per section. Bind each field to a child element with the class shown below, and set the Collection List wrapper to `display: none`. The JS reads the DOM, extracts text content and `src`/`href` attributes, builds card HTML, and injects it.
+The exact selectors are:
 
-**Pattern:**
+| Records | Required rendered selector | Used on |
+|---|---|---|
+| Customers | `.cms-customers .cms-item` | Press Room |
+| Opinions | `.cms-opinions > [role="listitem"]` | Press Room; relevant news/update records on Company News |
+| Product updates | `.cms-updates > [role="listitem"]` | Company News; searchable records on Press Room |
+| Press coverage | `.cms-press > [role="listitem"]` | Press Room |
+| Research | `.cms-research > [role="listitem"]` | Press Room search/filter |
+| News | `.cms-news > [role="listitem"]` or `.cms-news .cms-item` | Company News |
+| Videos | `.cms-videos > [role="listitem"]` or `.cms-videos .cms-item` | Reader supports them; current Press Room renderer does not consume these lists |
+| Events | `.cms-events > [role="listitem"]` or `.cms-events .cms-item` | Reader supports them; Press Room currently uses the event cards shipped in the embed |
+
+For the `>` selectors, put the class on the **Collection List element whose direct children are the Collection Items**. Putting the class only on an outer Collection List Wrapper, with a `.w-dyn-items` element between it and the list items, does not match. Set each Collection Item's `role` attribute to `listitem` when not already present. Customers need a `.cms-item` class on each item; their selector permits nesting.
+
+Example for updates (replace sample values with CMS bindings):
+
 ```html
-<!-- Hidden CMS source (rendered by Webflow) -->
-<div class="cms-customers" style="display:none">
-  <div class="cms-item">
-    <div class="cms-field-company">Coles</div>
-    <div class="cms-field-title">How Coles built a retail media engine...</div>
-    <img class="cms-field-logo" src="https://..." />
-    <img class="cms-field-thumbnail" src="https://..." />
-    <a class="cms-field-link" href="/customers/coles"></a>
-    ...
+<div style="display:none" aria-hidden="true">
+  <div class="cms-updates">
+    <div role="listitem">
+      <span class="cms-field-title">Actual published announcement title</span>
+      <span class="cms-field-date">2026-10-07</span>
+      <span class="cms-field-summary">Actual announcement summary</span>
+      <span class="cms-field-card-tag">Product Updates</span>
+      <a class="cms-field-link" href="/post/actual-published-slug">Read announcement</a>
+    </div>
   </div>
-  <div class="cms-item">...</div>
 </div>
 ```
 
-> **Convention for images:** Use `<img>` tags — JS reads the `src` attribute.  
-> **Convention for links:** Use `<a>` tags — JS reads the `href` attribute.  
-> **Convention for text:** Use `<div>` or `<span>` — JS reads `textContent`.
+Example for customers:
 
----
+```html
+<div class="cms-customers" style="display:none" aria-hidden="true">
+  <div class="cms-item">
+    <span class="cms-field-title">Actual case-study title</span>
+    <span class="cms-field-company">Company name</span>
+    <span class="cms-field-industry">Retail</span>
+    <span class="cms-field-region">LATAM</span>
+    <span class="cms-field-metric">Actual published metric</span>
+    <span class="cms-field-metric-label">Metric description</span>
+    <img class="cms-field-logo" src="https://your-existing-cdn/logo.svg" alt="Company name">
+    <a class="cms-field-link" href="/casestudy/actual-published-slug">Read case study</a>
+  </div>
+</div>
+```
 
-## 1. Customers
+## Field classes the reader actually supports
 
-**Collection name:** `Customers`  
-**Section ID:** `ts-sec-customers`  
-**CMS wrapper class:** `cms-customers`
+| Field class | Element/binding | Requirement and effect |
+|---|---|---|
+| `cms-field-title` | Text | Required for every record; blank titles are discarded. Use this for events too, rather than an old `cms-field-name` convention. |
+| `cms-field-link` | Anchor with a real `href` | Required for a usable record. Use the CMS item URL or actual external article. Press Room filters out missing/invalid links; Company News expects valid links. No `#` placeholders. |
+| `cms-field-summary` | Text | Optional summary. |
+| `cms-field-date` | Text/date formatted as an unambiguous date with a year | Needed for reliable newest-first ordering; ISO `YYYY-MM-DD` is suitable. Verify ambiguous/missing dates before publishing. |
+| `cms-field-card-tag` | Text | Optional display label; otherwise uses the first tag or the collection category. A trailing `*` marks the record as featured internally and is removed from display. |
+| `cms-field-tag` | One or more text elements | Categories/tags. All matching tag elements are read, including nested tag/reference-list elements. |
+| `cms-field-company` | Text | Company display/name matching on customer cards. |
+| `cms-field-industry` | Text | Customer industry filtering; keep labels consistent. |
+| `cms-field-region` | Text | Optional customer metadata. |
+| `cms-field-metric` | Text | Published customer metric value. |
+| `cms-field-metric-label` | Text | Metric label; note the hyphen, not `metricLabel`. |
+| `cms-field-logo` | Class directly on an `img`; bind `src` | Optional company logo. The reader uses `img.cms-field-logo`, not a wrapper or CSS background. |
+| `cms-field-thumbnail` | Class directly on an `img`; bind `src` | Optional record thumbnail. Customer-card design still prioritizes logos/name on gradients. |
 
-| Field | Class | Type | Required | Notes / Example |
-|-------|-------|------|----------|-----------------|
-| Company name | `cms-field-company` | Text | ✅ | `Coles` |
-| Title | `cms-field-title` | Text | ✅ | `How Coles built a retail media engine reaching 21M weekly shoppers` |
-| Metric value | `cms-field-metric` | Text | ✅ | `3.2×` |
-| Metric label | `cms-field-metric-label` | Text | ✅ | `ROAS improvement` |
-| Industry | `cms-field-industry` | Text | ❌ | `Food & Grocery`. Each distinct value becomes a filter pill above the customer stories; use consistent spelling |
-| Region | `cms-field-region` | Text | ❌ | `APAC` — renders as tag pill |
-| Logo | `cms-field-logo` | Image (`src`) | ❌ | Company logo. Falls back to text pill if missing |
-| Thumbnail | `cms-field-thumbnail` | Image (`src`) | ❌ | Card hero image. Falls back to gradient bg if missing |
-| Link URL | `cms-field-link` | Link (`href`) | ✅ | `/casestudy/coles`. Records without a link are not shown |
+Elements marked `w-dyn-bind-empty` are ignored. Link URLs may be root-relative or HTTPS; keep external URLs complete. Do not invent missing metrics, thumbnails or records.
 
----
+Old documentation mentioned fields such as `cms-field-video-url`, `cms-field-download`, `cms-field-name`, `cms-field-outlet`, `cms-field-version`, `cms-field-authors`, and a `.cms-featured` collection. This reader does not consume those fields or that collection. Keep existing CMS schema if used elsewhere, but bind this reader's common `title`, `link`, `summary`, `date`, etc. rather than expecting unsupported fields to drive these embeds.
 
-## 2. Opinions
+## Content classification
 
-**Collection name:** `Opinions`  
-**Section ID:** `ts-sec-opinion`  
-**CMS wrapper class:** `cms-opinions`
+- Each collection supplies its default category.
+- An Opinion record with any tag equal to `Product Updates`, `New Feature`, `Product Deep Dive`, or `Integration` (case-insensitive) becomes a Product Update.
+- An Opinion title matching `OpenAI Ads`, `partnership`, or `partners with` becomes News. This is existing code behavior; review actual records affected by it.
+- Explicit News records should use `.cms-news`; do not depend on title heuristics or assume a `News` tag alone changes an Opinion's category.
+- Product Updates sort newest first; records without parseable dates fall after dated updates in the shared reader. Company News additionally sorts the combined News/Updates list, so give all its intended records valid dates.
 
-| Field | Class | Type | Required | Notes / Example |
-|-------|-------|------|----------|-----------------|
-| Tag / category | `cms-field-tag` | Text | ✅ | `Opinion`, `Perspective`, `Industry` |
-| Title | `cms-field-title` | Text | ✅ | `Retail media is becoming infrastructure, not a feature` |
-| Summary | `cms-field-summary` | Text | ❌ | First 1–2 sentences. Renders below title |
-| Author | `cms-field-author` | Text | ❌ | `Regina Ye, CEO` |
-| Date | `cms-field-date` | Text | ❌ | `Mar 2026` — displayed as-is |
-| Thumbnail | `cms-field-thumbnail` | Image (`src`) | ❌ | Article hero image (not currently shown in card, but needed for og/sharing) |
-| Link URL | `cms-field-link` | Link (`href`) | ❌ | `/blog/retail-media-infrastructure`. Falls back to `#` |
+## Press Room `/resources`
 
----
+Keep the current customer, opinion, update, research and press lists. The renderer uses its shipped published-content snapshot when a category has no loaded CMS records; supplying a category makes those live records the category's source. It normalizes URLs and deduplicates by category plus title. The source snapshot is a fallback, not an instruction to replace the CMS database.
 
-## 3. Product Updates
+Customer cards show a logo or company name on a soft gradient. Recognized brands may use the bundled brand catalog. Ambev uses its name when no logo is available. Do not replace logos with old story photographs merely because thumbnails remain in the CMS.
 
-**Collection name:** `Product Updates`  
-**Section ID:** `ts-sec-updates`  
-**CMS wrapper class:** `cms-updates`
+The old standalone News section is gone. News and Product Updates are presented on Company News; do not paste an old News block back into Press Room. Search suggestions are generated from loaded post titles. Verify every visible suggestion returns a real result.
 
-| Field | Class | Type | Required | Notes / Example |
-|-------|-------|------|----------|-----------------|
-| Tag / category | `cms-field-tag` | Text | ✅ | `New Feature`, `Platform`, `API`, `Launch` |
-| Title | `cms-field-title` | Text | ✅ | `Tomi AI Copilot: autonomous campaign management` |
-| Summary | `cms-field-summary` | Text | ❌ | Short description, 1–2 lines |
-| Date | `cms-field-date` | Text | ❌ | `Mar 2026` |
-| Version | `cms-field-version` | Text | ❌ | `v3.2` — renders as mono badge |
-| Link URL | `cms-field-link` | Link (`href`) | ❌ | `/changelog/v3-2`. Falls back to `#` |
+## Company News `/company/news`
 
----
+Render `.cms-news`, `.cms-updates`, and/or relevant `.cms-opinions` lists before its JS. The page consumes only records classified as News or Product Updates.
 
-## 4. Videos
+When any matching live CMS rows exist, they replace the entire fallback list. Provide the full intended set of news and update rows; a one-item test list will replace the fallback with just that item. Remove test records and check counts, dates, titles, URLs and newest-first ordering before publication.
 
-**Collection name:** `Videos`  
-**Section ID:** `ts-sec-videos`  
-**CMS wrapper class:** `cms-videos`
-
-| Field | Class | Type | Required | Notes / Example |
-|-------|-------|------|----------|-----------------|
-| Title | `cms-field-title` | Text | ✅ | `How Topsort powers retail media at global scale` |
-| Type / format | `cms-field-type` | Text | ✅ | `Explainer`, `Interview`, `Talk`, `Webinar`, `Product Demo` |
-| Duration | `cms-field-duration` | Text | ✅ | `4:32` |
-| Speaker | `cms-field-speaker` | Text | ❌ | `Regina Ye` |
-| Company / source | `cms-field-company` | Text | ❌ | `Topsort` — shown as "Speaker · Company" |
-| Thumbnail | `cms-field-thumbnail` | Image (`src`) | ❌ | Video poster image. Falls back to gradient bg |
-| Video URL | `cms-field-video-url` | Link (`href`) | ❌ | YouTube/Vimeo link or embed URL |
-| Link URL | `cms-field-link` | Link (`href`) | ❌ | Page URL to navigate to on click. Falls back to `#` |
-
----
-
-## 5. Events
-
-**Collection name:** `Events`  
-**Section ID:** `ts-sec-events`  
-**CMS wrapper class:** `cms-events`
-
-| Field | Class | Type | Required | Notes / Example |
-|-------|-------|------|----------|-----------------|
-| Event name | `cms-field-name` | Text | ✅ | `Shoptalk 2026` |
-| Date range | `cms-field-date` | Text | ✅ | `May 12–14, 2026` — displayed as-is |
-| City | `cms-field-city` | Text | ✅ | `Las Vegas` |
-| Event type | `cms-field-type` | Text | ✅ | `Conference`, `Summit`, `Expo` |
-| Past event? | `cms-field-past` | Text | ❌ | Any non-empty value = "Recap". Empty = "Upcoming" |
-| Link URL | `cms-field-link` | Link (`href`) | ❌ | Event page or recap URL. Falls back to `#` |
-
----
-
-## 6. Press Room
-
-**Collection name:** `Press`  
-**Section ID:** `ts-sec-press`  
-**CMS wrapper class:** `cms-press`
-
-| Field | Class | Type | Required | Notes / Example |
-|-------|-------|------|----------|-----------------|
-| Outlet name | `cms-field-outlet` | Text | ✅ | `Forbes`, `TechCrunch` |
-| Title | `cms-field-title` | Text | ✅ | `Topsort raises $20M to build the commerce-native...` |
-| Date | `cms-field-date` | Text | ✅ | `Mar 15, 2026` |
-| External URL | `cms-field-link` | Link (`href`) | ❌ | `https://forbes.com/...` — opens external article |
-
----
-
-## 7. Research
-
-**Collection name:** `Research`  
-**Section ID:** `ts-sec-research`  
-**CMS wrapper class:** `cms-research`
-
-| Field | Class | Type | Required | Notes / Example |
-|-------|-------|------|----------|-----------------|
-| Title | `cms-field-title` | Text | ✅ | `A Look Forward to 2026: Retail Media Infrastructure...` |
-| Paper type | `cms-field-type` | Text | ✅ | `White Paper`, `Benchmark`, `Technical Paper`, `Report` |
-| Authors | `cms-field-authors` | Text | ❌ | `Topsort Research` |
-| Date | `cms-field-date` | Text | ❌ | `Mar 2026` |
-| Cover image | `cms-field-thumbnail` | Image (`src`) | ❌ | Cover thumbnail. Falls back to generated document placeholder |
-| Download URL | `cms-field-download` | Link (`href`) | ❌ | PDF download link |
-| Link URL | `cms-field-link` | Link (`href`) | ❌ | Page URL. Falls back to `#` |
-
----
-
-## 8. Featured (Editor's Picks)
-
-**Not a separate collection.** Either use a **multi-reference field** pointing to items from other collections, or add a `Featured` switch to each collection and create a filtered Collection List.
-
-**CMS wrapper class:** `cms-featured`
-
-| Field | Class | Type | Required | Notes / Example |
-|-------|-------|------|----------|-----------------|
-| Tag | `cms-field-tag` | Text | ✅ | `Case Study`, `Opinion`, `Video` |
-| Title | `cms-field-title` | Text | ✅ | `How Coles built a retail media engine...` |
-| Summary | `cms-field-summary` | Text | ✅ | 1–2 sentence description |
-| Metric value | `cms-field-metric` | Text | ❌ | `3.2×` — shown as overlay badge on image |
-| Metric label | `cms-field-metric-label` | Text | ❌ | `ROAS improvement` |
-| Thumbnail | `cms-field-thumbnail` | Image (`src`) | ❌ | Hero image for featured card. Falls back to gradient + icon |
-| Link URL | `cms-field-link` | Link (`href`) | ❌ | Destination page. Falls back to `#` |
-
----
-
-## 9. Customer Logo Strip
-
-Since the 2026-09-26 redesign the logo strip above the customer cards is the design's own logo artwork
-(`customer-logos.svg`, about 40 customer logos), not CMS fields. Nothing to maintain in the CMS.
-
----
-
-## Summary
-
-| Collection | Text fields | Image fields | Link fields | Total |
-|------------|-------------|--------------|-------------|-------|
-| **Customers** | 6 | 2 (logo, thumbnail) | 1 (link) | **9** |
-| **Opinions** | 5 | 1 (thumbnail) | 1 (link) | **7** |
-| **Product Updates** | 5 | — | 1 (link) | **6** |
-| **Videos** | 5 | 1 (thumbnail) | 2 (video-url, link) | **8** |
-| **Events** | 5 | — | 1 (link) | **6** |
-| **Press** | 3 | — | 1 (link) | **4** |
-| **Research** | 4 | 1 (thumbnail) | 2 (download, link) | **7** |
-| **Featured** | 5 | 1 (thumbnail) | 1 (link) | **7** |
+No dedicated collection is mandatory: existing collection lists with the required bindings are sufficient. Do not bulk-copy or duplicate existing items merely to satisfy the page layout.

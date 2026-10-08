@@ -1,10 +1,10 @@
 # Solutions verification
 
-Current refresh checks:
+The current source-route handoff was checked with `scripts/test-source-sync.mjs` and `scripts/test-webflow-handoff.mjs`.
 
-- Static audits passed for all 21 routes: fragment structure, scoped CSS/classes, JavaScript syntax, unique IDs, anchor/ARIA targets, and complete split-part content.
-- Existing solutions pages checked in Chromium at 1440px and 390px with the refreshed shared navbar: no horizontal overflow, clipped visible text, broken loaded images, or JavaScript errors.
-- Google Ad Manager and Kevel migration parts: all workflow steps, keyboard controls, and FAQ panels passed at both widths.
-- All marketing destinations in [link-check.json](link-check.json) are in the fetched Topsort sitemap.
+- Every solution remains one file containing numbered, bounded paste parts.
+- The route/file map in `../page-map.json` matches the source.
+- The all-page browser check covers 1440px and 390px overflow and JavaScript errors, plus shared navigation and selected page interactions.
+- Link targets may be planned source routes that are not yet published in Webflow. Use `../redirects.json` and verify the actual site after installation.
 
-Tests ran locally. Forms were intercepted during testing; no live leads were sent and nothing was published to Webflow.
+Local checks do not verify Webflow page IDs, CMS bindings, live SEO or publication. Follow `../installation.text` for those checks.

@@ -5,13 +5,13 @@
     "reference": "index.html",
     "sectionCharacters": {
       "css": 40668,
-      "html": 50395,
+      "html": 50381,
       "js": 17121
     },
     "files": [
       {
         "file": "index.html",
-        "characters": 109227
+        "characters": 109213
       }
     ],
     "embedParts": [
@@ -23,12 +23,12 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 48771
+        "characters": 48755
       },
       {
         "index": 3,
         "kind": "HTML",
-        "characters": 1624
+        "characters": 1626
       },
       {
         "index": 4,
@@ -50,7 +50,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "01LaunchStart a new commerce media business with production-ready infrastructure.Read more",
@@ -105,12 +105,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences and first-party signals across external media channels.Learn more",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaConnect digital screens and physical shopping experiences to your commerce media business.Learn more",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "Sponsored ListingsPromote products directly within search, browse and recommendation experiences.Read more",
@@ -170,7 +170,7 @@
       {
         "label": "Explore Core Platform",
         "from": "/platform/core-platform",
-        "to": "https://www.topsort.com/products/t-platform"
+        "to": "https://www.topsort.com/platform/core-platform"
       },
       {
         "label": "Read the docs",
@@ -210,17 +210,17 @@
       {
         "label": "Plan your migration",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Migration guide",
         "from": "/solutions/migrations",
-        "to": "https://www.topsort.com/post/migrate-from-legacy-ad-server-to-topsort"
+        "to": "https://www.topsort.com/solutions/migrations"
       },
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore the API",
@@ -239,13 +239,13 @@
     "reference": "launch.html",
     "sectionCharacters": {
       "css": 34281,
-      "html": 22069,
+      "html": 22075,
       "js": 17104
     },
     "files": [
       {
         "file": "launch.html",
-        "characters": 74381
+        "characters": 74387
       }
     ],
     "embedParts": [
@@ -257,7 +257,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 22069
+        "characters": 22075
       },
       {
         "index": 3,
@@ -279,7 +279,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -289,7 +289,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore commerce media resources",
@@ -304,12 +304,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -328,13 +328,13 @@
     "reference": "scale.html",
     "sectionCharacters": {
       "css": 34277,
-      "html": 22179,
+      "html": 22185,
       "js": 17103
     },
     "files": [
       {
         "file": "scale.html",
-        "characters": 74485
+        "characters": 74491
       }
     ],
     "embedParts": [
@@ -346,7 +346,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 22179
+        "characters": 22185
       },
       {
         "index": 3,
@@ -368,7 +368,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -378,7 +378,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore commerce media resources",
@@ -393,12 +393,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -417,13 +417,13 @@
     "reference": "optimize.html",
     "sectionCharacters": {
       "css": 34285,
-      "html": 22235,
+      "html": 22241,
       "js": 17106
     },
     "files": [
       {
         "file": "optimize.html",
-        "characters": 74555
+        "characters": 74561
       }
     ],
     "embedParts": [
@@ -435,7 +435,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 22235
+        "characters": 22241
       },
       {
         "index": 3,
@@ -457,7 +457,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -467,7 +467,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore commerce media resources",
@@ -482,12 +482,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -506,13 +506,13 @@
     "reference": "expand.html",
     "sectionCharacters": {
       "css": 34280,
-      "html": 22077,
+      "html": 22083,
       "js": 17104
     },
     "files": [
       {
         "file": "expand.html",
-        "characters": 74388
+        "characters": 74394
       }
     ],
     "embedParts": [
@@ -524,7 +524,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 22077
+        "characters": 22083
       },
       {
         "index": 3,
@@ -546,7 +546,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -556,7 +556,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore commerce media resources",
@@ -571,12 +571,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -591,17 +591,17 @@
   },
   {
     "route": "/solutions/offsite-advertising",
-    "publishedPath": "/products/offsite-ads",
+    "publishedPath": "/solutions/offsite-advertising",
     "reference": "offsite-advertising.html",
     "sectionCharacters": {
       "css": 36395,
-      "html": 24153,
+      "html": 24157,
       "js": 17117
     },
     "files": [
       {
         "file": "offsite-advertising.html",
-        "characters": 78605
+        "characters": 78609
       }
     ],
     "embedParts": [
@@ -613,7 +613,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 24153
+        "characters": 24157
       },
       {
         "index": 3,
@@ -635,7 +635,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -645,7 +645,7 @@
       {
         "label": "Explore Offsite",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "See customer stories",
@@ -660,7 +660,7 @@
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -675,17 +675,17 @@
   },
   {
     "route": "/solutions/in-store",
-    "publishedPath": "/products/in-store-journey",
+    "publishedPath": "/solutions/in-store",
     "reference": "in-store.html",
     "sectionCharacters": {
       "css": 36372,
-      "html": 21653,
+      "html": 21666,
       "js": 17106
     },
     "files": [
       {
         "file": "in-store.html",
-        "characters": 76060
+        "characters": 76073
       }
     ],
     "embedParts": [
@@ -697,7 +697,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 21653
+        "characters": 21666
       },
       {
         "index": 3,
@@ -719,7 +719,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -729,7 +729,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "See customer case studies",
@@ -744,7 +744,7 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -763,13 +763,13 @@
     "reference": "sponsored-listings.html",
     "sectionCharacters": {
       "css": 36390,
-      "html": 21403,
+      "html": 21409,
       "js": 17116
     },
     "files": [
       {
         "file": "sponsored-listings.html",
-        "characters": 75848
+        "characters": 75854
       }
     ],
     "embedParts": [
@@ -781,7 +781,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 21403
+        "characters": 21409
       },
       {
         "index": 3,
@@ -803,7 +803,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -813,7 +813,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore commerce media resources",
@@ -823,12 +823,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -847,13 +847,13 @@
     "reference": "sponsored-brands.html",
     "sectionCharacters": {
       "css": 36512,
-      "html": 22620,
+      "html": 22626,
       "js": 17114
     },
     "files": [
       {
         "file": "sponsored-brands.html",
-        "characters": 77183
+        "characters": 77189
       }
     ],
     "embedParts": [
@@ -865,7 +865,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 22620
+        "characters": 22626
       },
       {
         "index": 3,
@@ -887,7 +887,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -897,7 +897,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore retail media resources",
@@ -912,12 +912,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -936,13 +936,13 @@
     "reference": "display-banner.html",
     "sectionCharacters": {
       "css": 36506,
-      "html": 22581,
+      "html": 22587,
       "js": 17112
     },
     "files": [
       {
         "file": "display-banner.html",
-        "characters": 77134
+        "characters": 77140
       }
     ],
     "embedParts": [
@@ -954,7 +954,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 22581
+        "characters": 22587
       },
       {
         "index": 3,
@@ -976,7 +976,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -986,7 +986,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore retail media resources",
@@ -1001,12 +1001,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -1025,13 +1025,13 @@
     "reference": "native-placements.html",
     "sectionCharacters": {
       "css": 36511,
-      "html": 22729,
+      "html": 22735,
       "js": 17115
     },
     "files": [
       {
         "file": "native-placements.html",
-        "characters": 77293
+        "characters": 77299
       }
     ],
     "embedParts": [
@@ -1043,7 +1043,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 22729
+        "characters": 22735
       },
       {
         "index": 3,
@@ -1065,7 +1065,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -1075,7 +1075,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore retail media resources",
@@ -1090,12 +1090,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -1114,13 +1114,13 @@
     "reference": "video-ads.html",
     "sectionCharacters": {
       "css": 36499,
-      "html": 22570,
+      "html": 22576,
       "js": 17107
     },
     "files": [
       {
         "file": "video-ads.html",
-        "characters": 77106
+        "characters": 77112
       }
     ],
     "embedParts": [
@@ -1132,7 +1132,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 22570
+        "characters": 22576
       },
       {
         "index": 3,
@@ -1154,7 +1154,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -1164,7 +1164,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore retail media resources",
@@ -1179,12 +1179,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -1203,13 +1203,13 @@
     "reference": "marketplaces.html",
     "sectionCharacters": {
       "css": 37002,
-      "html": 24178,
+      "html": 24184,
       "js": 17110
     },
     "files": [
       {
         "file": "marketplaces.html",
-        "characters": 79223
+        "characters": 79229
       }
     ],
     "embedParts": [
@@ -1221,7 +1221,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 24178
+        "characters": 24184
       },
       {
         "index": 3,
@@ -1243,7 +1243,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -1253,7 +1253,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore commerce media resources",
@@ -1268,12 +1268,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -1292,13 +1292,13 @@
     "reference": "retailers.html",
     "sectionCharacters": {
       "css": 36997,
-      "html": 23970,
+      "html": 23976,
       "js": 17107
     },
     "files": [
       {
         "file": "retailers.html",
-        "characters": 79004
+        "characters": 79010
       }
     ],
     "embedParts": [
@@ -1310,7 +1310,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 23970
+        "characters": 23976
       },
       {
         "index": 3,
@@ -1332,7 +1332,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -1342,7 +1342,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore commerce media resources",
@@ -1357,12 +1357,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -1381,13 +1381,13 @@
     "reference": "delivery-apps.html",
     "sectionCharacters": {
       "css": 37054,
-      "html": 23794,
+      "html": 23800,
       "js": 17111
     },
     "files": [
       {
         "file": "delivery-apps.html",
-        "characters": 78893
+        "characters": 78899
       }
     ],
     "embedParts": [
@@ -1399,7 +1399,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 23794
+        "characters": 23800
       },
       {
         "index": 3,
@@ -1421,7 +1421,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -1431,7 +1431,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore commerce media resources",
@@ -1446,12 +1446,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -1470,13 +1470,13 @@
     "reference": "travel-platforms.html",
     "sectionCharacters": {
       "css": 37059,
-      "html": 23329,
+      "html": 23335,
       "js": 17114
     },
     "files": [
       {
         "file": "travel-platforms.html",
-        "characters": 78439
+        "characters": 78445
       }
     ],
     "embedParts": [
@@ -1488,7 +1488,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 23329
+        "characters": 23335
       },
       {
         "index": 3,
@@ -1510,7 +1510,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -1520,7 +1520,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore retail media resources",
@@ -1535,12 +1535,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -1559,13 +1559,13 @@
     "reference": "financial-platforms.html",
     "sectionCharacters": {
       "css": 36616,
-      "html": 23405,
+      "html": 23411,
       "js": 17117
     },
     "files": [
       {
         "file": "financial-platforms.html",
-        "characters": 78078
+        "characters": 78084
       }
     ],
     "embedParts": [
@@ -1577,7 +1577,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 23405
+        "characters": 23411
       },
       {
         "index": 3,
@@ -1599,7 +1599,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -1609,7 +1609,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore commerce insights",
@@ -1624,12 +1624,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -1648,13 +1648,13 @@
     "reference": "classifieds.html",
     "sectionCharacters": {
       "css": 37050,
-      "html": 23625,
+      "html": 23631,
       "js": 17109
     },
     "files": [
       {
         "file": "classifieds.html",
-        "characters": 78716
+        "characters": 78722
       }
     ],
     "embedParts": [
@@ -1666,7 +1666,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 23625
+        "characters": 23631
       },
       {
         "index": 3,
@@ -1688,7 +1688,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -1698,7 +1698,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore commerce insights",
@@ -1713,12 +1713,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -1733,17 +1733,17 @@
   },
   {
     "route": "/solutions/migrations",
-    "publishedPath": null,
+    "publishedPath": "/solutions/migrations",
     "reference": "migrations/index.html",
     "sectionCharacters": {
       "css": 36477,
-      "html": 31141,
+      "html": 31080,
       "js": 17108
     },
     "files": [
       {
         "file": "migrations/index.html",
-        "characters": 85663
+        "characters": 85602
       }
     ],
     "embedParts": [
@@ -1755,7 +1755,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 31141
+        "characters": 31080
       },
       {
         "index": 3,
@@ -1777,7 +1777,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore solutions",
@@ -1792,37 +1792,37 @@
       {
         "label": "Compare Topsort vs. Google Ad Manager",
         "from": "/compare/google-ad-manager",
-        "to": "https://www.topsort.com/compare/topsort-vs-google-ad-manager"
+        "to": "https://www.topsort.com/compare/google-ad-manager"
       },
       {
         "label": "See migration plan",
         "from": "/solutions/migrations/kevel",
-        "to": "https://www.topsort.com/book-a-demo?source=kevel-migration"
+        "to": "https://www.topsort.com/solutions/migrations/kevel"
       },
       {
         "label": "Compare Topsort vs. Kevel",
         "from": "/compare/kevel",
-        "to": "https://www.topsort.com/compare/topsort-vs-kevel"
+        "to": "https://www.topsort.com/compare/kevel"
       },
       {
         "label": "Compare Topsort vs. Criteo",
         "from": "/compare/criteo",
-        "to": "https://www.topsort.com/compare/topsort-vs-cireto"
+        "to": "https://www.topsort.com/compare/criteo"
       },
       {
         "label": "Compare Topsort vs. CitrusAd",
         "from": "/compare/citrusad",
-        "to": "https://www.topsort.com/post/topsort-vs-citrusad"
+        "to": "https://www.topsort.com/compare/citrusad"
       },
       {
         "label": "Compare Topsort vs. Moloco",
         "from": "/compare/moloco",
-        "to": "https://www.topsort.com/compare/topsort-vs-moloco"
+        "to": "https://www.topsort.com/compare/moloco"
       },
       {
         "label": "Compare Topsort vs. VTEX Ads",
         "from": "/compare/vtex-ads",
-        "to": "https://www.topsort.com/compare/topsort-vs-vtex"
+        "to": "https://www.topsort.com/compare/vtex-ads"
       },
       {
         "label": "Compare Topsort vs. Pentaleap",
@@ -1837,7 +1837,7 @@
       {
         "label": "Book a demo",
         "from": "/talk-to-sales",
-        "to": "https://www.topsort.com/book-a-demo"
+        "to": "https://www.topsort.com/talk-to-sales"
       },
       {
         "label": "Explore commerce media resources",
@@ -1852,12 +1852,12 @@
       {
         "label": "Offsite AdvertisingExtend commerce audiences across external media channels.Explore",
         "from": "/solutions/offsite-advertising",
-        "to": "https://www.topsort.com/products/offsite-ads"
+        "to": "https://www.topsort.com/solutions/offsite-advertising"
       },
       {
         "label": "In-Store MediaBring digital screens and physical retail into your network.Explore",
         "from": "/solutions/in-store",
-        "to": "https://www.topsort.com/products/in-store-journey"
+        "to": "https://www.topsort.com/solutions/in-store"
       },
       {
         "label": "All solutionsExplore every goal, channel and industry we support.Explore",
@@ -1876,13 +1876,13 @@
     "reference": "migrations/google-ad-manager.html",
     "sectionCharacters": {
       "css": 38769,
-      "html": 73839,
+      "html": 73828,
       "js": 17167
     },
     "files": [
       {
         "file": "migrations/google-ad-manager.html",
-        "characters": 130842
+        "characters": 130831
       }
     ],
     "embedParts": [
@@ -1894,12 +1894,12 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 46974
+        "characters": 46959
       },
       {
         "index": 3,
         "kind": "HTML",
-        "characters": 26865
+        "characters": 26869
       },
       {
         "index": 4,
@@ -1916,12 +1916,12 @@
       {
         "label": "Migration guide",
         "from": "/solutions/migrations",
-        "to": "https://www.topsort.com/post/migrate-from-legacy-ad-server-to-topsort"
+        "to": "https://www.topsort.com/solutions/migrations"
       },
       {
         "label": "Talk to a migration expert",
         "from": "/book-a-demo?source=gam-migration",
-        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+        "to": "https://www.topsort.com/talk-to-sales?source=gam-migration"
       },
       {
         "label": "See the Migration Plan",
@@ -1931,7 +1931,7 @@
       {
         "label": "Talk to a migration expert",
         "from": "/book-a-demo?source=gam-migration",
-        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+        "to": "https://www.topsort.com/talk-to-sales?source=gam-migration"
       },
       {
         "label": "See the Migration Plan",
@@ -1941,7 +1941,7 @@
       {
         "label": "Talk to a migration expert",
         "from": "/book-a-demo?source=gam-migration",
-        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+        "to": "https://www.topsort.com/talk-to-sales?source=gam-migration"
       },
       {
         "label": "See object mapping",
@@ -1951,12 +1951,12 @@
       {
         "label": "Talk to a migration expert",
         "from": "/book-a-demo?source=gam-migration",
-        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+        "to": "https://www.topsort.com/talk-to-sales?source=gam-migration"
       },
       {
         "label": "Talk to a migration expert",
         "from": "/book-a-demo?source=gam-migration",
-        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+        "to": "https://www.topsort.com/talk-to-sales?source=gam-migration"
       },
       {
         "label": "Read the Falabella story",
@@ -1991,7 +1991,7 @@
       {
         "label": "Talk to a migration expert",
         "from": "/book-a-demo?source=gam-migration",
-        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+        "to": "https://www.topsort.com/talk-to-sales?source=gam-migration"
       },
       {
         "label": "See the Migration Plan",
@@ -2011,12 +2011,12 @@
       {
         "label": "Data GenieEvent reporting, analytics, and data warehouse access.",
         "from": "/products/data-genie",
-        "to": "https://www.topsort.com/products/data-genie"
+        "to": "https://www.topsort.com/platform/data-genie"
       },
       {
         "label": "Talk to a migration expert",
         "from": "/book-a-demo?source=gam-migration",
-        "to": "https://www.topsort.com/book-a-demo?source=gam-migration"
+        "to": "https://www.topsort.com/talk-to-sales?source=gam-migration"
       },
       {
         "label": "See the Migration Plan",
@@ -2031,17 +2031,17 @@
   },
   {
     "route": "/solutions/migrations/kevel",
-    "publishedPath": null,
+    "publishedPath": "/solutions/migrations/kevel",
     "reference": "migrations/kevel.html",
     "sectionCharacters": {
       "css": 37579,
-      "html": 74992,
+      "html": 74949,
       "js": 17172
     },
     "files": [
       {
         "file": "migrations/kevel.html",
-        "characters": 130910
+        "characters": 130867
       }
     ],
     "embedParts": [
@@ -2053,7 +2053,7 @@
       {
         "index": 2,
         "kind": "HTML",
-        "characters": 15226
+        "characters": 15192
       },
       {
         "index": 3,
@@ -2063,7 +2063,7 @@
       {
         "index": 4,
         "kind": "HTML",
-        "characters": 12078
+        "characters": 12069
       },
       {
         "index": 5,
@@ -2080,27 +2080,27 @@
       {
         "label": "Migration guide",
         "from": "/solutions/migrations",
-        "to": "https://www.topsort.com/post/migrate-from-legacy-ad-server-to-topsort"
+        "to": "https://www.topsort.com/solutions/migrations"
       },
       {
         "label": "Plan your migration",
         "from": "/book-a-demo?source=kevel-migration",
-        "to": "https://www.topsort.com/book-a-demo?source=kevel-migration"
+        "to": "https://www.topsort.com/talk-to-sales?source=kevel-migration"
       },
       {
         "label": "Already evaluating? Compare Topsort vs. Kevel",
         "from": "/compare/kevel",
-        "to": "https://www.topsort.com/compare/topsort-vs-kevel"
+        "to": "https://www.topsort.com/compare/kevel"
       },
       {
         "label": "Talk to Topsort about migration",
         "from": "/book-a-demo?source=kevel-migration",
-        "to": "https://www.topsort.com/book-a-demo?source=kevel-migration"
+        "to": "https://www.topsort.com/talk-to-sales?source=kevel-migration"
       },
       {
         "label": "Compare Topsort vs. Kevel",
         "from": "/compare/kevel",
-        "to": "https://www.topsort.com/compare/topsort-vs-kevel"
+        "to": "https://www.topsort.com/compare/kevel"
       }
     ],
     "sections": 8,

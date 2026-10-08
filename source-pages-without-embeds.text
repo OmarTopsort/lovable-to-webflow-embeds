@@ -1,0 +1,77 @@
+SOURCE PAGES WITHOUT A DELIVERED EMBED
+
+These routes exist in /source but have not been converted in this package.
+SEO metadata is not a substitute for a page. Preserve existing Webflow content
+for these routes. Do not create blank pages or clone unrelated embeds.
+If full source coverage is requested, convert and verify these pages first.
+
+/audiences/agencies — Agencies | Topsort
+/audiences/brands — Brands | Topsort
+/audiences/partners — Technology Partners | Topsort
+/audiences/retailers-and-marketplaces — Retailers and Marketplaces | Topsort
+/cannes
+/cannes-2026
+/case-study/obi — OBI Case Study: +93% ROAS with AI-Powered Auctions | Topsort
+/company/careers — Careers | Topsort
+/company/contact — Contact | Topsort
+/compare/pentaleap — Topsort vs. Pentaleap | Retail Media Platform Comparison
+/compare/zitcha — Topsort vs. Zitcha | Retail Media Platform Comparison
+/customers — Customer Stories | Topsort
+/developer-day — Topsort Fall 26 Update — Save the Date | Boston
+/developer-day-2026 — Topsort Fall 26 Update — Save the Date | Boston
+/developers — Developers — Topsort APIs & SDKs
+/login
+/login/sso
+/partner-day
+/partners — Partners | Topsort
+/platform/onsite — Onsite Retail Media Advertising | Topsort
+/pricing — Pricing | Topsort
+/privacy-and-security — Privacy & Security | Topsort
+/pt/partner-day
+/regions — Topsort by Region | Global commerce media infrastructure
+/regions/australia-new-zealand — Retail Media in Australia and New Zealand | Topsort
+/regions/europe — Retail Media in Europe | Topsort
+/regions/europe/dach — Retail Media in DACH | Topsort Germany, Austria, Switzerland
+/regions/latin-america — Retail Media in Latin America | Topsort LATAM
+/regions/latin-america/brazil — Topsort no Brasil | Infraestrutura de retail media
+/regions/latin-america/spanish-latam — Topsort en América Latina | Retail media regional
+/regions/middle-east — Retail Media in the Middle East | Topsort
+/regions/united-states — Retail Media in the United States | Topsort
+/resources/api — API Documentation | Topsort
+/resources/documentation — Product Documentation | Topsort
+/resources/engineering
+/resources/events — Events and Webinars | Topsort
+/resources/guides — Retail Media Guides | Topsort
+/resources/insights
+/resources/product
+/resources/research — Research and Benchmarks | Topsort
+/resources/trust-center — Security and Trust Center | Topsort
+/solutions/activate-offsite — Activate Offsite | Topsort
+/solutions/automate-campaign-operations — Automate Campaign Operations | Topsort
+/solutions/catalog-and-discovery — Improve Catalog and Discovery | Topsort
+/solutions/grow-advertiser-participation — Grow Advertiser Participation | Topsort
+/solutions/launch-retail-media — Launch a Retail Media Network | Topsort
+/solutions/monetize-in-store — Monetize In-Store | Topsort
+/solutions/monetize-onsite — Monetize Onsite | Topsort
+/solutions/unify-commerce-data — Unify Commerce Data | Topsort
+/start-free — Start free | Topsort
+/submit-rfp — RFP | Topsort
+/terms — Terms | Topsort
+/toppie-retailer
+/try
+/why-topsort — Why Topsort | The Commerce Media Operating System
+/why-topsort/architecture — Commerce-Native Architecture | Topsort
+/why-topsort/make-commerce-natural — Make Commerce Natural Again | Topsort
+/why-topsort/migration — Why Migrate to Topsort | Retail Media Platform Migration
+/why-topsort/pan-commerce-intelligence — AI Commerce Intelligence | Topsort
+/why-topsort/retail-media-3 — Retail Media 3.0 | Topsort
+/why-topsort/security — Security and Trust | Topsort
+
+SOURCE REDIRECTS TO UNDELIVERED TARGETS (reference only)
+/resources/customers -> /customers
+/rfp -> /submit-rfp
+
+ALIASES AND SEPARATE PROJECTS
+/privacy uses the same source Legal component as /legals; reuse legals.html.
+/v3 and /v3/* are prototype-prefix aliases, not new Webflow folders.
+/fall-update-2026 has its own delivered embed from fall-update-2026-source.

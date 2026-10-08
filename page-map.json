@@ -1,0 +1,2157 @@
+{
+  "schemaVersion": 1,
+  "preparedOn": "2026-10-08",
+  "urlPolicy": "source routes are target public URLs; local index.html maps to its parent route, never an /index slug",
+  "productionOrigin": "https://www.topsort.com",
+  "pages": [
+    {
+      "file": "index.html",
+      "title": "Make CommerceNatural Again.",
+      "sha256": "f1c178e43cd89f23375ddd14f20ed097d3e529cb4915f3c22187febaf152a4f7",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS (1/2)",
+          "characters": 48913,
+          "sha256": "7e6ae716e1df2db5ef7bc0c3465d7362ab03dbfe26af10cbabdbe6e27ec89350"
+        },
+        {
+          "number": 2,
+          "kind": "CSS (2/2)",
+          "characters": 16654,
+          "sha256": "1e283635750afbce5231a7b892543589e1804289f3f8978fc64c720494a5d032"
+        },
+        {
+          "number": 3,
+          "kind": "HTML (1/2)",
+          "characters": 27414,
+          "sha256": "b82ea66beb8dc72cf71c89469456b5e909f67de29b39caf7fd62865bf9fd2487"
+        },
+        {
+          "number": 4,
+          "kind": "HTML (2/2)",
+          "characters": 29915,
+          "sha256": "122bcdc636af5da652b945a54066bcd9209f790663e592503007601ec153f37a"
+        },
+        {
+          "number": 5,
+          "kind": "JS (1/6)",
+          "characters": 5952,
+          "sha256": "a035818dc2e7d942d76448fccc3a543418a09990d054a38421e3c51ff1248fbc"
+        },
+        {
+          "number": 6,
+          "kind": "JS (2/6)",
+          "characters": 43888,
+          "sha256": "1f4735fddf77681a56082ed40ed413b7556a7b938d773fd585dae63f2408f0fc"
+        },
+        {
+          "number": 7,
+          "kind": "JS (3/6)",
+          "characters": 47425,
+          "sha256": "467d0d8a13239af11e13ae95d67eec3fca91338b2aebc7d49bf1560d269f0a98"
+        },
+        {
+          "number": 8,
+          "kind": "JS (4/6)",
+          "characters": 44265,
+          "sha256": "12024b0cea042aeba15d27d1fb72c373c4d4bf8da2f538eff6838f44f897ff70"
+        },
+        {
+          "number": 9,
+          "kind": "JS (5/6)",
+          "characters": 44514,
+          "sha256": "3cfe7778e5a8edb534638573f6facb283de94ee3fa7ae5793a0328039e7a339a"
+        },
+        {
+          "number": 10,
+          "kind": "JS (6/6)",
+          "characters": 27583,
+          "sha256": "4f07e867f5a05c335c0d5a3dbad47950c628696cb078296a38b1c437fb0cfc3f"
+        }
+      ],
+      "rootIds": [
+        "ts-home-v3",
+        "ts-home-v3-p2"
+      ],
+      "route": "/",
+      "sourceRoute": "/",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Topsort | Commerce AI for Retail Media Networks",
+        "description": "Topsort is Commerce AI for retailers and marketplaces: grow your retail media network with sponsored listings, sub-5ms auctions, offsite and in-store ads.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "company/about.html",
+      "title": "Commerce infrastructure for the next generation of marketplaces.",
+      "sha256": "75d73e98bf6d832f147df25de32e540ccf93ae77c20f7668964f4ecfee978c17",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 25562,
+          "sha256": "40cde0c136c9dd1e3e110ce1ffa1602aa9b01c2d6f298aca97fec05eeb1be394"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 44482,
+          "sha256": "301b921d9f3e70793ad6978f736f04ebd507f7f8134e67b603c76f4ba93cbc48"
+        },
+        {
+          "number": 3,
+          "kind": "JS (1/3)",
+          "characters": 18417,
+          "sha256": "fb59e3fd40360dd78c52460a687b201b5f1fdc1a1a4f88027fd3c03af8fd2a09"
+        },
+        {
+          "number": 4,
+          "kind": "JS (2/3)",
+          "characters": 45742,
+          "sha256": "04e6aafbb43e02ca8fa104f4123384175cc2a665edbc82e9a1b8d3c6fd587aa8"
+        },
+        {
+          "number": 5,
+          "kind": "JS (3/3)",
+          "characters": 39141,
+          "sha256": "251f0728993d8f3643d3b1ba457286f1e990e4845b847d02748651990a8c8e5e"
+        }
+      ],
+      "rootIds": [
+        "ts-page-about"
+      ],
+      "route": "/company/about",
+      "sourceRoute": "/company/about",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/about"
+      ],
+      "seo": {
+        "title": "About Topsort | Commerce infrastructure for modern marketplaces",
+        "description": "Topsort powers the auctions, ranking systems and monetization infrastructure behind modern commerce platforms. 120+ people, 40+ countries, billions of commerce decisions.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "company/news.html",
+      "title": "What's new at Topsort",
+      "sha256": "4f8ad19698f0b3d7a26cda83368ce933b71e4c39a87cd8d75d54a602b8d963e9",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 8825,
+          "sha256": "4335db5b88ba966b0ebd51173115dd6e76433fd18d54f6f8b34b1ec36e7e484f"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 9149,
+          "sha256": "6f1cb05cdd76721ca1502060fbb02cf073f3245086f869a1aade105c7f0a6cd4"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 18353,
+          "sha256": "4f33fcceb65311efbf387b28c1ab8e23cfa14a46be5427e418bb194c56fee557"
+        }
+      ],
+      "rootIds": [
+        "ts-company-news"
+      ],
+      "route": "/company/news",
+      "sourceRoute": "/company/news",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Company News & Announcements | Topsort",
+        "description": "The latest Topsort news: company announcements, product launches, partnerships and milestones from the Commerce AI company.",
+        "noindex": false
+      },
+      "cms": "fields.md: Company News"
+    },
+    {
+      "file": "talk-to-sales.html",
+      "title": "Let's talk about what you're building.",
+      "sha256": "2ae64faaadc2ed3a56577911f868d70139e1d3c9bff05d47649d3a34b3e96019",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 25128,
+          "sha256": "75a552e0c1463d8d9324b5f1e35d8a395301d839fd8bb28bcad13cd562aac429"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 35783,
+          "sha256": "71d615aca33363a3454b5c71cabc9160b440355408d6786ccb672ea8baeb3617"
+        },
+        {
+          "number": 3,
+          "kind": "JS (1/4)",
+          "characters": 32187,
+          "sha256": "73faf47baa1c181f14d4e1afa34bb0ba9efef0333df8f1aacaccac69188d50c3"
+        },
+        {
+          "number": 4,
+          "kind": "JS (2/4)",
+          "characters": 45748,
+          "sha256": "c2db348db24ec6b85f472938926eca325dfbb44bf18c81bb6424dd98decba409"
+        },
+        {
+          "number": 5,
+          "kind": "JS (3/4)",
+          "characters": 43252,
+          "sha256": "76cc27b3b9952aa2c8f4a34c4aba80c9eecc92f01018ee1efb580f083044f819"
+        },
+        {
+          "number": 6,
+          "kind": "JS (4/4)",
+          "characters": 26445,
+          "sha256": "ca6730eca5d803e0e4282e79b09e97d9f71644d1bd8d4ccbf5131d302b80f584"
+        }
+      ],
+      "rootIds": [
+        "ts-page-book-a-demo"
+      ],
+      "route": "/talk-to-sales",
+      "sourceRoute": "/talk-to-sales",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/book-a-demo"
+      ],
+      "seo": {
+        "title": "Talk to Sales: Commerce AI Demo & Pricing | Topsort",
+        "description": "Tell us what you're building and we'll introduce you to the right person on our sales team. Demos, pricing and migration questions, answered within one business day.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "resources.html",
+      "title": "Explore commerce media and AI commerce intelligence.",
+      "sha256": "f84f1026c690a180a3624d4846243b80f7810d87839fbff4ced9dcc57335018b",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 30242,
+          "sha256": "30fd3c88b58d5711fe94d8882bb495409a629778c7e973be96c0e70b28fb1b70"
+        },
+        {
+          "number": 2,
+          "kind": "HTML (1/2)",
+          "characters": 48866,
+          "sha256": "6a52a010f08a0ef53f24d9e462cbc497f297456667643cfbfb22d82c638810ed"
+        },
+        {
+          "number": 3,
+          "kind": "HTML (2/2)",
+          "characters": 11748,
+          "sha256": "53d679304f766925a0b62126f850b7f58e758d3e12521658f18e8def0768ea0b"
+        },
+        {
+          "number": 4,
+          "kind": "JS (1/2)",
+          "characters": 42266,
+          "sha256": "d8cd26de7cd308a5eaacf4ba381753906d461951dde331715e468d6fae1e54fc"
+        },
+        {
+          "number": 5,
+          "kind": "JS (2/2)",
+          "characters": 14270,
+          "sha256": "2a837562fcca952883c1df2edf9f72dcbe7180a416dabe691f1e3e6cedda6f12"
+        }
+      ],
+      "rootIds": [
+        "ts-resources",
+        "ts-resources-p2"
+      ],
+      "route": "/resources",
+      "sourceRoute": "/resources",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Press Room: Retail Media Case Studies, Research & Insights | Topsort",
+        "description": "Retail media case studies from DoorDash, Coles and more, plus research, product updates, events and press coverage from Topsort.",
+        "noindex": false
+      },
+      "cms": "fields.md: Press Room"
+    },
+    {
+      "file": "legals.html",
+      "title": "Topsort Legal",
+      "sha256": "fab7480b8d79ab63c693c7c224861be6b0b5f06a49178ef79f08b0d9a5d37b64",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 16394,
+          "sha256": "2e42a682581e021c507e4fab056b3d0ad513e12ce30e523a4aafe557182a8ccf"
+        },
+        {
+          "number": 2,
+          "kind": "HTML (1/4)",
+          "characters": 33942,
+          "sha256": "c87a77d3e87683349ef21ab39004615732bf6ee2eeefbe8838b1fd16949305a6"
+        },
+        {
+          "number": 3,
+          "kind": "HTML (2/4)",
+          "characters": 29032,
+          "sha256": "2e6cb7ced15d731d5aedafa210172452814bef63db76da40db5cc292105e7dd3"
+        },
+        {
+          "number": 4,
+          "kind": "HTML (3/4)",
+          "characters": 32380,
+          "sha256": "ae45eb2c9c78464d8c722085c0927b282185961bea48613eb1142e93efe6f7ad"
+        },
+        {
+          "number": 5,
+          "kind": "HTML (4/4)",
+          "characters": 24800,
+          "sha256": "94786646b0047a3f2d65c032938fc2f576d9c5b1c489a71db1b6102310b0478e"
+        },
+        {
+          "number": 6,
+          "kind": "JS",
+          "characters": 15130,
+          "sha256": "4928f18c8847d69d4d86278f8ac3e24f934e12c2e7c6ffcbd9db504b03a81b51"
+        }
+      ],
+      "rootIds": [
+        "ts-legals",
+        "ts-legals-p2",
+        "ts-legals-p3",
+        "ts-legals-p4"
+      ],
+      "route": "/legals",
+      "sourceRoute": "/legals",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Legal Center | Topsort",
+        "description": "Topsort's privacy policy, fair use policy, SaaS terms, and data management practices.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "platform/core-platform.html",
+      "title": "Everything you need to build and scale commerce media.",
+      "sha256": "00050aab8d2b769cb5049313c64aa4e04472be9eb118459e4705d34c7ad6ed2f",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 39225,
+          "sha256": "44e22dde0202e38a42e4bfed14da2d10be6cea9c6833d40da50b6e9364528c0f"
+        },
+        {
+          "number": 2,
+          "kind": "HTML (1/2)",
+          "characters": 45648,
+          "sha256": "6e42440469c2d86970e9539b7042490b6d3546c8c5775192fd6e244400299f70"
+        },
+        {
+          "number": 3,
+          "kind": "HTML (2/2)",
+          "characters": 19055,
+          "sha256": "94ef914f001ec999802ed1c609a9eb7fa2b088c92089c7f075c930c2413ae240"
+        },
+        {
+          "number": 4,
+          "kind": "JS",
+          "characters": 14115,
+          "sha256": "219dc0f1e9540f33a936b3ddfaf004c5511873d190970c7a3bde9a7f0404c4f4"
+        }
+      ],
+      "rootIds": [
+        "ts-prd-t-platform",
+        "ts-prd-t-platform-p2"
+      ],
+      "route": "/platform/core-platform",
+      "sourceRoute": "/platform/core-platform",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/t-platform",
+        "/products/t-platform",
+        "/retail-media-platform",
+        "/retail-media"
+      ],
+      "seo": {
+        "title": "Core Platform: Commerce AI Ad Server, Auctions & Sponsored Listings | Topsort",
+        "description": "Run your retail media network on one platform: ad server, real-time auctions, sponsored listings, display ads, advertiser self-serve, measurement and APIs.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "platform/t-brain.html",
+      "title": "Give commerce ashared understanding.",
+      "sha256": "f16f118b1af3899b1af1675f0085b73af2e7895435957e715eb81661e66d7893",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 42280,
+          "sha256": "9144394d2278505d51b59ade523e21f60d1bfed6a32b33e191d71b30970d3063"
+        },
+        {
+          "number": 2,
+          "kind": "HTML (1/2)",
+          "characters": 40746,
+          "sha256": "50d9ead5ff6a82c04ffb0a0d89bb3d15315f79513e0d0bb8300543547100159b"
+        },
+        {
+          "number": 3,
+          "kind": "HTML (2/2)",
+          "characters": 19023,
+          "sha256": "45c70bc2e70e989530763fe9b0f0fbf6c805e6b73b6706b292471578d6a8a39b"
+        },
+        {
+          "number": 4,
+          "kind": "JS",
+          "characters": 14109,
+          "sha256": "a1e0296bc954bf8852067eda9b074377e2a904c4ac338eae8340da205f4adecf"
+        }
+      ],
+      "rootIds": [
+        "ts-prd-t-brain",
+        "ts-prd-t-brain-p2"
+      ],
+      "route": "/platform/t-brain",
+      "sourceRoute": "/platform/t-brain",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/t-brain",
+        "/products/t-brain"
+      ],
+      "seo": {
+        "title": "T-Brain | The Intelligence Layer Behind Topsort Commerce AI | Topsort",
+        "description": "T-brain is the commerce foundation under every Topsort decision: shared models and embeddings powering relevance, ranking and prediction across every surface.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "platform/tomi.html",
+      "title": "Campaign operations,without the operational drag.",
+      "sha256": "b0377ae71d4987ca68b160fe9068fa196970e5e0239156f85d4e889c34486956",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 36371,
+          "sha256": "106a43ed56a4e131a00813c03fc1d3f44f607dee6988c3a1e3c452711bff4cec"
+        },
+        {
+          "number": 2,
+          "kind": "HTML (1/2)",
+          "characters": 46716,
+          "sha256": "576552ee2d6b978c4ddf502cc42ada078f58876108f31191ccba272e3e1aa331"
+        },
+        {
+          "number": 3,
+          "kind": "HTML (2/2)",
+          "characters": 19099,
+          "sha256": "cc918ae88d7eea7c75d0f9f5e1b3e4cbd38aa1fcd09a0f4230cc851a46e02026"
+        },
+        {
+          "number": 4,
+          "kind": "JS",
+          "characters": 14103,
+          "sha256": "e8ffaf57b21f5d7bc6dc76aff63b3ed9cb6bcd8eb35bee4fd116fddf6d47b9a8"
+        }
+      ],
+      "rootIds": [
+        "ts-prd-tomi",
+        "ts-prd-tomi-p2"
+      ],
+      "route": "/platform/tomi",
+      "sourceRoute": "/platform/tomi",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/tomi",
+        "/products/tomi"
+      ],
+      "seo": {
+        "title": "Tomi | AI agent for retail media campaign operations | Topsort",
+        "description": "Tomi handles retail media campaign operations conversationally: creating campaigns, spotting issues and recommending changes grounded in commerce data.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "platform/toppie.html",
+      "title": "Connect the commerce Media Network.",
+      "sha256": "eca7f4c0db343ba094325cf08073aa902f2069ce1055fca9185dde1eaa2f4475",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 39037,
+          "sha256": "abd511d5f10d60f32dde1c3896e078ed3b876589da161497e2703e7774fbb2af"
+        },
+        {
+          "number": 2,
+          "kind": "HTML (1/2)",
+          "characters": 41328,
+          "sha256": "1b00c05b520dad56fc6bf74c46b751e3103fa41867d0044243ecee513da141af"
+        },
+        {
+          "number": 3,
+          "kind": "HTML (2/2)",
+          "characters": 19072,
+          "sha256": "3cd3dc98400be3978b20069df4984e1fd33fb8f3b2fdbd8d71a3c9ce90831240"
+        },
+        {
+          "number": 4,
+          "kind": "JS",
+          "characters": 14115,
+          "sha256": "ad83ed2fabad266598e7a83eb871563c93bc8a32408c06571ece82cc990c2b11"
+        }
+      ],
+      "rootIds": [
+        "ts-prd-toppie-dsp",
+        "ts-prd-toppie-dsp-p2"
+      ],
+      "route": "/platform/toppie",
+      "sourceRoute": "/platform/toppie",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/private-toppie",
+        "/toppie-dsp",
+        "/products/private-toppie",
+        "/products/toppie-dsp"
+      ],
+      "seo": {
+        "title": "Toppie | Free cross-retailer campaign workspace | Topsort",
+        "description": "Toppie gives brands and agencies a free workspace to plan, launch, manage and measure retail media campaigns across every connected retailer.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "platform/data-genie.html",
+      "title": "Data Genie",
+      "sha256": "66245ab6cd5db996d9515f6b87dda04d97850ce3ffd296d0a7dea0003e5286f2",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 19620,
+          "sha256": "8794903b49189795910685089362ce394621e4100bf7b4369d966b905b9aa0d6"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 12741,
+          "sha256": "c619e780c06143b92883a506056117c76fcea1fb939184c404509e44e3a0c6fe"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 14092,
+          "sha256": "245b467a8601ddb2f4bcf263e84ef1c0e0e3ff254eac22e10b15d603f20752db"
+        }
+      ],
+      "rootIds": [
+        "ts-prd-data-genie"
+      ],
+      "route": "/platform/data-genie",
+      "sourceRoute": "/platform/data-genie",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/data-genie",
+        "/genie-copilot",
+        "/products/data-genie",
+        "/products/genie-copilot"
+      ],
+      "seo": {
+        "title": "Data Genie | Topsort",
+        "description": "Retail media reporting, benchmarking and data sharing for retailers, brands and agencies, from one measurement source.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "platform/offsite.html",
+      "title": "Offsite Advertising",
+      "sha256": "1a9560b91c7ebefba3354c1b13bebe0f760575da86f28ba38da793b7e7341105",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 20783,
+          "sha256": "6e81a57ba1833eb92d776f9082c60e45057ed907a709feee8ded98f64833b9cd"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 16978,
+          "sha256": "7f60f84304f85a9133c9d7013a1c1e14d5ae82798b4081cc15aa519096dedbb1"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 14101,
+          "sha256": "73eceb3dd8ba46a7d66d766e4a96d03e1ae99339172db62a25ac98dd022ba625"
+        }
+      ],
+      "rootIds": [
+        "ts-prd-offsite-advertising"
+      ],
+      "route": "/platform/offsite",
+      "sourceRoute": "/platform/offsite",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/products/offsite-ads"
+      ],
+      "seo": {
+        "title": "Offsite Retail Media | Topsort",
+        "description": "Extend retail media demand beyond owned properties with commerce audiences, closed-loop measurement and one campaign workflow.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "platform/in-store.html",
+      "title": "In-Store Media",
+      "sha256": "94066d3cd54d49c40c4b21addcfa8cec411747f0f7244bcca112c10a258574ce",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 21558,
+          "sha256": "b03647f4ac966c09876b991095e3e1159401abeec8b897a73bf53364db41e37d"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 28795,
+          "sha256": "c10661f65b7fc3149860ec17053cb57039349dd3d970a7af552b7190b6ca152e"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 14090,
+          "sha256": "a3f0e20d1f65e5b4ba3f743c310eb5455bfb42f03b9c87762c284e8237c77562"
+        }
+      ],
+      "rootIds": [
+        "ts-prd-in-store"
+      ],
+      "route": "/platform/in-store",
+      "sourceRoute": "/platform/in-store",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/products/in-store-journey"
+      ],
+      "seo": {
+        "title": "In-Store Media | Topsort",
+        "description": "Bring physical stores into the same retail media system: screens, store-level assortment and in-store transaction signals.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "platform/agentic-traffic-control-room.html",
+      "title": "Understand and manage AI shopping traffic.",
+      "sha256": "fce9cb8e5e0111db6246545a82d8f675288fd64f67718c33d8a638b30e5674a9",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 23715,
+          "sha256": "53f9c129e7de22108698f58bf150feb7a01bd0514cd662c1708ff87ee0219a73"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 31474,
+          "sha256": "1a2e12c8b799c69116e9728ae076a0debd540a1e00f2d76b921e3ac522fa3900"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 15084,
+          "sha256": "58e0a6ab8dcba999fd06d538d90a10a12a9c93f6523124f70c3fc8355d527eaa"
+        }
+      ],
+      "rootIds": [
+        "ts-agentic-traffic-control-room"
+      ],
+      "route": "/platform/agentic-traffic-control-room",
+      "sourceRoute": "/platform/agentic-traffic-control-room",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Agentic Traffic Control Room: Manage AI Shopping Agents | Topsort",
+        "description": "Understand and manage AI shopping traffic. See how AI agents interact with your store, fix missing product answers, configure sponsored offers and manage agent access.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "products/t-engine.html",
+      "title": "The intelligent ad engine for commerce.",
+      "sha256": "d2c5b1e72f807aebb910fca55eea230da8290236a4c1a99fd0ef55e318d518d6",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 32273,
+          "sha256": "82853bd598c18396e154187b6f8fe9aa5c19bd130f9acd91503c6c5c90a8fa68"
+        },
+        {
+          "number": 2,
+          "kind": "HTML (1/2)",
+          "characters": 45785,
+          "sha256": "acb96c6854c0a01b8d0111d7b3a7a55ffda673ceb62e5ff3f86214476a8aa658"
+        },
+        {
+          "number": 3,
+          "kind": "HTML (2/2)",
+          "characters": 10090,
+          "sha256": "3964822b0368107578b85b56e047ce424246c7ea312a3cc2d11516db6123f4d2"
+        },
+        {
+          "number": 4,
+          "kind": "JS",
+          "characters": 14111,
+          "sha256": "2377e49af3905d9cd122ed3b5ceede5bc8b93e85953a9ac079f199324e80b455"
+        }
+      ],
+      "rootIds": [
+        "ts-prd-t-engine",
+        "ts-prd-t-engine-p2"
+      ],
+      "route": "/products/t-engine",
+      "sourceRoute": "/products/t-engine",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/t-engine"
+      ],
+      "seo": {
+        "title": "T-Engine · Intelligent Ad Engine for Commerce | Topsort",
+        "description": "T-Engine powers real-time auctions, pacing, quality scoring, attribution-aware optimization and full-funnel decisioning for commerce media.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "products/t-zero.html",
+      "title": "A modern ad server for commerce.",
+      "sha256": "539008bc511e672e9b965e450335ecddb3ee993893c071534e2ddb503d9ee4e6",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 30686,
+          "sha256": "a853317485caaf8e1245774eaebc84bce475ba4b82df6888c8de37df99c9c82a"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 46809,
+          "sha256": "6dafdb04b1b5394b2b46ae1e6351142583bcfaa72d867e5db440672aba99b3cd"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 14088,
+          "sha256": "3492333a1b120869cd9164f18f66cd741d0357513d5aaa335a13f9dc4e0e631a"
+        }
+      ],
+      "rootIds": [
+        "ts-prd-t-zero"
+      ],
+      "route": "/products/t-zero",
+      "sourceRoute": "/products/t-zero",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/t-zero"
+      ],
+      "seo": {
+        "title": "T-Zero · Modern Ad Server for Commerce | Topsort",
+        "description": "T-Zero is a lightweight, programmable commerce ad server: ad serving, auctions, ranking logic and sponsored listings, launched in days.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "products/toptimize.html",
+      "title": "Make your existing ad server brilliant.",
+      "sha256": "9392b33dbf3efbdd67af71cf140c76ff9f339b870e6421234a7054f40e92d719",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 30547,
+          "sha256": "2038fdc3262ca19d9e4919b9ddca6bf64d708cdea78dfa155b63512068bf96a4"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 46411,
+          "sha256": "27703b3f42f3e1b530ee489dc16c3063f0b6a6dd76e622b0c361e6833a268c43"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 14091,
+          "sha256": "74d52acb797b2486fcc9159e87d818e73be9fc38133cb3a7e30ce4d8840437ad"
+        }
+      ],
+      "rootIds": [
+        "ts-prd-toptimize"
+      ],
+      "route": "/products/toptimize",
+      "sourceRoute": "/products/toptimize",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/toptimize",
+        "/toptimize-ssp",
+        "/products/toptimize-ssp"
+      ],
+      "seo": {
+        "title": "Toptimize · AI Intelligence Layer for Your Ad Server | Topsort",
+        "description": "Toptimize wraps your existing ad server in an AI intelligence layer: revenue predictions, dynamic pricing and demand-aware allocation. No rip-and-replace.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/index.html",
+      "title": "Build the commerce media business you need.",
+      "sha256": "9d6fce1abe2fc3c42021bf3868d10e58ab4be5c109715c3ca1616053b693fb3e",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 40812,
+          "sha256": "bf1eec92400ad2f411ebeb8548a2fdc345c01899f40ad5eb083ded47181170c9"
+        },
+        {
+          "number": 2,
+          "kind": "HTML (1/2)",
+          "characters": 48755,
+          "sha256": "33551e9ec3f54e167e2aca264a243c2c5757bd3f188c4d99021a0aeb57e2fa2d"
+        },
+        {
+          "number": 3,
+          "kind": "HTML (2/2)",
+          "characters": 1626,
+          "sha256": "590fcaaa57efe9c6c3f34343172f5bb03679fe926625582116874615f9333ac4"
+        },
+        {
+          "number": 4,
+          "kind": "JS",
+          "characters": 17138,
+          "sha256": "26d3cde7f3b0647066d108bce8ba48f537cf765470c031ac9b73093a58135c9b"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-index",
+        "ts-sol-index-p2"
+      ],
+      "route": "/solutions",
+      "sourceRoute": "/solutions",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Commerce AI Solutions for Retailers & Marketplaces | Topsort",
+        "description": "Launch, scale, optimize and expand a retail media network for retailers, marketplaces, delivery apps and B2B commerce with Topsort.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/launch.html",
+      "title": "Go live in weeks, not quarters.",
+      "sha256": "4f4e06c9109984ca498ddf9d82fe5b5c2c2c03e79935bb790685398c7da2469e",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 34425,
+          "sha256": "06d1d85425ee5a130a734938f4be99d7c3d24f321548d7178c2b1c2247b1b99b"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 22075,
+          "sha256": "7bbf3fe91d03b7c9ca734a50924df29da430a05b4c4b1dfa1ce479579a92d1ef"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17121,
+          "sha256": "7d7e1064d2b349944d0148ea9a532c9be070fbc0589c3e9262ddbd88e6c6d125"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-launch"
+      ],
+      "route": "/solutions/launch",
+      "sourceRoute": "/solutions/launch",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Go live in weeks, not quarters | Topsort",
+        "description": "Launch your commerce media business with production-ready infrastructure: auctions, APIs, advertiser tools and measurement, ready from day one.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/scale.html",
+      "title": "Scale without breaking what works.",
+      "sha256": "76bf739a3312e894af418021a9a07c099895f6bc91645dec2a20e95615847ed9",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 34421,
+          "sha256": "8c1db9216841a5ba5733b04d1d0a95c1d29e3b31b7e4c33524cb7e7bc69b92ed"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 22185,
+          "sha256": "a5c2966131d362e61a74f23e0efed7168ae7ead2445ac97241de941701382b05"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17120,
+          "sha256": "a470c316be78bf8a4cad58e3c5297ed43652af17650c461a95463854e8b4f26a"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-scale"
+      ],
+      "route": "/solutions/scale",
+      "sourceRoute": "/solutions/scale",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Scale without breaking what works | Topsort",
+        "description": "Grow from hundreds to millions of daily auctions on infrastructure that scales with you. No re-architecture, no downtime.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/optimize.html",
+      "title": "Squeeze more from every impression.",
+      "sha256": "2b5be96078872342069e6a3691b4659a2ee2d5cb190efc01d9fe14584293e8d4",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 34429,
+          "sha256": "83f0c62603f65a1c9b9e2dc15c79d276154cedbd12aea6b7f80d638cd619618d"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 22241,
+          "sha256": "07098c3852dad13f3d19a10ff59f808876cc4191f25833c6494db0e98d8b7057"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17123,
+          "sha256": "fcde0856ee7e4d2d387a4bfa6c0d7c01244356afd3109f9ff51c036037ddc2c4"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-optimize"
+      ],
+      "route": "/solutions/optimize",
+      "sourceRoute": "/solutions/optimize",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Optimize Retail Media Yield & ROAS | Topsort",
+        "description": "Improve yield, advertiser ROAS, pacing, relevance and auction efficiency with AI optimization built into every commerce media decision.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/expand.html",
+      "title": "Take your commerce media beyond your own surfaces.",
+      "sha256": "9872ce2a18d448e8da418d0e775b5396ad387518300127ba6157f9bc3f5d6162",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 34424,
+          "sha256": "202679d4418e281da00ad7990cf325a163d7f4ec039762564a7b94b15d0669d1"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 22083,
+          "sha256": "c3e29151dfc9fb1efd2d437cb1b6171d9f48a1f462b084158b01f7304d4f6bc8"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17121,
+          "sha256": "ec1967a371ec58507d879df0cca4882901a67d81acdbc2ced20fd8fb787b5e18"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-expand"
+      ],
+      "route": "/solutions/expand",
+      "sourceRoute": "/solutions/expand",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Take your commerce media beyond your own surfaces | Topsort",
+        "description": "Expand across offsite channels, new formats and partner networks, powered by your first-party commerce data and unified measurement.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/offsite-advertising.html",
+      "title": "Take your commerce media beyond owned surfaces.",
+      "sha256": "4935ef988f2475d2c51d9328cf24cc34651100673c94548c740a70fd1b0c8242",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 36539,
+          "sha256": "1d60f74aea76633666be31adc2e0e48026b75e46795e759692cb04af9cea5f0d"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 24157,
+          "sha256": "0b0d06ffa69fa68f00dd4b677ac0484e175beb1b59fc8706d8525701c8dfb2d6"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17134,
+          "sha256": "ad22832859cb0188be7314b76d687b92b1a28eef0797fb1e37bff17e92062649"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-offsite-advertising"
+      ],
+      "route": "/solutions/offsite-advertising",
+      "sourceRoute": "/solutions/offsite-advertising",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Offsite Advertising — Demand Orchestration | Topsort",
+        "description": "Extend retail media beyond owned surfaces with offsite demand orchestration infrastructure.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/in-store.html",
+      "title": "Turn every store into an intelligent commerce surface.",
+      "sha256": "1a45b5bf0f5c5dad3ead185ca1a1138ee3a1b66733b608c1d2a070b8f0164083",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 36516,
+          "sha256": "184b01544d3e07c94f912476cddf4ef1c29c510627d059daf83bcbbad3d47ce3"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 21666,
+          "sha256": "727055162c614dd49c521aabf0a05b1af6cce75765d6a9974a253fe8f3e6b5d8"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17123,
+          "sha256": "3c6c80b5667055fde64ec35f746f1bc8b7f783843c1e4b63eac530b8eb8acf3f"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-in-store"
+      ],
+      "route": "/solutions/in-store",
+      "sourceRoute": "/solutions/in-store",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "In-Store Retail Media | Topsort",
+        "description": "Activate in-store retail media — screens, shelf, and point-of-sale monetization integrated with your retail media stack.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/sponsored-listings.html",
+      "title": "Sponsored listings that feel native.",
+      "sha256": "20f5512bf580c903024b8ae1e3ff15d943940693e9f776f7c2871237640474c5",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 36534,
+          "sha256": "3d35efa07d5acb1f910b58278c0a503acceea38eddd1497b76f6b21c7ab9af4e"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 21409,
+          "sha256": "f9adbbd067b1a3e3676ca86255d184c6a1283f6c3569f60fc20ddcad4b6c834e"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17133,
+          "sha256": "4bf0c2ac08908cd69f157189c8f4a3ad6d7dbb1b10047f3c3b2d6650919aeed3"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-sponsored-listings"
+      ],
+      "route": "/solutions/sponsored-listings",
+      "sourceRoute": "/solutions/sponsored-listings",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Sponsored listings that feel native | Topsort",
+        "description": "Use AI-powered ranking and auction intelligence to place the right products across search and category experiences while protecting relevance and conver...",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/sponsored-brands.html",
+      "title": "Elevate brands at the top of the funnel.",
+      "sha256": "023aca46504481c287ea3cb0ce63ad1c52e6ce40062ac466878c6546b819d569",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 36656,
+          "sha256": "5a9d269fa1d960b8d9305804aa20a1d086b3c4bc38450d92d9cb261518427ec0"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 22626,
+          "sha256": "a52a87121969aa2d62fbda7b6eae230f6b7ddade62141b45c0964e120bb85bd0"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17131,
+          "sha256": "376cc0b80d9932bab212a26646e6960d2d03a2ae1f2051c38170c87ac24ef3a8"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-sponsored-brands"
+      ],
+      "route": "/solutions/sponsored-brands",
+      "sourceRoute": "/solutions/sponsored-brands",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Elevate brands at the top of the funnel | Topsort",
+        "description": "Premium brand placements that drive awareness, consideration, and conversion across your commerce platform.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/display-banner.html",
+      "title": "Display ads, reimagined for commerce.",
+      "sha256": "4496f81ab4c0e5a40cdd7aaf49f3c2feb4d8cea0f3c30eac15c0f52cf1c5699b",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 36650,
+          "sha256": "72e42bd947c69e8037c93e2ca3c60678d2b6bb0b60e63db93c832c1c83133829"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 22587,
+          "sha256": "26ac48cc42c2e91893d5cf1ce90e1eec913c8af613f089ef73e76d3acf6ec1b6"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17129,
+          "sha256": "2469cc70b135a2bbcdcb9c0bb86af18661427c3857385569ae1ec9d3eab8f178"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-display-banner"
+      ],
+      "route": "/solutions/display-banner",
+      "sourceRoute": "/solutions/display-banner",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Display ads, reimagined for commerce | Topsort",
+        "description": "High-impact banner and display placements powered by commerce data, auction mechanics, and real-time optimization.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/native-placements.html",
+      "title": "Ads that don't feel like ads.",
+      "sha256": "d499652246515f68263cdeea8d3b02c7e2dcbf2b52ede88621dd8fec3af92895",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 36655,
+          "sha256": "7a38c9a835aa8972475778e0ace3f82c2a0bb9e61c7b244b31c93077e50a1c5c"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 22735,
+          "sha256": "d2c268278e29afbbe9aea785a0843242431447acaf3f6d98451d0f3bc101b1fd"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17132,
+          "sha256": "4f3942b45ec4b3ddbf208ede0946d4f0a9754634239335edbf877f53b8802c2d"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-native-placements"
+      ],
+      "route": "/solutions/native-placements",
+      "sourceRoute": "/solutions/native-placements",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Ads that don't feel like ads | Topsort",
+        "description": "Native placements that match the look, feel, and function of the surrounding content. Higher engagement, better experience.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/video-ads.html",
+      "title": "Shoppable video for commerce platforms.",
+      "sha256": "2364b570555f90aeca8936283575af3b5ca0d64a3d28779741eb8f86e422d01c",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 36643,
+          "sha256": "a448ba8d7f8ac4d8633209be2838f051ea80481cb4120cacf10bf511a88e1c71"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 22576,
+          "sha256": "5f8299cd670c58358b30d9278501daa50ddccb9c7f42635f721460c56106fa65"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17124,
+          "sha256": "e286608b8e96414fd7489812159c735e72e52a4385b718556d7d95c4b7822816"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-video-ads"
+      ],
+      "route": "/solutions/video-ads",
+      "sourceRoute": "/solutions/video-ads",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Shoppable video for commerce platforms | Topsort",
+        "description": "Engage shoppers with rich video experiences. Product demos, brand stories, and interactive content powered by commerce data.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/marketplaces.html",
+      "title": "AI commerce infrastructure for modern marketplaces.",
+      "sha256": "a99f22c0988675571979dd5ab4811947c8a4fd0c3ff146792cd30295d773c50a",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 37146,
+          "sha256": "a2a073c244f9513b388585e8c04b9e310443604226d43e436e7f595541e8b22a"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 24184,
+          "sha256": "16f6e2e01ef1cf08edb5c5b35e29b5a663f64463f28709ab842dd99a17d7db34"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17127,
+          "sha256": "117264188cfd773864daed6febd1f8ff3616a29ab33e9285e5e611125f9eb8fc"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-marketplaces"
+      ],
+      "route": "/solutions/marketplaces",
+      "sourceRoute": "/solutions/marketplaces",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "AI commerce infrastructure for modern marketplaces | Topsort",
+        "description": "Turn marketplace traffic, seller demand, and commerce signals into an intelligent monetization business built to grow.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/retailers.html",
+      "title": "AI commerce infrastructure for modern retailers.",
+      "sha256": "dde4be72b0d230b804ec22b25c9c64f44d81a0cbc9bf2a4cf35e7b0979a08a89",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 37141,
+          "sha256": "a71971860358badf6af84cf41fd3bf38cb4ca91b3c3c09a4c25c09a8226d529e"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 23976,
+          "sha256": "8fce45392f8f7ea7833503c6222099798c933c36417fc43598506f40371c6482"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17124,
+          "sha256": "716221d8db34d24bf3e3d795c1588e2cd9cd8347169e92dfb0eb5794a6e7d612"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-retailers"
+      ],
+      "route": "/solutions/retailers",
+      "sourceRoute": "/solutions/retailers",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "AI commerce infrastructure for modern retailers | Topsort",
+        "description": "Turn your commerce data, inventory, and brand relationships into an intelligent monetization business built to grow.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/delivery-apps.html",
+      "title": "AI commerce infrastructure for delivery platforms.",
+      "sha256": "46b5d2ca92ea45c5697221940c2a87085bd54581ef4230b8555e32b6c3c09650",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 37198,
+          "sha256": "ebf191786660c148ea7db42f3dc34d72f81e9192aa10b8940be7f3e8f00ae627"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 23800,
+          "sha256": "6baead2e35f3d33a90b96299f2d1bc3e052f9324dfce68f6284947c6993ce42d"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17128,
+          "sha256": "f69ce2f863f5b1aefd8352eae543d6c5aed17e89aa2e4e5014e5587ab36a63b9"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-delivery-apps"
+      ],
+      "route": "/solutions/delivery-apps",
+      "sourceRoute": "/solutions/delivery-apps",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "AI commerce infrastructure for delivery platforms | Topsort",
+        "description": "Turn real-time ordering signals into intelligent advertising, discovery, and monetization across every delivery experience.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/travel-platforms.html",
+      "title": "Intelligent commerce for travel and hospitality.",
+      "sha256": "efb55ed11d9a80c7c3e080dc5b9a04549979145e6bb1708d3729e3aba295bf52",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 37203,
+          "sha256": "1c512e96723bb2bf8e6270188248c0b5b07a9d49b1cd819fe9a53d48d6799b53"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 23335,
+          "sha256": "e10acb0e0f5f175ede517b64066446bd5fb6fd52ea00db05e8c55b635f290963"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17131,
+          "sha256": "d9f9a06c5eac81bc95460f3bff20b2211a559ba63b651cc7ba2f40d7b670f248"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-travel-platforms"
+      ],
+      "route": "/solutions/travel-platforms",
+      "sourceRoute": "/solutions/travel-platforms",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Intelligent commerce for travel and hospitality | Topsort",
+        "description": "Turn high-intent travel signals into smarter discovery, advertising, and monetization across every booking experience.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/financial-platforms.html",
+      "title": "Intelligent commerce for financial platforms.",
+      "sha256": "70b3c331ae56ce720f4230b367e359aed7ac5140b679d24089b0f9ffb288bdcb",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 36760,
+          "sha256": "06ab8528b2f7c9bf2f57953c3113608bc0a37e42b828336888bc4e917b3d6453"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 23411,
+          "sha256": "428e1f1ff99db6673d76b131bb56fb24263b43bc46e45888dfd14c42743942a9"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17134,
+          "sha256": "3e2514f63b4bce325bb7942392b39d518abbb027cd8626fa6fb8a167a4b69f5c"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-financial-platforms"
+      ],
+      "route": "/solutions/financial-platforms",
+      "sourceRoute": "/solutions/financial-platforms",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Intelligent commerce for financial platforms | Topsort",
+        "description": "Turn financial product discovery into personalized experiences that connect customers with relevant products and create new revenue.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/classifieds.html",
+      "title": "Intelligent commerce for classifieds platforms.",
+      "sha256": "b7bf4a7044bfb678bd4b55d23832242d09d261a56d1f571ca9f9309c7b39758f",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 37194,
+          "sha256": "5a282ed5f340c456c51890b02bd0de85619c95499cd803bdebcb4454ecfc6c2b"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 23631,
+          "sha256": "9d52375ea46f5355c13dbd38273a39c10c168887ff78d7731b35c4e871595b12"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17126,
+          "sha256": "7b62888de3d018c8dc34a1a078ea12278e5bf62f214b8aec310623a085270225"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-classifieds"
+      ],
+      "route": "/solutions/classifieds",
+      "sourceRoute": "/solutions/classifieds",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Classifieds Advertising & Listing Promotion | Topsort",
+        "description": "Monetize classifieds with auction-based listing promotion, featured placements and revenue intelligence across jobs, real estate, automotive and services.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/migrations/index.html",
+      "title": "Migrate to commerce-native infrastructure.",
+      "sha256": "028c1e7cdb53bcd626bcc1d8ac45e9702e8f5d852a538c7e936a2ca9a81157b4",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 36621,
+          "sha256": "ff3bb4137ef13851ae19c82dfb8c60929b71b8e57219ed14ebcf2716934bccd8"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 31080,
+          "sha256": "f5dc8614e097b01fbf47b3193aa4e670ba31f69d2ef6025b33aacc29ec79f4b4"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 17125,
+          "sha256": "bd5b78c7688a4f6c386b2a360f4e3221293ea470979e39476f3941ebad2e8f56"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-migrations"
+      ],
+      "route": "/solutions/migrations",
+      "sourceRoute": "/solutions/migrations",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Migrations to Topsort | Commerce Media Ad Server Migration",
+        "description": "Phased migration paths from legacy ad servers and retail media platforms to Topsort's commerce-native infrastructure.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/migrations/google-ad-manager.html",
+      "title": "Migrate from Google Ad Manager to Topsort",
+      "sha256": "6c90e3d20310e65837acdf797f118ed2b332e9a19c29ce8b2cfab16be724083f",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 38913,
+          "sha256": "0a784e417735cbe50a2939b258645e36810cb30559f8ad32b25ddf54fea12a39"
+        },
+        {
+          "number": 2,
+          "kind": "HTML (1/2)",
+          "characters": 46959,
+          "sha256": "b76f32b7ddc99e8d0398a7d1808757a88740c99136e214a9480ae3ddce507f4e"
+        },
+        {
+          "number": 3,
+          "kind": "HTML (2/2)",
+          "characters": 26869,
+          "sha256": "dbaa001a6efbd45e8b5be9f29762c4b3cd2836faec93f2b8692c50a8826cf773"
+        },
+        {
+          "number": 4,
+          "kind": "JS",
+          "characters": 17184,
+          "sha256": "e8dc3d188c2a92f1e97fec4a3f4e57a157553f7af2d50f65f2c5344ec4d57949"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-migrations-google-ad-manager",
+        "ts-sol-migrations-google-ad-manager-p2"
+      ],
+      "route": "/solutions/migrations/google-ad-manager",
+      "sourceRoute": "/solutions/migrations/google-ad-manager",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Migrate from Google Ad Manager to Topsort | GAM Migration",
+        "description": "Migrate from Google Ad Manager to Topsort. Map GAM line items, ad units, creatives, targeting, and reporting to commerce-native retail media infrastructure with a phased migration plan.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "solutions/migrations/kevel.html",
+      "title": "Migrate from Kevelto Topsort.",
+      "sha256": "622fbadafc1b85e2f2392d8dd51827d16102f2be6e60735e392c1533b51f693b",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 37723,
+          "sha256": "c933f76dd2304a8567fa16bcb0e2076072282545e0072c644709d1a7816d340d"
+        },
+        {
+          "number": 2,
+          "kind": "HTML (1/3)",
+          "characters": 15192,
+          "sha256": "0a5110a0f90b21b875815a3660d6fe005a0ae7317a62db436afd6bbe9319a64d"
+        },
+        {
+          "number": 3,
+          "kind": "HTML (2/3)",
+          "characters": 47688,
+          "sha256": "9adb45c75b11da98f704c551b259cccb6757727b1ddfdb95e8cdf584fb9e4b17"
+        },
+        {
+          "number": 4,
+          "kind": "HTML (3/3)",
+          "characters": 12069,
+          "sha256": "78bf6b3b2cdfba78e1df58cd5963188e7166e6fc26f346afa8ac6522c7fcd99f"
+        },
+        {
+          "number": 5,
+          "kind": "JS",
+          "characters": 17189,
+          "sha256": "caa73a751d33289695e8a85997e642041bfaaaccbfb901d188d6926eb0b39217"
+        }
+      ],
+      "rootIds": [
+        "ts-sol-migrations-kevel",
+        "ts-sol-migrations-kevel-p2",
+        "ts-sol-migrations-kevel-p3"
+      ],
+      "route": "/solutions/migrations/kevel",
+      "sourceRoute": "/solutions/migrations/kevel",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [],
+      "seo": {
+        "title": "Migrate from Kevel to Topsort | Kevel Migration",
+        "description": "Migrate from Kevel to Topsort with a mapped, validated migration: advertisers to vendors, flights to campaigns, ads to bids, creatives to assets, and zones to slots.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "compare/index.html",
+      "title": "Topsort vs. legacyretail media platforms.",
+      "sha256": "2490cd767dd1dbe66ae8caa929cee992f8e62e6484f0686a2747212616825d77",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 45356,
+          "sha256": "600b0fef603fd4b486ad303c96971a6eb3c6cbc047f4c94eb717419e70456573"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 25578,
+          "sha256": "641353bd8015c2d88b02fdb51f2dd9fc3a8c736ed1a6956824c2a9ea747516f7"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 4631,
+          "sha256": "77c7a9778a24b0e4efd9ad576fd545dffae95fa0531619ab1f346d980088deac"
+        }
+      ],
+      "rootIds": [
+        "ts-compare"
+      ],
+      "route": "/compare",
+      "sourceRoute": "/compare",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/compare/legacy-retail-media-platforms"
+      ],
+      "seo": {
+        "title": "Topsort vs. Legacy Retail Media Platforms | Comparison Hub",
+        "description": "Compare Topsort's commerce intelligence infrastructure with Criteo, CitrusAd, Kevel, Pentaleap, Zitcha, and VTEX Ads — plus a phased, low-risk migration path.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "compare/criteo.html",
+      "title": "Topsort vs.Criteo.",
+      "sha256": "4aa8b4d09c98eea8c8f86f6e2cd0313b3d9bf5cbf7754e726c9e3d2d4673eb22",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 45356,
+          "sha256": "600b0fef603fd4b486ad303c96971a6eb3c6cbc047f4c94eb717419e70456573"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 25948,
+          "sha256": "5d7208428e251a9c63f86f39f838cc2fda09ae0484dc0efb45968589fcc88ce5"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 4638,
+          "sha256": "ab30839357c36cde61a85085bb18f1579ec2bc2901a601ae05c2d5b1f2d39d2b"
+        }
+      ],
+      "rootIds": [
+        "ts-compare-criteo"
+      ],
+      "route": "/compare/criteo",
+      "sourceRoute": "/compare/criteo",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/compare/topsort-vs-cireto",
+        "/compare/topsort-vs-criteo"
+      ],
+      "seo": {
+        "title": "Topsort vs. Criteo | Own the Retail Media Engine",
+        "description": "Compare Topsort and Criteo: retailer-owned commerce media infrastructure with AI-native auctions and demand mediation versus an established commerce media network.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "compare/kevel.html",
+      "title": "Topsortvs. Kevel.",
+      "sha256": "e20e3c3aee82b36078475c1d24a5d1abd5a9946c0f9a9a6af64a819790b2b673",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 45356,
+          "sha256": "600b0fef603fd4b486ad303c96971a6eb3c6cbc047f4c94eb717419e70456573"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 30596,
+          "sha256": "1446400280db7f23c8be93d04bb8870b70e3f9accd7c55e85e362b3dfd7e923d"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 4637,
+          "sha256": "5137abec1427e3057facc741a54a4508d52437bd778a4772b209509a45e55ba8"
+        }
+      ],
+      "rootIds": [
+        "ts-compare-kevel"
+      ],
+      "route": "/compare/kevel",
+      "sourceRoute": "/compare/kevel",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/compare/topsort-vs-kevel"
+      ],
+      "seo": {
+        "title": "Topsort vs. Kevel | Commerce Media vs. Ad Infrastructure",
+        "description": "Compare Topsort and Kevel: commerce-native auctions, AI optimization, attribution and omnichannel monetization versus configurable ad-serving infrastructure.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "compare/google-ad-manager.html",
+      "title": "Topsort vs.Google Ad Manager.",
+      "sha256": "efcdb13421168996a41d5a47060560942a0b14a0ea774fbac86b8a6b7c6c2d9f",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 45356,
+          "sha256": "600b0fef603fd4b486ad303c96971a6eb3c6cbc047f4c94eb717419e70456573"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 29060,
+          "sha256": "1dc1b4d06105da7a6615b8515acb6bad4d4121ef6c1185395fbdab3f44fb9b8a"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 4635,
+          "sha256": "a1b61ced2607921d1c8870fe4f26da786f0d4b69d70d79feff3640f71f019629"
+        }
+      ],
+      "rootIds": [
+        "ts-compare-gam"
+      ],
+      "route": "/compare/google-ad-manager",
+      "sourceRoute": "/compare/google-ad-manager",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/compare/topsort-vs-google-ad-manager",
+        "/compare/gam"
+      ],
+      "seo": {
+        "title": "Topsort vs. Google Ad Manager | Commerce Media vs. Ad Serving",
+        "description": "Compare Topsort and Google Ad Manager: commerce-native auctions, catalog intelligence, purchase attribution and AI optimization versus publisher ad inventory management.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "compare/moloco.html",
+      "title": "Topsortvs. Moloco.",
+      "sha256": "f475f3610afba7fe436f331165ef3470e0939904f498382bc61dcd604dccfffd",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 45356,
+          "sha256": "600b0fef603fd4b486ad303c96971a6eb3c6cbc047f4c94eb717419e70456573"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 28881,
+          "sha256": "c5999e2d2536a1df6b751a06608ba30dc01a47771a76a8f60f7461c88605932a"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 4638,
+          "sha256": "120af0d1e12b21934f50e661d62705075b290c8f34298c577ebda796364de5e9"
+        }
+      ],
+      "rootIds": [
+        "ts-compare-moloco"
+      ],
+      "route": "/compare/moloco",
+      "sourceRoute": "/compare/moloco",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/compare/topsort-vs-moloco"
+      ],
+      "seo": {
+        "title": "Topsort vs. Moloco | Commerce Media Comparison",
+        "description": "Compare Topsort and Moloco: commerce media infrastructure with auctions, relevance, advertiser workflows, and omnichannel monetization versus AI-powered performance advertising.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "compare/vtex-ads.html",
+      "title": "Topsortvs. VTEX Ads.",
+      "sha256": "d0720e6588d610cd5386de7245200e7d60926c289485ef8d30d05007bb3e720a",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 45356,
+          "sha256": "600b0fef603fd4b486ad303c96971a6eb3c6cbc047f4c94eb717419e70456573"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 42680,
+          "sha256": "8d8b8a2ca73749e720d33f3bead643a2c57436fa8482e199d180408ce4433b8b"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 4636,
+          "sha256": "f4aa47701d766518e8d26f55dd5710b8c0f105c96ed8ef9ed7825e7536fc18f3"
+        }
+      ],
+      "rootIds": [
+        "ts-compare-vtex"
+      ],
+      "route": "/compare/vtex-ads",
+      "sourceRoute": "/compare/vtex-ads",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/compare/topsort-vs-vtex",
+        "/compare/vtex"
+      ],
+      "seo": {
+        "title": "Topsort vs. VTEX Ads | Independent Commerce Media Infrastructure",
+        "description": "Compare Topsort and VTEX Ads: independent commerce media infrastructure with commerce-native auctions, AI optimization and attribution versus retail media inside the VTEX commerce ecosystem.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "compare/citrusad.html",
+      "title": "Topsortvs. CitrusAd / Epsilon.",
+      "sha256": "b813860d7b19a55e116084e8330e83dda91f28610eb636163d229aa2cf179b38",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 45356,
+          "sha256": "600b0fef603fd4b486ad303c96971a6eb3c6cbc047f4c94eb717419e70456573"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 30578,
+          "sha256": "7ba12105a3d3d152c599b396d8753d7902e269404abb8ba2252d295735f76941"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 4640,
+          "sha256": "224c91b009c6e728438a7c1a9adc0cbaff95cefc35d737ce479fefc98dfb8571"
+        }
+      ],
+      "rootIds": [
+        "ts-compare-citrusad"
+      ],
+      "route": "/compare/citrusad",
+      "sourceRoute": "/compare/citrusad",
+      "sourceAuthority": "source/src/App.tsx or source/src/pages/v3/pageData.ts",
+      "previousPaths": [
+        "/compare/epsilon"
+      ],
+      "seo": {
+        "title": "Topsort vs. CitrusAd / Epsilon Retail Media",
+        "description": "Compare Topsort and CitrusAd / Epsilon Retail Media: commerce-native auctions, AI optimization and operator-owned monetization versus ecosystem-led media activation.",
+        "noindex": false
+      },
+      "cms": null
+    },
+    {
+      "file": "fall-update-2026.html",
+      "title": "Topsort Fall Update 2026 Commerce—Evolved",
+      "sha256": "2a89160a87ff90645636b0aade362bd66680bc314563492122be8768e42fa8c4",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "complete file",
+          "characters": 48398,
+          "sha256": "2a89160a87ff90645636b0aade362bd66680bc314563492122be8768e42fa8c4"
+        }
+      ],
+      "rootIds": [
+        "topsort-fall-update"
+      ],
+      "route": "/fall-update-2026",
+      "sourceRoute": "/",
+      "sourceAuthority": "fall-update-2026-source/src/routes/index.tsx",
+      "previousPaths": [],
+      "seo": null,
+      "cms": null,
+      "note": "Separate event project; retain its existing Webflow SEO. Do not use /developer-day metadata."
+    }
+  ],
+  "components": [
+    {
+      "file": "navbar.html",
+      "title": null,
+      "sha256": "9bcc0af86d6d550fa643ab0250b5e97e36ae9a8d03e74f1529b69190c4ddf992",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 26056,
+          "sha256": "21ccb993c36dddaec60544899e15ec96a115939b60916f016ea3d816c242fbc2"
+        },
+        {
+          "number": 2,
+          "kind": "HTML (1/2)",
+          "characters": 46218,
+          "sha256": "e8fd7027e2a888260f54422e0111c608d5185c256063a131ff3fe978951891a0"
+        },
+        {
+          "number": 3,
+          "kind": "HTML (2/2)",
+          "characters": 28801,
+          "sha256": "3a8c55f60d3895da4a8be7a67c1a9aace903527dd6c09f8565050dd10643f65d"
+        },
+        {
+          "number": 4,
+          "kind": "JS",
+          "characters": 44818,
+          "sha256": "fe3cde306b4d8689d8e2265800d8edf385ea694238102509dca0582128ce7181"
+        }
+      ],
+      "rootIds": [
+        "ts-site-nav",
+        "ts-site-nav-p2"
+      ]
+    },
+    {
+      "file": "footer.html",
+      "title": null,
+      "sha256": "dbdd2d5d0642e5cd9d14320f6936eaf2bfa60cc213e3968c54a58fbaa3955024",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 10398,
+          "sha256": "021b0f07a3aeadbefa35b7ff498b23322ef38fe8bc03af8db5ec3e86c58f75b5"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 38873,
+          "sha256": "6814cc96d4a9c835cf9715cc5d51bfc144fead9e72bcc3545e9a0c9c0c77a27b"
+        },
+        {
+          "number": 3,
+          "kind": "JS",
+          "characters": 9913,
+          "sha256": "8373fd35c2a020f9f81b9e3aea65f8bfd034eabd348c517db528003cadeff43f"
+        }
+      ],
+      "rootIds": [
+        "ts-site-footer"
+      ]
+    },
+    {
+      "file": "global-head.html",
+      "title": null,
+      "sha256": "5451bb522b997a85dc14a6e59ae8b5ae64425db154617214bef5c524e341a6b3",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "complete file",
+          "characters": 20746,
+          "sha256": "5451bb522b997a85dc14a6e59ae8b5ae64425db154617214bef5c524e341a6b3"
+        }
+      ],
+      "rootIds": []
+    },
+    {
+      "file": "global-body.html",
+      "title": null,
+      "sha256": "532248504ca496d754c6fb1a11a894b60feba54ef7982a6040a6b98898700494",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "complete file",
+          "characters": 9036,
+          "sha256": "532248504ca496d754c6fb1a11a894b60feba54ef7982a6040a6b98898700494"
+        }
+      ],
+      "rootIds": []
+    },
+    {
+      "file": "newsletter-form.html",
+      "title": null,
+      "sha256": "7a63e35e9121ca7a4e2d96f60b290cdbcd007b8b8a5f8d64927fdc0fdfb8d15f",
+      "pasteParts": [
+        {
+          "number": 1,
+          "kind": "CSS",
+          "characters": 3875,
+          "sha256": "d0347a3b3748f3418f4cf8d6332b01683c6d5f55199bdcac01bf57bc30aedf0d"
+        },
+        {
+          "number": 2,
+          "kind": "HTML",
+          "characters": 464,
+          "sha256": "8ef4ac2e7f69decd32d11c468d58de9f19daaf2edf60eff67368b2a092f240bf"
+        }
+      ],
+      "rootIds": []
+    }
+  ],
+  "sharedSourceAliases": [
+    {
+      "route": "/privacy",
+      "file": "legals.html",
+      "note": "Same Legal component in source; reuse this file if the existing /privacy page remains. Prefer one canonical legal URL; do not invent another document."
+    }
+  ],
+  "supportingFiles": [
+    "README.md",
+    "installation.text",
+    "fields.md",
+    "seo-meta.text",
+    "redirects.json",
+    "source-pages-without-embeds.text",
+    "privacy-policy.docx"
+  ],
+  "missingSourceRoutes": [
+    "/audiences/agencies",
+    "/audiences/brands",
+    "/audiences/partners",
+    "/audiences/retailers-and-marketplaces",
+    "/cannes",
+    "/cannes-2026",
+    "/case-study/obi",
+    "/company/careers",
+    "/company/contact",
+    "/compare/pentaleap",
+    "/compare/zitcha",
+    "/customers",
+    "/developer-day",
+    "/developer-day-2026",
+    "/developers",
+    "/login",
+    "/login/sso",
+    "/partner-day",
+    "/partners",
+    "/platform/onsite",
+    "/pricing",
+    "/privacy-and-security",
+    "/pt/partner-day",
+    "/regions",
+    "/regions/australia-new-zealand",
+    "/regions/europe",
+    "/regions/europe/dach",
+    "/regions/latin-america",
+    "/regions/latin-america/brazil",
+    "/regions/latin-america/spanish-latam",
+    "/regions/middle-east",
+    "/regions/united-states",
+    "/resources/api",
+    "/resources/documentation",
+    "/resources/engineering",
+    "/resources/events",
+    "/resources/guides",
+    "/resources/insights",
+    "/resources/product",
+    "/resources/research",
+    "/resources/trust-center",
+    "/solutions/activate-offsite",
+    "/solutions/automate-campaign-operations",
+    "/solutions/catalog-and-discovery",
+    "/solutions/grow-advertiser-participation",
+    "/solutions/launch-retail-media",
+    "/solutions/monetize-in-store",
+    "/solutions/monetize-onsite",
+    "/solutions/unify-commerce-data",
+    "/start-free",
+    "/submit-rfp",
+    "/terms",
+    "/toppie-retailer",
+    "/try",
+    "/why-topsort",
+    "/why-topsort/architecture",
+    "/why-topsort/make-commerce-natural",
+    "/why-topsort/migration",
+    "/why-topsort/pan-commerce-intelligence",
+    "/why-topsort/retail-media-3",
+    "/why-topsort/security"
+  ]
+}
