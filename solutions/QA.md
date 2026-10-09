@@ -1,10 +1,5 @@
-# Solutions verification
+# Verification
 
-The current source-route handoff was checked with `scripts/test-source-sync.mjs` and `scripts/test-webflow-handoff.mjs`.
+The current routing audit checks assigned page URLs and internal links against the October 9, 2026 live sitemap snapshot. Run `node scripts/test-webflow-handoff.mjs` and `node scripts/test-embed-audit.mjs`.
 
-- Every solution remains one file containing numbered, bounded paste parts.
-- The route/file map in `../page-map.json` matches the source.
-- The all-page browser check covers 1440px and 390px overflow and JavaScript errors, plus shared navigation and selected page interactions.
-- Link targets may be planned source routes that are not yet published in Webflow. Use `../redirects.json` and verify the actual site after installation.
-
-Local checks do not verify Webflow page IDs, CMS bindings, live SEO or publication. Follow `../installation.text` for those checks.
+Layout and interaction checks are in `scripts/test-source-sync.mjs`. Live Webflow page IDs, bindings and publication require verification in the target site, as described in `../installation.text`.

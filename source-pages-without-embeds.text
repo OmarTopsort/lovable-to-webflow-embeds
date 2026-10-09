@@ -1,77 +1,79 @@
-SOURCE PAGES WITHOUT A DELIVERED EMBED
+SOURCE REFERENCE ONLY — NOT A WEBFLOW ROUTE PLAN
 
-These routes exist in /source but have not been converted in this package.
-SEO metadata is not a substitute for a page. Preserve existing Webflow content
-for these routes. Do not create blank pages or clone unrelated embeds.
-If full source coverage is requested, convert and verify these pages first.
+The live sitemap controls page paths. These additional source routes have no
+converted embed in this package; do not create or rename Webflow pages for them.
 
-/audiences/agencies — Agencies | Topsort
-/audiences/brands — Brands | Topsort
-/audiences/partners — Technology Partners | Topsort
-/audiences/retailers-and-marketplaces — Retailers and Marketplaces | Topsort
+/audiences/agencies
+/audiences/brands
+/audiences/partners
+/audiences/retailers-and-marketplaces
 /cannes
 /cannes-2026
-/case-study/obi — OBI Case Study: +93% ROAS with AI-Powered Auctions | Topsort
-/company/careers — Careers | Topsort
-/company/contact — Contact | Topsort
-/compare/pentaleap — Topsort vs. Pentaleap | Retail Media Platform Comparison
-/compare/zitcha — Topsort vs. Zitcha | Retail Media Platform Comparison
-/customers — Customer Stories | Topsort
-/developer-day — Topsort Fall 26 Update — Save the Date | Boston
-/developer-day-2026 — Topsort Fall 26 Update — Save the Date | Boston
-/developers — Developers — Topsort APIs & SDKs
+/case-study/obi
+/company/careers
+/company/contact
+/compare/pentaleap
+/compare/zitcha
+/customers
+/developer-day
+/developer-day-2026
+/developers
 /login
 /login/sso
 /partner-day
-/partners — Partners | Topsort
-/platform/onsite — Onsite Retail Media Advertising | Topsort
-/pricing — Pricing | Topsort
-/privacy-and-security — Privacy & Security | Topsort
+/partners
+/platform/onsite
+/pricing
+/privacy-and-security
 /pt/partner-day
-/regions — Topsort by Region | Global commerce media infrastructure
-/regions/australia-new-zealand — Retail Media in Australia and New Zealand | Topsort
-/regions/europe — Retail Media in Europe | Topsort
-/regions/europe/dach — Retail Media in DACH | Topsort Germany, Austria, Switzerland
-/regions/latin-america — Retail Media in Latin America | Topsort LATAM
-/regions/latin-america/brazil — Topsort no Brasil | Infraestrutura de retail media
-/regions/latin-america/spanish-latam — Topsort en América Latina | Retail media regional
-/regions/middle-east — Retail Media in the Middle East | Topsort
-/regions/united-states — Retail Media in the United States | Topsort
-/resources/api — API Documentation | Topsort
-/resources/documentation — Product Documentation | Topsort
+/regions
+/regions/australia-new-zealand
+/regions/europe
+/regions/europe/dach
+/regions/latin-america
+/regions/latin-america/brazil
+/regions/latin-america/spanish-latam
+/regions/middle-east
+/regions/united-states
+/resources/api
+/resources/documentation
 /resources/engineering
-/resources/events — Events and Webinars | Topsort
-/resources/guides — Retail Media Guides | Topsort
+/resources/events
+/resources/guides
 /resources/insights
 /resources/product
-/resources/research — Research and Benchmarks | Topsort
-/resources/trust-center — Security and Trust Center | Topsort
-/solutions/activate-offsite — Activate Offsite | Topsort
-/solutions/automate-campaign-operations — Automate Campaign Operations | Topsort
-/solutions/catalog-and-discovery — Improve Catalog and Discovery | Topsort
-/solutions/grow-advertiser-participation — Grow Advertiser Participation | Topsort
-/solutions/launch-retail-media — Launch a Retail Media Network | Topsort
-/solutions/monetize-in-store — Monetize In-Store | Topsort
-/solutions/monetize-onsite — Monetize Onsite | Topsort
-/solutions/unify-commerce-data — Unify Commerce Data | Topsort
-/start-free — Start free | Topsort
-/submit-rfp — RFP | Topsort
-/terms — Terms | Topsort
+/resources/research
+/resources/trust-center
+/solutions/activate-offsite
+/solutions/automate-campaign-operations
+/solutions/catalog-and-discovery
+/solutions/grow-advertiser-participation
+/solutions/launch-retail-media
+/solutions/monetize-in-store
+/solutions/monetize-onsite
+/solutions/unify-commerce-data
+/start-free
+/submit-rfp
+/terms
 /toppie-retailer
 /try
-/why-topsort — Why Topsort | The Commerce Media Operating System
-/why-topsort/architecture — Commerce-Native Architecture | Topsort
-/why-topsort/make-commerce-natural — Make Commerce Natural Again | Topsort
-/why-topsort/migration — Why Migrate to Topsort | Retail Media Platform Migration
-/why-topsort/pan-commerce-intelligence — AI Commerce Intelligence | Topsort
-/why-topsort/retail-media-3 — Retail Media 3.0 | Topsort
-/why-topsort/security — Security and Trust | Topsort
+/why-topsort
+/why-topsort/architecture
+/why-topsort/make-commerce-natural
+/why-topsort/migration
+/why-topsort/pan-commerce-intelligence
+/why-topsort/retail-media-3
+/why-topsort/security
 
-SOURCE REDIRECTS TO UNDELIVERED TARGETS (reference only)
-/resources/customers -> /customers
-/rfp -> /submit-rfp
+CONVERTED BUT NOT ASSIGNED TO A LIVE PAGE
+_unpublished/products/offsite.html
+Source: /platform/offsite
+Reason: Alternate source design. The existing sitemap page is supplied by the dedicated Solutions embed.
 
-ALIASES AND SEPARATE PROJECTS
-/privacy uses the same source Legal component as /legals; reuse legals.html.
-/v3 and /v3/* are prototype-prefix aliases, not new Webflow folders.
-/fall-update-2026 has its own delivered embed from fall-update-2026-source.
+_unpublished/products/in-store.html
+Source: /platform/in-store
+Reason: Alternate source design. The existing sitemap page is supplied by the dedicated Solutions embed.
+
+_unpublished/products/agentic-traffic-control-room.html
+Source: /platform/agentic-traffic-control-room
+Reason: No dedicated product route is listed in the sitemap. Existing-page CTAs use Book a demo until a destination is established.
