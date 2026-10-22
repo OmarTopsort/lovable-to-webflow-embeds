@@ -186,7 +186,7 @@ Make receives application/x-www-form-urlencoded fields, including optOutNews as 
 </div>
 <!-- ════════ END PART 2 of 3 ════════ -->
 
-<!-- ════════ PART 3 of 3 · JS · 15,972 chars ════════ -->
+<!-- ════════ PART 3 of 3 · JS · 15,493 chars ════════ -->
 <script>
 (function () {
   'use strict';
@@ -206,20 +206,16 @@ const FREE_EMAIL_DOMAINS = new Set([
   "mailinator.com", "guerrillamail.com", "10minutemail.com", "tempmail.com", "yopmail.com",
 ]);
 
-const KEYBOARD_RUNS = ["qwert", "asdf", "zxcv", "sdfg", "dfgh", "fghj", "ghjk", "hjkl", "jkl", "wert", "ertz", "tyui", "uiop", "xcvb", "cvbn", "vbnm"];
-
-/** True when a word looks like random typing rather than a name or company. */
-function looksLikeGibberish(raw        )          {
-  const s = raw.trim().toLowerCase();
-  if (s.length < 2) return true;
-  const letters = s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z]/g, "");
-  if (letters.length === 0) return true;
-  if (/(.)\1{2,}/.test(letters)) return true; // aaa, xxxx
-  if (new Set(letters).size === 1) return true; // aa
-  if (letters.length >= 4 && !/[aeiouy]/.test(letters)) return true; // dkgj
-  if (/[bcdfghjklmnpqrstvwxz]{5,}/.test(letters)) return true; // dflkjsg
-  if (letters.length >= 4 && KEYBOARD_RUNS.some((k) => letters.includes(k))) return true;
-  return false;
+/** Detect only unmistakable junk entries; real names can contain repeated letters,
+ * long consonant clusters, or non-Latin characters. */
+function looksLikeGibberish(raw) {
+  const text = raw.trim().normalize("NFKC").toLowerCase();
+  const letters = (text.match(/\p{L}/gu) || []).join("");
+  // A value consisting solely of six or more identical letters is likely spam.
+  if (letters.length >= 6 && new Set(letters).size === 1) return true;
+  // Match whole keyboard-mash values, not fragments within a legitimate name.
+  const latin = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z]/g, "");
+  return /^(?:qwerty(?:uiop)?|asdfgh(?:jkl)?|zxcvbnm?)$/.test(latin);
 }
 
                                                                                                 
@@ -236,12 +232,6 @@ function validateLead(l           )             {
   const m = /^([a-z0-9._%+-]+)@([a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,})$/.exec(email);
   if (!m || email.length > 254) e.email = "invalid";
   else if (FREE_EMAIL_DOMAINS.has(m[2])) e.email = "personal";
-  else {
-    const local = m[1].replace(/[._%+-]/g, "");
-    const domainName = m[2].split(".")[0];
-    if (local.length > 2 && looksLikeGibberish(local.replace(/[0-9]/g, "") || "x")) e.email = "invalid";
-    else if (looksLikeGibberish(domainName.replace(/[0-9-]/g, "") || "x")) e.email = "invalid";
-  }
   return e;
 }
 
