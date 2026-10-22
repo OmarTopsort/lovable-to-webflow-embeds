@@ -5,7 +5,8 @@ SEO title: Marketplace Monetization Index 2026 Report | Topsort
 SEO description: How does your marketplace's advertising business measure up? Get benchmarks, customer examples and a practical 90-day playbook.
 Canonical: https://www.topsort.com/marketplace-monetization-index
 Marketing preference: checked opt-out => optin false; unchecked => optin true.
-Lead integration: the mmi-lead backend must assign submissions to the Marketplace Monetization Index 2026 list and honor opt-in preference; frontend alone does not configure the backend.
+Lead integration: Supabase mmi-lead remains unchanged. AFTER a successful Supabase response, an independent best-effort browser request sends the lead to the Make webhook for HubSpot form submission, list membership, and opt-out handling.
+Make receives application/x-www-form-urlencoded fields, including optOutNews as string "true" or "false". Do not place Make API keys in frontend code. Secure/verify opt-out actions in Make before activation; a public browser webhook is not proof of identity.
 -->
 
 <!-- ════════ PART 1 of 3 · CSS · 17,152 chars ════════ -->
@@ -185,7 +186,7 @@ Lead integration: the mmi-lead backend must assign submissions to the Marketplac
 </div>
 <!-- ════════ END PART 2 of 3 ════════ -->
 
-<!-- ════════ PART 3 of 3 · JS · 14,263 chars ════════ -->
+<!-- ════════ PART 3 of 3 · JS · 15,822 chars ════════ -->
 <script>
 (function () {
   'use strict';
@@ -333,6 +334,37 @@ function validateLead(l           )             {
       // The visible PDF link remains available if automatic downloading fails.
     } finally { downloadBusy = false; }
   }
+  // Send a separate best-effort copy only after Supabase confirms the submission.
+  // This is deliberately not awaited: Make must never block PDF delivery.
+  function forwardSuccessfulLeadToMake(lead) {
+    try {
+      var submissionId = (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function')
+        ? crypto.randomUUID()
+        : 'mmi-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2);
+      var payload = new URLSearchParams({
+        firstName: lead.firstName,
+        lastName: lead.lastName,
+        email: lead.email,
+        company: lead.company,
+        pageLanguage: lang,
+        reportLanguage: reportLang,
+        optOutNews: String(form.elements.namedItem('optout').checked),
+        submissionId: submissionId,
+        submittedAt: new Date().toISOString(),
+        sourcePage: location.origin + location.pathname
+      });
+      // Form encoding avoids cross-origin JSON preflight and Make parses it natively.
+      var hook = 'https://hook.us1.make.com/yi4e9nh785uz6m1wbxdcmav8ju485dw9';
+      var queued = false;
+      try { queued = typeof navigator.sendBeacon === 'function' && navigator.sendBeacon(hook, payload); }
+      catch (_) { /* Fall back to fetch below. */ }
+      if (!queued) {
+        fetch(hook, {method: 'POST', mode: 'no-cors', keepalive: true, body: payload})
+          .catch(function () { /* Do not change the Supabase/PDF outcome. */ });
+      }
+    } catch (_) { /* Make is independent of the successful lead submission. */ }
+  }
+
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
     if (busy || sent) return;
@@ -360,6 +392,7 @@ function validateLead(l           )             {
       }
       sent = true; form.hidden = true; success.hidden = false; success.focus();
       downloadReport();
+      forwardSuccessfulLeadToMake(lead);
     } catch (_) { serverError.hidden = false; }
     finally { busy = false; render(); }
   });
