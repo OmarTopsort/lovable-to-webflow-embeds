@@ -186,7 +186,7 @@ Make receives application/x-www-form-urlencoded fields, including optOutNews as 
 </div>
 <!-- ════════ END PART 2 of 3 ════════ -->
 
-<!-- ════════ PART 3 of 3 · JS · 15,822 chars ════════ -->
+<!-- ════════ PART 3 of 3 · JS · 15,972 chars ════════ -->
 <script>
 (function () {
   'use strict';
@@ -336,7 +336,7 @@ function validateLead(l           )             {
   }
   // Send a separate best-effort copy only after Supabase confirms the submission.
   // This is deliberately not awaited: Make must never block PDF delivery.
-  function forwardSuccessfulLeadToMake(lead) {
+  function forwardSuccessfulLeadToMake(lead, optOutAtSubmit) {
     try {
       var submissionId = (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function')
         ? crypto.randomUUID()
@@ -348,7 +348,7 @@ function validateLead(l           )             {
         company: lead.company,
         pageLanguage: lang,
         reportLanguage: reportLang,
-        optOutNews: String(form.elements.namedItem('optout').checked),
+        optOutNews: String(optOutAtSubmit),
         submissionId: submissionId,
         submittedAt: new Date().toISOString(),
         sourcePage: location.origin + location.pathname
@@ -370,6 +370,8 @@ function validateLead(l           )             {
     if (busy || sent) return;
     var lead = {};
     fields.forEach(function (name) { lead[name] = form.elements.namedItem(name).value; });
+    // Capture the checkbox before Supabase starts its asynchronous request.
+    var optOutAtSubmit = form.elements.namedItem('optout').checked;
     errors = validateLead(lead); serverError.hidden = true; renderErrors();
     var first = fields.find(function (name) { return errors[name]; });
     if (first) { form.elements.namedItem(first).focus(); return; }
@@ -392,7 +394,7 @@ function validateLead(l           )             {
       }
       sent = true; form.hidden = true; success.hidden = false; success.focus();
       downloadReport();
-      forwardSuccessfulLeadToMake(lead);
+      forwardSuccessfulLeadToMake(lead, optOutAtSubmit);
     } catch (_) { serverError.hidden = false; }
     finally { busy = false; render(); }
   });
