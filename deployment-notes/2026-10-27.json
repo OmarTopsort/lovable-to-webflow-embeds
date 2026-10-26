@@ -1,0 +1,32 @@
+{
+  "siteId": "64761186cb9c6205851bddcb",
+  "date": "2026-10-27",
+  "cloudAsset": {
+    "assetId": "6adfc6c53ae9d4ba2bd1f2e3",
+    "source": "https://topsort-nav-palette.lovable.app/assets/sky-D7Iy8sfN.webp",
+    "dimensions": [
+      1920,
+      1088
+    ]
+  },
+  "cmsCollection": "661510b0a4b56514d678209f",
+  "cmsChanges": [
+    {
+      "id": "6abaaf5a6118ac9e1cf3fd93",
+      "link": "https://www.topsort.com/post/openai-ads-integration"
+    },
+    {
+      "id": "6abaaf5511a501d982e2a4d2",
+      "link": "https://www.topsort.com/post/introducing-insights-ai-powered-analytics-for-marketplace-performance"
+    },
+    {
+      "id": "6abaaf5434f71c5687ae6cb8",
+      "link": "https://www.topsort.com/post/introducing-redesigned-analytics-reports-in-topsort"
+    },
+    {
+      "id": "6abaaf55830ca74df417bfa3",
+      "isArchived": true,
+      "reason": "Empty planning placeholder Advendio (possible); no article content or destination."
+    }
+  ]
+}
