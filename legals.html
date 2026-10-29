@@ -327,7 +327,7 @@
 <div id="ts-legals-outro" class="ts-root ts-lg ts-core ts-core-prd" data-ts-root="ts-legals"><div class="ts-lg-4r ts-lg-4u ts-lg-7 ts-lg-s ts-lg-2"><div class="ts-lg-2o ts-lg-9 ts-lg-n"><section class="ts-lg-3e ts-lg-39 ts-lg-2f ts-lg-20"><div class="ts-lg-2y ts-lg-25"><section class="ts-lg-3e ts-lg-3j ts-lg-2f ts-lg-2i ts-lg-20 ts-lg-3h ts-lg-2g"><div class="ts-lg-2y ts-lg-25"><div class="" data-ts-reveal="0"><div class="ts-lg-3l ts-lg-33 ts-lg-3n ts-lg-b ts-lg-36 ts-lg-2d ts-lg-e ts-lg-8"><video class="ts-lg-3b ts-lg-0 ts-lg-1j ts-lg-1a ts-lg-4y ts-lg-2z" src="https://topsort-nav-palette.lovable.app/__l5e/assets-v1/c3512b7c-84fb-4013-aa99-cc76ee025d63/bg_animation.webm" autoplay="" loop="" playsinline="" aria-hidden="true"></video><div class="ts-lg-3l ts-lg-52 ts-lg-k ts-lg-l ts-lg-z ts-lg-2a ts-lg-2b ts-lg-2c"><div class="ts-lg-28"><h2 class="ts-lg-2v ts-lg-n ts-lg-48 ts-lg-r ts-lg-1n ts-lg-4m ts-lg-2k ts-lg-4e">Questions about our policies?</h2><p class="ts-lg-2u ts-lg-n ts-lg-43 ts-lg-1p ts-lg-3x">Our data protection team responds directly to customers, partners and individuals.</p></div><div class="ts-lg-k ts-lg-m ts-lg-y"><a class="ts-lg-14 ts-lg-1i ts-lg-1k ts-lg-w ts-lg-3o ts-lg-3f ts-lg-3k ts-lg-42 ts-lg-t ts-lg-4n ts-lg-5 ts-lg-4d ts-lg-3q ts-lg-1e ts-lg-1f" href="mailto:dpo@topsort.com">Email the DPO</a><a class="ts-lg-14 ts-lg-1i ts-lg-1k ts-lg-w ts-lg-3o ts-lg-3f ts-lg-3k ts-lg-42 ts-lg-t ts-lg-4n ts-lg-b ts-lg-f ts-lg-9 ts-lg-4c ts-lg-1d ts-lg-1c" href="https://www.topsort.com/product/tech/privacy-and-security">Privacy &amp; Security</a></div></div></div></div></div></section></div></section></div></div></div>
 <!-- ════════ END PART 9 of 9 ════════ -->
 
-<!-- ════════ PART 6 of 6 · JS · 18926 chars ════════ -->
+<!-- ════════ PART 6 of 6 · JS · 21294 chars ════════ -->
 <script>(function(){function run(){var roots=["ts-legals","ts-legals-p2","ts-legals-p3","ts-legals-p4","ts-legals-tomi-1","ts-legals-tomi-2","ts-legals-outro"].map(function(id){return document.getElementById(id);}).filter(Boolean);function all(s){return roots.flatMap(function(r){return Array.from(r.querySelectorAll(s));});}function one(s){return all(s)[0];}var views=all('[data-ts-tab-view]');views.forEach(function(view){view.querySelectorAll('[role="tab"]').forEach(function(button,i){button.addEventListener('click',function(){views.forEach(function(v,k){v.hidden=k!==i;});views[i].querySelectorAll('[role="tab"]')[i].focus();});button.addEventListener('keydown',function(e){if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();var next=e.key==='Home'?0:e.key==='End'?views.length-1:(i+(e.key==='ArrowRight'?1:-1)+views.length)%views.length;views[next].querySelectorAll('[role="tab"]')[next].click();});});});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();})();</script><script>(function () {
   'use strict';
   var roots = ["ts-legals","ts-legals-p2","ts-legals-p3","ts-legals-p4","ts-legals-tomi-1","ts-legals-tomi-2","ts-legals-outro"].map(function (id) { return document.getElementById(id); }).filter(function (root) { return root && !root.hasAttribute('data-ts-ready'); });
@@ -598,11 +598,13 @@
   });
 })();
 </script>
-<!-- ts-legals-sidebar-scrollspy-v1 -->
+<!-- ts-legals-sidebar-scrollspy-v2: body-level dock avoids embed overflow clipping -->
 <style>
-#ts-legals nav a[href^="#"] > span:first-child{transition:width .28s cubic-bezier(.2,.85,.25,1),background-color .28s ease!important}
-#ts-legals nav a[href^="#"] > span:last-child{transition:color .24s ease!important}
-@media (prefers-reduced-motion:reduce){#ts-legals nav a[href^="#"] > span{transition:none!important}}
+#ts-legals nav a[href^="#"] > span:first-child,
+#ts-legals-sidebar-portal nav a[href^="#"] > span:first-child{transition:width .28s cubic-bezier(.2,.85,.25,1),background-color .28s ease!important}
+#ts-legals nav a[href^="#"] > span:last-child,
+#ts-legals-sidebar-portal nav a[href^="#"] > span:last-child{transition:color .24s ease!important}
+@media(prefers-reduced-motion:reduce){#ts-legals nav a[href^="#"] > span,#ts-legals-sidebar-portal nav a[href^="#"] > span{transition:none!important}}
 </style>
 <script>
 (function(){
@@ -612,48 +614,94 @@
     var panel=root&&root.querySelector('aside .ts-lg-3u');
     var aside=panel&&panel.parentElement;
     var nav=panel&&panel.querySelector('nav');
-    var lastTerms=document.getElementById('ts-legals-tomi-2');
-    if(!root||!panel||!aside||!nav||!lastTerms)return;
+    var pageEnd=document.getElementById('ts-legals-outro')||document.getElementById('ts-legals-tomi-2');
+    if(!root||!panel||!aside||!nav||!pageEnd)return;
     var links=Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
-    var targets=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
     if(!links.length)return;
-    var lastActive=-1,frame=0;
-    var dockProps=['position','top','left','width','max-height','z-index'];
-    function clearDock(){dockProps.forEach(function(prop){panel.style.removeProperty(prop);});}
+    var targets=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+    var portal=document.createElement('div');
+    portal.id='ts-legals-sidebar-portal';
+    portal.className='ts-root ts-lg ts-core ts-core-prd';
+    portal.setAttribute('data-ts-root','ts-legals');
+    portal.style.setProperty('position','fixed','important');
+    portal.style.setProperty('display','none','important');
+    portal.style.setProperty('z-index','50','important');
+    portal.style.setProperty('overflow-x','visible','important');
+    portal.style.setProperty('overflow-y','visible','important');
+    portal.style.setProperty('margin','0','important');
+    portal.style.setProperty('padding','0','important');
+    var floatingPanel=panel.cloneNode(true);
+    floatingPanel.style.setProperty('position','static','important');
+    floatingPanel.style.setProperty('top','auto','important');
+    floatingPanel.style.setProperty('width','100%','important');
+    floatingPanel.style.setProperty('overflow-y','auto','important');
+    floatingPanel.querySelectorAll('[id]').forEach(function(el){el.removeAttribute('id');});
+    portal.appendChild(floatingPanel);
+    document.body.appendChild(portal);
+    var floatingLinks=Array.prototype.slice.call(floatingPanel.querySelectorAll('nav a[href^="#"]'));
+    var lastActive=-1,frame=0,floating=false;
     function headerOffset(){
       var header=document.querySelector('[data-ts-navbar],.w-nav,#ts-navbar');
       return Math.max(128,Math.round((header?header.getBoundingClientRect().height:0)+29));
     }
     function updateDock(){
-      var rect=aside.getBoundingClientRect(),end=lastTerms.getBoundingClientRect().bottom,top=headerOffset();
-      if(window.innerWidth<1024||rect.top>top||end<=top+20){clearDock();return;}
-      panel.style.setProperty('position','fixed','important');
-      panel.style.setProperty('left',Math.round(rect.left)+'px','important');
-      panel.style.setProperty('width',Math.round(rect.width)+'px','important');
-      panel.style.setProperty('max-height','calc(100vh - '+(top+16)+'px)','important');
-      panel.style.setProperty('z-index','10','important');
-      var y=Math.min(top,end-panel.getBoundingClientRect().height-16);
-      panel.style.setProperty('top',Math.round(y)+'px','important');
+      var rect=aside.getBoundingClientRect(),top=headerOffset();
+      var pageEndBottom=pageEnd.getBoundingClientRect().bottom;
+      var shouldDock=window.innerWidth>=1024&&rect.width>120&&rect.top<=top&&pageEndBottom>top+24;
+      if(!shouldDock){
+        if(floating){
+          portal.style.setProperty('display','none','important');
+          panel.style.removeProperty('visibility');
+          panel.removeAttribute('aria-hidden');
+          panel.inert=false;
+          floating=false;
+        }
+        return;
+      }
+      portal.style.setProperty('left',Math.round(rect.left)+'px','important');
+      portal.style.setProperty('top',Math.round(top)+'px','important');
+      portal.style.setProperty('width',Math.round(rect.width)+'px','important');
+      var maximum='calc(100vh - '+Math.round(top+16)+'px)';
+      portal.style.setProperty('max-height',maximum,'important');
+      floatingPanel.style.setProperty('max-height',maximum,'important');
+      if(!floating){
+        portal.style.setProperty('display','block','important');
+        panel.style.setProperty('visibility','hidden','important');
+        panel.setAttribute('aria-hidden','true');
+        panel.inert=true;
+        floating=true;
+      }
+    }
+    function scrollActiveIntoView(index){
+      if(!floating)return;
+      var selected=floatingLinks[index];
+      if(!selected)return;
+      var area=floatingPanel.getBoundingClientRect(),item=selected.getBoundingClientRect();
+      if(item.bottom>area.bottom-12)floatingPanel.scrollTop+=item.bottom-area.bottom+20;
+      else if(item.top<area.top+12)floatingPanel.scrollTop-=area.top+20-item.top;
     }
     function mark(index){
       if(index===lastActive)return;
       lastActive=index;
-      links.forEach(function(a,i){
-        var active=i===index,dot=a.firstElementChild,label=a.lastElementChild;
-        if(!dot||!label)return;
-        dot.classList.toggle('ts-lg-4x',active);
-        dot.classList.toggle('ts-lg-5',active);
-        dot.classList.toggle('ts-lg-4w',!active);
-        dot.classList.toggle('ts-lg-3',!active);
-        dot.classList.toggle('ts-lg-17',!active);
-        dot.classList.toggle('ts-lg-15',!active);
-        label.classList.toggle('ts-lg-t',active);
-        label.classList.toggle('ts-lg-4c',active);
-        label.classList.toggle('ts-lg-3y',!active);
-        label.classList.toggle('ts-lg-16',!active);
-        if(active)a.setAttribute('aria-current','location');
-        else a.removeAttribute('aria-current');
+      [links,floatingLinks].forEach(function(set){
+        set.forEach(function(a,i){
+          var active=i===index,dot=a.firstElementChild,label=a.lastElementChild;
+          if(!dot||!label)return;
+          dot.classList.toggle('ts-lg-4x',active);
+          dot.classList.toggle('ts-lg-5',active);
+          dot.classList.toggle('ts-lg-4w',!active);
+          dot.classList.toggle('ts-lg-3',!active);
+          dot.classList.toggle('ts-lg-17',!active);
+          dot.classList.toggle('ts-lg-15',!active);
+          label.classList.toggle('ts-lg-t',active);
+          label.classList.toggle('ts-lg-4c',active);
+          label.classList.toggle('ts-lg-3y',!active);
+          label.classList.toggle('ts-lg-16',!active);
+          if(active)a.setAttribute('aria-current','location');
+          else a.removeAttribute('aria-current');
+        });
       });
+      scrollActiveIntoView(index);
     }
     function run(){
       frame=0;
