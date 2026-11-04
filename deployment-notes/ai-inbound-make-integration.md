@@ -1,96 +1,59 @@
-# AI Inbound Service — Make.com integration checklist
+# Book a Demo — Felipe inbound AI / Make.com rollout
 
-**Implementation status:** Webflow payload enhancement is proposed in this PR, not yet deployed. The existing browser -> Make webhook and HubSpot region-based scheduler stay unchanged.
+**Updated:** November 4, 2026. This repository's Book a Demo form is synchronized with the saved Webflow embed. Publishing Webflow is a separate action.
 
-## Architecture
+## Live path
 
-Browser form -> existing Make webhook -> (existing Slack/CRM actions continue) + **new Make HTTP POST** -> Felipe's internal inbound API.
+`www.topsort.com/book-a-demo` browser form → **Website Leads (copy)** Make custom webhook → exclusive router:
 
-The bearer token MUST be stored in Make's secured HTTP/API-key credentials. **Never** put it in Webflow, browser JS, GitHub, Slack, or public docs. The token shared in chat should be rotated before going live.
+- **Full Book a Demo submission** → persistent event-id deduplication → authenticated POST to Felipe's backend → Felix/Felipe's service handles AI qualification, HubSpot writes and assigned-rep Slack briefing. No legacy Make Slack, Sheets, Gmail or HubSpot modules run for these submissions.
+- **Early Capture and other website submissions** → existing Slack → Google Sheets → Gmail → HubSpot + campaign routes. Felipe's API is not called.
 
-## Webflow full-form event (new + legacy fields)
+**Browser webhook destination:**
+`https://hook.us1.make.com/yilwrmxu7dqn2agmg5i1rrgaobp6bok4`
 
-New canonical fields:
-- `event_id`: unique `evt_<uuid>`, stable for retries **of that event**.
-- `submission_id`: `webflow_sub_<uuid>`, stable between early-capture and full-submit actions in the same page session.
-- `event_type`: `form_completed`
-- `source`: `topsort_website`
-- `page_url`: current page
-- `timestamp`: ISO 8601
-- `contact.first_name`, `contact.last_name`, `contact.email`
-- `form.message`: raw free-text notes
-- `form.product_interest`: comma-separated interest-chip labels
-- `form.country`: geolocation-derived country, which may be empty
-- `contact.job_title`, `contact.company`, `contact.website`: empty because the current form does not collect these details. Enrich on the server; never fabricate a submitted value.
+**Felipe API destination (Make HTTP POST only):**
+`https://internal-tooling.api.topsort.ai/api/v1/webhooks/inbound`
 
-Legacy fields `email`, `name`, `firstname`, `lastname`, `company`, `role`, `companySize`, `companyDomain`, `interests`, `notes`, `message`, `type`, `page`, `page_title`, `country`, `region`, `timestamp` remain, so existing Make mapping can continue.
+The API bearer credential is stored in Make's `Felipe AI API Token` connection, **never** in Webflow or the GitHub repository.
 
-Early-capture event:
-- `event_type`: `email_captured` (legacy `type` = `Early Capture`)
-- Includes `submission_id`, `event_id`, and `email`.
-- **Do not forward to the backend as `form_completed`**. If Felipe only supports `form_completed`, skip the new HTTP module for early captures.
+## Browser form payload
 
-## Make scenario: new HTTP request
+For a completed form:
+- `event_id` — distinct `evt_<uuid>` for this event; use for deduplication
+- `submission_id` — `webflow_sub_<uuid>`, shared with early capture within the page session
+- `event_type: "form_completed"`, legacy `type: "Full Form Submission"`
+- `source: "topsort_website"`, `page_url`, `page`, `timestamp`
+- `contact: {first_name, last_name, email, job_title, company, website}`
+- `form: {message, product_interest, country}`
+- Legacy top-level fields remain for existing Make mappings (`email`, `name`, `firstname`, `lastname`, `role`, `interests`, `notes`, `message`, `country`, `region`, etc.).
 
-1. Leave existing Slack/CRM modules active during migration.
-2. Add a router filter where `event_type = form_completed` OR legacy `type = Full Form Submission`.
-3. Add Make HTTP `Make a request`: POST `https://internal-tooling.api.topsort.ai/api/v1/webhooks/inbound`.
-4. `Content-Type: application/json`, `Authorization: Bearer <ROTATED_TOKEN_IN_MAKE_SECURE_CREDENTIALS>`.
-5. Request JSON structure:
+The form does not collect company/website or a precise job title; the corresponding canonical contact fields may be empty. Felipe's service should enrich them rather than guess submitted answers.
 
-```json
-{
-  "event_id": "{{event_id}}",
-  "submission_id": "{{submission_id}}",
-  "event_type": "form_completed",
-  "source": "topsort_website",
-  "page_url": "{{page_url}}",
-  "timestamp": "{{timestamp}}",
-  "contact": {
-    "first_name": "{{contact.first_name}}",
-    "last_name": "{{contact.last_name}}",
-    "email": "{{contact.email}}",
-    "job_title": "{{contact.job_title}}",
-    "company": "{{contact.company}}",
-    "website": "{{contact.website}}"
-  },
-  "form": {
-    "message": "{{form.message}}",
-    "product_interest": "{{form.product_interest}}",
-    "country": "{{form.country}}"
-  }
-}
-```
+For early capture: `event_type: "email_captured"`, `type: "Early Capture"`; it goes through the **legacy route**, not Felipe.
 
-The curly-brace placeholders are illustrative: map them using Make's variable picker. For initial testing, map to Make sample payload from a safe test submission, not real lead PII.
+Regional HubSpot meeting scheduler behavior is unchanged.
 
-6. Configure retry/backoff for 429 and 5xx; use Felipe's response codes and idempotency semantics. Do not retry a 4xx validation error automatically.
-7. Notify the operational owner on terminal failures. Persist request/event IDs (not tokens) for troubleshooting.
-8. Do **not** run both legacy CRM writers and Felipe's new CRM writer for the same fields until ownership is defined; avoid duplicate contacts, Slack messages, and deals.
-9. Test one authorized sample end-to-end, confirming the backend returned 2xx, HubSpot was enriched, one Slack alert fired, and the HubSpot scheduler still loads.
+## Make.com routing & failure behavior
 
-## Felipe must confirm before enabling
+In `Website Leads (copy)`:
+1. Route full `/book-a-demo` submissions with a present email (canonical event type or legacy full submission type) exclusively to the Felipe branch.
+2. Check `Website Lead AI Events` Data Store using `event_id`, falling back to `submission_id`.
+3. POST canonical JSON to Felipe, mapped from nested fields with legacy fallbacks.
+4. Add Data Store record **only** after HTTP success, with `overwrite: false`.
+5. On Felipe HTTP error, alert via Slack and do not mark the event processed. The tested error handler currently has no explicit `Ignore` directive.
+6. Route all other email-bearing submissions exclusively to the legacy workflow.
+7. Preserve Cannes, Partner Day and Developer Day campaign memberships for legacy submissions.
 
-- Supports `event_type = form_completed` and string `event_id`/`submission_id`.
-- Accepts empty optional values for job title, company, website, country.
-- Supports idempotent `event_id` retries.
-- Returns a clear status code on success/validation errors.
-- Clarifies who writes HubSpot/Slack and expected response time.
-- Token rotation and storage policy.
-- CORS is not required: Make calls Felipe server-to-server.
+**Reported Make AI validation:** full demo → Felipe only; early capture → legacy only; event/newsletter → legacy only; API failure → Slack error, no dedup record; repeated event → skipped. These were scenario tests, **not proof of a live production Webflow submission**. Tests already produced real Slack/Gmail/Sheets/HubSpot side effects.
 
-## Rollout
+## Launch / verification
 
-1. Rotate bearer token and store only in Make.
-2. Publish PR's updated embedded code to Webflow as a separate reviewed deployment; the repo commit alone does not update the live page.
-3. Capture the new payload in a staging Make route.
-4. Configure new authenticated HTTP POST, initially in test mode.
-5. Validate success, duplicates, early-capture behavior, and scheduler.
-6. Enable production routing and monitor failures.
+1. Activate **Website Leads (copy)** and confirm its custom webhook is listening; do not disable the old scenario until other sources using it are identified.
+2. Publish the saved Webflow page to `www.topsort.com` (and `topsort.com`).
+3. Submit one real test lead via the Book a Demo page and confirm one Felipe API execution, one qualification/HubSpot update, and one assigned-rep Slack briefing. Check the scheduler still appears.
+4. Confirm Early Capture still enters the legacy path and doesn't trigger Felipe.
+5. Check Make execution history, deduplication and error alert.
+6. Retire the old scenario **only after** confirming no other website forms or integrations still target its webhook.
 
-## Blockers
-
-- No Make.com account/scenario access through the current tools: you must make the HTTP module change.
-- The actual backend endpoint has not been called from here (to avoid unauthorized test events and secret exposure).
-- Webflow production publishing requires updating the page's third of six embedded HTML chunks (not just this GitHub file).
-- Token currently appeared in a conversation; rotate before use.
+Note: GitHub does not deploy Webflow automatically. The Webflow site's saved third HTML embed is separately updated to the same code as this repository.
