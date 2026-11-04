@@ -360,6 +360,19 @@
   });
 
   var WEBHOOK = 'https://hook.us1.make.com/o0o9b48cm4d3wpt6vabbujcd0b1e5dbj';
+  // Stable submission ID links early email capture to the later completed form.
+  // These IDs are for idempotency, NOT authentication. Never expose API bearer tokens here.
+  function eventUuid() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+      return window.crypto.randomUUID();
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.floor(Math.random() * 16);
+      return (c === 'x' ? r : ((r & 3) | 8)).toString(16);
+    });
+  }
+  var submissionId = 'webflow_sub_' + eventUuid();
+
   var PERSONAL_DOMAINS = new Set([
     'gmail.com', 'googlemail.com', 'google.com',
     'outlook.com', 'outlook.co', 'hotmail.com', 'hotmail.co.uk', 'live.com', 'msn.com',
@@ -581,6 +594,11 @@
     if (!email || email === captured) return;
     captured = email;
     sendToWebhook({
+      event_id: 'evt_' + eventUuid(),
+      submission_id: submissionId,
+      event_type: 'email_captured',
+      source: 'topsort_website',
+      page_url: pageUrl,
       email: email,
       type: 'Early Capture',
       page: pageUrl,
@@ -639,6 +657,28 @@
     var message = [interests ? 'Interested in: ' + interests : '', notes].filter(Boolean).join('\n\n');
     earlyCapture(email);
     sendToWebhook({
+      // Canonical payload for Make -> Felipe's API. Keep legacy fields below
+      // until Make's existing Slack/CRM branches have been migrated.
+      event_id: 'evt_' + eventUuid(),
+      submission_id: submissionId,
+      event_type: 'form_completed',
+      source: 'topsort_website',
+      page_url: pageUrl,
+      contact: {
+        first_name: firstname,
+        last_name: lastname,
+        email: email,
+        // The current form asks for a broad role, not a precise job title,
+        // and does not ask for company name or URL. Do not invent them.
+        job_title: '',
+        company: '',
+        website: ''
+      },
+      form: {
+        message: notes,
+        product_interest: interests,
+        country: detectedCountry
+      },
       email: email,
       name: name,
       firstname: firstname,
