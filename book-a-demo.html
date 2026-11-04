@@ -359,7 +359,7 @@
     });
   });
 
-  var WEBHOOK = 'https://hook.us1.make.com/o0o9b48cm4d3wpt6vabbujcd0b1e5dbj';
+  var WEBHOOK = 'https://hook.us1.make.com/yilwrmxu7dqn2agmg5i1rrgaobp6bok4';
   // Stable submission ID links early email capture to the later completed form.
   // These IDs are for idempotency, NOT authentication. Never expose API bearer tokens here.
   function eventUuid() {
@@ -570,6 +570,7 @@
 
   var pageUrl = (location.origin + location.pathname).replace(/\/$/, '');
   function sendToWebhook(data) {
+    if (isBlockedDomain(data && data.email)) return;
     fetch(WEBHOOK, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -577,6 +578,15 @@
     }).catch(function () { });
   }
   var emailDomain = function (value) { return (value.trim().toLowerCase().split('@')[1] || ''); };
+  // Editable domain blocklist for demo leads; subdomains are also matched.
+  var BLOCKED_DOMAINS = ['eventdatagroup.com'];
+  var isBlockedDomain = function (value) {
+    var domain = emailDomain(String(value || ''));
+    return BLOCKED_DOMAINS.some(function (blocked) {
+      blocked = String(blocked).trim().toLowerCase().replace(/^@/, '');
+      return blocked && (domain === blocked || domain.endsWith('.' + blocked));
+    });
+  };
   var isWorkEmail = function (value) {
     var domain = emailDomain(value);
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) && !PERSONAL_DOMAINS.has(domain);
@@ -591,7 +601,7 @@
   // once the email field is left holding a work address.
   var captured = '';
   function earlyCapture(email) {
-    if (!email || email === captured) return;
+    if (!email || email === captured || isBlockedDomain(email)) return;
     captured = email;
     sendToWebhook({
       event_id: 'evt_' + eventUuid(),
@@ -643,6 +653,21 @@
     var email = emailInput.value.trim();
     var domain = emailDomain(email);
     if (domain.indexOf('.') === -1) { showEmailError(COPY.format); return; }
+    // Blocked addresses get the normal confirmation state, without any lead
+    // capture, Make request, HubSpot scheduler, or conversion tracking.
+    if (isBlockedDomain(email)) {
+      toggle(emailError, false);
+      emailInput.removeAttribute('aria-invalid');
+      toggle(form, false);
+      toggle(sent, true);
+      var blockedCalendar = one('[data-ts-calendar]', sent);
+      if (blockedCalendar) toggle(blockedCalendar, false);
+      var blockedDescription = one('p', sent);
+      if (blockedDescription) blockedDescription.textContent = 'Thanks for your interest.';
+      var blockedHeading = one('h2', sent);
+      if (blockedHeading) { blockedHeading.setAttribute('tabindex', '-1'); blockedHeading.focus({preventScroll: true}); }
+      return;
+    }
     if (PERSONAL_DOMAINS.has(domain)) { showEmailError(COPY.personal); return; }
     toggle(emailError, false);
     emailInput.removeAttribute('aria-invalid');
