@@ -1,5 +1,8 @@
 # Holly SEO / AEO engineering verification — 2026-11-12
 
+> **Current scope and disposition (2026-11-12): ENGLISH ONLY.** Per the user's latest instruction, Spanish/Portuguese SEO, translations, and hreflang are explicitly out of scope and are not launch blockers. This note supersedes the earlier locale follow-up below. English SEO cleanup is published and verified on `www.topsort.com` / `topsort.com`. Mobile INP remains unavailable from Google field data, not a measured failure. Weekly AI visibility monitoring is active.
+
+
 **Request:** Holly's technical SEO/AEO audit sent in the Topsort Slack DM on 2026-11-09 at 22:48 EET, followed by “can we run this” at 22:48:13 and “seo and aeo should be an ongoing progress” on Nov 10.  
 **Scope:** Topsort Webflow site `64761186cb9c6205851bddcb`, English-first, without adding translations or changing unrelated CRM/vendor work.  
 **Release inspected:** Production HTML “Last Published: Wed Nov 11 2026 22:22:26 GMT+0000”; Webflow reports custom-domain publish on Nov 11 22:22:59 UTC.  
@@ -70,3 +73,33 @@ By contrast, the untranslated /es/products/t-brain and /pt/products/t-brain vari
 
 ### Publishing note
 The individual CMS item was published using Webflow's `publish_collection_items` and verified live. A full-site republish was *not necessary* and was not performed. GitHub stores this audit trail; Webflow CMS is the source of truth for the published article.
+
+## English-only finalization — November 12, 2026
+
+### Production fixes completed
+
+- Added accurate, unique SEO descriptions to three published English blog posts, preserving the existing content and page URLs:
+  - `/post/why-roas-is-a-constraint-not-the-goal`
+  - `/post/retail-media-was-built-around-search-commerce-wont-be`
+  - `/post/retail-media-is-transitioning-from-tools-to-infrastructure`
+- Added an accurate SEO description to the full article `/newsroom/topsort-fall-update-2026-recap`.
+- Identified **23** other published English newsroom pages with *both* blank SEO description and zero CMS article body content. Added **21** original concise newsroom summaries with page-specific SEO descriptions and links to the original publisher/official Topsort article or video, while preserving headlines, CMS slugs, and existing source URLs. These are paraphrased original abstracts, not republished article text. All 21 were published via Webflow CMS and multiple live HTML pages were verified to contain their new source links, body text, and non-empty meta description.
+- Two newsroom placeholders have no linked source and no article body in Webflow, and each had **zero clicks / zero impressions** in the preceding three-month Search Console window:
+  - `/newsroom/topsort-launches-toppie-mediation-with-additional-integration-with-mirakl`
+  - `/newsroom/petco-mx`
+  Rather than invent business claims, changed their English CMS sitemap/indexing status to `includeInSitemap: false` and published the site. Both remain accessible by direct URL but now deliver native live `<meta name="robots" content="noindex">`; both are absent from the live XML sitemap.
+- Full-site Webflow production publish succeeded on the `www.topsort.com` and `topsort.com` domains. Last-published timestamp reported by Webflow for both: **2026-11-12T10:12:01.189Z**.
+- Post-publish live sitemap: **1,266 URLs total** (**445 primary English**, 410 Spanish, 411 Portuguese; secondary locales were not edited). Previously 1,268 total / 447 English.
+- Verified all **82 indexable English static pages** exposed by Webflow's static-page sitemap status had a non-empty SEO title and description. Static pages with empty descriptions (search results, style guide, utility, outdated forms) are already omitted from the sitemap.
+- Rechecked English blog and newsroom CMS across all items; no missing descriptions on staged indexable published articles after excluding the two unsourced placeholders. The remaining missing fields surfaced only on draft/archived records, which are outside the live indexed content.
+- Earlier **120-page independent English crawl** found HTTP 200 on all 120 sampled URLs with no missing SEO descriptions or duplicate titles. Prior 50-page OpenSEO sample and ten Google Search Console URL inspections remain supporting evidence, not proof of a full 445-URL per-page crawl.
+
+### Excluded / not an English engineering blocker
+
+- All Spanish and Portuguese SEO tasks, including the previously observed mismatched PT hreflang alternate on English `/compare`, were **explicitly excluded by the user**. No translated copy, localized canonical, or locale routing was changed. Previously documented notes about locale changes must not be read as an outstanding deliverable for this English-only request.
+- Mobile Google PageSpeed/CrUX report dated Nov 10 2026: **Core Web Vitals passed**; mobile LCP around 1.6–1.7 seconds, CLS 0, and INP **N/A due to insufficient field interaction data**. It is not correct to claim an INP violation or invent an INP value.
+- OpenSEO six-prompt AI visibility tracker is already enabled weekly, first scheduled for **November 19, 2026**; the first result and ongoing rankings depend on future collection, not another code change. External editorial accuracy reviews require source-owner validation on future claims.
+
+### Outcome
+
+**English SEO/AEO engineering cleanup: complete for confirmed, actionable issues reviewed here and verified live.** This acceptance is not a guarantee that Google has recrawled every changed page, nor an exhaustive line-by-line editorial audit of all 445 English sitemap URLs. The rolling AEO/SEO monitoring is intentionally ongoing.
