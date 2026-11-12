@@ -50,3 +50,23 @@ By contrast, the untranslated /es/products/t-brain and /pt/products/t-brain vari
 - [Webflow locale page settings](https://help.webflow.com/hc/en-us/articles/33961235760531-Localize-page-settings)
 
 **Scope note:** The separate Capterra claim originated Nov 6 (before this Nov 9–11 task window); follow-up messages Nov 11 identify missing admin access. It is not presented as a newly requested task within the chosen 3-day window.
+
+
+## Follow-up execution — November 12, 2026 (morning Cairo)
+
+### Completed and live
+- Independently crawled **120 English commercial and editorial URLs** with Firecrawl, covering **20 solutions, 13 products, 27 case studies, and 60 blog posts**. All 120 returned HTTP 200; zero missing SEO titles, zero missing meta descriptions, and zero duplicate SEO titles *within this sample*. Crawl ID: `01a1ceda-1dd2-70da-9064-928926428f1d`. This is additional coverage, **not** a full 1,268-URL crawl.
+- Checked linked URLs missing from the sitemap: the most frequently referenced retired product URL paths still redirect to the relevant live products or solutions (e.g., `/products/offsite-ads` to `/solutions/offsite-ads`, `/products/in-store-journey` to `/solutions/in-store`, `/products/toptimize-ssp` to `/products/toptimize`). Redirects are not automatically broken links.
+- Identified one genuinely misdirected case-study link in the article `/post/best-ad-server-software-for-marketplaces`: `/casestudy/el-grocer` resolved to the home page. Verified correct case study `/casestudy/elgrocer` is HTTP 200 and relevant. Changed exactly that URL in the Webflow Blog Posts v2 CMS `richtext-content` field on item `6a03827cfbc9ef774627da87`, published that item to primary English locale, and verified live HTML contains the correct destination and not the old link. No unrelated article body fields or other CMS records were intentionally changed.
+- Rechecked Google PageSpeed's mobile report (dated Nov 10, 2026; field data Oct 11–Nov 7): **Core Web Vitals passed**, LCP **1.7 s (URL) / 1.6 s (origin)**, CLS **0**, INP **N/A** (not measurable from field data). Do not characterize missing INP as failed. Source: https://pagespeed.web.dev/analysis/https-topsort-com/kfeo5feoke?form_factor=mobile .
+- Verified unchanged live `/compare` generated language alternates: PT-BR still points to `/pt/contato-br-copy-2`. This is a Portuguese *contact* page, not a Portuguese comparison translation. ES and PT variants of this Webflow page are noindex and excluded from the generated sitemap. The tool exposes localized slug and metadata but not per-page native hreflang overrides; replacing the PT slug would break a real contact page. Do **not** swap, automatically translate or inject client-side JS as a fake SEO fix.
+
+### Current assessment and unresolved blockers
+1. **Open: Webflow native hreflang mapping** on English `/compare`. The correct non-destructive solution is to remove an unrelated PT alternate or establish a true equivalent comparison page via native Webflow locale controls. Requires native locale SEO access that connected MCP does not expose. Do not publish an unsafe workaround.
+2. **External availability:** INP requires adequate real-user interactions to accumulate new CrUX field data. Site currently passes other CWV metrics; no manufactured INP metric.
+3. **Coverage:** 120 additional pages plus the 50-page OpenSEO sample is good evidence but no exhaustive guarantee across 1,268 URLs. A full audit would require additional crawl quota, or dedicated programmatic sitemap QA with browser/network access.
+4. **Editorial review:** Some translated locales inherit English metadata, by user-defined English-first policy. Avoid translating and changing noindex without explicitly scoped localization planning.
+5. **Automation:** six-prompt AI visibility tracking is enabled weekly, next on Nov 19, 2026. No visibility results yet.
+
+### Publishing note
+The individual CMS item was published using Webflow's `publish_collection_items` and verified live. A full-site republish was *not necessary* and was not performed. GitHub stores this audit trail; Webflow CMS is the source of truth for the published article.
