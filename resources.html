@@ -289,7 +289,7 @@ function search() {
   count.textContent = matches.length + ' ' + (matches.length === 1 ? 'result' : 'results');
   forLabel.hidden = !q; forLabel.textContent = 'for “' + raw + '”';
   inLabel.hidden = active === 'All'; inLabel.textContent = 'in ' + active;
-  place(grid, matches.map(function (e) { return fill(e.metric ? 'entry-metric' : 'entry', e); }));
+  place(grid, matches.map(function (e) { return fill(e.metric ? 'entry-metric' : (e.image ? 'opinion' : 'entry'), e); }));
   grid.hidden = !matches.length;
   empty.hidden = matches.length > 0;
 }
