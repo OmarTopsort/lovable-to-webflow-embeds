@@ -16,7 +16,7 @@
 .ts-rv [data-rv-popular]{right:12px!important;min-width:0!important}
 .ts-rv [data-rv-popular-label]{flex:0 0 auto!important;white-space:nowrap!important;font-size:13px!important}
 .ts-rv [data-rv-terms]{flex:1 1 0%!important;min-width:0!important}
-.ts-rv [data-rv-terms] button{flex:1 1 0%!important;min-width:0!important;max-width:none!important}
+.ts-rv [data-rv-terms] button{flex:0 1 auto!important;min-width:0!important;max-width:150px!important}
 @media(max-width:639px){
  .ts-rv [data-rv-terms] button:nth-child(n+2){display:none!important}
  .ts-rv [data-rv-terms] button{min-height:32px!important}
@@ -156,7 +156,7 @@ function fill(name, e, index) {
     if (field === 'image') {
       var src = absolute(value);
       if (src) { el.setAttribute('src', src); el.setAttribute('alt', el.hasAttribute('data-rv-alt') ? e.title : ''); el.removeAttribute('data-rv-alt'); node.querySelectorAll('[data-rv-without-image]').forEach(function (x) { x.remove(); }); }
-      else { node.querySelectorAll('[data-rv-with-image]').forEach(function (x) { x.remove(); }); el.remove(); }
+      else { node.querySelectorAll('[data-rv-with-image]').forEach(function (x) { x.remove(); }); var frame = el.parentElement; if (frame && frame.children.length === 1) frame.remove(); else el.remove(); }
     } else if (!value && el.hasAttribute('data-rv-optional')) el.remove();
     else { el.textContent = value; el.removeAttribute('data-rv-optional'); }
   });
@@ -314,7 +314,7 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveIndica
 // Popular searches rotate three at a time; the category-like terms open that
 // category instead of a literal text search.
 // Suggestions come from the records actually searchable on this page.
-var terms = Array.from(new Set(entries.map(function (e) { return e.title; }).filter(Boolean)));
+var terms = ["DoorDash", "Cannes", "Build vs Buy", "OpenAI Ads", "Commerce media", "Migrations", "Developer Day", "Attribution", "Coles"];
 var aliases = {};
 var termIndex = 0, chipBox = one('[data-rv-terms]');
 all('[data-rv-term]').forEach(function (b, i) { b.textContent = terms[i % terms.length] || ''; b.hidden = !terms.length; });
