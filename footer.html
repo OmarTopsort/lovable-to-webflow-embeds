@@ -11,6 +11,12 @@
   if(!footer) return;
   var show=function(){footer.classList.add('ts-ft-o');};
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){show();return;}
-  requestAnimationFrame(function(){requestAnimationFrame(show);});
+  if(!('IntersectionObserver' in window)){show();return;}
+  var observer=new IntersectionObserver(function(entries){
+    if(!entries[0] || !entries[0].isIntersecting) return;
+    observer.disconnect();
+    requestAnimationFrame(function(){requestAnimationFrame(show);});
+  },{threshold:0.4});
+  observer.observe(footer);
 })();
 </script>
