@@ -1,0 +1,151 @@
+<!-- ══════════════════════════════════════════════════════════════════
+     tomi-embeds/navbar.html  ·  Webflow paste guide
+     1 part · under 50,000 chars (Webflow HTML Embed limit)
+     Site navbar for every Tomi page. Paste into a Symbol at the top
+     of the page, the same way webflow-embed/navbar.html is used.
+     Self-contained: fonts, tokens, and chrome CSS live in this file.
+     ══════════════════════════════════════════════════════════════════ -->
+
+<!-- ════════ PART 1 of 1 · CSS + HTML + JS ════════ -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+<style>
+#ts-tomi-navbar,
+#ts-tomi-navbar *,
+#ts-tomi-navbar *::before,
+#ts-tomi-navbar *::after{box-sizing:border-box !important}
+#ts-tomi-navbar{
+  --ink:0 0% 4%;
+  --ash:30 4% 45%;
+  --ceramic:42 33% 98%;
+  --shadow-soft:0 1px 2px hsl(var(--ink) / 0.03);
+  font-family:"Instrument Sans",system-ui,sans-serif !important;
+  line-height:1.5 !important;
+  -webkit-font-smoothing:antialiased !important;
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  color:hsl(var(--ink)) !important;
+}
+#ts-tomi-navbar a{text-decoration:none !important;color:inherit !important}
+#ts-tomi-navbar svg{display:block !important}
+#ts-tomi-navbar .ts-tm-bar{
+  position:sticky !important;top:0 !important;z-index:40 !important;
+  width:100% !important;height:64px !important;
+  display:flex !important;align-items:center !important;justify-content:space-between !important;
+  padding:0 1.5rem !important;
+  background:hsl(var(--ceramic) / 0.8) !important;
+  -webkit-backdrop-filter:blur(12px) !important;backdrop-filter:blur(12px) !important;
+  border-bottom:1px solid hsl(var(--ink) / 0.04) !important;
+}
+@media (min-width:1280px){
+  #ts-tomi-navbar .ts-tm-bar{max-width:1280px !important;margin-left:auto !important;margin-right:auto !important}
+}
+#ts-tomi-navbar .ts-tm-brand{display:flex !important;align-items:center !important;gap:0.5rem !important}
+#ts-tomi-navbar .ts-tm-avatar{
+  width:28px !important;height:28px !important;border-radius:9999px !important;
+  object-fit:cover !important;box-shadow:var(--shadow-soft) !important;
+}
+#ts-tomi-navbar .ts-tm-word{
+  font-family:"Newsreader",Georgia,serif !important;font-weight:500 !important;
+  letter-spacing:-0.015em !important;font-size:1.25rem !important;line-height:1 !important;
+  color:hsl(var(--ink)) !important;
+}
+#ts-tomi-navbar .ts-tm-by{
+  font-family:"Instrument Sans",system-ui,sans-serif !important;font-weight:400 !important;
+  letter-spacing:0 !important;font-size:0.75rem !important;color:hsl(var(--ash)) !important;
+  margin-left:0.375rem !important;vertical-align:middle !important;
+}
+#ts-tomi-navbar .ts-tm-links{
+  display:none !important;align-items:center !important;gap:1.75rem !important;
+  font-size:0.875rem !important;color:hsl(var(--ash)) !important;
+}
+#ts-tomi-navbar .ts-tm-links a{transition:color .15s !important}
+#ts-tomi-navbar .ts-tm-links a:hover{color:hsl(var(--ink)) !important}
+@media (min-width:768px){#ts-tomi-navbar .ts-tm-links{display:flex !important}}
+#ts-tomi-navbar .ts-tm-actions{display:flex !important;align-items:center !important;gap:0.5rem !important}
+#ts-tomi-navbar .ts-tm-signin{
+  display:none !important;font-size:0.875rem !important;font-weight:500 !important;
+  color:hsl(var(--ink) / 0.8) !important;padding:0.5rem 0.75rem !important;border-radius:0.5rem !important;
+  transition:color .15s,background-color .15s !important;
+}
+#ts-tomi-navbar .ts-tm-signin:hover{color:hsl(var(--ink)) !important;background:hsl(var(--ink) / 0.04) !important}
+@media (min-width:640px){#ts-tomi-navbar .ts-tm-signin{display:inline-flex !important}}
+#ts-tomi-navbar .ts-tm-cta{
+  display:inline-flex !important;align-items:center !important;gap:0.375rem !important;
+  height:36px !important;padding:0 1rem !important;border-radius:0.5rem !important;
+  background:hsl(var(--ink)) !important;color:hsl(var(--ceramic)) !important;
+  font-size:0.875rem !important;font-weight:500 !important;
+  box-shadow:var(--shadow-soft) !important;transition:background-color .15s !important;
+}
+#ts-tomi-navbar .ts-tm-cta:hover{background:hsl(var(--ink) / 0.9) !important}
+#ts-tomi-navbar .ts-tm-cta svg{width:14px !important;height:14px !important}
+#ts-tomi-navbar .ts-tm-burger{
+  display:inline-flex !important;align-items:center !important;justify-content:center !important;
+  width:36px !important;height:36px !important;padding:0 !important;border:0 !important;
+  background:transparent !important;color:hsl(var(--ink)) !important;border-radius:0.5rem !important;cursor:pointer !important;
+}
+#ts-tomi-navbar .ts-tm-burger svg{width:18px !important;height:18px !important}
+@media (min-width:768px){#ts-tomi-navbar .ts-tm-burger{display:none !important}}
+#ts-tomi-navbar .ts-tm-drawer{
+  display:none !important;flex-direction:column !important;gap:0.25rem !important;
+  padding:0.5rem 1.5rem 1rem !important;background:hsl(var(--ceramic)) !important;
+  border-bottom:1px solid hsl(var(--ink) / 0.06) !important;
+}
+#ts-tomi-navbar .ts-tm-drawer a{
+  display:block !important;padding:0.75rem 0.25rem !important;font-size:0.9375rem !important;color:hsl(var(--ink)) !important;
+}
+#ts-tomi-navbar.is-open .ts-tm-drawer{display:flex !important}
+@media (min-width:1280px){
+  #ts-tomi-navbar .ts-tm-drawer{max-width:1280px !important;margin-left:auto !important;margin-right:auto !important}
+}
+</style>
+
+<div id="ts-tomi-navbar" class="ts-root ts-tm">
+  <div class="ts-tm-bar">
+    <a href="/" aria-label="Tomi home">
+      <span class="ts-tm-brand">
+        <img src="https://cdn.prod.website-files.com/64761186cb9c6205851bddcb/6ab14f6784159ff763aaa7de_tomi-avatar.png" alt="" class="ts-tm-avatar">
+        <span class="ts-tm-word">Tomi<span class="ts-tm-by">by Topsort</span></span>
+      </span>
+    </a>
+    <nav class="ts-tm-links" aria-label="Main navigation">
+      <a href="/#capabilities">Capabilities</a>
+      <a href="/#how">How it works</a>
+      <a href="/pricing">Pricing</a>
+    </nav>
+    <div class="ts-tm-actions">
+      <a class="ts-tm-signin" href="https://tomi.topsort.com/auth/signin">Sign in</a>
+      <a class="ts-tm-cta" href="https://tomi.topsort.com/auth/signup">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+        Try Tomi free
+      </a>
+      <button type="button" class="ts-tm-burger" aria-label="Open menu" aria-expanded="false" data-ts-nav-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="ts-tm-drawer" aria-label="Mobile navigation" hidden>
+    <a href="/#capabilities">Capabilities</a>
+    <a href="/#how">How it works</a>
+    <a href="/pricing">Pricing</a>
+    <a href="https://tomi.topsort.com/auth/signin">Sign in</a>
+  </nav>
+</div>
+<script>
+(function () {
+  var root = document.getElementById("ts-tomi-navbar");
+  if (!root || root.hasAttribute("data-ts-ready")) return;
+  root.setAttribute("data-ts-ready", "");
+  var toggle = root.querySelector("[data-ts-nav-toggle]");
+  var drawer = root.querySelector(".ts-tm-drawer");
+  if (!toggle || !drawer) return;
+  toggle.addEventListener("click", function () {
+    var open = root.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    if (open) drawer.removeAttribute("hidden");
+    else drawer.setAttribute("hidden", "");
+  });
+})();
+</script>
+<!-- ════════ END PART 1 of 1 ════════ -->

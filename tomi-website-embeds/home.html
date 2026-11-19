@@ -1,0 +1,2630 @@
+<!-- ══════════════════════════════════════════════════════════════════
+     tomi-embeds/home.html  ·  Webflow paste guide
+     Home page body only. Navbar and footer are separate embeds:
+       tomi-embeds/navbar.html  (paste above)
+       tomi-embeds/footer.html  (paste below)
+     ══════════════════════════════════════════════════════════════════ -->
+
+<style>@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap");
+
+*, ::before, ::after{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+::backdrop{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+/*
+! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com
+*/
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+::before,
+::after {
+  --tw-content: '';
+}
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
+  font-family: Instrument Sans, system-ui, sans-serif; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr:where([title]) {
+  text-decoration: underline dotted;
+}
+/*
+Remove the default font size and weight for headings.
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+/*
+Add the correct font weight in Edge and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
+}
+/*
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+button,
+select {
+  text-transform: none;
+}
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+:-moz-focusring {
+  outline: auto;
+}
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+legend {
+  padding: 0;
+}
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+  padding: 0;
+}
+/*
+Prevent resizing textareas horizontally by default.
+*/
+textarea {
+  resize: vertical;
+}
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+/*
+Set the default cursor for buttons.
+*/
+button,
+[role="button"] {
+  cursor: pointer;
+}
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+:root {
+    /* Surfaces */
+    --background: 42 33% 98%;        /* ceramic #fcfbf8 */
+    --foreground: 0 0% 4%;            /* ink #0a0a0a */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+
+    /* Brand primary — cobalt indigo */
+    --primary: 243 75% 59%;           /* #4f46e5 */
+    --primary-foreground: 0 0% 100%;
+
+    /* Peach — warm accent surfaces */
+    --secondary: 32 50% 88%;          /* #e8d4b8 */
+    --secondary-foreground: 0 0% 4%;
+
+    /* Coral — warning/highlight */
+    --accent: 18 75% 63%;             /* #e8825a */
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 42 20% 95%;
+    --muted-foreground: 30 4% 45%;    /* ash */
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 4% / 0.08;
+    --input: 0 0% 4% / 0.08;
+    --ring: 243 75% 59%;
+
+    --radius: 1rem;
+
+    /* Custom semantic tokens */
+    --ceramic: 42 33% 98%;
+    --ink: 0 0% 4%;
+    --ash: 30 4% 45%;
+    --peach: 32 50% 81%;
+    --peach-soft: 32 60% 92%;
+    --cobalt: 243 75% 59%;
+    --coral: 18 75% 63%;
+
+    /* Gradients */
+    --gradient-warm: radial-gradient(ellipse at top, hsl(var(--peach) / 0.35), transparent 60%);
+    --gradient-prompt: linear-gradient(180deg, hsl(var(--peach) / 0.25), transparent);
+
+    /* Shadows */
+    --shadow-card: 0 2px 8px hsl(var(--ink) / 0.02), 0 16px 48px hsl(var(--ink) / 0.04);
+    --shadow-prompt: 0 2px 8px hsl(var(--ink) / 0.02), 0 24px 64px hsl(var(--cobalt) / 0.08);
+    --shadow-soft: 0 1px 2px hsl(var(--ink) / 0.03);
+
+    /* Sidebar (unused but kept for shadcn) */
+    --sidebar-background: 42 33% 98%;
+    --sidebar-foreground: 0 0% 4%;
+    --sidebar-primary: 243 75% 59%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 42 20% 95%;
+    --sidebar-accent-foreground: 0 0% 4%;
+    --sidebar-border: 0 0% 4% / 0.08;
+    --sidebar-ring: 243 75% 59%;
+  }
+*{
+  border-color: hsl(var(--border));
+}
+html {
+    font-family: "Instrument Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+body{
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+::selection {
+    background: hsl(var(--peach));
+    color: hsl(var(--ink));
+  }
+.container{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+@media (min-width: 1280px){
+
+  .container{
+    max-width: 1280px;
+  }
+}
+.pointer-events-none{
+  pointer-events: none;
+}
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.-inset-6{
+  inset: -1.5rem;
+}
+.inset-x-0{
+  left: 0px;
+  right: 0px;
+}
+.top-0{
+  top: 0px;
+}
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+.-mr-0\.5{
+  margin-right: -0.125rem;
+}
+.mb-1{
+  margin-bottom: 0.25rem;
+}
+.mb-10{
+  margin-bottom: 2.5rem;
+}
+.mb-12{
+  margin-bottom: 3rem;
+}
+.mb-14{
+  margin-bottom: 3.5rem;
+}
+.mb-2{
+  margin-bottom: 0.5rem;
+}
+.mb-3{
+  margin-bottom: 0.75rem;
+}
+.mb-4{
+  margin-bottom: 1rem;
+}
+.mb-5{
+  margin-bottom: 1.25rem;
+}
+.mb-6{
+  margin-bottom: 1.5rem;
+}
+.mb-8{
+  margin-bottom: 2rem;
+}
+.ml-0\.5{
+  margin-left: 0.125rem;
+}
+.mt-5{
+  margin-top: 1.25rem;
+}
+.mt-6{
+  margin-top: 1.5rem;
+}
+.mt-7{
+  margin-top: 1.75rem;
+}
+.inline-block{
+  display: inline-block;
+}
+.flex{
+  display: flex;
+}
+.inline-flex{
+  display: inline-flex;
+}
+.grid{
+  display: grid;
+}
+.hidden{
+  display: none;
+}
+.size-1\.5{
+  width: 0.375rem;
+  height: 0.375rem;
+}
+.size-10{
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.size-3{
+  width: 0.75rem;
+  height: 0.75rem;
+}
+.size-3\.5{
+  width: 0.875rem;
+  height: 0.875rem;
+}
+.size-4{
+  width: 1rem;
+  height: 1rem;
+}
+.size-5{
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.size-7{
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.size-8{
+  width: 2rem;
+  height: 2rem;
+}
+.size-9{
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.h-10{
+  height: 2.5rem;
+}
+.h-11{
+  height: 2.75rem;
+}
+.h-2{
+  height: 0.5rem;
+}
+.h-4{
+  height: 1rem;
+}
+.h-\[640px\]{
+  height: 640px;
+}
+.h-full{
+  height: 100%;
+}
+.min-h-\[36px\]{
+  min-height: 36px;
+}
+.w-16{
+  width: 4rem;
+}
+.w-24{
+  width: 6rem;
+}
+.w-full{
+  width: 100%;
+}
+.w-px{
+  width: 1px;
+}
+.min-w-0{
+  min-width: 0px;
+}
+.max-w-2xl{
+  max-width: 42rem;
+}
+.max-w-3xl{
+  max-width: 48rem;
+}
+.max-w-4xl{
+  max-width: 56rem;
+}
+.max-w-\[18ch\]{
+  max-width: 18ch;
+}
+.max-w-\[52ch\]{
+  max-width: 52ch;
+}
+.max-w-\[58ch\]{
+  max-width: 58ch;
+}
+.max-w-full{
+  max-width: 100%;
+}
+.max-w-xl{
+  max-width: 36rem;
+}
+.flex-1{
+  flex: 1 1 0%;
+}
+.shrink-0{
+  flex-shrink: 0;
+}
+@keyframes pulse{
+
+  50%{
+    opacity: .5;
+  }
+}
+.animate-pulse{
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes spin{
+
+  to{
+    transform: rotate(360deg);
+  }
+}
+.animate-spin{
+  animation: spin 1s linear infinite;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.resize-none{
+  resize: none;
+}
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.flex-col{
+  flex-direction: column;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.place-items-center{
+  place-items: center;
+}
+.items-start{
+  align-items: flex-start;
+}
+.items-center{
+  align-items: center;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.gap-1\.5{
+  gap: 0.375rem;
+}
+.gap-10{
+  gap: 2.5rem;
+}
+.gap-2{
+  gap: 0.5rem;
+}
+.gap-3{
+  gap: 0.75rem;
+}
+.gap-4{
+  gap: 1rem;
+}
+.gap-6{
+  gap: 1.5rem;
+}
+.space-y-3 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+.overflow-hidden{
+  overflow: hidden;
+}
+.truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-balance{
+  text-wrap: balance;
+}
+.text-pretty{
+  text-wrap: pretty;
+}
+.rounded{
+  border-radius: 0.25rem;
+}
+.rounded-2xl{
+  border-radius: 1rem;
+}
+.rounded-full{
+  border-radius: 9999px;
+}
+.rounded-lg{
+  border-radius: var(--radius);
+}
+.rounded-md{
+  border-radius: calc(var(--radius) - 4px);
+}
+.rounded-xl{
+  border-radius: 0.75rem;
+}
+.border{
+  border-width: 1px;
+}
+.border-0{
+  border-width: 0px;
+}
+.border-t{
+  border-top-width: 1px;
+}
+.border-ink\/10{
+  border-color: hsl(var(--ink) / 0.1);
+}
+.border-ink\/\[0\.05\]{
+  border-color: hsl(var(--ink) / 0.05);
+}
+.border-ink\/\[0\.06\]{
+  border-color: hsl(var(--ink) / 0.06);
+}
+.border-peach\/30{
+  border-color: hsl(var(--peach) / 0.3);
+}
+.border-peach\/40{
+  border-color: hsl(var(--peach) / 0.4);
+}
+.border-peach\/60{
+  border-color: hsl(var(--peach) / 0.6);
+}
+.bg-card{
+  background-color: hsl(var(--card));
+}
+.bg-cobalt{
+  background-color: hsl(var(--cobalt));
+}
+.bg-cobalt\/60{
+  background-color: hsl(var(--cobalt) / 0.6);
+}
+.bg-coral{
+  background-color: hsl(var(--coral));
+}
+.bg-coral\/15{
+  background-color: hsl(var(--coral) / 0.15);
+}
+.bg-ink{
+  background-color: hsl(var(--ink));
+}
+.bg-ink\/\[0\.06\]{
+  background-color: hsl(var(--ink) / 0.06);
+}
+.bg-peach{
+  background-color: hsl(var(--peach));
+}
+.bg-peach-soft\/40{
+  background-color: hsl(var(--peach-soft) / 0.4);
+}
+.bg-peach\/10{
+  background-color: hsl(var(--peach) / 0.1);
+}
+.bg-peach\/15{
+  background-color: hsl(var(--peach) / 0.15);
+}
+.bg-peach\/20{
+  background-color: hsl(var(--peach) / 0.2);
+}
+.bg-peach\/25{
+  background-color: hsl(var(--peach) / 0.25);
+}
+.bg-transparent{
+  background-color: transparent;
+}
+.bg-gradient-to-b{
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+.from-peach\/30{
+  --tw-gradient-from: hsl(var(--peach) / 0.3) var(--tw-gradient-from-position);
+  --tw-gradient-to: hsl(var(--peach) / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.to-transparent{
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
+}
+.p-2{
+  padding: 0.5rem;
+}
+.p-3\.5{
+  padding: 0.875rem;
+}
+.p-4{
+  padding: 1rem;
+}
+.p-5{
+  padding: 1.25rem;
+}
+.p-6{
+  padding: 1.5rem;
+}
+.p-7{
+  padding: 1.75rem;
+}
+.px-1\.5{
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+}
+.px-2\.5{
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.px-3\.5{
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+}
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.py-0\.5{
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+.py-1{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.py-1\.5{
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+.py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-20{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.pb-24{
+  padding-bottom: 6rem;
+}
+.pb-3{
+  padding-bottom: 0.75rem;
+}
+.pt-1{
+  padding-top: 0.25rem;
+}
+.pt-16{
+  padding-top: 4rem;
+}
+.pt-5{
+  padding-top: 1.25rem;
+}
+.text-left{
+  text-align: left;
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+.align-middle{
+  vertical-align: middle;
+}
+.font-serif{
+  font-family: Newsreader, Georgia, serif;
+}
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-5xl{
+  font-size: 3rem;
+  line-height: 1;
+}
+.text-\[1\.35rem\]{
+  font-size: 1.35rem;
+}
+.text-\[11px\]{
+  font-size: 11px;
+}
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.font-medium{
+  font-weight: 500;
+}
+.font-semibold{
+  font-weight: 600;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.tabular-nums{
+  --tw-numeric-spacing: tabular-nums;
+  font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+.leading-\[1\.05\]{
+  line-height: 1.05;
+}
+.leading-none{
+  line-height: 1;
+}
+.leading-relaxed{
+  line-height: 1.625;
+}
+.leading-snug{
+  line-height: 1.375;
+}
+.tracking-\[0\.12em\]{
+  letter-spacing: 0.12em;
+}
+.tracking-\[0\.14em\]{
+  letter-spacing: 0.14em;
+}
+.tracking-wide{
+  letter-spacing: 0.025em;
+}
+.text-ash{
+  color: hsl(var(--ash));
+}
+.text-ash\/70{
+  color: hsl(var(--ash) / 0.7);
+}
+.text-ceramic{
+  color: hsl(var(--ceramic));
+}
+.text-ceramic\/60{
+  color: hsl(var(--ceramic) / 0.6);
+}
+.text-cobalt{
+  color: hsl(var(--cobalt));
+}
+.text-coral{
+  color: hsl(var(--coral));
+}
+.text-ink{
+  color: hsl(var(--ink));
+}
+.text-ink\/60{
+  color: hsl(var(--ink) / 0.6);
+}
+.text-ink\/70{
+  color: hsl(var(--ink) / 0.7);
+}
+.text-ink\/80{
+  color: hsl(var(--ink) / 0.8);
+}
+.text-peach{
+  color: hsl(var(--peach));
+}
+.text-primary-foreground{
+  color: hsl(var(--primary-foreground));
+}
+.opacity-60{
+  opacity: 0.6;
+}
+.shadow-card{
+  --tw-shadow-color: hsl(var(--card));
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.outline-none{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.blur-2xl{
+  --tw-blur: blur(40px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-colors{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+@keyframes enter{
+
+  from{
+    opacity: var(--tw-enter-opacity, 1);
+    transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0) scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1)) rotate(var(--tw-enter-rotate, 0));
+  }
+}
+.font-serif {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+.text-balance {
+    text-wrap: balance;
+  }
+.text-pretty {
+    text-wrap: pretty;
+  }
+.bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+.shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+.shadow-prompt {
+    box-shadow: var(--shadow-prompt);
+  }
+.shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+/* Tomi — Editorial Matte design system.
+   All colors HSL. Tokens drive every surface, so components stay clean. */
+@keyframes float-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-float-up {
+  animation: float-up 0.6s ease-out both;
+}
+/* Vanilla equivalents of the source's stateful components. */
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 4rem; }
+body:has(#tomi-prompt-dialog[open]) { overflow: hidden; }
+.ts-tomi-testimonials { columns: 1; column-gap: 1rem; }
+.ts-tomi-testimonial {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 700ms ease-out, transform 700ms ease-out, border-color 700ms ease-out, box-shadow 700ms ease-out;
+    transition-delay: var(--tomi-reveal-delay, 0ms);
+}
+.ts-tomi-testimonial.ts-tomi-reveal-pending {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition-delay: 0ms;
+}
+.ts-tomi-testimonial:hover {
+    transform: translateY(-0.125rem);
+    border-color: hsl(var(--ink) / 0.12);
+    box-shadow: var(--shadow-card);
+}
+.ts-tomi-quote-icon {
+    color: hsl(var(--coral) / 0.7);
+    transition: color 500ms, transform 500ms;
+}
+.ts-tomi-testimonial:hover .ts-tomi-quote-icon {
+    color: hsl(var(--coral));
+    transform: translateY(-0.125rem);
+}
+.ts-tomi-dialog {
+    position: fixed;
+    inset: 0;
+    width: calc(100% - 2rem);
+    max-width: 28rem;
+    max-height: calc(100dvh - 2rem);
+    margin: auto;
+    padding: 1.5rem;
+    overflow-y: auto;
+    border: 1px solid hsl(var(--ink) / 0.1);
+    border-radius: 1rem;
+    background: hsl(var(--card));
+    color: hsl(var(--ink));
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+.ts-tomi-dialog[open] { display: grid; gap: 1rem; }
+.ts-tomi-dialog::backdrop { background: rgb(0 0 0 / 0.8); }
+.ts-tomi-dialog-header { text-align: center; padding-right: 0.75rem; }
+.ts-tomi-dialog-header p { margin-top: 0.375rem; }
+.ts-tomi-pending { overflow-wrap: anywhere; }
+.ts-tomi-dialog-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: hsl(var(--ink) / 0.7);
+    border-radius: 0.25rem;
+}
+.ts-tomi-dialog-close:hover { color: hsl(var(--ink)); }
+.ts-tomi-dialog :focus-visible, .suggestion-chip:focus-visible {
+    outline: 2px solid hsl(var(--cobalt));
+    outline-offset: 3px;
+}
+@media (min-width: 640px) { .ts-tomi-dialog-header { text-align: left; } }
+@media (min-width: 768px) { .ts-tomi-testimonials { columns: 2; } }
+@media (min-width: 1024px) { .ts-tomi-testimonials { columns: 3; } }
+	/* Hero chat demo — a staged conversation, not a live model. */
+	@keyframes hero-rise {
+	    from { opacity: 0; transform: translateY(10px) scale(0.985); }
+	    to { opacity: 1; transform: none; }
+	}
+	@keyframes hero-caret {
+	    0%, 45% { opacity: 1; }
+	    50%, 100% { opacity: 0; }
+	}
+	@keyframes hero-dot {
+	    0%, 80%, 100% { transform: translateY(0); opacity: 0.35; }
+	    40% { transform: translateY(-3px); opacity: 1; }
+	}
+	@keyframes hero-bar {
+	    from { transform: scaleX(0); }
+	    to { transform: scaleX(1); }
+	}
+	@keyframes hero-chip-in {
+	    from { opacity: 0; transform: translateY(6px); }
+	    to { opacity: 1; transform: none; }
+	}
+	.hero-thread {
+	    display: flex;
+	    flex-direction: column;
+	    gap: 0.85rem;
+	    padding: 1.15rem 1.15rem 0.15rem;
+	    max-height: min(34rem, 70vh);
+	    overflow: auto;
+	    scrollbar-width: thin;
+	}
+	#hero-form.is-chatting { overflow: visible; }
+	.hero-thread[hidden] { display: none; }
+	.hero-prompt {
+	    margin: 0;
+	    padding: 1.25rem 1.25rem 0.85rem;
+	    min-height: 4.5rem;
+	    font-size: 1.15rem;
+	    line-height: 1.6;
+	    color: hsl(var(--ash) / 0.55);
+	}
+	@media (min-width: 640px) {
+	    .hero-prompt { padding: 1.75rem 1.75rem 0.85rem; font-size: 1.25rem; min-height: 5rem; }
+	}
+	#hero-form.is-chatting .hero-prompt { display: none; }
+	.hero-msg {
+	    display: flex;
+	    align-items: flex-start;
+	    gap: 0.7rem;
+	    min-width: 0;
+	    animation: hero-rise 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+	}
+	.hero-msg-user { flex-direction: row-reverse; }
+	.hero-avatar {
+	    width: 1.75rem;
+	    height: 1.75rem;
+	    border-radius: 999px;
+	    flex: none;
+	    display: grid;
+	    place-items: center;
+	    font-size: 0.68rem;
+	    font-weight: 600;
+	    background: hsl(var(--ink));
+	    color: hsl(var(--ceramic));
+	}
+	.hero-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+	.hero-bubble {
+	    min-width: 0;
+	    max-width: min(100%, 34rem);
+	    border-radius: 1.05rem;
+	    padding: 0.7rem 0.9rem;
+	    font-size: 0.95rem;
+	    line-height: 1.55;
+	    color: hsl(var(--ink));
+	}
+	.hero-msg-user .hero-bubble {
+	    background: hsl(var(--ink));
+	    color: hsl(var(--ceramic));
+	    border-bottom-right-radius: 0.4rem;
+	}
+	.hero-msg-tomi .hero-bubble {
+	    flex: 1;
+	    background: hsl(var(--peach) / 0.16);
+	    border: 1px solid hsl(var(--peach) / 0.45);
+	    border-bottom-left-radius: 0.4rem;
+	}
+	.hero-caret {
+	    display: inline-block;
+	    width: 1px;
+	    height: 0.95em;
+	    margin-left: 1px;
+	    vertical-align: -0.08em;
+	    background: currentColor;
+	    animation: hero-caret 0.9s steps(1) infinite;
+	}
+	.hero-thinking {
+	    display: inline-flex;
+	    align-items: center;
+	    gap: 0.28rem;
+	    height: 0.7rem;
+	}
+	.hero-msg-thinking .hero-bubble {
+	    flex: none;
+	    padding: 0.62rem 0.8rem;
+	}
+	.hero-thinking span {
+	    width: 0.38rem;
+	    height: 0.38rem;
+	    border-radius: 999px;
+	    background: hsl(var(--cobalt));
+	    animation: hero-dot 1s ease-in-out infinite;
+	}
+	.hero-thinking span:nth-child(2) { animation-delay: 0.15s; }
+	.hero-thinking span:nth-child(3) { animation-delay: 0.3s; }
+	.hero-copy { white-space: pre-wrap; }
+	.hero-copy strong {
+	    font-weight: 650;
+	    background: hsl(var(--coral) / 0.16);
+	    color: hsl(var(--coral));
+	    border-radius: 0.3rem;
+	    padding: 0 0.28rem;
+	}
+	.hero-bars { display: grid; gap: 0.55rem; margin-top: 0.75rem; }
+	.hero-bar-row { display: flex; align-items: center; gap: 0.7rem; }
+	.hero-bar-row span:first-child {
+	    width: 6.6rem;
+	    flex: none;
+	    font-size: 0.78rem;
+	    color: hsl(var(--ash));
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	}
+	.hero-track {
+	    flex: 1;
+	    height: 0.42rem;
+	    border-radius: 999px;
+	    background: hsl(var(--ink) / 0.06);
+	    overflow: hidden;
+	}
+	.hero-fill {
+	    height: 100%;
+	    width: var(--w);
+	    border-radius: inherit;
+	    background: var(--c, hsl(var(--cobalt)));
+	    transform-origin: left center;
+	    transform: scaleX(0);
+	}
+	.hero-fill.is-in { animation: hero-bar 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+	.hero-bar-row em {
+	    width: 3.4rem;
+	    flex: none;
+	    text-align: right;
+	    font-style: normal;
+	    font-size: 0.78rem;
+	    font-weight: 650;
+	    font-variant-numeric: tabular-nums;
+	}
+	.hero-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+	.hero-action {
+	    font-size: 0.72rem;
+	    font-weight: 550;
+	    line-height: 1;
+	    padding: 0.42rem 0.7rem;
+	    border-radius: 999px;
+	    border: 1px solid hsl(var(--ink) / 0.1);
+	    background: hsl(var(--card));
+	    color: hsl(var(--ink) / 0.8);
+	    animation: hero-chip-in 0.4s ease both;
+	}
+	.hero-action:first-child {
+	    background: hsl(var(--cobalt));
+	    border-color: transparent;
+	    color: hsl(var(--ceramic));
+	}
+	.hero-action:nth-child(2) { animation-delay: 70ms; }
+	.hero-action:nth-child(3) { animation-delay: 140ms; }
+	.suggestion-chip:disabled {
+	    opacity: 0.45;
+	    cursor: default;
+	}
+	@media (prefers-reduced-motion: reduce) {
+	    html { scroll-behavior: auto; }
+	    .animate-float-up, .animate-pulse, .pulse-dot { animation: none; }
+	    .ts-tomi-testimonial, .ts-tomi-quote-icon { transition: none; }
+	    .ts-tomi-testimonial.ts-tomi-reveal-pending { opacity: 1; transform: none; }
+	    .hero-msg, .hero-action { animation: none; }
+	    .hero-caret, .hero-thinking span { animation: none; }
+	    .hero-fill { transform: none; }
+	}
+.placeholder\:text-ash\/50::placeholder{
+  color: hsl(var(--ash) / 0.5);
+}
+.focus-within\:border-cobalt\/30:focus-within{
+  border-color: hsl(var(--cobalt) / 0.3);
+}
+.hover\:border-peach:hover{
+  border-color: hsl(var(--peach));
+}
+.hover\:bg-cobalt\/90:hover{
+  background-color: hsl(var(--cobalt) / 0.9);
+}
+.hover\:bg-ink\/\[0\.04\]:hover{
+  background-color: hsl(var(--ink) / 0.04);
+}
+.hover\:bg-peach\/10:hover{
+  background-color: hsl(var(--peach) / 0.1);
+}
+.hover\:text-ink:hover{
+  color: hsl(var(--ink));
+}
+.hover\:shadow-card:hover{
+  --tw-shadow-color: hsl(var(--card));
+  --tw-shadow: var(--tw-shadow-colored);
+    box-shadow: var(--shadow-card);
+}
+.group:hover .group-hover\:bg-peach\/40{
+  background-color: hsl(var(--peach) / 0.4);
+}
+@media (min-width: 640px){
+
+  .sm\:mb-12{
+    margin-bottom: 3rem;
+  }
+
+  .sm\:inline-flex{
+    display: inline-flex;
+  }
+
+  .sm\:min-h-\[44px\]{
+    min-height: 44px;
+  }
+
+  .sm\:w-28{
+    width: 7rem;
+  }
+
+  .sm\:w-auto{
+    width: auto;
+  }
+
+  .sm\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:flex-row{
+    flex-direction: row;
+  }
+
+  .sm\:items-center{
+    align-items: center;
+  }
+
+  .sm\:justify-start{
+    justify-content: flex-start;
+  }
+
+  .sm\:gap-4{
+    gap: 1rem;
+  }
+
+  .sm\:rounded-\[28px\]{
+    border-radius: 28px;
+  }
+
+  .sm\:p-10{
+    padding: 2.5rem;
+  }
+
+  .sm\:p-12{
+    padding: 3rem;
+  }
+
+  .sm\:p-5{
+    padding: 1.25rem;
+  }
+
+  .sm\:p-7{
+    padding: 1.75rem;
+  }
+
+  .sm\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .sm\:py-28{
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .sm\:pb-32{
+    padding-bottom: 8rem;
+  }
+
+  .sm\:pt-24{
+    padding-top: 6rem;
+  }
+
+  .sm\:text-left{
+    text-align: left;
+  }
+
+  .sm\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .sm\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .sm\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .sm\:text-6xl{
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .sm\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .sm\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+@media (min-width: 768px){
+
+  .md\:flex{
+    display: flex;
+  }
+
+  .md\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-5{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .md\:text-7xl{
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+@media (min-width: 1024px){
+
+  .lg\:col-span-2{
+    grid-column: span 2 / span 2;
+  }
+
+  .lg\:grid-cols-1{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:gap-16{
+    gap: 4rem;
+  }
+
+  .lg\:gap-8{
+    gap: 2rem;
+  }
+
+  .lg\:border-l{
+    border-left-width: 1px;
+  }
+
+  .lg\:border-ceramic\/10{
+    border-color: hsl(var(--ceramic) / 0.1);
+  }
+
+  .lg\:pl-10{
+    padding-left: 2.5rem;
+  }
+}</style>
+
+<svg style="display:none">
+    <defs>
+        <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+            <path d="M5 3v4" />
+            <path d="M19 17v4" />
+            <path d="M3 5h4" />
+            <path d="M17 19h4" />
+        </symbol>
+        <symbol id="icon-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="m5 12 7-7 7 7" />
+            <path d="M12 19V5" />
+        </symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+        </symbol>
+        <symbol id="icon-paperclip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+        </symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5" />
+        </symbol>
+        <symbol id="icon-check-circle-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="m9 12 2 2 4-4" />
+        </symbol>
+        <symbol id="icon-bar-chart-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+            <path d="M18 17V9" />
+            <path d="M13 17V5" />
+            <path d="M8 17v-3" />
+        </symbol>
+        <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="6" />
+            <circle cx="12" cy="12" r="2" />
+        </symbol>
+        <symbol id="icon-megaphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 11 18-5v12L3 14v-3z" />
+            <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+        </symbol>
+        <symbol id="icon-package" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="m7.5 4.27 9 5.15" />
+            <path
+                d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+            <path d="m3.3 7 8.7 5 8.7-5" />
+            <path d="M12 22V12" />
+        </symbol>
+        <symbol id="icon-wand-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" />
+            <path d="m14 7 3 3" />
+            <path d="M5 6v4" />
+            <path d="M19 14v4" />
+            <path d="M10 2v2" />
+            <path d="M7 8H3" />
+            <path d="M21 16h-4" />
+            <path d="M11 3H9" />
+        </symbol>
+        <symbol id="icon-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22v-5" />
+            <path d="M15 8V2" />
+            <path d="M9 8V2" />
+            <path d="M12 8v8" />
+            <path d="M19 12a7 7 0 1 1-14 0v-4h14v4Z" />
+        </symbol>
+        <symbol id="icon-loader-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+        </symbol>
+        <symbol id="icon-quote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+            <path
+                d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+        </symbol>
+    </defs>
+</svg>
+<main>
+    <section class="relative overflow-hidden">
+        <div class="absolute inset-x-0 top-0 h-[640px] bg-gradient-warm pointer-events-none" aria-hidden="true"></div>
+        <div class="container relative pt-16 pb-24 sm:pt-24 sm:pb-32 flex flex-col items-center min-w-0">
+            <h1
+                class="font-serif text-5xl sm:text-6xl md:text-7xl text-center text-balance text-ink leading-[1.05] max-w-[18ch] mb-5 animate-float-up">
+                The agent layer for retail media.</h1>
+            <p
+                class="text-base sm:text-lg text-ash text-center max-w-[58ch] mb-10 sm:mb-12 text-pretty animate-float-up">
+                Turn complex retail media operations into natural conversation. Connect your Topsort workspace or upload campaign data to get instant insights, root-cause analyses, and ready-to-execute optimizations.</p>
+            <div class="w-full max-w-3xl min-w-0 relative animate-float-up">
+                <div class="absolute -inset-6 bg-gradient-to-b from-peach/30 to-transparent blur-2xl opacity-60 pointer-events-none"
+                    aria-hidden="true"></div>
+	                <form id="hero-form"
+	                    class="relative bg-card rounded-2xl sm:rounded-[28px] shadow-prompt border border-ink/[0.06] overflow-hidden transition-[border-color,box-shadow] duration-300 focus-within:border-cobalt/30">
+	                    <div id="hero-thread" class="hero-thread" hidden aria-live="polite" aria-relevant="additions"></div>
+	                    <p id="hero-prompt" class="hero-prompt">Ask Tomi anything about your retail media...</p>
+	                    <div id="hero-composer" class="px-4 sm:px-6 py-3 flex items-center justify-between border-t border-ink/[0.05]">
+	                        <div class="flex items-center gap-2"><button type="button"
+	                                class="size-9 rounded-lg grid place-items-center text-ash hover:text-ink hover:bg-ink/[0.04] transition-colors"
+	                                aria-label="Attach data source"><svg class="size-4">
+	                                    <use href="#icon-paperclip" />
+	                                </svg></button>
+	                            <div id="hero-status"
+	                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-peach/25 text-[11px] font-semibold tracking-wide uppercase text-ink/60">
+	                                <span class="size-1.5 rounded-full bg-cobalt pulse-dot"></span><span id="hero-status-label">Network connected</span></div>
+	                        </div>
+	                        <p id="hero-hint" class="text-sm text-ash/70">Pick a question below</p>
+	                    </div>
+	                </form>
+	            </div>
+	            <div class="w-full max-w-3xl min-w-0 mt-7" id="hero-suggestions">
+	                <div
+	                    class="text-[11px] font-semibold text-ash/70 uppercase tracking-[0.12em] mb-3 text-center sm:text-left">
+	                    Try asking</div>
+	                <div class="suggestion-chips flex flex-wrap justify-center sm:justify-start gap-2"><button type="button"
+	                        class="suggestion-chip inline-flex items-center px-3.5 py-2 rounded-full bg-card border border-ink/10 shadow-soft text-sm min-w-0 max-w-full text-left text-ink/70 hover:text-ink hover:border-peach hover:bg-peach/10 transition-all cursor-pointer"
+	                        data-value="Forecast inventory depletion for SKU-892">Forecast
+	                        inventory depletion for SKU-892</button><button type="button"
+	                        class="suggestion-chip inline-flex items-center px-3.5 py-2 rounded-full bg-card border border-ink/10 shadow-soft text-sm min-w-0 max-w-full text-left text-ink/70 hover:text-ink hover:border-peach hover:bg-peach/10 transition-all cursor-pointer"
+	                        data-value="Generate a Q3 ROAS report for Home Goods">Generate a Q3
+	                        ROAS report for Home Goods</button><button type="button"
+	                        class="suggestion-chip inline-flex items-center px-3.5 py-2 rounded-full bg-card border border-ink/10 shadow-soft text-sm min-w-0 max-w-full text-left text-ink/70 hover:text-ink hover:border-peach hover:bg-peach/10 transition-all cursor-pointer"
+	                        data-value="Compare audience overlap: Beauty vs. Wellness">Compare
+	                        audience overlap: Beauty vs. Wellness</button><button type="button"
+	                        class="suggestion-chip inline-flex items-center px-3.5 py-2 rounded-full bg-card border border-ink/10 shadow-soft text-sm min-w-0 max-w-full text-left text-ink/70 hover:text-ink hover:border-peach hover:bg-peach/10 transition-all cursor-pointer"
+	                        data-value="Why did CPC spike on Sunday?">Why did CPC spike on
+	                        Sunday?</button></div>
+	            </div>
+        </div>
+    </section>
+    <section id="answer" class="container py-20 sm:py-28">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-peach/20 border border-peach/40 text-xs font-medium text-ink/70 mb-5">
+                    <svg class="size-3">
+                        <use href="#icon-sparkles" />
+                    </svg>Sample answer</div>
+                <h2 class="font-serif text-3xl sm:text-5xl text-balance text-ink mb-3">From a question to a decision in
+                    seconds.</h2>
+                <p class="text-ash max-w-[52ch] mx-auto text-pretty">Ask why performance shifted, and Tomi returns answers with the receipts attached — transparent drivers, itemized impact, and one-click actions.</p>
+            </div>
+            <div class="bg-card rounded-2xl sm:rounded-[28px] border border-ink/[0.06] shadow-card p-6 sm:p-10">
+                <div class="flex items-start gap-4 mb-8 max-w-2xl mx-auto">
+                    <div
+                        class="size-8 rounded-full bg-ink text-ceramic grid place-items-center text-xs font-semibold shrink-0">
+                        U</div>
+                    <div class="pt-1 text-base text-ink font-medium leading-relaxed"><span id="typed-text"></span><span
+                            class="inline-block w-px h-4 bg-cobalt/60 align-middle ml-0.5 animate-pulse"></span></div>
+                </div>
+                <div class="flex items-start gap-4 max-w-2xl mx-auto">
+                    <img src="https://cdn.prod.website-files.com/64761186cb9c6205851bddcb/6ab14f6784159ff763aaa7de_tomi-avatar.png" alt="Tomi" class="size-8 rounded-full object-cover shrink-0 shadow-soft">
+                    <div class="flex-1 min-w-0 pt-1">
+                        <p class="text-base text-ink leading-relaxed mb-5 text-pretty">The dip was driven by a <span
+                                class="bg-coral/15 text-coral px-1.5 py-0.5 rounded font-semibold">34% increase in
+                                CPC</span> on broad-match patio furniture keywords, while conversion stayed flat. Here's
+                            the breakdown of the most affected sub-categories last week:</p>
+                        <div class="bg-peach/10 rounded-xl border border-peach/30 p-4 sm:p-5 space-y-3">
+                            <div class="flex items-center gap-3 sm:gap-4"><span
+                                    class="w-24 sm:w-28 text-sm text-ash truncate">Patio Sets</span>
+                                <div class="flex-1 h-2 bg-ink/[0.06] rounded-full overflow-hidden">
+                                    <div class="h-full rounded-full bg-coral" style="width:80%"></div>
+                                </div><span
+                                    class="text-sm font-semibold text-ink tabular-nums shrink-0 w-16 text-right">-$1,420</span>
+                            </div>
+                            <div class="flex items-center gap-3 sm:gap-4"><span
+                                    class="w-24 sm:w-28 text-sm text-ash truncate">Outdoor Rugs</span>
+                                <div class="flex-1 h-2 bg-ink/[0.06] rounded-full overflow-hidden">
+                                    <div class="h-full rounded-full bg-peach" style="width:52%"></div>
+                                </div><span
+                                    class="text-sm font-semibold text-ink tabular-nums shrink-0 w-16 text-right">-$850</span>
+                            </div>
+                            <div class="flex items-center gap-3 sm:gap-4"><span
+                                    class="w-24 sm:w-28 text-sm text-ash truncate">Grills</span>
+                                <div class="flex-1 h-2 bg-ink/[0.06] rounded-full overflow-hidden">
+                                    <div class="h-full rounded-full bg-cobalt/60" style="width:22%"></div>
+                                </div><span
+                                    class="text-sm font-semibold text-ink tabular-nums shrink-0 w-16 text-right">-$310</span>
+                            </div>
+                        </div>
+                        <div class="mt-5 flex flex-wrap gap-2"><button
+                                class="text-xs font-medium px-3 py-1.5 rounded-full bg-cobalt text-ceramic hover:bg-cobalt/90 transition-colors">Apply
+                                suggested bid caps</button><button
+                                class="text-xs font-medium px-3 py-1.5 rounded-full bg-card border border-ink/10 text-ink/80 hover:bg-ink/[0.04] transition-colors">Open
+                                in Data Room</button><button
+                                class="text-xs font-medium px-3 py-1.5 rounded-full bg-card border border-ink/10 text-ink/80 hover:bg-ink/[0.04] transition-colors">Schedule
+                                weekly digest</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="capabilities" class="container py-20 sm:py-28 border-t border-ink/[0.06]">
+        <div class="max-w-3xl mb-14">
+            <div class="text-[11px] font-semibold text-cobalt uppercase tracking-[0.12em] mb-3">Capabilities</div>
+            <h2 class="font-serif text-3xl sm:text-5xl text-ink text-balance mb-4">One agent. Every retail-media
+                workflow.</h2>
+            <p class="text-ash text-lg text-pretty">Built natively for commerce media. From pacing alerts to creative generation and cohort intelligence, Tomi handles the operational heavy lifting.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <article
+                class="group bg-card rounded-2xl border border-ink/[0.06] p-6 hover:border-peach hover:shadow-card transition-all">
+                <div
+                    class="size-10 rounded-xl bg-peach/25 grid place-items-center mb-5 group-hover:bg-peach/40 transition-colors">
+                    <svg class="size-5 text-ink">
+                        <use href="#icon-bar-chart-3" />
+                    </svg></div>
+                <h3 class="font-serif text-xl text-ink mb-2">Conversational analytics</h3>
+                <p class="text-sm text-ash leading-relaxed">Ask 'why' and 'what if' across campaigns, SKUs, and
+                    audiences — no SQL, no waiting on the data team.</p>
+            </article>
+            <article
+                class="group bg-card rounded-2xl border border-ink/[0.06] p-6 hover:border-peach hover:shadow-card transition-all">
+                <div
+                    class="size-10 rounded-xl bg-peach/25 grid place-items-center mb-5 group-hover:bg-peach/40 transition-colors">
+                    <svg class="size-5 text-ink">
+                        <use href="#icon-target" />
+                    </svg></div>
+                <h3 class="font-serif text-xl text-ink mb-2">Audience intelligence</h3>
+                <p class="text-sm text-ash leading-relaxed">Surface hidden overlaps, untapped segments, and
+                    incremental-reach opportunities in seconds.</p>
+            </article>
+            <article
+                class="group bg-card rounded-2xl border border-ink/[0.06] p-6 hover:border-peach hover:shadow-card transition-all">
+                <div
+                    class="size-10 rounded-xl bg-peach/25 grid place-items-center mb-5 group-hover:bg-peach/40 transition-colors">
+                    <svg class="size-5 text-ink">
+                        <use href="#icon-megaphone" />
+                    </svg></div>
+                <h3 class="font-serif text-xl text-ink mb-2">Campaign orchestration</h3>
+                <p class="text-sm text-ash leading-relaxed">Draft briefs, generate creative variants, and launch
+                    multi-surface campaigns from a single prompt.</p>
+            </article>
+            <article
+                class="group bg-card rounded-2xl border border-ink/[0.06] p-6 hover:border-peach hover:shadow-card transition-all">
+                <div
+                    class="size-10 rounded-xl bg-peach/25 grid place-items-center mb-5 group-hover:bg-peach/40 transition-colors">
+                    <svg class="size-5 text-ink">
+                        <use href="#icon-package" />
+                    </svg></div>
+                <h3 class="font-serif text-xl text-ink mb-2">Inventory + pacing</h3>
+                <p class="text-sm text-ash leading-relaxed">Forecast depletion, rebalance bids, and protect ROAS before
+                    stockouts and pacing issues hit.</p>
+            </article>
+            <article
+                class="group bg-card rounded-2xl border border-ink/[0.06] p-6 hover:border-peach hover:shadow-card transition-all">
+                <div
+                    class="size-10 rounded-xl bg-peach/25 grid place-items-center mb-5 group-hover:bg-peach/40 transition-colors">
+                    <svg class="size-5 text-ink">
+                        <use href="#icon-wand-2" />
+                    </svg></div>
+                <h3 class="font-serif text-xl text-ink mb-2">Anomaly detection</h3>
+                <p class="text-sm text-ash leading-relaxed">Tomi watches your network 24/7 and flags spikes, dips, and
+                    policy issues with a clear next step.</p>
+            </article>
+            <article
+                class="group bg-card rounded-2xl border border-ink/[0.06] p-6 hover:border-peach hover:shadow-card transition-all">
+                <div
+                    class="size-10 rounded-xl bg-peach/25 grid place-items-center mb-5 group-hover:bg-peach/40 transition-colors">
+                    <svg class="size-5 text-ink">
+                        <use href="#icon-sparkles" />
+                    </svg></div>
+                <h3 class="font-serif text-xl text-ink mb-2">Reports on autopilot</h3>
+                <p class="text-sm text-ash leading-relaxed">Schedule weekly executive summaries, advertiser-ready decks,
+                    and category deep dives.</p>
+            </article>
+        </div>
+    </section>
+    <section id="how" class="border-t border-ink/[0.06] bg-peach-soft/40">
+        <div class="container py-20 sm:py-28">
+            <div class="max-w-3xl mb-14">
+                <div class="text-[11px] font-semibold text-cobalt uppercase tracking-[0.12em] mb-3">How Tomi works</div>
+                <h2 class="font-serif text-3xl sm:text-5xl text-ink text-balance mb-4">Plug in. Ask. Ship.</h2>
+                <p class="text-ash text-lg">Three steps from setup to your first actionable insight.</p>
+            </div>
+            <ol class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <li class="bg-card rounded-2xl border border-ink/[0.06] p-7 relative overflow-hidden">
+                    <div class="font-serif text-5xl text-peach mb-6 leading-none">01</div>
+                    <h3 class="font-serif text-2xl text-ink mb-3">Connect Topsort or upload files</h3>
+                    <p class="text-ash leading-relaxed">Link your Topsort workspace with zero configuration, or drop in CSVs and campaign sheets to get started immediately.</p>
+                </li>
+                <li class="bg-card rounded-2xl border border-ink/[0.06] p-7 relative overflow-hidden">
+                    <div class="font-serif text-5xl text-peach mb-6 leading-none">02</div>
+                    <h3 class="font-serif text-2xl text-ink mb-3">Ask in plain English</h3>
+                    <p class="text-ash leading-relaxed">Skip the dashboard hunting. Query inventory pacing, diagnose unexpected dips, or compare audiences using conversational prompts.</p>
+                </li>
+                <li class="bg-card rounded-2xl border border-ink/[0.06] p-7 relative overflow-hidden">
+                    <div class="font-serif text-5xl text-peach mb-6 leading-none">03</div>
+                    <h3 class="font-serif text-2xl text-ink mb-3">Approve, then act</h3>
+                    <p class="text-ash leading-relaxed">Review every recommendation with full context, then apply bid adjustments, budget rebalancing, or creative tweaks directly to your live operations.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <section class="border-t border-ink/[0.06] bg-ink text-ceramic">
+        <div class="container py-20 sm:py-28">
+            <div class="grid lg:grid-cols-3 gap-10 lg:gap-16">
+                <div class="lg:col-span-2">
+                    <div class="text-[11px] font-semibold text-peach uppercase tracking-[0.12em] mb-4">Built with
+                        leading retailers</div>
+                    <blockquote class="font-serif text-2xl sm:text-3xl text-ceramic text-balance leading-snug mb-6">
+                        "Tomi turned our retail-media team from report-builders into decision-makers. We ask, it
+                        answers, we ship — same hour."</blockquote>
+                    <div class="text-sm text-ceramic/60">Director of Retail Media · Top-10 North American retailer</div>
+                </div>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 lg:gap-8 lg:border-l lg:border-ceramic/10 lg:pl-10">
+                    <div>
+                        <div class="font-serif text-4xl sm:text-5xl text-coral mb-1 tabular-nums">+38%</div>
+                        <div class="text-sm text-ceramic/60 leading-snug">average ROAS lift in 90 days</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-4xl sm:text-5xl text-coral mb-1 tabular-nums">12 hrs</div>
+                        <div class="text-sm text-ceramic/60 leading-snug">saved per analyst, per week</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-4xl sm:text-5xl text-coral mb-1 tabular-nums">24ms</div>
+                        <div class="text-sm text-ceramic/60 leading-snug">median query latency on live data</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="testimonials" class="container py-20 sm:py-28 border-t border-ink/[0.06]">
+        <div class="max-w-2xl mb-14">
+            <div class="text-[11px] font-semibold text-cobalt uppercase tracking-[0.12em] mb-3">What teams are saying
+            </div>
+            <h2 class="font-serif text-3xl sm:text-5xl text-ink text-balance mb-4">Trusted by retail-media operators
+                across the globe.</h2>
+            <p class="text-ash text-lg">From hyper-local marketplaces to multi-country retailers — Tomi is already in
+                the room when decisions get made.</p>
+        </div>
+        <div class="ts-tomi-testimonials">
+            <figure
+                class="ts-tomi-testimonial relative rounded-2xl border border-ink/[0.06] bg-card p-7 overflow-hidden">
+                <svg class="ts-tomi-quote-icon size-7 mb-4" aria-hidden="true">
+                    <use href="#icon-quote" />
+                </svg>
+                <blockquote class="font-serif text-[1.35rem] leading-snug text-ink text-balance">Tomi understands prompts
+                    easily, with minimal back and forth.</blockquote>
+                <figcaption class="mt-6 pt-5 border-t border-ink/[0.06]">
+                    <div class="text-[11px] font-semibold uppercase tracking-[0.14em] text-cobalt">Snoonu</div>
+                </figcaption>
+            </figure>
+            <figure
+                class="ts-tomi-testimonial relative rounded-2xl border border-ink/[0.06] bg-card p-7 overflow-hidden">
+                <svg class="ts-tomi-quote-icon size-7 mb-4" aria-hidden="true">
+                    <use href="#icon-quote" />
+                </svg>
+                <blockquote class="font-serif text-[1.35rem] leading-snug text-ink text-balance">Tomi is very efficient in
+                    giving deep insights and strong recommendations.</blockquote>
+                <figcaption class="mt-6 pt-5 border-t border-ink/[0.06]">
+                    <div class="text-[11px] font-semibold uppercase tracking-[0.14em] text-cobalt">Liverpool</div>
+                </figcaption>
+            </figure>
+            <figure
+                class="ts-tomi-testimonial relative rounded-2xl border border-ink/[0.06] bg-card p-7 overflow-hidden">
+                <svg class="ts-tomi-quote-icon size-7 mb-4" aria-hidden="true">
+                    <use href="#icon-quote" />
+                </svg>
+                <blockquote class="font-serif text-[1.35rem] leading-snug text-ink text-balance">Tomi allows us access to
+                    real-time campaign performance and make data-driven decisions.</blockquote>
+                <figcaption class="mt-6 pt-5 border-t border-ink/[0.06]">
+                    <div class="text-[11px] font-semibold uppercase tracking-[0.14em] text-cobalt">Sodimac CO</div>
+                </figcaption>
+            </figure>
+            <figure
+                class="ts-tomi-testimonial relative rounded-2xl border border-ink/[0.06] bg-card p-7 overflow-hidden">
+                <svg class="ts-tomi-quote-icon size-7 mb-4" aria-hidden="true">
+                    <use href="#icon-quote" />
+                </svg>
+                <blockquote class="font-serif text-[1.35rem] leading-snug text-ink text-balance">Tomi is a cool update and
+                    helps a lot with campaign recommendations and creations.</blockquote>
+                <figcaption class="mt-6 pt-5 border-t border-ink/[0.06]">
+                    <div class="text-[11px] font-semibold uppercase tracking-[0.14em] text-cobalt">YouTravel</div>
+                </figcaption>
+            </figure>
+            <figure
+                class="ts-tomi-testimonial relative rounded-2xl border border-ink/[0.06] bg-card p-7 overflow-hidden">
+                <svg class="ts-tomi-quote-icon size-7 mb-4" aria-hidden="true">
+                    <use href="#icon-quote" />
+                </svg>
+                <blockquote class="font-serif text-[1.35rem] leading-snug text-ink text-balance">Tomi has been a unique and
+                    highly valuable tool from day one.</blockquote>
+                <figcaption class="mt-6 pt-5 border-t border-ink/[0.06]">
+                    <div class="text-[11px] font-semibold uppercase tracking-[0.14em] text-cobalt">Puntos CO</div>
+                </figcaption>
+            </figure>
+            <figure
+                class="ts-tomi-testimonial relative rounded-2xl border border-ink/[0.06] bg-card p-7 overflow-hidden">
+                <svg class="ts-tomi-quote-icon size-7 mb-4" aria-hidden="true">
+                    <use href="#icon-quote" />
+                </svg>
+                <blockquote class="font-serif text-[1.35rem] leading-snug text-ink text-balance">I used it to quickly check for
+                    active campaigns, and it gave clear results.</blockquote>
+                <figcaption class="mt-6 pt-5 border-t border-ink/[0.06]">
+                    <div class="text-[11px] font-semibold uppercase tracking-[0.14em] text-cobalt">Cencosud</div>
+                </figcaption>
+            </figure>
+            <figure
+                class="ts-tomi-testimonial relative rounded-2xl border border-ink/[0.06] bg-card p-7 overflow-hidden">
+                <svg class="ts-tomi-quote-icon size-7 mb-4" aria-hidden="true">
+                    <use href="#icon-quote" />
+                </svg>
+                <blockquote class="font-serif text-[1.35rem] leading-snug text-ink text-balance">Using Tomi is like having a
+                    sharp, data-driven analyst available on demand.</blockquote>
+                <figcaption class="mt-6 pt-5 border-t border-ink/[0.06]">
+                    <div class="text-[11px] font-semibold uppercase tracking-[0.14em] text-cobalt">CDON</div>
+                </figcaption>
+            </figure>
+            <figure
+                class="ts-tomi-testimonial relative rounded-2xl border border-ink/[0.06] bg-card p-7 overflow-hidden">
+                <svg class="ts-tomi-quote-icon size-7 mb-4" aria-hidden="true">
+                    <use href="#icon-quote" />
+                </svg>
+                <blockquote class="font-serif text-[1.35rem] leading-snug text-ink text-balance">We adopted Tomi to overcome
+                    the limitations of manual operations.</blockquote>
+                <figcaption class="mt-6 pt-5 border-t border-ink/[0.06]">
+                    <div class="text-[11px] font-semibold uppercase tracking-[0.14em] text-cobalt">Frávega</div>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+    <section id="signup" class="container py-20 sm:py-28 border-t border-ink/[0.06]">
+        <div class="max-w-3xl mx-auto text-center">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-peach/60 bg-peach/15 text-xs font-medium text-ink/70 mb-6">
+                <span class="size-1.5 rounded-full bg-coral"></span>Free version · no credit card required</div>
+            <h2 class="font-serif text-4xl sm:text-6xl text-ink text-balance mb-5 leading-[1.05]">Stop reporting. Start
+                deciding.</h2>
+            <p class="text-ash text-lg mb-10 max-w-[52ch] mx-auto">Connect your Topsort account or drop in your data to ask Tomi your hardest question today.</p>
+            <div id="signup-success"
+                class="hidden max-w-xl mx-auto mb-6 inline-flex items-center gap-2 bg-card border border-ink/[0.06] rounded-2xl px-6 py-4 shadow-soft">
+                <svg class="size-5 text-cobalt shrink-0">
+                    <use href="#icon-check-circle-2" />
+                </svg><span class="text-ink font-medium text-left text-sm sm:text-base" id="success-message">You're on
+                    the list — we'll send your workspace link to you.</span></div>
+            <form id="signup-form"
+                class="max-w-xl mx-auto bg-card rounded-2xl border border-ink/[0.06] shadow-prompt p-2 flex flex-col sm:flex-row sm:items-center gap-2">
+                <input type="email" id="signup-email" required placeholder="you@retailer.com" aria-label="Work email"
+                    maxlength="320"
+                    class="flex-1 min-w-0 bg-transparent outline-none border-0 px-4 py-3 text-base text-ink placeholder:text-ash/50"><button
+                    type="submit" id="signup-button"
+                    class="shrink-0 inline-flex items-center justify-center gap-1.5 bg-cobalt text-primary-foreground h-11 px-5 rounded-xl text-sm font-medium hover:bg-cobalt/90 transition-colors shadow-soft w-full sm:w-auto"><span
+                        id="signup-button-text">Get started</span><svg class="size-4" id="signup-arrow">
+                        <use href="#icon-arrow-right" />
+                    </svg><svg class="size-4 animate-spin hidden" id="signup-loader">
+                        <use href="#icon-loader-2" />
+                    </svg></button></form>
+            <div class="mt-6 text-xs text-ash">By continuing you agree to Topsort's <a href="https://www.topsort.com/legals#fair-use-policy" class="underline hover:text-ink transition-colors">Terms</a> and <a href="https://www.topsort.com/legals" class="underline hover:text-ink transition-colors">Privacy Policy</a>.</div>
+        </div>
+    </section>
+</main>
+
+
+<dialog id="tomi-prompt-dialog" class="ts-tomi-dialog" aria-labelledby="tomi-dialog-title" aria-describedby="tomi-dialog-description">
+    <div class="ts-tomi-dialog-header">
+        <h2 id="tomi-dialog-title" class="font-serif text-2xl text-ink">Create your Tomi account to see the answer</h2>
+        <p id="tomi-dialog-description" class="text-sm text-ash">Takes a few seconds. You can start with sample data or connect your own.</p>
+    </div>
+    <p id="tomi-pending-question" class="ts-tomi-pending rounded-xl border border-ink/10 bg-peach/10 p-3.5 text-sm text-ink/80"></p>
+    <div class="flex flex-col gap-2 pt-1">
+        <a id="tomi-dialog-signup" href="https://tomi.topsort.com/auth/signup" class="inline-flex items-center justify-center gap-1.5 bg-cobalt text-primary-foreground h-11 px-5 rounded-lg text-sm font-medium hover:bg-cobalt/90 transition-colors shadow-soft">
+            <svg class="size-3.5" aria-hidden="true"><use href="#icon-sparkles" /></svg>Create free account
+        </a>
+        <a id="tomi-dialog-signin" href="https://tomi.topsort.com/auth/signin" class="inline-flex items-center justify-center h-10 rounded-lg text-sm text-ash hover:text-ink transition-colors">I already have an account</a>
+    </div>
+    <button type="button" id="tomi-dialog-close" class="ts-tomi-dialog-close" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+    </button>
+</dialog>
+
+<script>
+    (() => {
+	    const TOMI_SIGNIN_URL = 'https://tomi.topsort.com/auth/signin';
+	    const TOMI_SIGNUP_URL = 'https://tomi.topsort.com/auth/signup';
+	    const TOMI_AVATAR = 'https://cdn.prod.website-files.com/64761186cb9c6205851bddcb/6ab14f6784159ff763aaa7de_tomi-avatar.png';
+	    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+	    let typingTimer;
+	    let chatTimers = [];
+	    let chatRun = 0;
+	    // Static sample answers drawn from the rest of this page. Not a live model.
+	    const HERO_ANSWERS = {
+	        'Forecast inventory depletion for SKU-892': {
+	            text: 'SKU-892 has **11 days** of cover at the current sell-through. Patio Sets are pacing ahead of the rest of Home Goods, so the stockout lands before the weekend promo if bids stay where they are.\n\nPull spend off the broad match and protect the SKUs that still have cover.',
+	            bars: [
+	                ['Patio Sets', '80%', 'hsl(var(--coral))', '11d'],
+	                ['Outdoor Rugs', '52%', 'hsl(var(--peach))', '19d'],
+	                ['Grills', '22%', 'hsl(var(--cobalt) / 0.6)', '34d']
+	            ],
+	            actions: ['Rebalance bids', 'Open in Data Room', 'Schedule weekly digest']
+	        },
+	        'Generate a Q3 ROAS report for Home Goods': {
+	            text: 'Home Goods closed Q3 at a **+38% ROAS lift** versus the prior quarter, the same shape retailers see in the first 90 days. The gain came from tighter pacing, not more spend.\n\nThe executive summary is ready. Analyst time on this report drops to the **12 hours** a week the rest of the network already saves.',
+	            bars: [
+	                ['ROAS lift', '76%', 'hsl(var(--cobalt))', '+38%'],
+	                ['Hours saved', '50%', 'hsl(var(--peach))', '12h'],
+	                ['Query time', '12%', 'hsl(var(--coral))', '24ms']
+	            ],
+	            actions: ['Send the deck', 'Schedule weekly digest', 'Open in Data Room']
+	        },
+	        'Compare audience overlap: Beauty vs. Wellness': {
+	            text: 'Beauty and Wellness share **41%** of converting shoppers, mostly on replenishment SKUs. The rest of Wellness is incremental: people Beauty never reaches.\n\nSplit the overlap into its own bid, and keep Wellness prospecting on the unique slice. That is the incremental-reach opportunity, not a second copy of the same audience.',
+	            bars: [
+	                ['Shared buyers', '41%', 'hsl(var(--coral))', '41%'],
+	                ['Beauty only', '34%', 'hsl(var(--peach))', '34%'],
+	                ['Wellness only', '25%', 'hsl(var(--cobalt) / 0.6)', '25%']
+	            ],
+	            actions: ['Split the overlap', 'Open in Data Room', 'Draft the brief']
+	        },
+	        'Why did CPC spike on Sunday?': {
+	            text: 'Sunday CPC jumped **34%** on broad-match patio furniture keywords. Conversion stayed flat, so the extra cost did not buy extra orders.\n\nThe bleed is concentrated in three sub-categories:',
+	            bars: [
+	                ['Patio Sets', '80%', 'hsl(var(--coral))', '-$1,420'],
+	                ['Outdoor Rugs', '52%', 'hsl(var(--peach))', '-$850'],
+	                ['Grills', '22%', 'hsl(var(--cobalt) / 0.6)', '-$310']
+	            ],
+	            actions: ['Apply suggested bid caps', 'Open in Data Room', 'Schedule weekly digest']
+	        }
+	    };
+	    const HERO_FALLBACK = {
+	        text: 'That gets the same treatment as everything else on this network: a driver, the receipts, and one next step. Connect a Topsort workspace, or drop in a sheet, and this becomes live data instead of a sample.\n\nTeams using Tomi report a **+38% ROAS lift** in 90 days, and **12 hours** back per analyst each week.',
+	        bars: [
+	            ['ROAS lift', '76%', 'hsl(var(--cobalt))', '+38%'],
+	            ['Hours saved', '50%', 'hsl(var(--peach))', '12h']
+	        ],
+	        actions: ['Create a free account', 'Open in Data Room']
+	    };
+
+    function init() {
+        initTypingAnimation();
+        initSuggestionChips();
+        initSignupForm();
+        initSmoothScroll();
+        initTestimonials();
+        initPromptDialog();
+    }
+
+    function initTypingAnimation(text = 'Why did our ROAS dip in the Home & Garden category last week?') {
+        const textElement = document.getElementById('typed-text');
+
+        if (!textElement) return;
+
+        clearTimeout(typingTimer);
+        if (reducedMotion.matches) {
+            textElement.textContent = text;
+            return;
+        }
+        const typingSpeed = 18;
+        let index = 0;
+
+        textElement.textContent = '';
+
+        function typeChar() {
+            if (index >= text.length) return;
+
+            textElement.textContent += text.charAt(index);
+            index += 1;
+
+            typingTimer = setTimeout(typeChar, typingSpeed);
+        }
+
+        typingTimer = setTimeout(typeChar, typingSpeed);
+    }
+
+	    function initSuggestionChips() {
+	        const chips = document.querySelectorAll('.suggestion-chip');
+
+	        chips.forEach(chip => {
+	            chip.addEventListener('click', () => {
+	                const value = chip.dataset.value;
+	                if (!value || chip.disabled) return;
+	                playHeroChat(value);
+	            });
+	        });
+	    }
+
+	    function clearChatTimers() {
+	        chatTimers.forEach(entry => {
+	            cancelAnimationFrame(entry.frame);
+	            clearTimeout(entry.timer);
+	        });
+	        chatTimers = [];
+	    }
+
+	    // Both clocks: animation frames stall in some embeds, timers in others.
+	    function after(ms, run, fn) {
+	        const start = performance.now();
+	        const entry = {};
+	        let settled = false;
+	        const finish = () => {
+	            if (settled || run !== chatRun) return;
+	            settled = true;
+	            cancelAnimationFrame(entry.frame);
+	            clearTimeout(entry.timer);
+	            fn();
+	        };
+	        const tick = () => {
+	            if (run !== chatRun || settled) return;
+	            if (performance.now() - start >= ms) finish();
+	            else entry.frame = requestAnimationFrame(tick);
+	        };
+	        entry.frame = requestAnimationFrame(tick);
+	        entry.timer = setTimeout(finish, ms);
+	        chatTimers.push(entry);
+	    }
+
+	    function playHeroChat(question) {
+	        const thread = document.getElementById('hero-thread');
+	        const form = document.getElementById('hero-form');
+	        const hint = document.getElementById('hero-hint');
+	        const status = document.getElementById('hero-status-label');
+	        if (!thread || !form) return;
+
+	        clearChatTimers();
+	        const run = ++chatRun;
+	        const answer = HERO_ANSWERS[question] || HERO_FALLBACK;
+	        const instant = reducedMotion.matches;
+
+	        form.classList.add('hero-form-busy', 'is-chatting');
+	        thread.hidden = false;
+	        thread.querySelectorAll('.hero-caret').forEach(caret => caret.remove());
+	        if (hint) hint.textContent = 'Tomi is answering';
+	        if (status) status.textContent = 'Reading the network';
+	        document.querySelectorAll('.suggestion-chip').forEach(item => {
+	            item.disabled = true;
+	        });
+
+	        const user = appendMessage(thread, 'user', '');
+	        const userText = user.querySelector('.hero-copy');
+
+	        const revealAnswer = () => {
+	            if (status) status.textContent = 'Writing the answer';
+	            const tomi = appendMessage(thread, 'tomi', '');
+	            const copy = tomi.querySelector('.hero-copy');
+	            typeInto(copy, answer.text, instant, run, () => {
+	                mountAnswerExtras(tomi.querySelector('.hero-bubble'), answer, instant, question);
+	                finishChat(status, question);
+	            });
+	        };
+
+	        typeInto(userText, question, instant, run, () => {
+	            if (status) status.textContent = 'Checking the receipts';
+	            const thinking = appendMessage(thread, 'tomi', '');
+	            thinking.classList.add('hero-msg-thinking');
+	            thinking.querySelector('.hero-copy').outerHTML =
+	                '<span class="hero-thinking" aria-label="Tomi is thinking"><span></span><span></span><span></span></span>';
+	            after(instant ? 0 : 280, run, () => {
+	                thinking.remove();
+	                revealAnswer();
+	            });
+	        });
+	    }
+
+	    function appendMessage(thread, who, text) {
+	        const row = document.createElement('div');
+	        row.className = 'hero-msg hero-msg-' + who;
+	        const avatar = document.createElement('div');
+	        avatar.className = 'hero-avatar';
+	        if (who === 'tomi') {
+	            const img = document.createElement('img');
+	            img.src = TOMI_AVATAR;
+	            img.alt = '';
+	            avatar.appendChild(img);
+	        } else {
+	            avatar.textContent = 'You';
+	            avatar.style.fontSize = '0.58rem';
+	            avatar.style.letterSpacing = '-0.02em';
+	        }
+	        const bubble = document.createElement('div');
+	        bubble.className = 'hero-bubble';
+	        const copy = document.createElement('span');
+	        copy.className = 'hero-copy';
+	        copy.textContent = text;
+	        bubble.appendChild(copy);
+	        if (!reducedMotion.matches) {
+	            const caret = document.createElement('span');
+	            caret.className = 'hero-caret';
+	            caret.setAttribute('aria-hidden', 'true');
+	            bubble.appendChild(caret);
+	        }
+	        row.append(avatar, bubble);
+	        thread.appendChild(row);
+	        thread.scrollTop = thread.scrollHeight;
+	        return row;
+	    }
+
+	    function typeInto(node, text, instant, run, done) {
+	        if (instant) {
+	            paintRich(node, text);
+	            done();
+	            return;
+	        }
+	        const thread = node.closest('#hero-thread');
+	        const started = performance.now();
+	        const entry = {};
+	        let settled = false;
+	        const stop = () => {
+	            cancelAnimationFrame(entry.frame);
+	            clearTimeout(entry.timer);
+	        };
+	        const tick = () => {
+	            if (settled || run !== chatRun) return;
+	            stop();
+	            const elapsed = performance.now() - started;
+	            let index = 0;
+	            let cursor = 0;
+	            while (index < text.length && cursor < elapsed) {
+	                cursor += text.charAt(index) === '\n' ? 70 : 18;
+	                index += 1;
+	            }
+	            paintRich(node, text.slice(0, index));
+	            if (thread) thread.scrollTop = thread.scrollHeight;
+	            if (index >= text.length) {
+	                settled = true;
+	                const caret = node.parentElement && node.parentElement.querySelector('.hero-caret');
+	                if (caret) caret.remove();
+	                done();
+	                return;
+	            }
+	            entry.frame = requestAnimationFrame(tick);
+	            entry.timer = setTimeout(tick, 50);
+	        };
+	        entry.frame = requestAnimationFrame(tick);
+	        entry.timer = setTimeout(tick, 50);
+	        chatTimers.push(entry);
+	    }
+
+	    function paintRich(node, text) {
+	        node.replaceChildren();
+	        const parts = text.split('**');
+	        parts.forEach((part, i) => {
+	            if (!part) return;
+	            if (i % 2 === 1) {
+	                const strong = document.createElement('strong');
+	                strong.textContent = part;
+	                node.appendChild(strong);
+	            } else {
+	                node.appendChild(document.createTextNode(part));
+	            }
+	        });
+	    }
+
+	    function mountAnswerExtras(bubble, answer, instant, question) {
+	        if (answer.bars && answer.bars.length) {
+	            const list = document.createElement('div');
+	            list.className = 'hero-bars';
+	            answer.bars.forEach(([label, width, color, value]) => {
+	                const row = document.createElement('div');
+	                row.className = 'hero-bar-row';
+	                const name = document.createElement('span');
+	                name.textContent = label;
+	                const track = document.createElement('div');
+	                track.className = 'hero-track';
+	                const fill = document.createElement('div');
+	                fill.className = 'hero-fill' + (instant ? '' : ' is-in');
+	                fill.style.setProperty('--w', width);
+	                fill.style.setProperty('--c', color);
+	                if (instant) fill.style.transform = 'none';
+	                track.appendChild(fill);
+	                const figure = document.createElement('em');
+	                figure.textContent = value;
+	                row.append(name, track, figure);
+	                list.appendChild(row);
+	            });
+	            bubble.appendChild(list);
+	        }
+	        if (answer.actions && answer.actions.length) {
+	            const actions = document.createElement('div');
+	            actions.className = 'hero-actions';
+	            answer.actions.forEach(label => {
+	                const button = document.createElement('button');
+	                button.type = 'button';
+	                button.className = 'hero-action';
+	                button.textContent = label;
+	                button.addEventListener('click', () => {
+	                    if (question) rememberPrompt(question);
+	                    document.getElementById('tomi-prompt-dialog').showModal();
+	                });
+	                actions.appendChild(button);
+	            });
+	            bubble.appendChild(actions);
+	        }
+	        const thread = bubble.closest('#hero-thread');
+	        if (thread) thread.scrollTop = thread.scrollHeight;
+	    }
+
+	    function finishChat(status, question) {
+	        const form = document.getElementById('hero-form');
+	        const hint = document.getElementById('hero-hint');
+	        if (form) form.classList.remove('hero-form-busy');
+	        if (hint) hint.textContent = 'Pick another question';
+	        if (status) status.textContent = 'Network connected';
+	        document.querySelectorAll('.suggestion-chip').forEach(item => {
+	            item.disabled = false;
+	        });
+	        if (question) rememberPrompt(question);
+	    }
+
+	    function rememberPrompt(query) {
+	        try {
+	            sessionStorage.setItem('tomi_initial_prompt', query);
+	        } catch {
+	            // Restricted browser storage must not block the account flow.
+	        }
+	        const pending = document.getElementById('tomi-pending-question');
+	        if (pending) pending.textContent = '“' + query + '”';
+	        [['tomi-dialog-signup', TOMI_SIGNUP_URL], ['tomi-dialog-signin', TOMI_SIGNIN_URL]].forEach(([id, base]) => {
+	            const link = document.getElementById(id);
+	            if (!link) return;
+	            const url = new URL(base);
+	            url.searchParams.set('chat', query);
+	            link.href = url.toString();
+	        });
+	    }
+
+    function initPromptDialog() {
+        const dialog = document.getElementById('tomi-prompt-dialog');
+        document.getElementById('tomi-dialog-close').addEventListener('click', () => dialog.close());
+        dialog.addEventListener('keydown', event => {
+            if (event.key !== 'Tab') return;
+            const first = document.getElementById('tomi-dialog-signup');
+            const last = document.getElementById('tomi-dialog-close');
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        });
+        dialog.addEventListener('click', event => {
+            const bounds = dialog.getBoundingClientRect();
+            if (event.target === dialog && (
+                event.clientX < bounds.left || event.clientX > bounds.right ||
+                event.clientY < bounds.top || event.clientY > bounds.bottom
+            )) dialog.close();
+        });
+    }
+
+    function initTestimonials() {
+        if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
+        const cards = document.querySelectorAll('.ts-tomi-testimonial');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.remove('ts-tomi-reveal-pending');
+                observer.unobserve(entry.target);
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        cards.forEach((card, index) => {
+            card.style.setProperty('--tomi-reveal-delay', (index % 4) * 80 + 'ms');
+            card.classList.add('ts-tomi-reveal-pending');
+            observer.observe(card);
+        });
+    }
+
+	    function initSignupForm() {
+        const form = document.getElementById('signup-form');
+        const emailInput = document.getElementById('signup-email');
+        const button = document.getElementById('signup-button');
+        const buttonText = document.getElementById('signup-button-text');
+        const arrowIcon = document.getElementById('signup-arrow');
+        const loaderIcon = document.getElementById('signup-loader');
+
+        if (!form || !emailInput) return;
+
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+
+            const email = emailInput.value.trim();
+
+            if (!isValidEmail(email)) {
+                showToast('Please enter a valid work email', 'error');
+                emailInput.focus();
+                return;
+            }
+
+            if (button) {
+                button.disabled = true;
+            }
+
+            if (buttonText) {
+                buttonText.textContent = 'Redirecting';
+            }
+
+            if (arrowIcon) {
+                arrowIcon.classList.add('hidden');
+            }
+
+            if (loaderIcon) {
+                loaderIcon.classList.remove('hidden');
+            }
+
+            window.location.assign(TOMI_SIGNUP_URL);
+        });
+    }
+
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        return emailRegex.test(email) && email.length <= 320;
+    }
+
+    function showToast(message, type = 'info') {
+        const existingToast = document.querySelector('.toast-notification');
+
+        if (existingToast) {
+            existingToast.remove();
+        }
+
+        const toast = document.createElement('div');
+
+        toast.className =
+            'toast-notification fixed bottom-4 right-4 px-4 py-3 rounded-lg shadow-lg text-sm font-medium z-50 transition-all duration-300 transform translate-y-2 opacity-0';
+
+        if (type === 'error') {
+            toast.style.backgroundColor = '#dc2626';
+            toast.style.color = '#ffffff';
+        } else {
+            toast.style.backgroundColor = '#0a0a0a';
+            toast.style.color = '#fcfbf8';
+        }
+
+        toast.textContent = message;
+
+        document.body.appendChild(toast);
+
+        requestAnimationFrame(() => {
+            toast.style.transform = 'translateY(0)';
+            toast.style.opacity = '1';
+        });
+
+        setTimeout(() => {
+            toast.style.transform = 'translateY(2px)';
+            toast.style.opacity = '0';
+
+            setTimeout(() => {
+                toast.remove();
+            }, 300);
+        }, 4000);
+    }
+
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', event => {
+                const targetId = anchor.getAttribute('href');
+
+                if (!targetId || targetId === '#') return;
+
+                let targetElement;
+
+                try {
+                    targetElement = document.querySelector(targetId);
+                } catch {
+                    return;
+                }
+
+                if (!targetElement) return;
+
+                event.preventDefault();
+
+                targetElement.scrollIntoView({
+                    behavior: reducedMotion.matches ? 'auto' : 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init, { once: true });
+    } else {
+        init();
+    }
+    })();
+</script>

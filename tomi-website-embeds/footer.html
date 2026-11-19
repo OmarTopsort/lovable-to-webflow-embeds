@@ -1,0 +1,145 @@
+<!-- ══════════════════════════════════════════════════════════════════
+     tomi-embeds/footer.html  ·  Webflow paste guide
+     1 part · under 50,000 chars (Webflow HTML Embed limit)
+     Site footer for every Tomi page. Paste into a Symbol at the
+     bottom of the page, the same way webflow-embed/footer.html is used.
+     Self-contained: fonts, tokens, and chrome CSS live in this file.
+     ══════════════════════════════════════════════════════════════════ -->
+
+<!-- ════════ PART 1 of 1 · CSS + HTML + JS ════════ -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+<style>
+#ts-tomi-footer,
+#ts-tomi-footer *,
+#ts-tomi-footer *::before,
+#ts-tomi-footer *::after{box-sizing:border-box !important}
+#ts-tomi-footer{
+  --ink:0 0% 4%;
+  --ash:30 4% 45%;
+  --ceramic:42 33% 98%;
+  --shadow-soft:0 1px 2px hsl(var(--ink) / 0.03);
+  font-family:"Instrument Sans",system-ui,sans-serif !important;
+  line-height:1.5 !important;
+  -webkit-font-smoothing:antialiased !important;
+  width:100% !important;margin:0 !important;padding:0 !important;
+  color:hsl(var(--ink)) !important;
+  background:hsl(var(--ceramic)) !important;
+  border-top:1px solid hsl(var(--ink) / 0.06) !important;
+}
+#ts-tomi-footer h2,#ts-tomi-footer p,#ts-tomi-footer ul,#ts-tomi-footer li{margin:0 !important;padding:0 !important}
+#ts-tomi-footer ul{list-style:none !important}
+#ts-tomi-footer a{text-decoration:none !important;color:inherit !important}
+#ts-tomi-footer .ts-tf-wrap{
+  width:100% !important;max-width:1280px !important;margin:0 auto !important;
+  padding:3.5rem 1.5rem !important;
+}
+#ts-tomi-footer .ts-tf-grid{
+  display:grid !important;grid-template-columns:1fr 1fr !important;gap:2.5rem !important;margin-bottom:3rem !important;
+}
+#ts-tomi-footer .ts-tf-brand{grid-column:span 2 !important}
+@media (min-width:768px){
+  #ts-tomi-footer .ts-tf-grid{grid-template-columns:repeat(5,minmax(0,1fr)) !important}
+  #ts-tomi-footer .ts-tf-brand{grid-column:span 2 !important}
+}
+#ts-tomi-footer .ts-tf-mark{display:flex !important;align-items:center !important;gap:0.5rem !important}
+#ts-tomi-footer .ts-tf-avatar{
+  width:28px !important;height:28px !important;border-radius:9999px !important;
+  object-fit:cover !important;box-shadow:var(--shadow-soft) !important;
+}
+#ts-tomi-footer .ts-tf-word{
+  font-family:"Newsreader",Georgia,serif !important;font-weight:500 !important;
+  letter-spacing:-0.015em !important;font-size:1.25rem !important;line-height:1 !important;
+}
+#ts-tomi-footer .ts-tf-by{
+  font-family:"Instrument Sans",system-ui,sans-serif !important;font-weight:400 !important;
+  letter-spacing:0 !important;font-size:0.75rem !important;color:hsl(var(--ash)) !important;
+  margin-left:0.375rem !important;vertical-align:middle !important;
+}
+#ts-tomi-footer .ts-tf-blurb{
+  font-size:0.875rem !important;color:hsl(var(--ash)) !important;margin-top:1rem !important;
+  max-width:20rem !important;line-height:1.625 !important;
+}
+#ts-tomi-footer .ts-tf-col h2{
+  font-size:0.75rem !important;font-weight:600 !important;text-transform:uppercase !important;
+  letter-spacing:0.05em !important;margin-bottom:1rem !important;color:hsl(var(--ink)) !important;
+}
+#ts-tomi-footer .ts-tf-col li + li{margin-top:0.625rem !important}
+#ts-tomi-footer .ts-tf-col a{font-size:0.875rem !important;color:hsl(var(--ash)) !important;transition:color .15s !important}
+#ts-tomi-footer .ts-tf-col a:hover{color:hsl(var(--ink)) !important}
+#ts-tomi-footer .ts-tf-base{
+  display:flex !important;flex-direction:column !important;align-items:flex-start !important;
+  justify-content:space-between !important;gap:1rem !important;
+  padding-top:2rem !important;border-top:1px solid hsl(var(--ink) / 0.06) !important;
+  font-size:0.75rem !important;color:hsl(var(--ash)) !important;
+}
+@media (min-width:640px){
+  #ts-tomi-footer .ts-tf-base{flex-direction:row !important;align-items:center !important}
+}
+#ts-tomi-footer .ts-tf-legal{display:flex !important;align-items:center !important;gap:1.25rem !important}
+#ts-tomi-footer .ts-tf-legal a{transition:color .15s !important}
+#ts-tomi-footer .ts-tf-legal a:hover{color:hsl(var(--ink)) !important}
+</style>
+
+<footer id="ts-tomi-footer" class="ts-root ts-tf">
+  <div class="ts-tf-wrap">
+    <div class="ts-tf-grid">
+      <div class="ts-tf-brand">
+        <a href="/" aria-label="Tomi home">
+          <span class="ts-tf-mark">
+            <img src="https://cdn.prod.website-files.com/64761186cb9c6205851bddcb/6ab14f6784159ff763aaa7de_tomi-avatar.png" alt="" class="ts-tf-avatar">
+            <span class="ts-tf-word">Tomi<span class="ts-tf-by">by Topsort</span></span>
+          </span>
+        </a>
+        <p class="ts-tf-blurb">The AI agent for retail media, built on the Topsort platform.</p>
+      </div>
+      <div class="ts-tf-col">
+        <h2>Product</h2>
+        <ul>
+          <li><a href="/#capabilities">Capabilities</a></li>
+          <li><a href="/#how">How it works</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="https://www.topsort.com/products/t-platform">T-Platform</a></li>
+          <li><a href="https://www.topsort.com/products/t-brain">T-Brain AI</a></li>
+        </ul>
+      </div>
+      <div class="ts-tf-col">
+        <h2>Company</h2>
+        <ul>
+          <li><a href="https://www.topsort.com/about">About Topsort</a></li>
+          <li><a href="https://www.topsort.com/resources">Case Studies</a></li>
+          <li><a href="https://job-boards.greenhouse.io/topsort" target="_blank" rel="noopener noreferrer">Careers</a></li>
+          <li><a href="https://www.topsort.com/book-a-demo">Book a Demo</a></li>
+        </ul>
+      </div>
+      <div class="ts-tf-col">
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="https://docs.topsort.com" target="_blank" rel="noopener noreferrer">Docs</a></li>
+          <li><a href="https://api.docs.topsort.com/api-reference/introduction" target="_blank" rel="noopener noreferrer">API reference</a></li>
+          <li><a href="https://www.topsort.com/product/tech/privacy-and-security">Trust &amp; security</a></li>
+          <li><a href="https://topsort.statuspage.io" target="_blank" rel="noopener noreferrer">Status</a></li>
+          <li><a href="https://www.topsort.com/resources">Resources &amp; Insights</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ts-tf-base">
+      <div data-ts-year>© 2026 Topsort, Inc. All rights reserved.</div>
+      <div class="ts-tf-legal">
+        <a href="https://www.topsort.com/legals#fair-use-policy">Terms</a>
+        <a href="https://www.topsort.com/legals">Privacy</a>
+        <a href="https://www.topsort.com/product/tech/privacy-and-security">Security</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var root = document.getElementById("ts-tomi-footer");
+  if (!root || root.hasAttribute("data-ts-ready")) return;
+  root.setAttribute("data-ts-ready", "");
+  root.querySelectorAll("[data-ts-year]").forEach(function (el) {
+    el.textContent = el.textContent.replace(/\d{4}/, String(new Date().getFullYear()));
+  });
+})();
+</script>
+<!-- ════════ END PART 1 of 1 ════════ -->

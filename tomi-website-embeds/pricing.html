@@ -1,0 +1,571 @@
+<!-- ══════════════════════════════════════════════════════════════════
+     tomi-embeds/pricing.html  ·  Webflow paste guide
+     2 parts · each under 50,000 chars (Webflow HTML Embed limit)
+     Paste each PART below into its own HTML Embed, in this order.
+     Pricing page body only. Navbar and footer are separate embeds:
+       tomi-embeds/navbar.html  (paste above)
+       tomi-embeds/footer.html  (paste below)
+     Source: tomi-source/src/pages/Pricing.tsx
+     HTML is split on a section boundary. Part 2 repeats the root so
+     Webflow's per-embed wrapper cannot close it early. Page JS lists
+     both roots.
+     ══════════════════════════════════════════════════════════════════ -->
+
+<!-- ════════ PART 1 of 2 · CSS + HTML · hero, stages, plans ════════ -->
+<!-- ════════ PART 1 of 1 · CSS + HTML + JS ════════ -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+<style>
+#ts-tomi-pricing,
+#ts-tomi-pricing *,
+#ts-tomi-pricing *::before,
+#ts-tomi-pricing *::after{box-sizing:border-box !important}
+#ts-tomi-pricing{
+  --background:42 33% 98%;
+  --foreground:0 0% 4%;
+  --card:0 0% 100%;
+  --primary:243 75% 59%;
+  --primary-foreground:0 0% 100%;
+  --secondary:32 50% 88%;
+  --ink:0 0% 4%;
+  --ash:30 4% 45%;
+  --ceramic:42 33% 98%;
+  --peach:32 50% 81%;
+  --cobalt:243 75% 59%;
+  --coral:18 75% 63%;
+  --shadow-card:0 2px 8px hsl(var(--ink) / 0.02), 0 16px 48px hsl(var(--ink) / 0.04);
+  --shadow-soft:0 1px 2px hsl(var(--ink) / 0.03);
+  font-family:"Instrument Sans",system-ui,sans-serif !important;
+  line-height:1.5 !important;
+  -webkit-font-smoothing:antialiased !important;
+  width:100% !important;margin:0 !important;padding:0 !important;
+  color:hsl(var(--ink)) !important;
+  background:hsl(var(--background)) !important;
+}
+#ts-tomi-pricing h1,#ts-tomi-pricing h2,#ts-tomi-pricing h3,
+#ts-tomi-pricing p,#ts-tomi-pricing ul,#ts-tomi-pricing li{margin:0 !important;padding:0 !important}
+#ts-tomi-pricing ul{list-style:none !important}
+#ts-tomi-pricing a{text-decoration:none !important;color:inherit !important}
+#ts-tomi-pricing button{font-family:inherit !important;cursor:pointer !important}
+#ts-tomi-pricing svg{display:block !important;flex-shrink:0 !important}
+#ts-tomi-pricing .ts-tp-serif{
+  font-family:"Newsreader",Georgia,serif !important;font-weight:500 !important;letter-spacing:-0.015em !important;
+}
+#ts-tomi-pricing .ts-tp-wrap{width:100% !important;max-width:1280px !important;margin:0 auto !important;padding-left:1.5rem !important;padding-right:1.5rem !important}
+#ts-tomi-pricing .ts-tp-narrow{max-width:48rem !important}
+#ts-tomi-pricing .ts-tp-wide{max-width:64rem !important}
+#ts-tomi-pricing .ts-tp-center{text-align:center !important;margin-left:auto !important;margin-right:auto !important}
+#ts-tomi-pricing .ts-tp-balance{text-wrap:balance !important}
+#ts-tomi-pricing .ts-tp-eye{font-size:11px !important;font-weight:600 !important;color:hsl(var(--cobalt)) !important;text-transform:uppercase !important;letter-spacing:0.12em !important;margin-bottom:0.75rem !important}
+#ts-tomi-pricing .ts-tp-hero{padding-top:5rem !important;padding-bottom:3.5rem !important}
+#ts-tomi-pricing .ts-tp-hero h1{font-size:3rem !important;line-height:1.02 !important;color:hsl(var(--ink)) !important}
+#ts-tomi-pricing .ts-tp-hero h1 em{font-style:italic !important;color:hsl(var(--coral)) !important}
+#ts-tomi-pricing .ts-tp-lead{color:hsl(var(--ash)) !important;font-size:1.125rem !important;margin-top:1.5rem !important}
+#ts-tomi-pricing .ts-tp-hero-actions{display:flex !important;flex-wrap:wrap !important;justify-content:center !important;gap:0.75rem !important;margin-top:2rem !important}
+#ts-tomi-pricing .ts-tp-btn{
+  display:inline-flex !important;align-items:center !important;justify-content:center !important;gap:0.375rem !important;
+  height:44px !important;padding:0 1.25rem !important;border-radius:0.5rem !important;
+  font-size:0.875rem !important;font-weight:500 !important;border:1px solid transparent !important;
+}
+#ts-tomi-pricing .ts-tp-btn svg{width:16px !important;height:16px !important}
+#ts-tomi-pricing .ts-tp-btn-ink{background:hsl(var(--ink)) !important;color:hsl(var(--ceramic)) !important;box-shadow:var(--shadow-soft) !important}
+#ts-tomi-pricing .ts-tp-btn-ink:hover{background:hsl(var(--ink) / 0.9) !important}
+#ts-tomi-pricing .ts-tp-btn-ghost{background:transparent !important;color:hsl(var(--ink)) !important;border-color:hsl(var(--ink) / 0.15) !important}
+#ts-tomi-pricing .ts-tp-btn-ghost:hover{background:hsl(var(--ink) / 0.04) !important}
+#ts-tomi-pricing .ts-tp-btn-coral{background:hsl(var(--coral)) !important;color:hsl(var(--ceramic)) !important}
+#ts-tomi-pricing .ts-tp-btn-coral:hover{background:hsl(var(--coral) / 0.9) !important}
+#ts-tomi-pricing .ts-tp-section{padding-bottom:5rem !important}
+#ts-tomi-pricing .ts-tp-rule{padding-top:5rem !important;padding-bottom:5rem !important;border-top:1px solid hsl(var(--ink) / 0.06) !important}
+#ts-tomi-pricing .ts-tp-grid3{display:grid !important;gap:1rem !important;max-width:64rem !important;margin:0 auto !important}
+#ts-tomi-pricing .ts-tp-card{border-radius:1rem !important;background:hsl(var(--card)) !important;border:1px solid hsl(var(--ink) / 0.06) !important;padding:1.5rem !important}
+#ts-tomi-pricing .ts-tp-stage-top{display:flex !important;align-items:center !important;justify-content:space-between !important}
+#ts-tomi-pricing .ts-tp-kicker{font-size:11px !important;text-transform:uppercase !important;letter-spacing:0.12em !important;color:hsl(var(--ash)) !important;font-weight:600 !important}
+#ts-tomi-pricing .ts-tp-ico{width:16px !important;height:16px !important;color:hsl(var(--cobalt)) !important}
+#ts-tomi-pricing .ts-tp-stage h3{font-size:1.5rem !important;color:hsl(var(--ink)) !important;margin-top:1rem !important}
+#ts-tomi-pricing .ts-tp-stage p{font-size:0.875rem !important;color:hsl(var(--ash)) !important;margin-top:0.5rem !important;line-height:1.625 !important}
+#ts-tomi-pricing .ts-tp-tag{display:inline-block !important;margin-top:1.25rem !important;font-size:11px !important;font-weight:600 !important;padding:0.25rem 0.625rem !important;border-radius:9999px !important;background:hsl(var(--peach) / 0.3) !important;color:hsl(var(--ink)) !important}
+#ts-tomi-pricing .ts-tp-head{text-align:center !important;max-width:42rem !important;margin:0 auto 3rem !important}
+#ts-tomi-pricing .ts-tp-head h2{font-size:1.875rem !important;color:hsl(var(--ink)) !important}
+#ts-tomi-pricing .ts-tp-head p{color:hsl(var(--ash)) !important;margin-top:1rem !important}
+#ts-tomi-pricing .ts-tp-plan{position:relative !important;border-radius:1rem !important;padding:1.75rem !important;display:flex !important;flex-direction:column !important}
+#ts-tomi-pricing .ts-tp-plan-lite,#ts-tomi-pricing .ts-tp-plan-ent{background:hsl(var(--card)) !important;border:1px solid hsl(var(--ink) / 0.06) !important;color:hsl(var(--ink)) !important}
+#ts-tomi-pricing .ts-tp-plan-pro{background:hsl(var(--ink)) !important;color:hsl(var(--ceramic)) !important;border:1px solid hsl(var(--ink)) !important;box-shadow:var(--shadow-card) !important}
+#ts-tomi-pricing .ts-tp-badge{position:absolute !important;top:-0.75rem !important;left:1.75rem !important;padding:0.25rem 0.625rem !important;border-radius:9999px !important;background:hsl(var(--coral)) !important;color:hsl(var(--ceramic)) !important;font-size:11px !important;font-weight:600 !important;text-transform:uppercase !important;letter-spacing:0.04em !important}
+#ts-tomi-pricing .ts-tp-plan-kicker{font-size:11px !important;text-transform:uppercase !important;letter-spacing:0.1em !important;font-weight:600 !important}
+#ts-tomi-pricing .ts-tp-plan-lite .ts-tp-plan-kicker,#ts-tomi-pricing .ts-tp-plan-ent .ts-tp-plan-kicker{color:hsl(var(--cobalt)) !important}
+#ts-tomi-pricing .ts-tp-plan-pro .ts-tp-plan-kicker{color:hsl(var(--peach)) !important}
+#ts-tomi-pricing .ts-tp-plan h3{font-size:1.5rem !important;margin-top:0.75rem !important}
+#ts-tomi-pricing .ts-tp-plan-desc{font-size:0.875rem !important;margin-top:0.5rem !important;min-height:60px !important}
+#ts-tomi-pricing .ts-tp-plan-lite .ts-tp-plan-desc,#ts-tomi-pricing .ts-tp-plan-ent .ts-tp-plan-desc,
+#ts-tomi-pricing .ts-tp-muted{color:hsl(var(--ash)) !important}
+#ts-tomi-pricing .ts-tp-plan-pro .ts-tp-plan-desc,#ts-tomi-pricing .ts-tp-plan-pro .ts-tp-muted{color:hsl(var(--ceramic) / 0.6) !important}
+#ts-tomi-pricing .ts-tp-price{display:flex !important;align-items:baseline !important;gap:0.25rem !important;margin-top:1rem !important}
+#ts-tomi-pricing .ts-tp-price strong{font-size:2.25rem !important;font-weight:500 !important}
+#ts-tomi-pricing .ts-tp-price span,#ts-tomi-pricing .ts-tp-sub{font-size:0.875rem !important}
+#ts-tomi-pricing .ts-tp-sub{font-size:0.75rem !important;margin-top:0.25rem !important}
+#ts-tomi-pricing .ts-tp-features{margin:1.75rem 0 !important;flex:1 1 auto !important}
+#ts-tomi-pricing .ts-tp-features li{display:flex !important;align-items:flex-start !important;gap:0.5rem !important;font-size:0.875rem !important}
+#ts-tomi-pricing .ts-tp-features li + li{margin-top:0.625rem !important}
+#ts-tomi-pricing .ts-tp-features svg{width:16px !important;height:16px !important;margin-top:0.125rem !important}
+#ts-tomi-pricing .ts-tp-plan-lite .ts-tp-features svg,#ts-tomi-pricing .ts-tp-plan-ent .ts-tp-features svg{color:hsl(var(--cobalt)) !important}
+#ts-tomi-pricing .ts-tp-plan-pro .ts-tp-features svg{color:hsl(var(--coral)) !important}
+#ts-tomi-pricing .ts-tp-plan-lite .ts-tp-features span,#ts-tomi-pricing .ts-tp-plan-ent .ts-tp-features span{color:hsl(var(--ink) / 0.8) !important}
+#ts-tomi-pricing .ts-tp-plan-pro .ts-tp-features span{color:hsl(var(--ceramic) / 0.9) !important}
+#ts-tomi-pricing .ts-tp-plan .ts-tp-btn{width:100% !important;height:40px !important}
+#ts-tomi-pricing .ts-tp-note{font-size:0.75rem !important;color:hsl(var(--ash)) !important;text-align:center !important;max-width:42rem !important;margin:1.5rem auto 0 !important}
+#ts-tomi-pricing .ts-tp-wallet{max-width:64rem !important;margin:2rem auto 0 !important;border-radius:1rem !important;background:hsl(var(--peach) / 0.15) !important;border:1px solid hsl(var(--peach) / 0.4) !important;padding:1.5rem !important;display:flex !important;gap:1rem !important;align-items:flex-start !important}
+#ts-tomi-pricing .ts-tp-wallet svg{width:20px !important;height:20px !important;color:hsl(var(--coral)) !important;margin-top:0.125rem !important}
+#ts-tomi-pricing .ts-tp-wallet h3{font-size:1.25rem !important;color:hsl(var(--ink)) !important}
+#ts-tomi-pricing .ts-tp-wallet p{font-size:0.875rem !important;color:hsl(var(--ash)) !important;margin-top:0.25rem !important}
+#ts-tomi-pricing .ts-tp-table-wrap{max-width:64rem !important;margin:0 auto !important;border-radius:1rem !important;border:1px solid hsl(var(--ink) / 0.06) !important;background:hsl(var(--card)) !important;overflow-x:auto !important}
+#ts-tomi-pricing table{width:100% !important;min-width:680px !important;border-collapse:collapse !important;font-size:0.875rem !important}
+#ts-tomi-pricing th,#ts-tomi-pricing td{padding:1rem !important;text-align:center !important}
+#ts-tomi-pricing thead th{background:hsl(var(--peach) / 0.1) !important;font-weight:400 !important}
+#ts-tomi-pricing thead th:first-child{text-align:left !important;width:40% !important;font-weight:500 !important;color:hsl(var(--ash)) !important}
+#ts-tomi-pricing thead th:not(:first-child){font-size:1.125rem !important;color:hsl(var(--ink)) !important}
+#ts-tomi-pricing .ts-tp-group td{text-align:left !important;padding-top:1.5rem !important;padding-bottom:0.5rem !important;font-size:11px !important;text-transform:uppercase !important;letter-spacing:0.12em !important;font-weight:600 !important;color:hsl(var(--cobalt)) !important}
+#ts-tomi-pricing tbody tr.ts-tp-row{border-top:1px solid hsl(var(--ink) / 0.06) !important}
+#ts-tomi-pricing tbody td:first-child{text-align:left !important;color:hsl(var(--ink) / 0.8) !important}
+#ts-tomi-pricing .ts-tp-yes{color:hsl(var(--cobalt)) !important}
+#ts-tomi-pricing .ts-tp-no{color:hsl(var(--ink) / 0.2) !important}
+#ts-tomi-pricing .ts-tp-yes svg,#ts-tomi-pricing .ts-tp-no svg{width:16px !important;height:16px !important;margin:0 auto !important}
+#ts-tomi-pricing .ts-tp-split{display:grid !important;gap:1rem !important;max-width:64rem !important;margin:0 auto !important}
+#ts-tomi-pricing .ts-tp-panel{border-radius:1rem !important;padding:1.75rem !important}
+#ts-tomi-pricing .ts-tp-panel-light{background:hsl(var(--card)) !important;border:1px solid hsl(var(--ink) / 0.06) !important}
+#ts-tomi-pricing .ts-tp-panel-dark{background:hsl(var(--ink)) !important;color:hsl(var(--ceramic)) !important;box-shadow:var(--shadow-card) !important}
+#ts-tomi-pricing .ts-tp-field{margin-top:1.5rem !important}
+#ts-tomi-pricing .ts-tp-field-top{display:flex !important;justify-content:space-between !important;align-items:center !important;margin-bottom:0.75rem !important}
+#ts-tomi-pricing .ts-tp-field-top span{font-size:0.75rem !important;color:hsl(var(--ash)) !important;font-weight:500 !important}
+#ts-tomi-pricing .ts-tp-field-top strong{font-size:0.875rem !important;font-weight:500 !important;font-variant-numeric:tabular-nums !important;color:hsl(var(--ink)) !important}
+#ts-tomi-pricing .ts-tp-slider{position:relative !important;display:flex !important;align-items:center !important;height:20px !important;touch-action:none !important;user-select:none !important}
+#ts-tomi-pricing .ts-tp-track{position:relative !important;height:8px !important;width:100% !important;overflow:hidden !important;border-radius:9999px !important;background:hsl(var(--secondary)) !important}
+#ts-tomi-pricing .ts-tp-range{position:absolute !important;left:0 !important;top:0 !important;height:100% !important;background:hsl(var(--primary)) !important}
+#ts-tomi-pricing .ts-tp-thumb{
+  position:absolute !important;top:50% !important;width:20px !important;height:20px !important;margin-left:-10px !important;
+  transform:translateY(-50%) !important;border-radius:9999px !important;border:2px solid hsl(var(--primary)) !important;
+  background:hsl(var(--background)) !important;box-shadow:var(--shadow-soft) !important;
+}
+#ts-tomi-pricing .ts-tp-slider:focus-visible{outline:2px solid hsl(var(--cobalt)) !important;outline-offset:3px !important;border-radius:9999px !important}
+#ts-tomi-pricing .ts-tp-fine{font-size:0.75rem !important;color:hsl(var(--ash)) !important;margin-top:2rem !important;line-height:1.625 !important}
+#ts-tomi-pricing .ts-tp-hours-label{font-size:0.75rem !important;color:hsl(var(--ceramic) / 0.6) !important}
+#ts-tomi-pricing .ts-tp-hours{font-size:3rem !important;margin-top:0.5rem !important;font-variant-numeric:tabular-nums !important}
+#ts-tomi-pricing .ts-tp-hours span{font-size:1.5rem !important;color:hsl(var(--peach)) !important}
+#ts-tomi-pricing .ts-tp-stats{display:grid !important;grid-template-columns:1fr 1fr !important;gap:1.25rem !important;margin-top:1.5rem !important;padding-top:1.5rem !important;border-top:1px solid hsl(var(--ceramic) / 0.1) !important}
+#ts-tomi-pricing .ts-tp-stats div span{display:block !important;font-size:0.75rem !important;color:hsl(var(--ceramic) / 0.6) !important}
+#ts-tomi-pricing .ts-tp-stats div strong{display:block !important;font-size:1.5rem !important;font-weight:500 !important;margin-top:0.25rem !important;font-variant-numeric:tabular-nums !important}
+#ts-tomi-pricing .ts-tp-panel-dark .ts-tp-fine{color:hsl(var(--ceramic) / 0.5) !important}
+#ts-tomi-pricing .ts-tp-packs{max-width:64rem !important;margin:0 auto !important;display:grid !important;gap:0.75rem !important}
+#ts-tomi-pricing .ts-tp-pack{
+  text-align:left !important;border-radius:1rem !important;padding:1.25rem !important;
+  border:1px solid hsl(var(--ink) / 0.08) !important;background:hsl(var(--card)) !important;color:hsl(var(--ink)) !important;
+  transition:border-color .15s,box-shadow .15s !important;
+}
+#ts-tomi-pricing .ts-tp-pack:hover{border-color:hsl(var(--ink) / 0.2) !important}
+#ts-tomi-pricing .ts-tp-pack.is-on{border-color:hsl(var(--cobalt)) !important;background:hsl(var(--cobalt) / 0.05) !important;box-shadow:var(--shadow-soft) !important}
+#ts-tomi-pricing .ts-tp-pack .ts-tp-pack-name{font-size:0.75rem !important;color:hsl(var(--ash)) !important;font-weight:500 !important}
+#ts-tomi-pricing .ts-tp-pack .ts-tp-pack-n{font-size:1.875rem !important;color:hsl(var(--ink)) !important;margin-top:0.5rem !important}
+#ts-tomi-pricing .ts-tp-pack .ts-tp-pack-unit{font-size:0.75rem !important;color:hsl(var(--ash)) !important}
+#ts-tomi-pricing .ts-tp-pack .ts-tp-pack-price{margin-top:1rem !important;font-size:0.875rem !important;font-weight:500 !important}
+#ts-tomi-pricing .ts-tp-pack-line{font-size:0.875rem !important;color:hsl(var(--ash)) !important;text-align:center !important;margin-top:1rem !important}
+#ts-tomi-pricing .ts-tp-estimate{max-width:64rem !important;margin:2.5rem auto 0 !important}
+#ts-tomi-pricing .ts-tp-panel h3{font-size:1.25rem !important;color:hsl(var(--ink)) !important}
+#ts-tomi-pricing .ts-tp-peach{background:hsl(var(--peach) / 0.15) !important;border:1px solid hsl(var(--peach) / 0.4) !important;display:flex !important;flex-direction:column !important}
+#ts-tomi-pricing .ts-tp-peach svg{width:20px !important;height:20px !important;color:hsl(var(--coral)) !important}
+#ts-tomi-pricing .ts-tp-total{font-size:3rem !important;color:hsl(var(--ink)) !important;margin-top:1rem !important;font-variant-numeric:tabular-nums !important}
+#ts-tomi-pricing .ts-tp-peach p{font-size:0.875rem !important;color:hsl(var(--ash)) !important}
+#ts-tomi-pricing .ts-tp-peach .ts-tp-value{margin-top:1.5rem !important}
+#ts-tomi-pricing .ts-tp-peach .ts-tp-value strong{color:hsl(var(--ink)) !important;font-weight:500 !important}
+#ts-tomi-pricing .ts-tp-peach .ts-tp-fine{margin-top:auto !important;padding-top:1.5rem !important}
+#ts-tomi-pricing .ts-tp-faq{max-width:48rem !important}
+#ts-tomi-pricing .ts-tp-acc{border-radius:1rem !important;border:1px solid hsl(var(--ink) / 0.06) !important;background:hsl(var(--card)) !important;padding:0 1.5rem !important}
+#ts-tomi-pricing .ts-tp-acc-item{border-bottom:1px solid hsl(var(--ink) / 0.08) !important}
+#ts-tomi-pricing .ts-tp-acc-item:last-child{border-bottom:0 !important}
+#ts-tomi-pricing .ts-tp-acc-btn{
+  width:100% !important;display:flex !important;align-items:center !important;justify-content:space-between !important;
+  gap:1rem !important;padding:1rem 0 !important;background:transparent !important;border:0 !important;
+  text-align:left !important;font-size:1rem !important;font-weight:500 !important;color:hsl(var(--ink)) !important;
+}
+#ts-tomi-pricing .ts-tp-acc-btn svg{width:16px !important;height:16px !important;transition:transform .2s !important}
+#ts-tomi-pricing .ts-tp-acc-item.is-open .ts-tp-acc-btn svg{transform:rotate(180deg) !important}
+#ts-tomi-pricing .ts-tp-acc-panel{display:none !important;padding-bottom:1rem !important;font-size:0.875rem !important;color:hsl(var(--ash)) !important}
+#ts-tomi-pricing .ts-tp-acc-item.is-open .ts-tp-acc-panel{display:block !important}
+@media (min-width:640px){
+  #ts-tomi-pricing .ts-tp-hero{padding-top:7rem !important}
+  #ts-tomi-pricing .ts-tp-hero h1{font-size:4.5rem !important}
+  #ts-tomi-pricing .ts-tp-head h2{font-size:3rem !important}
+  #ts-tomi-pricing .ts-tp-packs{grid-template-columns:1fr 1fr !important}
+}
+@media (min-width:768px){
+  #ts-tomi-pricing .ts-tp-grid3,#ts-tomi-pricing .ts-tp-split,#ts-tomi-pricing .ts-tp-estimate{grid-template-columns:1fr 1fr 1fr !important}
+  #ts-tomi-pricing .ts-tp-split,#ts-tomi-pricing .ts-tp-estimate{grid-template-columns:1fr 1fr !important}
+}
+@media (min-width:1024px){
+  #ts-tomi-pricing .ts-tp-packs{grid-template-columns:repeat(4,minmax(0,1fr)) !important}
+}
+</style>
+
+<main id="ts-tomi-pricing" class="ts-root ts-tp">
+  <section class="ts-tp-wrap ts-tp-hero ts-tp-center ts-tp-narrow">
+    <div class="ts-tp-eye">Pricing</div>
+    <h1 class="ts-tp-serif ts-tp-balance">Less ad ops. <em>More growth.</em></h1>
+    <p class="ts-tp-lead ts-tp-balance">Ask better questions. Fix campaigns faster. Give every seller a simpler way to advertise — Tomi grows from a helpful assistant to an AI-powered operation.</p>
+    <div class="ts-tp-hero-actions">
+      <a class="ts-tp-btn ts-tp-btn-ink" href="#plans">Find your plan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a class="ts-tp-btn ts-tp-btn-ghost" href="#compare">Compare capabilities</a>
+    </div>
+  </section>
+
+  <section class="ts-tp-wrap ts-tp-section">
+    <div class="ts-tp-grid3">
+      <article class="ts-tp-card ts-tp-stage">
+        <div class="ts-tp-stage-top"><span class="ts-tp-kicker">01 / Ask</span><svg class="ts-tp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3 class="ts-tp-serif">Get answers in seconds.</h3>
+        <p>Ask Tomi about performance, campaigns and what needs your attention — right inside app.topsort.</p>
+        <span class="ts-tp-tag">Tomi Lite</span>
+      </article>
+      <article class="ts-tp-card ts-tp-stage">
+        <div class="ts-tp-stage-top"><span class="ts-tp-kicker">02 / Act</span><svg class="ts-tp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"/><path d="m14 7 3 3"/><path d="M5 6v4"/><path d="M19 14v4"/><path d="M10 2v2"/><path d="M7 8H3"/><path d="M21 16h-4"/><path d="M11 3H9"/></svg></div>
+        <h3 class="ts-tp-serif">Turn insight into action.</h3>
+        <p>Open standalone Tomi to diagnose campaigns, compose outreach and manage work across connected ad servers.</p>
+        <span class="ts-tp-tag">Tomi Pro</span>
+      </article>
+      <article class="ts-tp-card ts-tp-stage">
+        <div class="ts-tp-stage-top"><span class="ts-tp-kicker">03 / Scale</span><svg class="ts-tp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg></div>
+        <h3 class="ts-tp-serif">Let your sellers do more.</h3>
+        <p>Give your seller network a self-service experience with automation, oversight and reporting built in.</p>
+        <span class="ts-tp-tag">Tomi Enterprise</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="plans" class="ts-tp-wrap ts-tp-rule">
+    <div class="ts-tp-head">
+      <div class="ts-tp-eye">Plans</div>
+      <h2 class="ts-tp-serif ts-tp-balance">One product, three ways to grow.</h2>
+    </div>
+    <div class="ts-tp-grid3">
+      <article class="ts-tp-plan ts-tp-plan-lite">
+        <div class="ts-tp-plan-kicker">Embedded in app.topsort</div>
+        <h3 class="ts-tp-serif">Lite + Credits</h3>
+        <p class="ts-tp-plan-desc">Ask Tomi questions about your advertising business. Pay only when you need more usage.</p>
+        <div class="ts-tp-price"><strong class="ts-tp-serif">Free</strong></div>
+        <p class="ts-tp-sub ts-tp-muted">25 credits / organization / month</p>
+        <ul class="ts-tp-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Conversational AI and Q&amp;A</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Existing Topsort data context</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Shared organization credit balance</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Purchase more credits anytime</span></li>
+        </ul>
+        <a class="ts-tp-btn ts-tp-btn-ink" href="#credits">Explore credits</a>
+      </article>
+      <article class="ts-tp-plan ts-tp-plan-pro">
+        <div class="ts-tp-badge">Most popular</div>
+        <div class="ts-tp-plan-kicker">Standalone Tomi · 14-day trial</div>
+        <h3 class="ts-tp-serif">Pro</h3>
+        <p class="ts-tp-plan-desc">A complete AI ad-ops workspace for your own organization. No seller self-service.</p>
+        <div class="ts-tp-price"><strong class="ts-tp-serif">$499</strong><span class="ts-tp-muted">/month</span></div>
+        <p class="ts-tp-sub ts-tp-muted">250 credits / organization / month</p>
+        <ul class="ts-tp-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Campaign Doctor and Email Composer</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Campaign creation and optimization</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Connectors to other ad servers</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Team workflows and performance reporting</span></li>
+        </ul>
+        <a class="ts-tp-btn ts-tp-btn-coral" href="https://tomi.topsort.com/auth/signup">Start 14-day trial</a>
+      </article>
+      <article class="ts-tp-plan ts-tp-plan-ent">
+        <div class="ts-tp-plan-kicker">For retailers &amp; ad networks</div>
+        <h3 class="ts-tp-serif">Enterprise</h3>
+        <p class="ts-tp-plan-desc">Give your seller network AI-powered self-service, automation and business reporting.</p>
+        <div class="ts-tp-price"><strong class="ts-tp-serif">$15,000</strong><span class="ts-tp-muted">/month</span></div>
+        <p class="ts-tp-sub ts-tp-muted">2,000 credits / organization / month · annual agreement</p>
+        <ul class="ts-tp-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Everything in Pro</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Seller self-service and activation</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Enterprise governance and integrations</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Advanced performance and revenue reporting</span></li>
+        </ul>
+        <a class="ts-tp-btn ts-tp-btn-ink" href="mailto:sales@topsort.com?subject=Tomi%20Enterprise">Talk to Topsort</a>
+      </article>
+    </div>
+    <p class="ts-tp-note">All credits are organization-owned. Additional credits are available on every plan. Standalone starts with a limited 14-day trial; trial allowance and commercial terms are subject to confirmation.</p>
+    <div class="ts-tp-wallet">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+      <div>
+        <h3 class="ts-tp-serif">Your purchased credits come with you.</h3>
+        <p>Buy credits in Tomi Lite and keep your unused purchased balance when you upgrade to Pro or Enterprise. One shared organization wallet, no transfer required.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- ════════ END PART 1 of 2 ════════ -->
+
+<!-- ════════ PART 2 of 2 · HTML + JS · compare, calculators, FAQ ════════ -->
+<main id="ts-tomi-pricing-p2" class="ts-root ts-tp" data-ts-root="ts-tomi-pricing">
+  <section id="compare" class="ts-tp-wrap ts-tp-rule">
+    <div class="ts-tp-head">
+      <div class="ts-tp-eye">Compare capabilities</div>
+      <h2 class="ts-tp-serif ts-tp-balance">The right Tomi for the work you do.</h2>
+    </div>
+    <div class="ts-tp-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th class="ts-tp-serif">Lite</th>
+            <th class="ts-tp-serif">Pro</th>
+            <th class="ts-tp-serif">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="ts-tp-group"><td colspan="4">Access and usage</td></tr>
+          <tr class="ts-tp-row"><td>Monthly base</td><td>Free</td><td>$499</td><td>$15,000</td></tr>
+          <tr class="ts-tp-row"><td>Included org credits / month</td><td>25</td><td>250</td><td>2,000</td></tr>
+          <tr class="ts-tp-row"><td>Purchase more credits</td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
+          <tr class="ts-tp-row"><td>Back-and-forth AI questions</td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
+          <tr class="ts-tp-group"><td colspan="4">Do work with Tomi</td></tr>
+          <tr class="ts-tp-row"><td>Standalone workspace</td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
+          <tr class="ts-tp-row"><td>Campaign Doctor</td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
+          <tr class="ts-tp-row"><td>Email Composer</td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
+          <tr class="ts-tp-row"><td>Campaign editing &amp; optimization</td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
+          <tr class="ts-tp-row"><td>Other ad-server connectors</td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
+          <tr class="ts-tp-row"><td>Team performance reporting</td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
+          <tr class="ts-tp-group"><td colspan="4">Scale across your seller network</td></tr>
+          <tr class="ts-tp-row"><td>Seller self-service portal</td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
+          <tr class="ts-tp-row"><td>Seller onboarding &amp; activation</td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
+          <tr class="ts-tp-row"><td>Branded seller experience</td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
+          <tr class="ts-tp-row"><td>Revenue opportunity reporting</td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td>Internal</td><td>Seller network</td></tr>
+          <tr class="ts-tp-row"><td>Advanced governance / custom integrations</td><td class="ts-tp-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></td><td>Standard</td><td class="ts-tp-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="time" class="ts-tp-wrap ts-tp-rule">
+    <div class="ts-tp-head">
+      <div class="ts-tp-eye">Productivity, not payroll</div>
+      <h2 class="ts-tp-serif ts-tp-balance">Make room for more meaningful work.</h2>
+      <p>See how much time your team could get back. Two quick inputs, no salary details needed.</p>
+    </div>
+    <div class="ts-tp-split">
+      <div class="ts-tp-panel ts-tp-panel-light">
+        <div class="ts-tp-field" data-ts-slider data-key="team" data-min="1" data-max="50" data-step="1" data-value="5">
+          <div class="ts-tp-field-top"><span>Ad-ops team size</span><strong data-ts-readout>5 people</strong></div>
+          <div class="ts-tp-slider" role="slider" tabindex="0" aria-label="Ad-ops team size" aria-valuemin="1" aria-valuemax="50" aria-valuenow="5"><div class="ts-tp-track"><div class="ts-tp-range"></div></div><div class="ts-tp-thumb"></div></div>
+        </div>
+        <div class="ts-tp-field" data-ts-slider data-key="share" data-min="5" data-max="50" data-step="1" data-value="20">
+          <div class="ts-tp-field-top"><span>Share of each person's time saved</span><strong data-ts-readout>20%</strong></div>
+          <div class="ts-tp-slider" role="slider" tabindex="0" aria-label="Share of each person's time saved" aria-valuemin="5" aria-valuemax="50" aria-valuenow="20"><div class="ts-tp-track"><div class="ts-tp-range"></div></div><div class="ts-tp-thumb"></div></div>
+        </div>
+        <p class="ts-tp-fine">Assumes 40 hours per week and 52 weeks per year. This is a scenario calculator, not a measured Tomi result.</p>
+      </div>
+      <div class="ts-tp-panel ts-tp-panel-dark">
+        <div class="ts-tp-hours-label">Estimated hours recovered per month</div>
+        <div class="ts-tp-hours ts-tp-serif"><span data-ts-monthly>173</span> <span>hours</span></div>
+        <div class="ts-tp-stats">
+          <div><span>Weekly hours</span><strong data-ts-weekly>40h</strong></div>
+          <div><span>FTE-equivalent</span><strong data-ts-fte>1.00</strong></div>
+          <div><span>Annual hours</span><strong data-ts-yearly>2,080</strong></div>
+          <div><span>Capacity freed</span><strong data-ts-capacity>20%</strong></div>
+        </div>
+        <p class="ts-tp-fine">FTE equivalent means work capacity, not employees eliminated or cash savings.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="credits" class="ts-tp-wrap ts-tp-rule">
+    <div class="ts-tp-head">
+      <div class="ts-tp-eye">Pay for more AI work</div>
+      <h2 class="ts-tp-serif ts-tp-balance">More work to do? Add credits.</h2>
+      <p>One organization, one wallet. Buy more when you need them and keep unused purchased credits when you upgrade.</p>
+    </div>
+    <div class="ts-tp-packs">
+      <button type="button" class="ts-tp-pack" data-ts-pack="0"><div class="ts-tp-pack-name">Starter</div><div class="ts-tp-pack-n ts-tp-serif">100</div><div class="ts-tp-pack-unit">credits</div><div class="ts-tp-pack-price">$500</div><div class="ts-tp-pack-unit">$5.00 / credit</div></button>
+      <button type="button" class="ts-tp-pack is-on" data-ts-pack="1"><div class="ts-tp-pack-name">Growth</div><div class="ts-tp-pack-n ts-tp-serif">500</div><div class="ts-tp-pack-unit">credits</div><div class="ts-tp-pack-price">$2,250</div><div class="ts-tp-pack-unit">$4.50 / credit</div></button>
+      <button type="button" class="ts-tp-pack" data-ts-pack="2"><div class="ts-tp-pack-name">Scale</div><div class="ts-tp-pack-n ts-tp-serif">2,000</div><div class="ts-tp-pack-unit">credits</div><div class="ts-tp-pack-price">$8,000</div><div class="ts-tp-pack-unit">$4.00 / credit</div></button>
+      <button type="button" class="ts-tp-pack" data-ts-pack="3"><div class="ts-tp-pack-name">Volume</div><div class="ts-tp-pack-n ts-tp-serif">5,000</div><div class="ts-tp-pack-unit">credits</div><div class="ts-tp-pack-price">$17,500</div><div class="ts-tp-pack-unit">$3.50 / credit</div></button>
+    </div>
+    <p class="ts-tp-pack-line" data-ts-pack-line>Growth · 500 credits for $2,250 · 10% off the standard rate.</p>
+    <div class="ts-tp-split ts-tp-estimate">
+      <div class="ts-tp-panel ts-tp-panel-light">
+        <h3 class="ts-tp-serif">Estimate my monthly workload</h3>
+        <div class="ts-tp-field" data-ts-slider data-key="questions" data-min="0" data-max="500" data-step="1" data-value="50">
+          <div class="ts-tp-field-top"><span>Questions / month</span><strong data-ts-readout>50</strong></div>
+          <div class="ts-tp-slider" role="slider" tabindex="0" aria-label="Questions / month" aria-valuemin="0" aria-valuemax="500" aria-valuenow="50"><div class="ts-tp-track"><div class="ts-tp-range"></div></div><div class="ts-tp-thumb"></div></div>
+        </div>
+        <div class="ts-tp-field" data-ts-slider data-key="analysis" data-min="0" data-max="100" data-step="1" data-value="10">
+          <div class="ts-tp-field-top"><span>Campaign analyses / month</span><strong data-ts-readout>10</strong></div>
+          <div class="ts-tp-slider" role="slider" tabindex="0" aria-label="Campaign analyses / month" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10"><div class="ts-tp-track"><div class="ts-tp-range"></div></div><div class="ts-tp-thumb"></div></div>
+        </div>
+        <div class="ts-tp-field" data-ts-slider data-key="edits" data-min="0" data-max="100" data-step="1" data-value="10">
+          <div class="ts-tp-field-top"><span>Campaign edits / month</span><strong data-ts-readout>10</strong></div>
+          <div class="ts-tp-slider" role="slider" tabindex="0" aria-label="Campaign edits / month" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10"><div class="ts-tp-track"><div class="ts-tp-range"></div></div><div class="ts-tp-thumb"></div></div>
+        </div>
+        <div class="ts-tp-field" data-ts-slider data-key="bulk" data-min="0" data-max="20" data-step="1" data-value="1">
+          <div class="ts-tp-field-top"><span>Bulk optimizations / month</span><strong data-ts-readout>1</strong></div>
+          <div class="ts-tp-slider" role="slider" tabindex="0" aria-label="Bulk optimizations / month" aria-valuemin="0" aria-valuemax="20" aria-valuenow="1"><div class="ts-tp-track"><div class="ts-tp-range"></div></div><div class="ts-tp-thumb"></div></div>
+        </div>
+      </div>
+      <div class="ts-tp-panel ts-tp-peach">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+        <div class="ts-tp-total ts-tp-serif" data-ts-credits>307</div>
+        <div>estimated credits / month</div>
+        <p class="ts-tp-value">At the <span data-ts-pack-name>Growth</span> pack rate: about <strong data-ts-pack-value>$1,382</strong> in metered usage value before included credits.</p>
+        <p class="ts-tp-fine">Based on median task consumption. Heavy workloads may use substantially more. Credit purchases will be available in-app.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ts-tp-wrap ts-tp-rule ts-tp-faq">
+    <div class="ts-tp-head">
+      <div class="ts-tp-eye">Questions</div>
+      <h2 class="ts-tp-serif">Credits, trials and upgrades</h2>
+    </div>
+    <div class="ts-tp-acc">
+      <div class="ts-tp-acc-item">
+        <button type="button" class="ts-tp-acc-btn" aria-expanded="false">Will my purchased credits transfer if I upgrade?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="ts-tp-acc-panel">Yes. Unused purchased credits remain in your organization wallet when you move from Lite to Pro or Enterprise, subject to their original 12-month validity. Monthly included credits reset with the billing cycle and trial credits expire with the trial.</div>
+      </div>
+      <div class="ts-tp-acc-item">
+        <button type="button" class="ts-tp-acc-btn" aria-expanded="false">How do the 14-day trial and organization credits work?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="ts-tp-acc-panel">Lite chat is embedded in app.topsort. Standalone Tomi opens as a separate app with a 14-day limited trial after organization-level activation. Credits belong to the organization, not each user. No automatic paid conversion is assumed.</div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+(function () {
+  var roots = ["ts-tomi-pricing", "ts-tomi-pricing-p2"].map(function (id) { return document.getElementById(id); }).filter(function (node) { return node && !node.hasAttribute("data-ts-ready"); });
+  if (!roots.length) return;
+  roots.forEach(function (node) { node.setAttribute("data-ts-ready", ""); });
+  var root = {
+    querySelector: function (sel) {
+      for (var i = 0; i < roots.length; i++) { var found = roots[i].querySelector(sel); if (found) return found; }
+      return null;
+    },
+    querySelectorAll: function (sel) {
+      var list = [];
+      roots.forEach(function (node) { list.push.apply(list, node.querySelectorAll(sel)); });
+      return list;
+    },
+    setAttribute: function () {},
+    hasAttribute: function () { return false; }
+  };
+
+  var packs = [
+    { name: "Starter", credits: 100, price: 500 },
+    { name: "Growth", credits: 500, price: 2250 },
+    { name: "Scale", credits: 2000, price: 8000 },
+    { name: "Volume", credits: 5000, price: 17500 }
+  ];
+  var state = { team: 5, share: 20, selected: 1, questions: 50, analysis: 10, edits: 10, bulk: 1 };
+  var money = function (n) { return "$" + Math.round(n).toLocaleString("en-US"); };
+  var num = function (n) { return Math.round(n).toLocaleString("en-US"); };
+
+  function paintSlider(field) {
+    var min = Number(field.getAttribute("data-min"));
+    var max = Number(field.getAttribute("data-max"));
+    var value = Number(field.getAttribute("data-value"));
+    var pct = max === min ? 0 : ((value - min) / (max - min)) * 100;
+    field.querySelector(".ts-tp-range").style.width = pct + "%";
+    field.querySelector(".ts-tp-thumb").style.left = pct + "%";
+    var slider = field.querySelector(".ts-tp-slider");
+    slider.setAttribute("aria-valuenow", String(value));
+    var key = field.getAttribute("data-key");
+    var readout = field.querySelector("[data-ts-readout]");
+    readout.textContent = key === "team" ? value + " people" : key === "share" ? value + "%" : String(value);
+  }
+
+  var q = function (sel) { return root.querySelector(sel); };
+  var qa = function (sel) { return root.querySelectorAll(sel); };
+
+  function render() {
+    var weekly = state.team * (state.share / 100) * 40;
+    var monthly = (weekly * 52) / 12;
+    var yearly = weekly * 52;
+    q("[data-ts-monthly]").textContent = num(monthly);
+    q("[data-ts-weekly]").textContent = Math.round(weekly) + "h";
+    q("[data-ts-fte]").textContent = (state.team * state.share / 100).toFixed(2);
+    q("[data-ts-yearly]").textContent = num(yearly);
+    q("[data-ts-capacity]").textContent = state.share + "%";
+
+    var total = state.questions + state.analysis * 5 + state.edits * 14 + state.bulk * 67;
+    var pack = packs[state.selected];
+    var off = Math.round((1 - pack.price / pack.credits / 5) * 100);
+    q("[data-ts-credits]").textContent = num(total);
+    q("[data-ts-pack-name]").textContent = pack.name;
+    q("[data-ts-pack-value]").textContent = money((total * pack.price) / pack.credits);
+    q("[data-ts-pack-line]").textContent = pack.name + " · " + num(pack.credits) + " credits for " + money(pack.price) + " · " + off + "% off the standard rate.";
+    qa("[data-ts-pack]").forEach(function (btn) {
+      btn.classList.toggle("is-on", Number(btn.getAttribute("data-ts-pack")) === state.selected);
+    });
+  }
+
+  function setValue(field, raw) {
+    var min = Number(field.getAttribute("data-min"));
+    var max = Number(field.getAttribute("data-max"));
+    var step = Number(field.getAttribute("data-step")) || 1;
+    var value = Math.round((Math.min(max, Math.max(min, raw)) - min) / step) * step + min;
+    field.setAttribute("data-value", String(value));
+    state[field.getAttribute("data-key")] = value;
+    paintSlider(field);
+    render();
+  }
+
+  function valueFromEvent(field, event) {
+    var slider = field.querySelector(".ts-tp-slider");
+    var rect = slider.getBoundingClientRect();
+    var min = Number(field.getAttribute("data-min"));
+    var max = Number(field.getAttribute("data-max"));
+    var ratio = rect.width ? (event.clientX - rect.left) / rect.width : 0;
+    return min + Math.min(1, Math.max(0, ratio)) * (max - min);
+  }
+
+  qa("[data-ts-slider]").forEach(function (field) {
+    paintSlider(field);
+    var slider = field.querySelector(".ts-tp-slider");
+    var drag = false;
+    slider.addEventListener("pointerdown", function (event) {
+      drag = true;
+      slider.setPointerCapture(event.pointerId);
+      setValue(field, valueFromEvent(field, event));
+    });
+    slider.addEventListener("pointermove", function (event) {
+      if (drag) setValue(field, valueFromEvent(field, event));
+    });
+    slider.addEventListener("pointerup", function () { drag = false; });
+    slider.addEventListener("pointercancel", function () { drag = false; });
+    slider.addEventListener("keydown", function (event) {
+      var step = Number(field.getAttribute("data-step")) || 1;
+      var current = Number(field.getAttribute("data-value"));
+      if (event.key === "ArrowRight" || event.key === "ArrowUp") { event.preventDefault(); setValue(field, current + step); }
+      if (event.key === "ArrowLeft" || event.key === "ArrowDown") { event.preventDefault(); setValue(field, current - step); }
+      if (event.key === "Home") { event.preventDefault(); setValue(field, Number(field.getAttribute("data-min"))); }
+      if (event.key === "End") { event.preventDefault(); setValue(field, Number(field.getAttribute("data-max"))); }
+    });
+  });
+
+  qa("[data-ts-pack]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      state.selected = Number(btn.getAttribute("data-ts-pack"));
+      render();
+    });
+  });
+
+  qa(".ts-tp-acc-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var item = btn.parentNode;
+      var open = item.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      qa(".ts-tp-acc-item").forEach(function (other) {
+        if (other !== item) {
+          other.classList.remove("is-open");
+          other.querySelector(".ts-tp-acc-btn").setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  });
+
+  render();
+})();
+</script>
+<!-- ════════ END PART 1 of 1 ════════ -->
