@@ -1,0 +1,1658 @@
+<!-- ══════════════════════════════════════════════════════════════════
+     toppie/index.html  ·  Webflow paste guide
+     4 parts · each under 50,000 chars (Webflow HTML Embed limit)
+     Paste each PART below into its own HTML Embed, in this order.
+     The PART comments are landmarks only - you do not need to copy them.
+     Toppie — "More places to sell. More customers to win." brand landing page.
+     Source: toppie-source/src/routes/brands.index.tsx + components/toppie/* (TanStack/Lovable source, read-only).
+     Standalone sub-brand page — ships its own nav + footer, does not use navbar.html/footer.html.
+     No live public URL for /brands exists on topsort.com yet. The Explore form opens an in-page
+     Discover flow (loading -> opportunity results -> create account / sign in) that mirrors the
+     Lovable /brands/discover + /brands/signup demo journey with the same sample inventory; the
+     final hand-off goes to https://app.topsort.com/. QA fixes per fixes.pdf (2026-11-25).
+     ══════════════════════════════════════════════════════════════════ -->
+
+<!-- ════════ PART 1 of 4 · CSS · page · 37,597 chars ════════ -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<style>
+.ts-tpb,
+.ts-tpb *,
+.ts-tpb *::before,
+.ts-tpb *::after {
+  box-sizing: border-box !important;
+}
+
+.ts-tpb {
+  --tpb-background: 38 33% 95% !important;
+  --tpb-foreground: 10 10% 12% !important;
+  --tpb-card: 40 50% 98% !important;
+  --tpb-primary: 354 71% 42% !important;
+  --tpb-primary-foreground: 38 33% 95% !important;
+  --tpb-secondary: 15 32% 93% !important;
+  --tpb-secondary-foreground: 349 44% 20% !important;
+  --tpb-muted: 15 32% 93% !important;
+  --tpb-muted-foreground: 14 6% 41% !important;
+  --tpb-accent: 8 35% 88% !important;
+  --tpb-accent-foreground: 349 44% 20% !important;
+  --tpb-burgundy: 349 44% 20% !important;
+  --tpb-border: 30 17% 84% !important;
+  --tpb-hero: 7 52% 94% !important;
+  --tpb-red-2: 359 81% 58% !important;
+  --tpb-red-3: 358 100% 68% !important;
+  font-family: 'Poppins', system-ui, sans-serif !important;
+  line-height: 1.5 !important;
+  -webkit-font-smoothing: antialiased !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: hsl(var(--tpb-background)) !important;
+  color: hsl(var(--tpb-foreground)) !important;
+  overflow-x: clip !important;
+}
+
+.ts-tpb h1, .ts-tpb h2, .ts-tpb h3, .ts-tpb h4,
+.ts-tpb p, .ts-tpb ul, .ts-tpb ol, .ts-tpb li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.ts-tpb h1, .ts-tpb h2, .ts-tpb h3 { font-weight: 600 !important; letter-spacing: -0.045em !important; }
+.ts-tpb ul, .ts-tpb ol { list-style: none !important; }
+.ts-tpb a { text-decoration: none !important; color: inherit !important; }
+.ts-tpb button { font: inherit !important; color: inherit !important; cursor: pointer !important; background: none !important; border: 0 !important; appearance: none !important; -webkit-appearance: none !important; }
+.ts-tpb input { font: inherit !important; color: inherit !important; }
+.ts-tpb img, .ts-tpb video, .ts-tpb svg { display: block !important; max-width: 100% !important; }
+.ts-tpb :is(a, button, input):focus-visible { outline: 2px solid hsl(var(--tpb-primary)) !important; outline-offset: 3px !important; }
+
+.ts-tpb-wrap { width: 100% !important; max-width: 1600px !important; margin: 0 auto !important; padding: 0 20px !important; }
+@media (min-width: 640px) { .ts-tpb-wrap { padding: 0 40px !important; } }
+
+/* ---- Gradient text + hover-gradient + top hairline paint (shared motif) ---- */
+@keyframes ts-tpb-gradient-pan { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+.ts-tpb-gradient {
+  background-image: linear-gradient(90deg, hsl(var(--tpb-primary)), hsl(var(--tpb-burgundy)), hsl(var(--tpb-red-2)), hsl(var(--tpb-primary))) !important;
+  background-size: 300% 100% !important;
+  -webkit-background-clip: text !important; background-clip: text !important;
+  color: transparent !important; -webkit-text-fill-color: transparent !important;
+  animation: ts-tpb-gradient-pan 6s ease-in-out infinite !important;
+  display: inline-block !important;
+}
+.ts-tpb-hover-grad {
+  background-image: linear-gradient(90deg, hsl(var(--tpb-primary)), hsl(var(--tpb-burgundy)), hsl(var(--tpb-red-2)), hsl(var(--tpb-primary))) !important;
+  background-size: 300% 100% !important;
+  -webkit-background-clip: text !important; background-clip: text !important;
+  animation: ts-tpb-gradient-pan 6s ease-in-out infinite paused !important;
+  transition: color .6s cubic-bezier(.22,1,.36,1) !important;
+}
+.ts-tpb-hover-grad:hover, .ts-tpb-line-paint:hover .ts-tpb-hover-grad {
+  color: transparent !important; -webkit-text-fill-color: transparent !important; animation-play-state: running !important;
+}
+.ts-tpb-line-paint { position: relative !important; }
+.ts-tpb-line-paint::before {
+  content: "" !important; position: absolute !important; left: 0 !important; right: 0 !important; top: -1px !important; height: 2px !important;
+  background-image: linear-gradient(90deg, hsl(var(--tpb-primary)), hsl(var(--tpb-burgundy)), hsl(var(--tpb-red-2)), hsl(var(--tpb-primary))) !important;
+  background-size: 300% 100% !important; animation: ts-tpb-gradient-pan 6s ease-in-out infinite paused !important;
+  transform: scaleX(0) !important; transform-origin: left !important; opacity: 0 !important;
+  transition: transform .9s cubic-bezier(.22,1,.36,1), opacity .5s ease !important;
+}
+.ts-tpb-line-paint:hover::before { transform: scaleX(1) !important; opacity: 1 !important; animation-play-state: running !important; }
+.ts-tpb-icon-lift { transition: transform .6s cubic-bezier(.22,1,.36,1) !important; }
+.ts-tpb-line-paint:hover .ts-tpb-icon-lift { transform: translateY(-6px) rotate(-6deg) scale(1.04) !important; }
+
+/* ---- Entrance reveal ---- */
+.ts-tpb-reveal { opacity: 0 !important; transform: translateY(22px) !important; transition: opacity .85s cubic-bezier(.22,1,.36,1), transform .85s cubic-bezier(.22,1,.36,1) !important; }
+.ts-tpb-reveal.ts-tpb-in { opacity: 1 !important; transform: none !important; }
+@keyframes ts-tpb-rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.ts-tpb-rise { animation: ts-tpb-rise .7s cubic-bezier(.2,.7,.2,1) both !important; }
+
+/* ---- Eyebrow labels / pills ---- */
+.ts-tpb-label { font-family: 'Poppins', system-ui, sans-serif !important; font-size: .68rem !important; font-weight: 600 !important; letter-spacing: .08em !important; text-transform: uppercase !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+.ts-tpb-pill {
+  display: inline-flex !important; align-items: center !important; gap: 8px !important;
+  border: 1px solid hsl(var(--tpb-primary) / .25) !important; background: hsl(var(--tpb-background)) !important;
+  border-radius: 999px !important; padding: 6px 14px !important; font-size: 12px !important; font-weight: 500 !important; color: hsl(var(--tpb-primary)) !important;
+}
+.ts-tpb-pill-dot { width: 6px !important; height: 6px !important; border-radius: 999px !important; background: hsl(var(--tpb-primary)) !important; flex-shrink: 0 !important; }
+
+/* ---- Buttons ---- */
+.ts-tpb-btn { display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; border-radius: 999px !important; padding: 14px 24px !important; font-size: 14px !important; font-weight: 600 !important; transition: transform .25s ease, background-color .25s ease, border-color .25s ease, color .25s ease !important; }
+.ts-tpb-btn svg { width: 16px !important; height: 16px !important; transition: transform .25s ease !important; flex-shrink: 0 !important; }
+.ts-tpb-btn:hover svg { transform: translateX(3px) !important; }
+a.ts-tpb-btn-primary, button.ts-tpb-btn-primary { background: hsl(var(--tpb-primary)) !important; color: hsl(var(--tpb-primary-foreground)) !important; }
+a.ts-tpb-btn-primary:hover, button.ts-tpb-btn-primary:hover { background: hsl(var(--tpb-primary) / .88) !important; }
+a.ts-tpb-btn-outline, button.ts-tpb-btn-outline { border: 1px solid hsl(var(--tpb-foreground) / .15) !important; background: hsl(var(--tpb-background)) !important; color: hsl(var(--tpb-foreground)) !important; }
+a.ts-tpb-btn-outline:hover, button.ts-tpb-btn-outline:hover { border-color: hsl(var(--tpb-primary)) !important; background: hsl(var(--tpb-secondary)) !important; }
+a.ts-tpb-btn-light, button.ts-tpb-btn-light { background: hsl(var(--tpb-background)) !important; color: hsl(var(--tpb-primary)) !important; }
+a.ts-tpb-btn-light:hover, button.ts-tpb-btn-light:hover { background: hsl(var(--tpb-foreground)) !important; color: hsl(var(--tpb-background)) !important; }
+
+/* ===================== NAV ===================== */
+.ts-tpb-nav { position: sticky !important; top: 0 !important; z-index: 40 !important; padding-top: 0 !important; transition: padding .6s cubic-bezier(.22,1,.36,1) !important; }
+.ts-tpb-nav-bar {
+  width: 100% !important; max-width: 1600px !important; margin: 0 auto !important; padding: 16px 20px !important;
+  display: flex !important; align-items: center !important; gap: 4px !important;
+  border: 1px solid transparent !important; border-radius: 0 !important; background: transparent !important;
+  transition: max-width .6s cubic-bezier(.22,1,.36,1), padding .6s cubic-bezier(.22,1,.36,1), background-color .5s ease, border-color .5s ease, box-shadow .5s ease, border-radius .6s cubic-bezier(.22,1,.36,1) !important;
+}
+@media (min-width: 641px) { .ts-tpb-nav-bar { padding: 22px 40px !important; } }
+@media (max-width: 640px) {
+  .ts-tpb-nav[data-tpb-scrolled="true"] .ts-tpb-nav-bar, .ts-tpb-nav[data-tpb-menu-open="true"] .ts-tpb-nav-bar { max-width: calc(100% - 24px) !important; padding: 10px 14px !important; }
+}
+.ts-tpb-nav[data-tpb-scrolled="true"], .ts-tpb-nav[data-tpb-menu-open="true"] { padding-top: 12px !important; }
+.ts-tpb-nav[data-tpb-scrolled="true"] .ts-tpb-nav-bar, .ts-tpb-nav[data-tpb-menu-open="true"] .ts-tpb-nav-bar {
+  max-width: min(1440px, calc(100% - 64px)) !important; padding: 14px 24px !important; border-radius: 16px !important;
+  background: hsl(var(--tpb-background) / .92) !important; border-color: hsl(var(--tpb-foreground) / .08) !important;
+  box-shadow: 0 8px 30px -12px hsl(var(--tpb-burgundy) / .22) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(160%) !important; backdrop-filter: blur(14px) saturate(160%) !important;
+}
+.ts-tpb-nav[data-tpb-tone="dark"][data-tpb-scrolled="true"]:not([data-tpb-menu-open="true"]) .ts-tpb-nav-bar {
+  background: hsl(var(--tpb-foreground) / .8) !important; border-color: hsl(var(--tpb-background) / .14) !important;
+  box-shadow: 0 8px 30px -12px rgb(0 0 0 / .5) !important; color: hsl(var(--tpb-background)) !important;
+}
+.ts-tpb-nav[data-tpb-tone="dark"][data-tpb-scrolled="true"]:not([data-tpb-menu-open="true"]) .ts-tpb-nav-logo-word { filter: brightness(0) invert(1) !important; }
+.ts-tpb-nav[data-tpb-tone="dark"][data-tpb-scrolled="true"]:not([data-tpb-menu-open="true"]) .ts-tpb-nav-signin {
+  background: transparent !important; color: hsl(var(--tpb-background)) !important; border-color: hsl(var(--tpb-background) / .3) !important;
+}
+.ts-tpb-nav[data-tpb-tone="dark"][data-tpb-scrolled="true"]:not([data-tpb-menu-open="true"]) .ts-tpb-nav-signin:hover {
+  background: hsl(var(--tpb-background) / .1) !important; border-color: hsl(var(--tpb-background)) !important;
+}
+.ts-tpb-nav[data-tpb-tone="dark"][data-tpb-scrolled="true"]:not([data-tpb-menu-open="true"]) .ts-tpb-nav-links .ts-tpb-nav-link:hover {
+  background: hsl(var(--tpb-background) / .1) !important; color: hsl(var(--tpb-background)) !important;
+}
+.ts-tpb-nav-logo { display: flex !important; align-items: center !important; gap: 10px !important; margin-right: 16px !important; flex-shrink: 0 !important; }
+@media (min-width: 1280px) { .ts-tpb-nav-logo { margin-right: 32px !important; } }
+.ts-tpb-nav-icon { width: 38px !important; height: 38px !important; border-radius: 10px !important; object-fit: cover !important; flex-shrink: 0 !important; }
+.ts-tpb-nav-logo-word { height: 24px !important; width: auto !important; }
+.ts-tpb-nav-links { display: none !important; align-items: center !important; gap: 2px !important; }
+@media (min-width: 1024px) { .ts-tpb-nav-links { display: flex !important; } }
+.ts-tpb-nav-link { white-space: nowrap !important; border-radius: 10px !important; padding: 8px 14px !important; font-size: 14px !important; font-weight: 500 !important; transition: color .2s ease, background-color .2s ease !important; }
+a.ts-tpb-nav-link:hover { color: hsl(var(--tpb-primary)) !important; }
+.ts-tpb-nav-actions { margin-left: auto !important; display: flex !important; align-items: center !important; gap: 10px !important; }
+a.ts-tpb-nav-signin { display: inline-flex !important; align-items: center !important; white-space: nowrap !important; border: 1px solid hsl(var(--tpb-foreground) / .15) !important; background: hsl(var(--tpb-background)) !important; border-radius: 999px !important; padding: 8px 20px !important; font-size: 13px !important; font-weight: 600 !important; transition: border-color .2s ease, background-color .2s ease !important; }
+a.ts-tpb-nav-signin:hover { border-color: hsl(var(--tpb-primary)) !important; background: hsl(var(--tpb-secondary)) !important; }
+a.ts-tpb-nav-contact { display: inline-flex !important; align-items: center !important; white-space: nowrap !important; background: hsl(var(--tpb-primary)) !important; color: hsl(var(--tpb-primary-foreground)) !important; border-radius: 999px !important; padding: 8px 20px !important; font-size: 13px !important; font-weight: 600 !important; }
+@media (max-width: 479px) {
+  .ts-tpb-nav-actions a.ts-tpb-nav-signin, .ts-tpb-nav-actions a.ts-tpb-nav-contact { display: none !important; }
+}
+.ts-tpb-nav-toggle { display: inline-flex !important; align-items: center !important; justify-content: center !important; border-radius: 999px !important; padding: 8px !important; }
+@media (min-width: 1024px) { .ts-tpb-nav-toggle { display: none !important; } }
+.ts-tpb-nav-toggle svg { width: 20px !important; height: 20px !important; }
+/* The [hidden] attribute/property loses to the display:block !important reset above —
+   without these rules BOTH the burger and the X render at once (QA task 09).
+   Visibility is driven by the header's data-tpb-menu-open state instead. */
+.ts-tpb-nav-toggle svg[hidden] { display: none !important; }
+.ts-tpb-nav[data-tpb-menu-open="true"] [data-tpb-nav-icon-menu] { display: none !important; }
+.ts-tpb-nav[data-tpb-menu-open="true"] [data-tpb-nav-icon-close] { display: block !important; }
+.ts-tpb-nav:not([data-tpb-menu-open="true"]) [data-tpb-nav-icon-close] { display: none !important; }
+.ts-tpb-nav-panel {
+  position: absolute !important; inset-inline: 12px !important; top: 100% !important; margin-top: 8px !important;
+  border-radius: 16px !important; border: 1px solid hsl(var(--tpb-foreground) / .1) !important; background: hsl(var(--tpb-background)) !important;
+  box-shadow: 0 16px 32px -20px hsl(var(--tpb-foreground) / .3) !important;
+  opacity: 0 !important; transform: translateY(-6px) !important; pointer-events: none !important;
+  transition: opacity .25s ease, transform .25s ease !important;
+}
+@media (min-width: 1024px) { .ts-tpb-nav-panel { display: none !important; } }
+.ts-tpb-nav[data-tpb-menu-open="true"] .ts-tpb-nav-panel { opacity: 1 !important; transform: none !important; pointer-events: auto !important; }
+.ts-tpb-nav-panel-list { display: flex !important; flex-direction: column !important; gap: 4px !important; padding: 12px !important; }
+a.ts-tpb-nav-panel-link { display: flex !important; align-items: center !important; justify-content: space-between !important; padding: 10px 8px !important; font-size: 16px !important; font-weight: 500 !important; border-radius: 10px !important; }
+.ts-tpb-nav-panel-link:hover { background: hsl(var(--tpb-secondary)) !important; }
+.ts-tpb-nav-panel-link svg { width: 16px !important; height: 16px !important; color: hsl(var(--tpb-primary)) !important; }
+.ts-tpb-nav-panel-actions { display: flex !important; gap: 10px !important; padding: 8px 12px 16px !important; }
+.ts-tpb-nav-panel-actions a { flex: 1 1 0% !important; text-align: center !important; border-radius: 999px !important; padding: 10px 12px !important; font-size: 14px !important; font-weight: 600 !important; }
+.ts-tpb-nav-panel-actions a:first-child { border: 1px solid hsl(var(--tpb-foreground) / .15) !important; }
+.ts-tpb-nav-panel-actions a:last-child { background: hsl(var(--tpb-primary)) !important; color: hsl(var(--tpb-primary-foreground)) !important; }
+
+/* ===================== HERO ===================== */
+.ts-tpb-hero { position: relative !important; overflow: hidden !important; background: hsl(var(--tpb-hero)) !important; }
+@media (min-width: 1024px) { .ts-tpb-hero { min-height: 680px !important; } }
+.ts-tpb-hero-art { position: absolute !important; inset: 0 !important; display: none !important; pointer-events: none !important; overflow: hidden !important; }
+@media (min-width: 1024px) { .ts-tpb-hero-art { display: block !important; } }
+.ts-tpb-hero-art video { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: right center !important; transform-origin: 70% 50% !important; transition: transform 120ms linear !important; }
+@keyframes ts-tpb-hero-zoom { from { opacity: 0; scale: 1.1; } to { opacity: 1; scale: 1; } }
+.ts-tpb-hero-art video { animation: ts-tpb-hero-zoom 1.8s cubic-bezier(.22,1,.36,1) both !important; }
+/* <640px only: the dedicated vertical mobile clip bleeds up from the hero's bottom
+   edge, behind the copy — a different asset and treatment than the desktop video,
+   not a crop of it. Mirrors the source's absolute/aspect-[9/16]/object-contain block. */
+.ts-tpb-hero-art-mobile-v { position: absolute !important; left: 12px !important; right: 12px !important; bottom: 0 !important; aspect-ratio: 9 / 16 !important; pointer-events: none !important; overflow: hidden !important; }
+@media (min-width: 640px) { .ts-tpb-hero-art-mobile-v { display: none !important; } }
+.ts-tpb-hero-art-mobile-v video { width: 100% !important; height: 100% !important; object-fit: contain !important; object-position: bottom !important; }
+.ts-tpb-hero-art-mobile-v video { animation: ts-tpb-hero-zoom 1.8s cubic-bezier(.22,1,.36,1) both !important; }
+/* Reserves the vertical space the absolutely positioned mobile video occupies,
+   so the CTA row below isn't covered by it. */
+.ts-tpb-hero-spacer-mobile { height: calc(90vw + 24px) !important; }
+@media (min-width: 640px) { .ts-tpb-hero-spacer-mobile { display: none !important; } }
+/* 640–1023px only ("tablet"): in-flow block using the desktop asset, same as before. */
+.ts-tpb-hero-art-mobile { display: none !important; margin: 0 -20px !important; }
+@media (min-width: 640px) { .ts-tpb-hero-art-mobile { display: block !important; margin: 0 -40px !important; } }
+@media (min-width: 1024px) { .ts-tpb-hero-art-mobile { display: none !important; } }
+.ts-tpb-hero-art-mobile video { width: 100% !important; height: 340px !important; object-fit: cover !important; object-position: right center !important; animation: ts-tpb-hero-zoom 1.8s cubic-bezier(.22,1,.36,1) both !important; }
+@media (min-width: 640px) { .ts-tpb-hero-art-mobile video { height: 460px !important; } }
+.ts-tpb-hero-inner { position: relative !important; display: grid !important; gap: 48px !important; align-items: center !important; padding-top: 64px !important; padding-bottom: 0 !important; }
+@media (min-width: 640px) { .ts-tpb-hero-inner { padding-top: 96px !important; } }
+@media (min-width: 1024px) { .ts-tpb-hero-inner { grid-template-columns: 1fr 1fr !important; min-height: 680px !important; gap: 40px !important; padding-bottom: 80px !important; } }
+.ts-tpb-hero-copy { text-align: center !important; max-width: 640px !important; margin: 0 auto !important; width: 100% !important; }
+@media (min-width: 1024px) { .ts-tpb-hero-copy { text-align: left !important; max-width: none !important; margin: 0 !important; } }
+h1.ts-tpb-h1 { margin-top: 28px !important; font-size: clamp(2.5rem, 6vw, 4rem) !important; font-weight: 600 !important; line-height: 1.05 !important; letter-spacing: -0.04em !important; }
+p.ts-tpb-lead { max-width: 32rem !important; margin: 28px auto 0 !important; font-size: 1.125rem !important; line-height: 1.6 !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+@media (min-width: 1024px) { p.ts-tpb-lead { margin-left: 0 !important; } }
+.ts-tpb-cta-row { margin-top: 44px !important; display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 12px !important; }
+@media (min-width: 1024px) { .ts-tpb-cta-row { justify-content: flex-start !important; } }
+p.ts-tpb-hint { margin-top: 28px !important; font-size: 12px !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+
+/* ===================== WHY ===================== */
+.ts-tpb-why { border-top: 1px solid hsl(var(--tpb-foreground) / .15) !important; scroll-margin-top: 56px !important; }
+.ts-tpb-why-grid { display: grid !important; gap: 40px !important; padding: 96px 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-why-grid { grid-template-columns: repeat(12, minmax(0,1fr)) !important; gap: 48px !important; padding: 144px 0 !important; } }
+.ts-tpb-why-grid > .ts-tpb-label { min-width: 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-why-grid > .ts-tpb-label { grid-column: span 3 / span 3 !important; } }
+.ts-tpb-why-main { min-width: 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-why-main { grid-column: span 9 / span 9 !important; } }
+h2.ts-tpb-scrollwords { font-family: 'Poppins', system-ui, sans-serif !important; font-weight: 600 !important; font-size: clamp(2.4rem, 7.5vw, 6.5rem) !important; line-height: 0.9 !important; letter-spacing: -0.055em !important; overflow-wrap: break-word !important; }
+.ts-tpb-word { display: inline !important; transition: opacity .5s ease !important; }
+.ts-tpb-word-muted { color: hsl(var(--tpb-muted-foreground) / .6) !important; }
+.ts-tpb-why-copy { margin-top: 64px !important; display: grid !important; gap: 28px !important; font-size: 1.05rem !important; line-height: 1.4 !important; }
+@media (min-width: 1024px) { .ts-tpb-why-copy { grid-template-columns: repeat(2, minmax(0,1fr)) !important; gap: 48px !important; } }
+.ts-tpb-why-copy p:first-child { color: hsl(var(--tpb-muted-foreground)) !important; }
+.ts-tpb-list { padding: 0 !important; }
+li.ts-tpb-list-item { display: grid !important; gap: 12px !important; align-items: start !important; border-top: 1px solid hsl(var(--tpb-foreground) / .15) !important; padding: 32px 0 !important; }
+@media (min-width: 1024px) { li.ts-tpb-list-item { grid-template-columns: repeat(12, minmax(0,1fr)) !important; gap: 24px !important; padding: 40px 0 !important; } }
+.ts-tpb-list-index { padding-top: 8px !important; }
+@media (min-width: 1024px) { .ts-tpb-list-index { grid-column: span 3 / span 3 !important; } }
+.ts-tpb-list-title { font-family: 'Poppins', system-ui, sans-serif !important; font-size: 2.6rem !important; font-weight: 600 !important; line-height: 1 !important; letter-spacing: -0.05em !important; }
+@media (min-width: 1024px) { .ts-tpb-list-title { font-size: 3.5rem !important; grid-column: span 5 / span 5 !important; } }
+@media (min-width: 1280px) { .ts-tpb-list-title { font-size: 4rem !important; } }
+.ts-tpb-list-desc { max-width: 24rem !important; padding-top: 4px !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+@media (min-width: 1024px) { .ts-tpb-list-desc { grid-column: span 4 / span 4 !important; } }
+.ts-tpb-why-spacer { height: 96px !important; }
+@media (min-width: 640px) { .ts-tpb-why-spacer { height: 144px !important; } }
+
+/* ===================== WHERE ===================== */
+.ts-tpb-where { border-top: 1px solid hsl(var(--tpb-foreground) / .15) !important; background: hsl(var(--tpb-accent) / .4) !important; }
+.ts-tpb-where-grid { display: grid !important; gap: 56px !important; align-items: center !important; padding: 96px 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-where-grid { grid-template-columns: repeat(12, minmax(0,1fr)) !important; gap: 48px !important; padding: 128px 0 !important; } }
+.ts-tpb-where-head { min-width: 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-where-head { grid-column: span 4 / span 4 !important; } }
+h2.ts-tpb-where-h2 { margin-top: 24px !important; font-size: 2.25rem !important; font-weight: 600 !important; line-height: 0.95 !important; letter-spacing: -0.05em !important; }
+@media (min-width: 640px) { h2.ts-tpb-where-h2 { font-size: 3rem !important; } }
+.ts-tpb-where-art { display: none !important; width: 192px !important; height: auto !important; margin-top: 40px !important; }
+@media (min-width: 1024px) { .ts-tpb-where-art { display: block !important; } }
+.ts-tpb-where-list { min-width: 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-where-list { grid-column: 6 / span 7 !important; } }
+li.ts-tpb-where-item { display: flex !important; flex-direction: column !important; gap: 14px !important; border-top: 1px solid hsl(var(--tpb-foreground) / .15) !important; padding: 28px 0 !important; }
+@media (min-width: 640px) { li.ts-tpb-where-item { flex-direction: row !important; align-items: center !important; justify-content: space-between !important; gap: 24px !important; } }
+.ts-tpb-where-left { display: flex !important; align-items: center !important; gap: 16px !important; min-width: 0 !important; }
+.ts-tpb-where-icon { width: 56px !important; height: 56px !important; object-fit: contain !important; flex-shrink: 0 !important; }
+.ts-tpb-where-title { font-size: 1.5rem !important; font-weight: 600 !important; letter-spacing: -0.03em !important; }
+.ts-tpb-where-desc { max-width: 20rem !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+@media (min-width: 640px) { .ts-tpb-where-desc { text-align: right !important; flex-shrink: 0 !important; } }
+
+/* ===================== EXPLORE ===================== */
+.ts-tpb-explore { background: hsl(var(--tpb-burgundy)) !important; color: hsl(var(--tpb-background)) !important; scroll-margin-top: 56px !important; }
+.ts-tpb-explore-wrap { padding-top: 96px !important; padding-bottom: 96px !important; }
+@media (min-width: 640px) { .ts-tpb-explore-wrap { padding-top: 144px !important; padding-bottom: 144px !important; } }
+.ts-tpb-explore-grid { display: grid !important; gap: 40px !important; }
+@media (min-width: 1024px) { .ts-tpb-explore-grid { grid-template-columns: repeat(12, minmax(0,1fr)) !important; gap: 48px !important; } }
+.ts-tpb-explore-grid > .ts-tpb-label { color: hsl(var(--tpb-accent)) !important; min-width: 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-explore-grid > .ts-tpb-label { grid-column: span 3 / span 3 !important; } }
+.ts-tpb-explore-main { min-width: 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-explore-main { grid-column: span 9 / span 9 !important; } }
+h2.ts-tpb-explore-h2 { font-family: 'Poppins', system-ui, sans-serif !important; font-weight: 600 !important; font-size: clamp(2.4rem, 7.5vw, 6.5rem) !important; line-height: 0.9 !important; letter-spacing: -0.055em !important; overflow-wrap: break-word !important; }
+h2.ts-tpb-explore-h2 .ts-tpb-gradient { white-space: nowrap !important; }
+.ts-tpb-explore-break { display: none !important; }
+@media (min-width: 1024px) { .ts-tpb-explore-break { display: block !important; } }
+p.ts-tpb-explore-sub { margin-top: 28px !important; max-width: 26rem !important; color: hsl(var(--tpb-background) / .7) !important; }
+form.ts-tpb-form { margin-top: 80px !important; }
+@media (min-width: 1024px) { form.ts-tpb-form { margin-left: 25% !important; } }
+.ts-tpb-field-label { display: block !important; margin-bottom: 12px !important; color: hsl(var(--tpb-accent)) !important; }
+.ts-tpb-field { display: flex !important; align-items: flex-end !important; border-bottom: 1px solid hsl(var(--tpb-background) / .3) !important; transition: border-color .5s ease !important; }
+.ts-tpb-field:focus-within { border-color: hsl(var(--tpb-background)) !important; }
+input.ts-tpb-input {
+  width: 100% !important; min-width: 0 !important; background: transparent !important; border: 0 !important; outline: none !important;
+  padding-bottom: 12px !important; font-family: 'Poppins', system-ui, sans-serif !important; font-weight: 500 !important;
+  font-size: clamp(1.8rem, 6vw, 5.5rem) !important; line-height: 1 !important; letter-spacing: -0.05em !important; color: hsl(var(--tpb-background)) !important;
+}
+.ts-tpb-input::placeholder { color: hsl(var(--tpb-background) / .25) !important; }
+button.ts-tpb-submit-icon {
+  padding-bottom: 16px !important; color: hsl(var(--tpb-background) / .5) !important; transition: color .5s ease, transform .5s ease !important;
+}
+.ts-tpb-submit-icon svg { width: clamp(1.76rem, 4.8vw, 3.6rem) !important; height: clamp(1.76rem, 4.8vw, 3.6rem) !important; }
+.ts-tpb-field:focus-within button.ts-tpb-submit-icon, button.ts-tpb-submit-icon:hover { color: hsl(var(--tpb-background)) !important; transform: translateX(4px) !important; }
+p.ts-tpb-error { margin-top: 12px !important; font-size: .68rem !important; font-weight: 600 !important; letter-spacing: .08em !important; text-transform: uppercase !important; color: hsl(var(--tpb-accent)) !important; }
+.ts-tpb-markets { margin-top: 40px !important; border: 0 !important; padding: 0 !important; }
+.ts-tpb-markets-legend { margin-bottom: 16px !important; color: hsl(var(--tpb-accent)) !important; }
+.ts-tpb-markets-row { display: flex !important; flex-wrap: wrap !important; gap: 16px 28px !important; font-size: 1.125rem !important; }
+@media (min-width: 640px) { .ts-tpb-markets-row { font-size: 1.25rem !important; } }
+button.ts-tpb-market {
+  border-bottom: 2px solid transparent !important; padding-bottom: 4px !important; color: hsl(var(--tpb-background) / .45) !important;
+  transition: color .5s ease, border-color .5s ease !important;
+}
+button.ts-tpb-market:hover { color: hsl(var(--tpb-background)) !important; }
+button.ts-tpb-market[aria-pressed="true"] { border-color: hsl(var(--tpb-background)) !important; color: hsl(var(--tpb-background)) !important; }
+.ts-tpb-form-submit { margin-top: 56px !important; }
+@media (max-width: 479px) { button.ts-tpb-form-submit { width: 100% !important; } }
+p.ts-tpb-note { margin-top: 16px !important; font-size: .68rem !important; font-weight: 600 !important; letter-spacing: .08em !important; text-transform: uppercase !important; color: hsl(var(--tpb-background) / .5) !important; }
+
+/* ===================== HOW ===================== */
+.ts-tpb-how { scroll-margin-top: 56px !important; }
+.ts-tpb-how-grid { display: grid !important; gap: 56px !important; padding: 96px 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-how-grid { grid-template-columns: repeat(12, minmax(0,1fr)) !important; gap: 48px !important; padding: 144px 0 !important; } }
+.ts-tpb-how-head { min-width: 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-how-head { grid-column: span 4 / span 4 !important; } }
+h2.ts-tpb-how-h2 { margin-top: 24px !important; font-size: 2.25rem !important; font-weight: 600 !important; line-height: 0.95 !important; letter-spacing: -0.05em !important; }
+@media (min-width: 640px) { h2.ts-tpb-how-h2 { font-size: 3rem !important; } }
+.ts-tpb-steps { min-width: 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-steps { grid-column: 6 / span 7 !important; } }
+li.ts-tpb-step { display: grid !important; grid-template-columns: 3rem minmax(0,1fr) !important; gap: 16px !important; border-top: 1px solid hsl(var(--tpb-foreground) / .15) !important; padding: 36px 0 !important; }
+@media (min-width: 640px) { li.ts-tpb-step { grid-template-columns: 6rem minmax(0,1fr) !important; gap: 24px !important; } }
+@media (min-width: 1024px) { li.ts-tpb-step { grid-template-columns: 8rem minmax(0,1fr) !important; padding: 44px 0 !important; } }
+.ts-tpb-step-index { font-family: 'Poppins', system-ui, sans-serif !important; font-size: 2.6rem !important; font-weight: 600 !important; line-height: 1 !important; letter-spacing: -0.06em !important; color: hsl(var(--tpb-primary)) !important; }
+@media (min-width: 1024px) { .ts-tpb-step-index { font-size: 4rem !important; } }
+.ts-tpb-step-row { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 24px !important; min-width: 0 !important; }
+.ts-tpb-step-row > div { min-width: 0 !important; }
+.ts-tpb-step-title { font-size: 1.5rem !important; font-weight: 600 !important; letter-spacing: -0.03em !important; }
+p.ts-tpb-step-desc { max-width: 24rem !important; margin-top: 10px !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+.ts-tpb-step-art { width: 64px !important; height: 64px !important; flex-shrink: 0 !important; object-fit: contain !important; }
+@media (min-width: 640px) { .ts-tpb-step-art { width: 88px !important; height: 88px !important; } }
+@media (min-width: 1024px) { .ts-tpb-step-art { width: 96px !important; height: 96px !important; } }
+
+/* ===================== END ===================== */
+.ts-tpb-end { position: relative !important; overflow: hidden !important; background: hsl(var(--tpb-primary)) !important; color: hsl(var(--tpb-primary-foreground)) !important; }
+/* Toppie jumps in from the right edge of the pre-footer (QA task 07). */
+.ts-tpb-end-art { position: absolute !important; bottom: 0 !important; right: -2vw !important; display: block !important; height: 108% !important; width: auto !important; max-width: none !important; pointer-events: none !important; }
+@media (max-width: 1023px) { .ts-tpb-end-art { height: 88% !important; right: -6vw !important; } }
+@media (max-width: 639px) { .ts-tpb-end-art { position: static !important; height: auto !important; width: min(62vw, 250px) !important; margin: 0 0 -6px auto !important; padding-top: 44px !important; } }
+.ts-tpb-end-grid { position: relative !important; display: grid !important; gap: 40px !important; padding: 96px 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-end-grid { grid-template-columns: repeat(12, minmax(0,1fr)) !important; padding: 128px 0 !important; } }
+@media (max-width: 639px) { .ts-tpb-end-grid { padding: 56px 0 24px !important; } }
+.ts-tpb-end-main { min-width: 0 !important; }
+@media (min-width: 1024px) { .ts-tpb-end-main { grid-column: span 8 / span 8 !important; } }
+h2.ts-tpb-end-h2 { font-family: 'Poppins', system-ui, sans-serif !important; font-weight: 600 !important; font-size: clamp(2.4rem, 7.5vw, 6.5rem) !important; line-height: 0.9 !important; letter-spacing: -0.055em !important; overflow-wrap: break-word !important; }
+@media (max-width: 639px) { .ts-tpb-end-main { max-width: 100% !important; } h2.ts-tpb-end-h2 { font-size: clamp(2.2rem, 10vw, 3.2rem) !important; } }
+@media (min-width: 640px) and (max-width: 1023px) { .ts-tpb-end-main { max-width: 62% !important; } }
+.ts-tpb-end-cta { margin-top: 40px !important; }
+@keyframes ts-tpb-end-hop {
+  0%, 58%, 100% { transform: translateY(0) !important; }
+  70% { transform: translateY(-4.5%) !important; }
+  80% { transform: translateY(0) !important; }
+  88% { transform: translateY(-1.8%) !important; }
+  94% { transform: translateY(0) !important; }
+}
+.ts-tpb-end-art-in { animation: ts-tpb-end-hop 5.5s ease-in-out 1s infinite !important; }
+
+/* ===================== FOOTER ===================== */
+.ts-tpb-footer { background: hsl(var(--tpb-foreground)) !important; color: hsl(var(--tpb-background)) !important; }
+.ts-tpb-footer-inner { display: flex !important; flex-wrap: wrap !important; align-items: center !important; gap: 20px !important; padding: 40px 20px !important; }
+@media (min-width: 640px) { .ts-tpb-footer-inner { gap: 24px !important; padding: 85px 40px !important; } }
+.ts-tpb-footer-mark { opacity: 0 !important; transform: translateY(10px) !important; transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1) !important; display: inline-flex !important; }
+/* The footer wordmark is a mask over an animated red sweep, mirroring the
+   Topsort wordmark drift on its right (QA task 07). */
+.ts-tpb-footer-logo {
+  position: relative !important; display: inline-block !important; height: 32px !important; aspect-ratio: 128 / 36 !important;
+  -webkit-mask-image: var(--tpb-logo-url) !important; mask-image: var(--tpb-logo-url) !important;
+  -webkit-mask-size: 100% 100% !important; mask-size: 100% 100% !important;
+  -webkit-mask-position: center !important; mask-position: center !important;
+  -webkit-mask-repeat: no-repeat !important; mask-repeat: no-repeat !important;
+}
+.ts-tpb-footer-logo img { height: 32px !important; width: auto !important; visibility: hidden !important; }
+.ts-tpb-footer-logo::before {
+  content: "" !important; position: absolute !important; inset: 0 !important;
+  background-image: linear-gradient(90deg, hsl(var(--tpb-background)), hsl(var(--tpb-primary)), hsl(var(--tpb-burgundy)), hsl(var(--tpb-primary)), hsl(var(--tpb-background))) !important;
+  background-size: 300% 100% !important;
+  animation: ts-tpb-footer-logo-sweep 7s ease-in-out infinite !important;
+}
+@keyframes ts-tpb-footer-logo-sweep {
+  0%, 35%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  70% { background-position: 100% 50%; }
+  85% { background-position: 0% 50%; }
+}
+.ts-tpb-footer-divider { flex: 1 1 0% !important; min-width: 20px !important; height: 1px !important; background: hsl(var(--tpb-background) / .18) !important; transform: scaleX(0) !important; transform-origin: left !important; opacity: 0 !important; transition: transform 1.1s cubic-bezier(.22,1,.36,1), opacity .6s ease !important; }
+p.ts-tpb-footer-tagline { font-size: .875rem !important; color: hsl(var(--tpb-background) / .6) !important; }
+@media (min-width: 640px) { p.ts-tpb-footer-tagline { font-size: 1.25rem !important; } }
+.ts-tpb-footer-letter { display: inline-block !important; opacity: 0 !important; transform: translateY(8px) !important; filter: blur(4px) !important; transition: opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1), filter .5s ease !important; }
+.ts-tpb-footer.ts-tpb-footer-in .ts-tpb-footer-mark { opacity: 1 !important; transform: none !important; }
+.ts-tpb-footer.ts-tpb-footer-in .ts-tpb-footer-divider { opacity: 1 !important; transform: scaleX(1) !important; transition-delay: .45s !important; }
+.ts-tpb-footer.ts-tpb-footer-in .ts-tpb-footer-letter { opacity: 1 !important; transform: none !important; filter: none !important; transition-delay: calc(1.4s + var(--i) * 30ms) !important; }
+.ts-tpb-footer-link { font-weight: 500 !important; }
+.ts-tpb-footer-link .ts-tpb-footer-letter {
+  background-image: linear-gradient(90deg, hsl(var(--tpb-primary)), hsl(var(--tpb-red-3)), oklch(0.7 0.2 22), hsl(var(--tpb-red-3)), hsl(var(--tpb-primary))) !important;
+  background-image: linear-gradient(90deg, #B91F2E, #E8505B, #F08A8F, #E8505B, #B91F2E) !important;
+  background-size: 800% 100% !important; -webkit-background-clip: text !important; background-clip: text !important;
+  color: transparent !important; -webkit-text-fill-color: transparent !important;
+  animation: ts-tpb-footer-gradient-drift 4s linear infinite !important;
+  animation-delay: calc((var(--i) - 31) * -0.12s) !important;
+}
+@keyframes ts-tpb-footer-gradient-drift { from { background-position: 0% 50%; } to { background-position: -200% 50%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ts-tpb *, .ts-tpb *::before, .ts-tpb *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important;
+  }
+  .ts-tpb-reveal { opacity: 1 !important; transform: none !important; }
+  .ts-tpb-footer-mark, .ts-tpb-footer-divider, .ts-tpb-footer-letter { opacity: 1 !important; transform: none !important; filter: none !important; }
+}
+</style>
+<!-- ════════ END PART 1 of 4 ════════ -->
+<!-- ════════ PART 2 of 4 · HTML · 21,698 chars ════════ -->
+<div id="ts-toppie" class="ts-root ts-tpb" style="--tpb-logo-url:url('https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/e1d9bcc6-cf25-4934-bb46-2cd38a20f955/logo_toppie.svg')">
+
+  <!-- ===== NAV ===== -->
+  <header id="ts-tpb-nav" class="ts-tpb-nav" data-tpb-scrolled="false" data-tpb-menu-open="false" data-tpb-tone="light">
+    <div class="ts-tpb-nav-bar">
+      <a href="https://www.topsort.com/products/toppie-dsp" class="ts-tpb-nav-logo" aria-label="Toppie home">
+        <video class="ts-tpb-nav-icon" data-tpb-icon-video src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/0eb8677a-22a1-4880-a06f-78a2a96553cb/toppie_icon_head.mp4" muted playsinline preload="auto" aria-hidden="true"></video>
+        <img class="ts-tpb-nav-logo-word" src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/e1d9bcc6-cf25-4934-bb46-2cd38a20f955/logo_toppie.svg" alt="Toppie" loading="eager">
+      </a>
+      <nav class="ts-tpb-nav-links" aria-label="Primary">
+        <a class="ts-tpb-nav-link" href="#ts-tpb-explore">Explore</a>
+        <a class="ts-tpb-nav-link" href="#ts-tpb-how">How It Works</a>
+        <a class="ts-tpb-nav-link" href="#ts-tpb-why">Why Toppie</a>
+      </nav>
+      <div class="ts-tpb-nav-actions">
+        <a class="ts-tpb-nav-signin" href="https://app.topsort.com/" target="_blank" rel="noopener" data-tpb-signin>Sign In</a>
+        <a class="ts-tpb-nav-contact" href="https://www.topsort.com/contact" target="_blank" rel="noopener">Contact</a>
+        <button type="button" class="ts-tpb-nav-toggle" aria-label="Menu" aria-expanded="false" data-tpb-nav-toggle>
+          <svg data-tpb-nav-icon-menu xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 6h16M4 18h16"/></svg>
+          <svg data-tpb-nav-icon-close hidden xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="ts-tpb-nav-panel" data-tpb-nav-panel>
+      <nav class="ts-tpb-nav-panel-list" aria-label="Mobile">
+        <a class="ts-tpb-nav-panel-link" href="#ts-tpb-explore" data-tpb-nav-close>Explore<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+        <a class="ts-tpb-nav-panel-link" href="#ts-tpb-how" data-tpb-nav-close>How It Works<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+        <a class="ts-tpb-nav-panel-link" href="#ts-tpb-why" data-tpb-nav-close>Why Toppie<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+      </nav>
+      <div class="ts-tpb-nav-panel-actions">
+        <a href="https://app.topsort.com/" target="_blank" rel="noopener" data-tpb-signin data-tpb-nav-close>Sign In</a>
+        <a href="https://www.topsort.com/contact" target="_blank" rel="noopener">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="ts-tpb-hero">
+    <div class="ts-tpb-hero-art" data-tpb-hero-art role="img" aria-label="Toppie the robot connecting products across commerce channels">
+      <video src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/b3476db2-c7dd-4759-ae9b-2afee23fac16/toppie_hero_2k.mp4" muted playsinline autoplay loop preload="auto" aria-hidden="true"></video>
+    </div>
+    <div class="ts-tpb-hero-art-mobile-v" data-tpb-no-reveal role="img" aria-label="Toppie the robot connecting products across commerce channels">
+      <video src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/10c9c84f-4dfe-4d01-a1a4-fe41df08351f/toppie_hero_mobile.mp4" muted playsinline autoplay loop preload="auto" aria-hidden="true"></video>
+    </div>
+    <div class="ts-tpb-wrap">
+      <div class="ts-tpb-hero-inner">
+        <div class="ts-tpb-hero-copy ts-tpb-rise">
+          <span class="ts-tpb-pill"><span class="ts-tpb-pill-dot"></span> The commerce advertising network</span>
+          <h1 class="ts-tpb-h1">More places to sell<br><span class="ts-tpb-gradient">More customers to win</span></h1>
+          <p class="ts-tpb-lead">Discover advertising opportunities across commerce. Reach shoppers where buying decisions happen, launch campaigns, and grow your brand&mdash;all from one place.</p>
+          <div class="ts-tpb-cta-row">
+            <a class="ts-tpb-btn ts-tpb-btn-primary" href="#ts-tpb-explore">Explore Opportunities <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+            <a class="ts-tpb-btn ts-tpb-btn-outline" href="#ts-tpb-how">How It Works <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+          </div>
+          <p class="ts-tpb-hint">Explore first. Connect when you're ready.</p>
+        </div>
+        <div class="ts-tpb-hero-spacer-mobile" aria-hidden="true"></div>
+        <div class="ts-tpb-hero-art-mobile">
+          <video src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/b3476db2-c7dd-4759-ae9b-2afee23fac16/toppie_hero_2k.mp4" muted playsinline autoplay loop preload="auto" aria-hidden="true"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY ===== -->
+  <section id="ts-tpb-why" class="ts-tpb-why">
+    <div class="ts-tpb-wrap">
+      <div class="ts-tpb-why-grid">
+        <p class="ts-tpb-label">(02) Why Toppie exists</p>
+        <div class="ts-tpb-why-main">
+          <h2 class="ts-tpb-scrollwords" data-tpb-scrollwords aria-label="The internet is full of customers. Finding the right ones shouldn't be complicated."><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad">The</span> </span><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad">internet</span> </span><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad">is</span> </span><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad">full</span> </span><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad">of</span> </span><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad">customers.</span> </span><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad ts-tpb-word-muted">Finding</span> </span><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad ts-tpb-word-muted">the</span> </span><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad ts-tpb-word-muted">right</span> </span><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad ts-tpb-word-muted">ones</span> </span><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad ts-tpb-word-muted">shouldn't</span> </span><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad ts-tpb-word-muted">be</span> </span><span class="ts-tpb-word" data-tpb-word style="opacity:.08"><span class="ts-tpb-hover-grad ts-tpb-word-muted">complicated.</span> </span></h2>
+          <div class="ts-tpb-why-copy">
+            <p>Advertising opportunities are scattered across retailers, marketplaces, and digital platforms. For brands, discovering and managing those opportunities can be unnecessarily complex.</p>
+            <p>Toppie brings supported commerce advertising opportunities into one place, helping brands find new ways to reach shoppers and grow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="ts-tpb-wrap ts-tpb-list">
+      <li class="ts-tpb-list-item ts-tpb-line-paint">
+        <span class="ts-tpb-label ts-tpb-list-index">01</span>
+        <span class="ts-tpb-hover-grad ts-tpb-list-title">Discover</span>
+        <span class="ts-tpb-list-desc">Find relevant advertising opportunities across participating commerce environments.</span>
+      </li>
+      <li class="ts-tpb-list-item ts-tpb-line-paint">
+        <span class="ts-tpb-label ts-tpb-list-index">02</span>
+        <span class="ts-tpb-hover-grad ts-tpb-list-title">Launch</span>
+        <span class="ts-tpb-list-desc">Create campaigns through a simple, guided workflow.</span>
+      </li>
+      <li class="ts-tpb-list-item ts-tpb-line-paint">
+        <span class="ts-tpb-label ts-tpb-list-index">03</span>
+        <span class="ts-tpb-hover-grad ts-tpb-list-title">Grow</span>
+        <span class="ts-tpb-list-desc">Measure performance and expand into new opportunities.</span>
+      </li>
+    </ol>
+    <div class="ts-tpb-why-spacer"></div>
+  </section>
+
+  <!-- ===== WHERE ===== -->
+  <section class="ts-tpb-where">
+    <div class="ts-tpb-wrap">
+      <div class="ts-tpb-where-grid">
+        <div class="ts-tpb-where-head">
+          <p class="ts-tpb-label">Where you can show up</p>
+          <h2 class="ts-tpb-where-h2">One place to find every shelf that matters.</h2>
+          <img class="ts-tpb-where-art" src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/08241ee9-1c1a-4106-8c51-06c96bad6396/toppie_magnifier.png" alt="Toppie searching with a magnifying glass" loading="lazy">
+        </div>
+        <ul class="ts-tpb-where-list">
+          <li class="ts-tpb-where-item ts-tpb-line-paint">
+            <span class="ts-tpb-where-left">
+              <img class="ts-tpb-where-icon ts-tpb-icon-lift" src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/ec9b7205-b074-449b-b48e-a985fe926821/channel_marketplaces.png" alt="" aria-hidden="true" loading="lazy">
+              <span class="ts-tpb-hover-grad ts-tpb-where-title">Marketplaces</span>
+            </span>
+            <span class="ts-tpb-where-desc">Sponsored listings where shoppers compare and choose.</span>
+          </li>
+          <li class="ts-tpb-where-item ts-tpb-line-paint">
+            <span class="ts-tpb-where-left">
+              <img class="ts-tpb-where-icon ts-tpb-icon-lift" src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/32c0bb2a-9515-47a8-a82b-95d9312c9d6d/channel_grocery.png" alt="" aria-hidden="true" loading="lazy">
+              <span class="ts-tpb-hover-grad ts-tpb-where-title">Grocery &amp; pharmacy</span>
+            </span>
+            <span class="ts-tpb-where-desc">Reach weekly baskets at the shelf, online.</span>
+          </li>
+          <li class="ts-tpb-where-item ts-tpb-line-paint">
+            <span class="ts-tpb-where-left">
+              <img class="ts-tpb-where-icon ts-tpb-icon-lift" src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/9a278a2f-3608-45ee-a672-835841e6ae49/channel_delivery.png" alt="" aria-hidden="true" loading="lazy">
+              <span class="ts-tpb-hover-grad ts-tpb-where-title">Delivery apps</span>
+            </span>
+            <span class="ts-tpb-where-desc">Appear in the moment someone is ready to order.</span>
+          </li>
+          <li class="ts-tpb-where-item ts-tpb-line-paint">
+            <span class="ts-tpb-where-left">
+              <img class="ts-tpb-where-icon ts-tpb-icon-lift" src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/16adb866-6ed1-40cc-a51b-7e2730b0d591/channel_specialty.png" alt="" aria-hidden="true" loading="lazy">
+              <span class="ts-tpb-hover-grad ts-tpb-where-title">Specialty retail</span>
+            </span>
+            <span class="ts-tpb-where-desc">Category stores with focused, high-intent traffic.</span>
+          </li>
+          <li class="ts-tpb-where-item ts-tpb-line-paint">
+            <span class="ts-tpb-where-left">
+              <img class="ts-tpb-where-icon ts-tpb-icon-lift" src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/9826e501-d81d-4326-b9a9-22f171e22c45/channel_offsite.png" alt="" aria-hidden="true" loading="lazy">
+              <span class="ts-tpb-hover-grad ts-tpb-where-title">Offsite media</span>
+            </span>
+            <span class="ts-tpb-where-desc">Extend retailer audiences beyond the store.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPLORE ===== -->
+  <section id="ts-tpb-explore" class="ts-tpb-explore">
+    <div class="ts-tpb-wrap ts-tpb-explore-wrap">
+      <div class="ts-tpb-explore-grid">
+        <p class="ts-tpb-label">(03) Explore the network</p>
+        <div class="ts-tpb-explore-main">
+          <h2 class="ts-tpb-explore-h2">Where could your<br class="ts-tpb-explore-break"> brand <span class="ts-tpb-gradient">go next?</span></h2>
+          <p class="ts-tpb-explore-sub">Tell us about your brand. We'll help you discover where you could advertise.</p>
+        </div>
+      </div>
+
+      <form class="ts-tpb-form" data-tpb-form novalidate>
+        <label for="ts-tpb-site" class="ts-tpb-label ts-tpb-field-label">Your brand's website</label>
+        <div class="ts-tpb-field">
+          <input id="ts-tpb-site" class="ts-tpb-input" type="text" inputmode="url" autocomplete="url" placeholder="yourbrand.com" name="site">
+          <button type="submit" class="ts-tpb-submit-icon" aria-label="Discover Opportunities">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+        <p class="ts-tpb-error" role="alert" data-tpb-form-error hidden>Enter a valid website, like yourbrand.com</p>
+
+        <fieldset class="ts-tpb-markets">
+          <legend class="ts-tpb-label ts-tpb-markets-legend">Where do you want to grow?</legend>
+          <div class="ts-tpb-markets-row" data-tpb-markets>
+            <button type="button" class="ts-tpb-market" data-tpb-market="Brazil" aria-pressed="true">Brazil</button>
+            <button type="button" class="ts-tpb-market" data-tpb-market="Mexico" aria-pressed="false">Mexico</button>
+            <button type="button" class="ts-tpb-market" data-tpb-market="United States" aria-pressed="false">United States</button>
+            <button type="button" class="ts-tpb-market" data-tpb-market="Australia" aria-pressed="false">Australia</button>
+            <button type="button" class="ts-tpb-market" data-tpb-market="Europe" aria-pressed="false">Europe</button>
+            <button type="button" class="ts-tpb-market" data-tpb-market="Other markets" aria-pressed="false">Other markets</button>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="ts-tpb-btn ts-tpb-btn-primary ts-tpb-form-submit">Discover Opportunities <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+        <p class="ts-tpb-note">No account needed to explore.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== HOW ===== -->
+  <section id="ts-tpb-how" class="ts-tpb-how">
+    <div class="ts-tpb-wrap">
+      <div class="ts-tpb-how-grid">
+        <div class="ts-tpb-how-head">
+          <p class="ts-tpb-label">(04) How It Works</p>
+          <h2 class="ts-tpb-how-h2">From your brand to your next customer.</h2>
+        </div>
+        <ol class="ts-tpb-steps">
+          <li class="ts-tpb-step ts-tpb-line-paint">
+            <span class="ts-tpb-step-index">1</span>
+            <div class="ts-tpb-step-row">
+              <div>
+                <h3 class="ts-tpb-hover-grad ts-tpb-step-title">Tell us about your brand.</h3>
+                <p class="ts-tpb-step-desc">Start with your website and the markets you want to reach.</p>
+              </div>
+              <img class="ts-tpb-step-art ts-tpb-icon-lift" src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/e08aa96c-99ab-4b4c-88ae-755448d919f9/step_brand.png" alt="" aria-hidden="true" loading="lazy">
+            </div>
+          </li>
+          <li class="ts-tpb-step ts-tpb-line-paint">
+            <span class="ts-tpb-step-index">2</span>
+            <div class="ts-tpb-step-row">
+              <div>
+                <h3 class="ts-tpb-hover-grad ts-tpb-step-title">Explore what fits.</h3>
+                <p class="ts-tpb-step-desc">Discover available destinations and understand eligibility before committing.</p>
+              </div>
+              <img class="ts-tpb-step-art ts-tpb-icon-lift" src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/d1b8e0cf-c25d-42ef-8778-63bf905f3913/step_explore.png" alt="" aria-hidden="true" loading="lazy">
+            </div>
+          </li>
+          <li class="ts-tpb-step ts-tpb-line-paint">
+            <span class="ts-tpb-step-index">3</span>
+            <div class="ts-tpb-step-row">
+              <div>
+                <h3 class="ts-tpb-hover-grad ts-tpb-step-title">Launch and learn.</h3>
+                <p class="ts-tpb-step-desc">Build a campaign, complete required approvals, and track performance.</p>
+              </div>
+              <img class="ts-tpb-step-art ts-tpb-icon-lift" src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/1fcc02c0-65b1-4025-a654-ac2e1340fe78/step_launch.png" alt="" aria-hidden="true" loading="lazy">
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== END ===== -->
+  <section class="ts-tpb-end">
+    <img class="ts-tpb-end-art" data-tpb-end-art data-tpb-no-reveal src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/8bf9dfbc-2f9a-4662-b79f-f13e5c58f0fb/toppie_jump.png" alt="Toppie the robot jumping" loading="eager" decoding="async">
+    <div class="ts-tpb-wrap">
+      <div class="ts-tpb-end-grid">
+        <div class="ts-tpb-end-main">
+          <h2 class="ts-tpb-end-h2">Your next stage of growth starts here.</h2>
+          <a class="ts-tpb-btn ts-tpb-btn-light ts-tpb-end-cta" href="#ts-tpb-explore">Explore Opportunities <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="ts-tpb-footer" class="ts-tpb-footer">
+    <div class="ts-tpb-footer-inner">
+      <a href="https://www.topsort.com/products/toppie-dsp" aria-label="Toppie home" class="ts-tpb-footer-mark">
+        <span class="ts-tpb-footer-logo"><img src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/e1d9bcc6-cf25-4934-bb46-2cd38a20f955/logo_toppie.svg" alt="Toppie" loading="lazy"></span>
+      </a>
+      <span class="ts-tpb-footer-divider" aria-hidden="true"></span>
+      <p class="ts-tpb-footer-tagline" aria-label="Commerce advertising, built by Topsort">
+        <span aria-hidden="true"><span class="ts-tpb-footer-letter" style="--i:0">C</span><span class="ts-tpb-footer-letter" style="--i:1">o</span><span class="ts-tpb-footer-letter" style="--i:2">m</span><span class="ts-tpb-footer-letter" style="--i:3">m</span><span class="ts-tpb-footer-letter" style="--i:4">e</span><span class="ts-tpb-footer-letter" style="--i:5">r</span><span class="ts-tpb-footer-letter" style="--i:6">c</span><span class="ts-tpb-footer-letter" style="--i:7">e</span><span class="ts-tpb-footer-letter" style="--i:8">&nbsp;</span><span class="ts-tpb-footer-letter" style="--i:9">a</span><span class="ts-tpb-footer-letter" style="--i:10">d</span><span class="ts-tpb-footer-letter" style="--i:11">v</span><span class="ts-tpb-footer-letter" style="--i:12">e</span><span class="ts-tpb-footer-letter" style="--i:13">r</span><span class="ts-tpb-footer-letter" style="--i:14">t</span><span class="ts-tpb-footer-letter" style="--i:15">i</span><span class="ts-tpb-footer-letter" style="--i:16">s</span><span class="ts-tpb-footer-letter" style="--i:17">i</span><span class="ts-tpb-footer-letter" style="--i:18">n</span><span class="ts-tpb-footer-letter" style="--i:19">g</span><span class="ts-tpb-footer-letter" style="--i:20">,</span><span class="ts-tpb-footer-letter" style="--i:21">&nbsp;</span><span class="ts-tpb-footer-letter" style="--i:22">b</span><span class="ts-tpb-footer-letter" style="--i:23">u</span><span class="ts-tpb-footer-letter" style="--i:24">i</span><span class="ts-tpb-footer-letter" style="--i:25">l</span><span class="ts-tpb-footer-letter" style="--i:26">t</span><span class="ts-tpb-footer-letter" style="--i:27">&nbsp;</span><span class="ts-tpb-footer-letter" style="--i:28">b</span><span class="ts-tpb-footer-letter" style="--i:29">y</span><span class="ts-tpb-footer-letter" style="--i:30">&nbsp;</span><a href="https://www.topsort.com" target="_blank" rel="noopener noreferrer" class="ts-tpb-footer-link"><span class="ts-tpb-footer-letter" style="--i:31">T</span><span class="ts-tpb-footer-letter" style="--i:32">o</span><span class="ts-tpb-footer-letter" style="--i:33">p</span><span class="ts-tpb-footer-letter" style="--i:34">s</span><span class="ts-tpb-footer-letter" style="--i:35">o</span><span class="ts-tpb-footer-letter" style="--i:36">r</span><span class="ts-tpb-footer-letter" style="--i:37">t</span></a></span>
+      </p>
+    </div>
+  </footer>
+
+</div>
+<!-- ════════ END PART 2 of 4 ════════ -->
+<!-- ════════ PART 3 of 4 · CSS · Discover flow · 25,221 chars ════════ -->
+<style>
+/* ===================== DISCOVER FLOW (QA task 08) =====================
+   Full-screen layer inside the embed root: loading → results → signup. */
+.ts-tpb-flow { position: fixed !important; inset: 0 !important; z-index: 9999 !important; background: hsl(var(--tpb-background)) !important; color: hsl(var(--tpb-foreground)) !important; }
+.ts-tpb-flow[hidden] { display: none !important; }
+.ts-tpb-flow-scroll { height: 100% !important; overflow-y: auto !important; overflow-x: clip !important; -webkit-overflow-scrolling: touch !important; }
+.ts-tpb-flow-top { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 16px !important; max-width: 1600px !important; margin: 0 auto !important; padding: 18px 20px !important; }
+@media (min-width: 640px) { .ts-tpb-flow-top { padding: 22px 40px !important; } }
+.ts-tpb-flow-top .ts-tpb-nav-logo { margin-right: 0 !important; }
+button.ts-tpb-flow-close { display: inline-flex !important; align-items: center !important; gap: 6px !important; font-size: 13px !important; font-weight: 600 !important; color: hsl(var(--tpb-muted-foreground)) !important; border-radius: 999px !important; padding: 8px 14px !important; transition: color .2s ease, background-color .2s ease !important; }
+button.ts-tpb-flow-close:hover { color: hsl(var(--tpb-foreground)) !important; background: hsl(var(--tpb-secondary)) !important; }
+.ts-tpb-flow-close svg { width: 16px !important; height: 16px !important; }
+.ts-tpb-flow-body { max-width: 1600px !important; margin: 0 auto !important; padding: 0 20px 80px !important; }
+@media (min-width: 640px) { .ts-tpb-flow-body { padding: 0 40px 120px !important; } }
+.ts-tpb-flow svg { width: 16px !important; height: 16px !important; flex-shrink: 0 !important; }
+.ts-tpb-flow .ts-tpb-btn svg { width: 16px !important; height: 16px !important; }
+.ts-tpb-btn-block { display: flex !important; width: 100% !important; }
+.ts-tpb-flow .ts-tpb-gradient { animation: ts-tpb-gradient-pan 6s ease-in-out infinite !important; }
+
+/* ---- loading theme ---- */
+.ts-tpb-flow-dark { background: hsl(var(--tpb-burgundy)) !important; color: hsl(var(--tpb-background)) !important; }
+.ts-tpb-flow-dark .ts-tpb-flow-top .ts-tpb-nav-logo-word { filter: brightness(0) invert(1) !important; }
+.ts-tpb-flow-dark button.ts-tpb-flow-close { color: hsl(var(--tpb-background) / .7) !important; }
+.ts-tpb-flow-dark button.ts-tpb-flow-close:hover { color: hsl(var(--tpb-background)) !important; background: hsl(var(--tpb-background) / .1) !important; }
+.ts-tpb-load { max-width: 1100px !important; margin: 0 auto !important; padding: 24px 0 40px !important; animation: ts-tpb-rise 1s cubic-bezier(.22,1,.36,1) both !important; }
+.ts-tpb-load-head { display: flex !important; align-items: center !important; gap: 20px !important; }
+@media (min-width: 640px) { .ts-tpb-load-head { gap: 28px !important; } }
+.ts-tpb-load-video { display: block !important; width: 64px !important; aspect-ratio: 1 !important; border-radius: 10px !important; overflow: hidden !important; flex-shrink: 0 !important; }
+@media (min-width: 640px) { .ts-tpb-load-video { width: 112px !important; } }
+@media (min-width: 1024px) { .ts-tpb-load-video { width: 128px !important; } }
+.ts-tpb-load-video video { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: right bottom !important; }
+h1.ts-tpb-load-h1 { min-width: 0 !important; flex: 1 !important; font-size: 1.5rem !important; font-weight: 600 !important; line-height: 1.15 !important; letter-spacing: 0 !important; }
+@media (min-width: 640px) { h1.ts-tpb-load-h1 { font-size: 3rem !important; } }
+@media (min-width: 1024px) { h1.ts-tpb-load-h1 { font-size: 3.75rem !important; } }
+.ts-tpb-load-h1 > span { display: block !important; }
+.ts-tpb-load-h1 .ts-tpb-gradient { overflow-wrap: break-word !important; max-width: 100% !important; }
+ol.ts-tpb-load-steps { margin-top: 40px !important; }
+li.ts-tpb-load-step { display: flex !important; align-items: center !important; gap: 20px !important; min-height: 76px !important; padding: 16px 0 !important; border-bottom: 1px solid hsl(var(--tpb-background) / .17) !important; color: hsl(15 30% 78%) !important; transition: color .8s ease !important; }
+@media (min-width: 640px) { li.ts-tpb-load-step { gap: 28px !important; } }
+.ts-tpb-load-step[data-lit="true"] { color: hsl(var(--tpb-background)) !important; }
+.ts-tpb-load-label { font-size: 1rem !important; font-weight: 500 !important; transition: opacity .8s ease !important; }
+.ts-tpb-load-step[data-lit="false"] .ts-tpb-load-label { opacity: .3 !important; }
+@media (min-width: 640px) { .ts-tpb-load-label { font-size: 1.125rem !important; } }
+.ts-tpb-load-light { display: flex !important; align-items: center !important; justify-content: center !important; width: 40px !important; height: 40px !important; border-radius: 999px !important; border: 1px solid hsl(var(--tpb-background) / .17) !important; background: hsl(15 25% 32%) !important; color: hsl(15 30% 78%) !important; flex-shrink: 0 !important; transition: background-color .8s ease, color .8s ease, border-color .8s ease, box-shadow 1s ease !important; }
+.ts-tpb-load-step[data-lit="true"] .ts-tpb-load-light { background: hsl(var(--tpb-primary)) !important; border-color: hsl(8 80% 60%) !important; color: hsl(var(--tpb-primary-foreground)) !important; box-shadow: 0 0 12px hsl(8 80% 60% / .55), 0 0 32px hsl(var(--tpb-primary) / .45), inset 0 1px 3px hsl(var(--tpb-background) / .35) !important; }
+.ts-tpb-load-step[data-active="true"] .ts-tpb-load-light { animation: ts-tpb-load-breathe 2s ease-in-out infinite !important; }
+@keyframes ts-tpb-load-breathe { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.3); } }
+.ts-tpb-load-dot { width: 8px !important; height: 8px !important; border-radius: 999px !important; background: currentColor !important; }
+.ts-tpb-load-check { display: none !important; }
+.ts-tpb-load-step[data-lit="true"]:not([data-active="true"]) .ts-tpb-load-dot { display: none !important; }
+.ts-tpb-load-step[data-lit="true"]:not([data-active="true"]) .ts-tpb-load-check { display: block !important; }
+p.ts-tpb-load-note { margin-top: 28px !important; max-width: 32rem !important; font-size: .875rem !important; line-height: 1.6 !important; color: hsl(15 30% 78%) !important; }
+
+/* ---- results ---- */
+.ts-tpb-results { display: grid !important; gap: 40px !important; align-items: start !important; padding-top: 24px !important; }
+@media (min-width: 1024px) { .ts-tpb-results { grid-template-columns: minmax(0,1fr) 340px !important; gap: 48px !important; padding-top: 40px !important; } }
+.ts-tpb-results-main { min-width: 0 !important; }
+h1.ts-tpb-results-h1 { font-size: 2.25rem !important; font-weight: 800 !important; line-height: 1.12 !important; letter-spacing: 0 !important; animation: ts-tpb-rise .7s cubic-bezier(.2,.7,.2,1) both !important; }
+@media (min-width: 640px) { h1.ts-tpb-results-h1 { font-size: 3rem !important; } }
+.ts-tpb-results-h1 > span { display: block !important; }
+.ts-tpb-results-bar { display: grid !important; grid-template-columns: minmax(0,1fr) auto !important; align-items: end !important; gap: 16px !important; margin-top: 48px !important; padding-bottom: 16px !important; border-bottom: 1px solid hsl(var(--tpb-foreground)) !important; }
+.ts-tpb-results-bar h2 { font-size: 1rem !important; font-weight: 600 !important; letter-spacing: 0 !important; }
+@media (min-width: 640px) { .ts-tpb-results-bar h2 { font-size: 1.125rem !important; } }
+.ts-tpb-results-bar > span { font-size: .875rem !important; color: hsl(var(--tpb-muted-foreground)) !important; white-space: nowrap !important; }
+li.ts-tpb-opp { display: grid !important; gap: 16px !important; align-items: end !important; padding: 24px 0 !important; border-bottom: 1px solid hsl(var(--tpb-border)) !important; }
+@media (min-width: 640px) { li.ts-tpb-opp { grid-template-columns: minmax(0,1fr) auto !important; } .ts-tpb-opp > .ts-tpb-btn, .ts-tpb-opp > .ts-tpb-opp-na { justify-self: end !important; } }
+.ts-tpb-opp-off { opacity: .5 !important; }
+.ts-tpb-opp-info { min-width: 0 !important; }
+.ts-tpb-opp-meta { display: inline-flex !important; flex-wrap: wrap !important; align-items: center !important; gap: 8px 16px !important; max-width: 100% !important; font-size: .75rem !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+.ts-tpb-opp-market { display: inline-flex !important; align-items: center !important; gap: 8px !important; }
+.ts-tpb-status { font-weight: 500 !important; }
+.ts-tpb-status-avail { color: hsl(var(--tpb-primary)) !important; font-weight: 700 !important; }
+.ts-tpb-opp-name { margin-top: 4px !important; font-size: 1.5rem !important; font-weight: 700 !important; line-height: 1.2 !important; letter-spacing: -0.02em !important; }
+@media (min-width: 640px) { .ts-tpb-opp-name { font-size: 1.875rem !important; } }
+p.ts-tpb-opp-adlabel { margin-top: 24px !important; font-size: .75rem !important; font-weight: 500 !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+.ts-tpb-opp-formats { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; margin-top: 8px !important; }
+.ts-tpb-opp-na { font-size: .875rem !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+button.ts-tpb-opp-select { white-space: nowrap !important; }
+.ts-tpb-results-foot { display: grid !important; grid-template-columns: minmax(0,1fr) auto !important; align-items: center !important; gap: 16px !important; margin-top: 40px !important; }
+button.ts-tpb-more { display: inline-flex !important; align-items: center !important; gap: 8px !important; font-size: .875rem !important; font-weight: 600 !important; color: hsl(var(--tpb-primary)) !important; text-align: left !important; line-height: 1.5 !important; }
+button.ts-tpb-more:hover { text-decoration: underline !important; }
+button.ts-tpb-more svg { transition: transform .25s ease !important; }
+button.ts-tpb-more:hover svg { transform: translateX(3px) !important; }
+
+/* format pills + tooltip */
+.ts-tpb-pillwrap { position: relative !important; display: inline-flex !important; }
+button.ts-tpb-format-pill { display: inline-flex !important; align-items: center !important; gap: 8px !important; border: 1px solid hsl(var(--tpb-border)) !important; border-radius: 999px !important; padding: 4px 14px 4px 6px !important; font-size: .875rem !important; font-weight: 500 !important; background: hsl(var(--tpb-background)) !important; cursor: help !important; transition: border-color .2s ease !important; white-space: nowrap !important; }
+button.ts-tpb-format-pill:hover, .ts-tpb-pillwrap:focus-within button.ts-tpb-format-pill { border-color: hsl(var(--tpb-primary)) !important; }
+button.ts-tpb-format-pill svg { width: 24px !important; height: 24px !important; padding: 5px !important; border-radius: 999px !important; background: hsl(var(--tpb-secondary)) !important; color: hsl(var(--tpb-primary)) !important; }
+.ts-tpb-pillwrap-lg button.ts-tpb-format-pill { padding: 4px 14px 4px 6px !important; }
+.ts-tpb-tip { position: absolute !important; bottom: calc(100% + 10px) !important; left: 50% !important; transform: translateX(-50%) translateY(4px) !important; width: 256px !important; max-width: 78vw !important; padding: 12px !important; border-radius: 16px !important; border: 1px solid hsl(var(--tpb-border)) !important; background: hsl(var(--tpb-card)) !important; box-shadow: 0 16px 40px -18px hsl(var(--tpb-burgundy) / .4) !important; opacity: 0 !important; pointer-events: none !important; transition: opacity .2s ease, transform .2s ease !important; z-index: 30 !important; text-align: left !important; }
+.ts-tpb-pillwrap:hover .ts-tpb-tip, .ts-tpb-pillwrap:focus-within .ts-tpb-tip { opacity: 1 !important; transform: translateX(-50%) translateY(0) !important; }
+/* keep tooltips inside narrow viewports */
+@media (max-width: 639px) {
+  .ts-tpb-tip { left: 0 !important; transform: translateY(4px) !important; }
+  .ts-tpb-pillwrap:hover .ts-tpb-tip, .ts-tpb-pillwrap:focus-within .ts-tpb-tip { transform: translateY(0) !important; }
+  .ts-tpb-pillwrap.ts-tpb-tip-right .ts-tpb-tip { left: auto !important; right: 0 !important; }
+}
+.ts-tpb-tip img { width: 100% !important; aspect-ratio: 16 / 9 !important; object-fit: cover !important; border-radius: 12px !important; }
+.ts-tpb-tip-fallback { display: grid !important; place-items: center !important; aspect-ratio: 16 / 9 !important; border-radius: 12px !important; background: hsl(var(--tpb-secondary)) !important; color: hsl(var(--tpb-primary)) !important; }
+.ts-tpb-tip-fallback svg { width: 32px !important; height: 32px !important; }
+.ts-tpb-tip-title { display: block !important; margin-top: 12px !important; font-size: .875rem !important; font-weight: 600 !important; color: hsl(var(--tpb-foreground)) !important; }
+.ts-tpb-tip-desc { display: block !important; margin-top: 4px !important; font-size: .75rem !important; line-height: 1.6 !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+
+/* brand profile aside */
+.ts-tpb-profile { min-width: 0 !important; border: 1px solid hsl(var(--tpb-burgundy) / .2) !important; border-radius: 20px !important; background: hsl(var(--tpb-background)) !important; padding: 24px !important; color: hsl(var(--tpb-burgundy)) !important; }
+@media (min-width: 1024px) { .ts-tpb-profile { position: sticky !important; top: 24px !important; } }
+.ts-tpb-profile-head { display: grid !important; grid-template-columns: minmax(0,1fr) auto !important; align-items: center !important; gap: 12px !important; }
+.ts-tpb-profile-head p { font-size: .75rem !important; font-weight: 500 !important; color: hsl(15 20% 42%) !important; }
+button.ts-tpb-profile-editbtn { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 32px !important; height: 32px !important; border-radius: 999px !important; color: hsl(var(--tpb-burgundy)) !important; opacity: 0 !important; pointer-events: none !important; transition: opacity .4s ease, background-color .2s ease !important; }
+button.ts-tpb-profile-editbtn:hover { background: hsl(15 40% 93%) !important; }
+.ts-tpb-profile:hover button.ts-tpb-profile-editbtn, .ts-tpb-profile:focus-within button.ts-tpb-profile-editbtn, .ts-tpb-profile[data-editing="true"] button.ts-tpb-profile-editbtn { opacity: 1 !important; pointer-events: auto !important; }
+@media (hover: none) { button.ts-tpb-profile-editbtn { opacity: 1 !important; pointer-events: auto !important; } }
+.ts-tpb-profile-editbtn .ts-tpb-ico-check { display: none !important; }
+.ts-tpb-profile[data-editing="true"] .ts-tpb-profile-editbtn .ts-tpb-ico-check { display: block !important; }
+.ts-tpb-profile[data-editing="true"] .ts-tpb-profile-editbtn .ts-tpb-ico-pencil { display: none !important; }
+h2.ts-tpb-profile-name { margin-top: 4px !important; font-size: 1.875rem !important; font-weight: 600 !important; letter-spacing: 0 !important; overflow-wrap: break-word !important; }
+dl.ts-tpb-profile-details { margin-top: 20px !important; font-size: .875rem !important; }
+.ts-tpb-profile-row { border-top: 1px solid hsl(15 40% 86%) !important; padding-top: 16px !important; margin-top: 16px !important; }
+.ts-tpb-profile-row:first-child { margin-top: 0 !important; }
+.ts-tpb-profile-row dt { font-size: .72rem !important; letter-spacing: .16em !important; text-transform: uppercase !important; color: hsl(15 20% 42%) !important; }
+.ts-tpb-profile-row dd { display: flex !important; align-items: center !important; gap: 12px !important; margin: 8px 0 0 !important; min-width: 0 !important; }
+.ts-tpb-profile-row dd svg { color: hsl(15 20% 42%) !important; }
+.ts-tpb-break { overflow-wrap: anywhere !important; min-width: 0 !important; }
+ul.ts-tpb-profile-products { display: grid !important; gap: 12px !important; margin-top: 4px !important; }
+.ts-tpb-profile-products li { display: grid !important; grid-template-columns: 16px minmax(0,1fr) !important; align-items: center !important; gap: 12px !important; }
+.ts-tpb-profile-products span { overflow-wrap: break-word !important; }
+.ts-tpb-profile-editfields { margin-top: 20px !important; display: grid !important; gap: 16px !important; font-size: .875rem !important; }
+.ts-tpb-profile-editfields[hidden] { display: none !important; }
+.ts-tpb-profile-field span { display: block !important; margin-bottom: 6px !important; font-size: .72rem !important; letter-spacing: .16em !important; text-transform: uppercase !important; color: hsl(15 20% 42%) !important; }
+.ts-tpb-profile-field input, .ts-tpb-profile-field select { width: 100% !important; background: hsl(var(--tpb-card)) !important; border: 1px solid hsl(15 40% 86%) !important; border-radius: 10px !important; padding: 10px 12px !important; font-size: .875rem !important; color: hsl(var(--tpb-burgundy)) !important; outline: none !important; }
+.ts-tpb-profile-field input:focus, .ts-tpb-profile-field select:focus { border-color: hsl(var(--tpb-primary)) !important; }
+p.ts-tpb-profile-note { margin-top: 24px !important; font-size: .75rem !important; line-height: 1.6 !important; color: hsl(15 20% 42%) !important; }
+.ts-tpb-flag { width: 16px !important; height: 16px !important; border-radius: 999px !important; overflow: hidden !important; flex-shrink: 0 !important; }
+
+/* ---- signup ---- */
+.ts-tpb-flow-card { background: hsl(var(--tpb-card)) !important; }
+.ts-tpb-flow-card .ts-tpb-flow-body { max-width: none !important; padding: 0 !important; }
+.ts-tpb-signup { display: grid !important; min-height: calc(100vh - 80px) !important; }
+@media (min-width: 1024px) { .ts-tpb-signup { grid-template-columns: 1fr 1fr !important; } }
+.ts-tpb-signup-left { display: flex !important; flex-direction: column !important; padding: 8px 20px 32px !important; min-width: 0 !important; }
+@media (min-width: 640px) { .ts-tpb-signup-left { padding: 8px 64px 40px !important; } }
+@media (min-width: 1024px) { .ts-tpb-signup-left { padding: 8px 40px 40px max(40px, 8vw) !important; } }
+button.ts-tpb-signup-back { display: inline-flex !important; align-items: center !important; gap: 4px !important; align-self: flex-start !important; font-size: .875rem !important; font-weight: 600 !important; color: hsl(var(--tpb-muted-foreground)) !important; padding: 6px 0 !important; }
+button.ts-tpb-signup-back:hover { color: hsl(var(--tpb-foreground)) !important; }
+button.ts-tpb-signup-back svg { transition: transform .25s ease !important; }
+button.ts-tpb-signup-back:hover svg { transform: translateX(-3px) !important; }
+.ts-tpb-signup-card { margin: auto 0 !important; width: 100% !important; max-width: 28rem !important; padding: 40px 0 !important; }
+.ts-tpb-signup-brand { display: flex !important; align-items: center !important; gap: 10px !important; }
+.ts-tpb-signup-brand video { width: 53px !important; height: 53px !important; border-radius: 10px !important; object-fit: cover !important; }
+.ts-tpb-signup-brand img { height: 32px !important; width: auto !important; }
+h1.ts-tpb-signup-h1 { margin-top: 40px !important; font-size: 2.25rem !important; font-weight: 500 !important; line-height: 1.1 !important; letter-spacing: -0.03em !important; }
+@media (min-width: 640px) { h1.ts-tpb-signup-h1 { font-size: 2.6rem !important; } }
+.ts-tpb-signup-h1-sm { font-weight: 600 !important; margin-top: 24px !important; }
+p.ts-tpb-signup-sub { margin-top: 16px !important; font-size: .95rem !important; line-height: 1.6 !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+.ts-tpb-signup-actions { display: grid !important; gap: 12px !important; margin-top: 36px !important; }
+a.ts-tpb-signup-existing { display: flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; margin-top: 24px !important; font-size: .875rem !important; font-weight: 600 !important; color: hsl(var(--tpb-primary)) !important; }
+a.ts-tpb-signup-existing:hover { text-decoration: underline !important; }
+.ts-tpb-signup-field { display: block !important; margin-top: 32px !important; }
+.ts-tpb-signup-field span { display: block !important; font-size: .65rem !important; letter-spacing: .16em !important; text-transform: uppercase !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+.ts-tpb-signup-field input { margin-top: 8px !important; width: 100% !important; border: 1px solid hsl(var(--tpb-border)) !important; border-radius: 12px !important; background: hsl(var(--tpb-background)) !important; padding: 12px 16px !important; font-size: .875rem !important; outline: none !important; transition: border-color .2s ease !important; }
+.ts-tpb-signup-field input:focus { border-color: hsl(var(--tpb-primary)) !important; }
+p.ts-tpb-signup-error { margin-top: 12px !important; font-size: .75rem !important; font-weight: 600 !important; color: hsl(var(--tpb-primary)) !important; }
+.ts-tpb-signup-error[hidden] { display: none !important; }
+.ts-tpb-signup-field + .ts-tpb-btn-block, .ts-tpb-signup-error + .ts-tpb-btn-block { margin-top: 24px !important; }
+.ts-tpb-org-options { display: grid !important; gap: 8px !important; margin-top: 32px !important; }
+.ts-tpb-org-option { display: flex !important; align-items: center !important; gap: 12px !important; border: 1px solid hsl(var(--tpb-border)) !important; border-radius: 999px !important; padding: 16px !important; font-size: .875rem !important; cursor: pointer !important; transition: border-color .2s ease, background-color .2s ease !important; }
+.ts-tpb-org-option[data-checked="true"] { border-color: hsl(var(--tpb-primary)) !important; background: hsl(var(--tpb-secondary)) !important; }
+.ts-tpb-org-option input { accent-color: hsl(var(--tpb-primary)) !important; width: 16px !important; height: 16px !important; flex-shrink: 0 !important; }
+.ts-tpb-org-options + .ts-tpb-btn-block { margin-top: 24px !important; }
+p.ts-tpb-signup-foot { font-size: .75rem !important; color: hsl(var(--tpb-muted-foreground)) !important; }
+button.ts-tpb-signup-footlink { font-weight: 600 !important; color: hsl(var(--tpb-foreground)) !important; font-size: .75rem !important; }
+button.ts-tpb-signup-footlink:hover { text-decoration: underline !important; }
+.ts-tpb-signup-right { display: none !important; }
+@media (min-width: 1024px) {
+  .ts-tpb-signup-right { display: flex !important; flex-direction: column !important; padding: 5.5vh 3.5vw 8vh 2vw !important; position: sticky !important; top: 0 !important; height: 100vh !important; }
+  .ts-tpb-signup-video { position: relative !important; flex: 1 !important; border-radius: 32px !important; border: 1px solid hsl(var(--tpb-border) / .6) !important; background: hsl(var(--tpb-secondary)) !important; overflow: hidden !important; }
+  .ts-tpb-signup-video video { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; }
+}
+/* selected opportunities preview */
+ul.ts-tpb-selpreview { margin-top: 24px !important; border: 1px solid hsl(var(--tpb-border)) !important; border-radius: 16px !important; background: hsl(var(--tpb-card)) !important; overflow: hidden !important; }
+.ts-tpb-selpreview-item + .ts-tpb-selpreview-item { border-top: 1px solid hsl(var(--tpb-border)) !important; }
+button.ts-tpb-selpreview-head { display: flex !important; align-items: center !important; gap: 12px !important; width: 100% !important; padding: 12px 16px !important; text-align: left !important; }
+.ts-tpb-selpreview-name { min-width: 0 !important; flex: 1 !important; font-size: .875rem !important; font-weight: 600 !important; overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
+.ts-tpb-selpreview-market { display: inline-flex !important; align-items: center !important; gap: 6px !important; font-size: .75rem !important; color: hsl(var(--tpb-muted-foreground)) !important; flex-shrink: 0 !important; }
+.ts-tpb-selpreview-chev { color: hsl(var(--tpb-muted-foreground)) !important; transition: transform .3s ease !important; }
+.ts-tpb-selpreview-item[data-open="true"] .ts-tpb-selpreview-chev { transform: rotate(180deg) !important; }
+.ts-tpb-selpreview-body { display: grid !important; grid-template-rows: 0fr !important; transition: grid-template-rows .5s cubic-bezier(.22,1,.36,1) !important; }
+.ts-tpb-selpreview-item[data-open="true"] .ts-tpb-selpreview-body { grid-template-rows: 1fr !important; }
+.ts-tpb-selpreview-body > div { overflow: hidden !important; }
+.ts-tpb-selpreview-body span.ts-tpb-status { display: block !important; padding: 0 16px !important; font-size: .75rem !important; }
+.ts-tpb-selpreview-formats { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; padding: 8px 16px 16px !important; }
+.ts-tpb-selpreview-formats button.ts-tpb-format-pill { padding: 4px 10px !important; font-size: .75rem !important; gap: 6px !important; }
+.ts-tpb-selpreview-formats button.ts-tpb-format-pill svg { width: 14px !important; height: 14px !important; padding: 0 !important; background: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .ts-tpb-load, h1.ts-tpb-results-h1 { animation: none !important; }
+  .ts-tpb-load-step[data-active="true"] .ts-tpb-load-light { animation: none !important; }
+}
+</style>
+<!-- ════════ END PART 3 of 4 ════════ -->
+<!-- ════════ PART 4 of 4 · JS · 48,648 chars ════════ -->
+<script>
+(function () {
+  'use strict';
+  var root = document.getElementById('ts-toppie');
+  if (!root || root.hasAttribute('data-tpb-ready')) return;
+  root.setAttribute('data-tpb-ready', '');
+
+  var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var reduced = function () { return motion.matches; };
+  var one = function (s, scope) { return (scope || root).querySelector(s); };
+  var all = function (s, scope) { return Array.from((scope || root).querySelectorAll(s)); };
+
+  /* ---------------------------------------------------------------------
+   * Auto-reveal: fade/slide sections' content in as they enter the viewport.
+   * ------------------------------------------------------------------- */
+  (function autoReveal() {
+    var selector = 'section h1, section h2, section h3, section p, section li, section img, section form, section a, section button, footer > div > *';
+    if (!('IntersectionObserver' in window) || reduced()) {
+      all(selector).forEach(function (el) { el.classList.add('ts-tpb-reveal', 'ts-tpb-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { entry.target.classList.toggle('ts-tpb-in', entry.isIntersecting); });
+    }, { rootMargin: '-4% 0px -8% 0px', threshold: 0 });
+    var i = 0;
+    all(selector).forEach(function (el) {
+      if (el.closest('header') || el.closest('[data-tpb-no-reveal]') || el.closest('.ts-tpb-footer')) return;
+      el.classList.add('ts-tpb-reveal');
+      el.style.transitionDelay = ((i % 3) * 60) + 'ms';
+      i++;
+      io.observe(el);
+    });
+  })();
+
+  /* ---------------------------------------------------------------------
+   * Nav: transparent at top, floating glass bar on scroll; tone follows the
+   * surface directly behind the bar (light vs dark background).
+   * ------------------------------------------------------------------- */
+  (function nav() {
+    var header = one('#ts-tpb-nav');
+    if (!header) return;
+    var bar = one('.ts-tpb-nav-bar', header);
+    var toggle = one('[data-tpb-nav-toggle]', header);
+    var panel = one('[data-tpb-nav-panel]', header);
+    var iconMenu = one('[data-tpb-nav-icon-menu]', header);
+    var iconClose = one('[data-tpb-nav-icon-close]', header);
+    var scrolled = false, menuOpen = false;
+
+    function toneFor(r, g, b) {
+      var lin = [r, g, b].map(function (v) { v = v / 255; return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+      return (lin[0] * 0.2126 + lin[1] * 0.7152 + lin[2] * 0.0722) < 0.3 ? 'dark' : 'light';
+    }
+    function backgroundTone() {
+      if (!('elementsFromPoint' in document)) return 'light';
+      var rect = bar.getBoundingClientRect();
+      var y = Math.min(window.innerHeight - 1, Math.max(0, rect.top + rect.height / 2));
+      var xs = [rect.left + 8, rect.left + rect.width / 2, rect.right - 8];
+      for (var i = 0; i < xs.length; i++) {
+        var stack = document.elementsFromPoint(xs[i], y);
+        for (var j = 0; j < stack.length; j++) {
+          var el = stack[j];
+          if (header.contains(el)) continue;
+          for (; el; el = el.parentElement) {
+            var style = getComputedStyle(el);
+            var color = style.backgroundColor;
+            var m = color && color.match(/[\d.]+/g);
+            if (!m) continue;
+            var channels = m.map(Number);
+            if (channels[0] === 0 && channels[1] === 0 && channels[2] === 0 && (channels[3] === 0 || channels[3] === undefined)) continue;
+            if (channels.length >= 4 && channels[3] < 0.5) continue;
+            return toneFor(channels[0], channels[1], channels[2]);
+          }
+        }
+      }
+      return 'light';
+    }
+    var frame = 0;
+    function paint() {
+      frame = 0;
+      var y = window.scrollY || window.pageYOffset || 0;
+      scrolled = scrolled ? y > 4 : y > 24;
+      header.setAttribute('data-tpb-scrolled', String(scrolled));
+      header.setAttribute('data-tpb-menu-open', String(menuOpen));
+      header.setAttribute('data-tpb-tone', backgroundTone());
+    }
+    function schedule() { if (!frame) frame = requestAnimationFrame(paint); }
+    schedule();
+    setTimeout(schedule, 400);
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+
+    function setMenu(open) {
+      menuOpen = open;
+      header.setAttribute('data-tpb-menu-open', String(menuOpen));
+      toggle.setAttribute('aria-expanded', String(menuOpen));
+      if (iconMenu) iconMenu.hidden = menuOpen;
+      if (iconClose) iconClose.hidden = !menuOpen;
+      panel.setAttribute('aria-hidden', String(!menuOpen));
+    }
+    toggle.addEventListener('click', function () { setMenu(!menuOpen); });
+    all('[data-tpb-nav-close]', panel).forEach(function (link) {
+      link.addEventListener('click', function () { setMenu(false); });
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && menuOpen) setMenu(false);
+    });
+  })();
+
+  /* ---------------------------------------------------------------------
+   * Nav icon: Toppie's head plays its short animation once every few
+   * seconds, matching the live-app header treatment.
+   * ------------------------------------------------------------------- */
+  (function navIcon() {
+    var video = one('[data-tpb-icon-video]');
+    if (!video || reduced()) return;
+    function play() { video.currentTime = 0; var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+    play();
+    window.setInterval(play, 7000);
+  })();
+
+  /* ---------------------------------------------------------------------
+   * Hero: desktop background video scales up slightly as the page scrolls.
+   * ------------------------------------------------------------------- */
+  (function heroParallax() {
+    var art = one('[data-tpb-hero-art]');
+    if (!art || reduced()) return;
+    var frame = 0;
+    function update() {
+      frame = 0;
+      var p = Math.min(Math.max(window.scrollY / 500, 0), 1);
+      art.style.transform = 'scale(' + (1 + p * 0.1) + ')';
+    }
+    function schedule() { if (!frame) frame = requestAnimationFrame(update); }
+    update();
+    window.addEventListener('scroll', schedule, { passive: true });
+  })();
+
+  /* ---------------------------------------------------------------------
+   * Background/loop videos: play only while visible, pause under reduced
+   * motion or when the tab is hidden.
+   * ------------------------------------------------------------------- */
+  (function videos() {
+    var list = all('video');
+    list.forEach(function (video) { video.muted = true; video.playsInline = true; });
+    function update(video, visible) {
+      if (reduced() || document.hidden || !visible) video.pause();
+      else { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          entry.target.setAttribute('data-tpb-visible', String(entry.isIntersecting));
+          update(entry.target, entry.isIntersecting);
+        });
+      }, { rootMargin: '200px 0px' });
+      list.forEach(function (video) { io.observe(video); });
+    } else list.forEach(function (video) { update(video, true); });
+    document.addEventListener('visibilitychange', function () {
+      list.forEach(function (video) { update(video, video.getAttribute('data-tpb-visible') === 'true'); });
+    });
+  })();
+
+  /* ---------------------------------------------------------------------
+   * Scroll-words: "Why Toppie exists" headline words light up as the
+   * heading travels through the viewport.
+   * ------------------------------------------------------------------- */
+  (function scrollWords() {
+    var heading = one('[data-tpb-scrollwords]');
+    if (!heading) return;
+    var words = all('[data-tpb-word]', heading);
+    if (!words.length) return;
+    if (reduced()) { words.forEach(function (w) { w.style.opacity = '1'; }); return; }
+    var frame = 0;
+    function calc() {
+      frame = 0;
+      var rect = heading.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var raw = Math.min(1, Math.max(0, (vh * 0.9 - rect.top) / (vh * 0.55)));
+      var p = Math.round(raw * words.length) / words.length;
+      words.forEach(function (word, i) { word.style.opacity = (p * words.length > i) ? '1' : '.08'; });
+    }
+    function schedule() { if (!frame) frame = requestAnimationFrame(calc); }
+    calc();
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+  })();
+
+  /* ---------------------------------------------------------------------
+   * Explore form: website field + market picker. Submitting opens the
+   * in-page Discover flow (QA task 08): mapping-your-network loading,
+   * ranked opportunity results with selection, then account creation or
+   * existing-account sign-in that carries the chosen opportunities along.
+   * Mirrors the Lovable /brands/discover + /brands/signup demo journey;
+   * sample inventory only — no live backend is invented here.
+   * ------------------------------------------------------------------- */
+  var tpbFlow = (function discoverFlow() {
+    var ASSETS = 'https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/';
+    var LOADING_VIDEO = ASSETS + 'e37a536d-ac6a-4e45-82ef-52fb4c1c3dfe/toppie_loading.mp4';
+    var RUN_VIDEO = ASSETS + 'c58c74d1-e60c-4c87-b4d4-bb95b15b32d4/toppie_running.mp4';
+    var ICON_VIDEO = ASSETS + '0eb8677a-22a1-4880-a06f-78a2a96553cb/toppie_icon_head.mp4';
+    var LOGO_SVG = ASSETS + 'e1d9bcc6-cf25-4934-bb46-2cd38a20f955/logo_toppie.svg';
+    var FORMAT_ART = {
+      'Sponsored Products': ASSETS + 'format_products.png',
+      'Sponsored Brands': ASSETS + 'format_brands.png',
+      'Banners': ASSETS + 'format_display.png'
+    };
+    var CATEGORIES = ['Beauty & Personal Care', 'Grocery & Beverage', 'Home & Living', 'Electronics', 'Fashion & Apparel', 'Health & Wellness', 'Pet Supplies', 'Sports & Outdoors'];
+    var MARKETS = ['Brazil', 'Mexico', 'United States', 'Australia', 'Europe', 'Other markets'];
+    var STATUS_LABEL = { available: 'Available', eligibility: 'Eligibility check required', coming_soon: 'Coming soon', unavailable: 'Not available for this brand' };
+    var OPPS = [
+      { id: 'br-grocery', destination: 'National grocery marketplace', kind: 'Marketplace', market: 'Brazil', formats: ['Sponsored Products', 'Banners'], categories: ['Grocery & Beverage', 'Health & Wellness', 'Beauty & Personal Care', 'Pet Supplies'], status: 'available' },
+      { id: 'br-pharma', destination: 'Pharmacy & beauty chain', kind: 'Retailer', market: 'Brazil', formats: ['Sponsored Products', 'Sponsored Brands'], categories: ['Beauty & Personal Care', 'Health & Wellness'], status: 'eligibility' },
+      { id: 'br-electronics', destination: 'Electronics retailer', kind: 'Retailer', market: 'Brazil', formats: ['Sponsored Products'], categories: ['Electronics'], status: 'available' },
+      { id: 'mx-marketplace', destination: 'General merchandise marketplace', kind: 'Marketplace', market: 'Mexico', formats: ['Sponsored Products', 'Banners', 'Video'], categories: 'all', status: 'available' },
+      { id: 'mx-delivery', destination: 'Quick-commerce delivery app', kind: 'Delivery app', market: 'Mexico', formats: ['Sponsored Listings'], categories: ['Grocery & Beverage', 'Health & Wellness', 'Beauty & Personal Care', 'Pet Supplies'], status: 'eligibility' },
+      { id: 'us-home', destination: 'Home & living marketplace', kind: 'Marketplace', market: 'United States', formats: ['Sponsored Products', 'Banners'], categories: ['Home & Living'], status: 'available' },
+      { id: 'us-specialty', destination: 'Specialty beauty retailer', kind: 'Retailer', market: 'United States', formats: ['Sponsored Products'], categories: ['Beauty & Personal Care'], status: 'coming_soon' },
+      { id: 'us-sports', destination: 'Outdoor & sports retailer', kind: 'Retailer', market: 'United States', formats: ['Sponsored Products', 'Offsite'], categories: ['Sports & Outdoors', 'Fashion & Apparel'], status: 'eligibility' },
+      { id: 'au-grocery', destination: 'Online grocery platform', kind: 'Retailer', market: 'Australia', formats: ['Sponsored Products', 'Banners'], categories: ['Grocery & Beverage', 'Pet Supplies', 'Health & Wellness'], status: 'available' },
+      { id: 'au-fashion', destination: 'Fashion marketplace', kind: 'Marketplace', market: 'Australia', formats: ['Sponsored Products'], categories: ['Fashion & Apparel', 'Beauty & Personal Care'], status: 'coming_soon' },
+      { id: 'eu-marketplace', destination: 'Pan-European marketplace', kind: 'Marketplace', market: 'Europe', formats: ['Sponsored Products', 'Sponsored Brands', 'Banners'], categories: 'all', status: 'eligibility' },
+      { id: 'eu-pet', destination: 'Pet supplies retailer', kind: 'Retailer', market: 'Europe', formats: ['Sponsored Products'], categories: ['Pet Supplies'], status: 'available' },
+      { id: 'eu-electronics', destination: 'Consumer electronics retailer', kind: 'Retailer', market: 'Europe', formats: ['Sponsored Products', 'Banners'], categories: ['Electronics'], status: 'coming_soon' }
+    ];
+    var LOAD_STEPS = ['Reading your website address', 'Preparing your brand profile', 'Matching markets and categories', 'Checking available inventory'];
+
+    var session = null;
+    var layer = null, layerBody = null;
+    var loadTimer = 0;
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+    function normalizeWebsite(value) {
+      var raw = (value || '').trim().toLowerCase();
+      if (!raw) return null;
+      try {
+        var url = new URL(/^https?:\/\//.test(raw) ? raw : ('https://' + raw));
+        var host = url.hostname.replace(/^www\./, '');
+        if (!/^([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/.test(host)) return null;
+        return host;
+      } catch (_) { return null; }
+    }
+    function brandFrom(website, market) {
+      var base = (website.split('.')[0] || website).replace(/[-_]/g, ' ');
+      var name = base.replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+      return { name: name, website: website, category: CATEGORIES[0], market: market, productTypes: 'Skincare, body care, gift sets' };
+    }
+    function matchOpps() {
+      var order = { available: 0, eligibility: 1, coming_soon: 2, unavailable: 3 };
+      var b = session.brand;
+      var inMarket = b.market === 'Other markets' ? OPPS.slice() : OPPS.filter(function (o) { return o.market === b.market; });
+      return inMarket.map(function (o) {
+        var fits = o.categories === 'all' || o.categories.indexOf(b.category) !== -1;
+        var copy = {}; for (var k in o) copy[k] = o[k];
+        if (!fits) copy.status = 'unavailable';
+        return copy;
+      }).sort(function (a, z) { return order[a.status] - order[z.status]; });
+    }
+    function oppById(id) { for (var i = 0; i < OPPS.length; i++) if (OPPS[i].id === id) return OPPS[i]; return null; }
+
+    var FLAGS = {
+      'Brazil': '<rect width="24" height="24" fill="#009C3B"/><path d="M2 12 12 5 22 12 12 19Z" fill="#FFDF00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/>',
+      'Mexico': '<rect width="8" height="24" fill="#006847"/><rect x="8" width="8" height="24" fill="#fff"/><rect x="16" width="8" height="24" fill="#CE1126"/><circle cx="12" cy="12" r="2" fill="#8C5A2B"/>',
+      'United States': '<rect width="24" height="24" fill="#fff"/><rect y="0" width="24" height="1.85" fill="#B22234"/><rect y="3.7" width="24" height="1.85" fill="#B22234"/><rect y="7.4" width="24" height="1.85" fill="#B22234"/><rect y="11.1" width="24" height="1.85" fill="#B22234"/><rect y="14.8" width="24" height="1.85" fill="#B22234"/><rect y="18.5" width="24" height="1.85" fill="#B22234"/><rect y="22.2" width="24" height="1.8" fill="#B22234"/><rect width="12" height="13" fill="#3C3B6E"/>',
+      'Australia': '<rect width="24" height="24" fill="#012169"/><path d="M0 0 12 12M12 0 0 12" stroke="#fff" stroke-width="2"/><path d="M6 0v12M0 6h12" stroke="#E4002B" stroke-width="2"/><circle cx="18" cy="16" r="1.3" fill="#fff"/><circle cx="6" cy="18" r="1.6" fill="#fff"/>',
+      'Europe': '<rect width="24" height="24" fill="#003399"/><circle cx="18" cy="12" r=".9" fill="#FC0"/><circle cx="17.2" cy="15" r=".9" fill="#FC0"/><circle cx="15" cy="17.2" r=".9" fill="#FC0"/><circle cx="12" cy="18" r=".9" fill="#FC0"/><circle cx="9" cy="17.2" r=".9" fill="#FC0"/><circle cx="6.8" cy="15" r=".9" fill="#FC0"/><circle cx="6" cy="12" r=".9" fill="#FC0"/><circle cx="6.8" cy="9" r=".9" fill="#FC0"/><circle cx="9" cy="6.8" r=".9" fill="#FC0"/><circle cx="12" cy="6" r=".9" fill="#FC0"/><circle cx="15" cy="6.8" r=".9" fill="#FC0"/><circle cx="17.2" cy="9" r=".9" fill="#FC0"/>'
+    };
+    function flag(market) {
+      if (!FLAGS[market]) return icon('map-pin', 'ts-tpb-flag');
+      return '<svg viewBox="0 0 24 24" role="img" aria-label="' + esc(market) + ' flag" class="ts-tpb-flag"><defs><clipPath id="tpbf-' + esc(market.replace(/\s/g, '')) + '"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#tpbf-' + esc(market.replace(/\s/g, '')) + ')">' + FLAGS[market] + '</g></svg>';
+    }
+    var ICON_PATHS = {
+      'chevron-right': '<path d="m9 18 6-6-6-6"/>',
+      'chevron-left': '<path d="m15 18-6-6 6-6"/>',
+      'chevron-down': '<path d="m6 9 6 6 6-6"/>',
+      'check': '<path d="M20 6 9 17l-5-5"/>',
+      'pencil': '<path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/>',
+      'globe': '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
+      'tag': '<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/>',
+      'map-pin': '<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
+      'shopping-bag': '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>',
+      'badge-check': '<path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/>',
+      'monitor-smartphone': '<path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-3.96 3.15"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/>',
+      'zap': '<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>',
+      'network': '<rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/>',
+      'droplets': '<path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>',
+      'sparkles': '<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>',
+      'gift': '<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>',
+      'package': '<path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/>',
+      'google': '<path d="M21.35 11.1H12v2.9h5.35c-.5 2.5-2.6 3.9-5.35 3.9a6 6 0 1 1 0-12c1.5 0 2.9.55 3.95 1.45l2.2-2.2A9 9 0 1 0 12 21c5.2 0 8.85-3.65 8.85-8.8 0-.4-.05-.75-.1-1.1z" fill="currentColor" stroke="none"/>'
+    };
+    function icon(name, cls) {
+      return '<svg class="' + (cls || '') + '" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICON_PATHS[name] + '</svg>';
+    }
+    function formatIconName(f) {
+      if (/brand/i.test(f)) return 'badge-check';
+      if (/banner|display/i.test(f)) return 'monitor-smartphone';
+      if (/video/i.test(f)) return 'zap';
+      if (/offsite/i.test(f)) return 'network';
+      return 'shopping-bag';
+    }
+    var FORMAT_INFO = {
+      'Sponsored Products': 'Promote individual products directly in search results and category pages, alongside other listings.',
+      'Sponsored Listings': 'Promoted spots for your items inside the app\u2019s listings and search.',
+      'Sponsored Brands': 'Showcase your brand and featured products together in one ad, with your logo, a headline, and custom imagery.',
+      'Banners': 'Promote a launch, offer, or seasonal campaign with a visual ad on the homepage, in search results, or on category pages.',
+      'Video': 'Short video ads that play inside the shopping experience.',
+      'Offsite': 'Reach the retailer\u2019s shoppers on other sites and social channels.'
+    };
+    function formatPill(f, big) {
+      var art = FORMAT_ART[f];
+      var tip = '<span class="ts-tpb-tip" role="tooltip">' +
+        (art ? '<img src="' + art + '" alt="' + esc(f) + ' example" loading="lazy">' : '<span class="ts-tpb-tip-fallback">' + icon(formatIconName(f)) + '</span>') +
+        '<span class="ts-tpb-tip-title">' + esc(f) + '</span>' +
+        '<span class="ts-tpb-tip-desc">' + esc(FORMAT_INFO[f] || 'An ad placement available on this destination.') + '</span></span>';
+      return '<span class="ts-tpb-pillwrap' + (big ? ' ts-tpb-pillwrap-lg' : '') + '">' +
+        '<button type="button" class="ts-tpb-format-pill">' + icon(formatIconName(f)) + esc(f) + '</button>' + tip + '</span>';
+    }
+    function statusSpan(o) {
+      return '<span class="ts-tpb-status' + (o.status === 'available' ? ' ts-tpb-status-avail' : '') + '">' + esc(STATUS_LABEL[o.status]) + '</span>';
+    }
+
+    /* ----- flow chrome ----- */
+    function ensureLayer() {
+      if (layer) return layer;
+      layer = document.createElement('div');
+      layer.className = 'ts-tpb-flow';
+      layer.setAttribute('role', 'dialog');
+      layer.setAttribute('aria-modal', 'true');
+      layer.hidden = true;
+      layer.innerHTML =
+        '<div class="ts-tpb-flow-scroll">' +
+          '<div class="ts-tpb-flow-top">' +
+            '<a href="https://www.topsort.com/products/toppie-dsp" class="ts-tpb-nav-logo" aria-label="Toppie home">' +
+              '<img class="ts-tpb-nav-logo-word" src="' + LOGO_SVG + '" alt="Toppie">' +
+            '</a>' +
+            '<button type="button" class="ts-tpb-flow-close" data-tpb-flow-close aria-label="Close and return to the page">' + icon('chevron-left') + 'Back to Toppie</button>' +
+          '</div>' +
+          '<div class="ts-tpb-flow-body" data-tpb-flow-body></div>' +
+        '</div>';
+      root.appendChild(layer);
+      layerBody = one('[data-tpb-flow-body]', layer);
+      one('[data-tpb-flow-close]', layer).addEventListener('click', closeFlow);
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && layer && !layer.hidden) closeFlow();
+      });
+      return layer;
+    }
+    function openFlow(html, theme) {
+      ensureLayer();
+      clearTimeout(loadTimer);
+      layer.className = 'ts-tpb-flow' + (theme ? ' ' + theme : '');
+      layerBody.innerHTML = html;
+      layer.hidden = false;
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+      one('.ts-tpb-flow-scroll', layer).scrollTop = 0;
+      var focusTarget = one('[data-tpb-autofocus]', layerBody) || one('[data-tpb-flow-close]', layer);
+      if (focusTarget) focusTarget.focus();
+    }
+    function closeFlow() {
+      if (!layer || layer.hidden) return;
+      clearTimeout(loadTimer);
+      layer.hidden = true;
+      layerBody.innerHTML = '';
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      var explore = one('#ts-tpb-explore');
+      if (explore) explore.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'start' });
+    }
+
+    /* ----- step 1 · mapping your network ----- */
+    function showLoading() {
+      var stepsHtml = LOAD_STEPS.map(function (label, i) {
+        return '<li class="ts-tpb-load-step" data-tpb-load-step="' + i + '" data-lit="false" data-active="false">' +
+          '<span class="ts-tpb-load-light" aria-hidden="true"><span class="ts-tpb-load-dot"></span><span class="ts-tpb-load-check">' + icon('check') + '</span></span>' +
+          '<span class="ts-tpb-load-label">' + esc(label) + '</span></li>';
+      }).join('');
+      openFlow(
+        '<div class="ts-tpb-load">' +
+          '<div class="ts-tpb-load-head">' +
+            '<span class="ts-tpb-load-video"><video src="' + LOADING_VIDEO + '" muted playsinline autoplay loop preload="auto" aria-label="Toppie running"></video></span>' +
+            '<h1 class="ts-tpb-load-h1"><span>Mapping your</span><span>network\u2026 <span class="ts-tpb-gradient">' + esc(session.brand.name) + '</span></span></h1>' +
+          '</div>' +
+          '<ol class="ts-tpb-load-steps" aria-label="Discovery progress">' + stepsHtml + '</ol>' +
+          '<p class="ts-tpb-load-note">We\u2019ll prepare an editable brand profile from your website.</p>' +
+        '</div>', 'ts-tpb-flow-dark');
+      var video = one('video', layerBody);
+      if (video && reduced()) video.pause();
+      var step = 0;
+      function paint() {
+        all('[data-tpb-load-step]', layerBody).forEach(function (li) {
+          var i = Number(li.getAttribute('data-tpb-load-step'));
+          li.setAttribute('data-lit', String(i <= step));
+          li.setAttribute('data-active', String(i === step));
+        });
+      }
+      paint();
+      function advance() {
+        step++;
+        if (step >= LOAD_STEPS.length) { showResults(); return; }
+        paint();
+        loadTimer = setTimeout(advance, 650);
+      }
+      loadTimer = setTimeout(advance, 650);
+    }
+
+    /* ----- step 2 · opportunity results ----- */
+    function showResults() {
+      var b = session.brand;
+      var opps = matchOpps();
+      var visible = session.showAll ? opps : opps.slice(0, 5);
+      var rows = visible.map(function (o) {
+        var sel = session.selected.indexOf(o.id) !== -1;
+        var selectable = o.status === 'available' || o.status === 'eligibility';
+        var action = selectable
+          ? '<button type="button" class="ts-tpb-btn ' + (sel ? 'ts-tpb-btn-primary' : 'ts-tpb-btn-outline') + ' ts-tpb-opp-select" data-tpb-select="' + esc(o.id) + '" aria-pressed="' + sel + '">' +
+            (sel ? icon('check') + 'Selected' : (o.status === 'available' ? 'Select' : 'Request check') + icon('chevron-right')) + '</button>'
+          : '<span class="ts-tpb-opp-na">' + (o.status === 'coming_soon' ? 'Notify me later' : 'Not eligible') + '</span>';
+        return '<li class="ts-tpb-opp' + (o.status === 'unavailable' ? ' ts-tpb-opp-off' : '') + '">' +
+          '<div class="ts-tpb-opp-info">' +
+            '<div class="ts-tpb-opp-meta">' + statusSpan(o) + '<span>' + esc(o.kind) + '</span><span class="ts-tpb-opp-market">' + flag(o.market) + esc(o.market) + '</span></div>' +
+            '<h3 class="ts-tpb-opp-name">' + esc(o.destination) + '</h3>' +
+            '<p class="ts-tpb-opp-adlabel">Ad products</p>' +
+            '<div class="ts-tpb-opp-formats">' + o.formats.map(function (f) { return formatPill(f, true); }).join('') + '</div>' +
+          '</div>' + action + '</li>';
+      }).join('');
+      var moreBtn = (!session.showAll && opps.length > 5) || (session.showAll && b.market !== 'Other markets') || (!session.showAll && opps.length <= 5 && b.market !== 'Other markets')
+        ? '<button type="button" class="ts-tpb-more" data-tpb-more>Explore More Opportunities ' + icon('chevron-right') + '</button>' : '';
+      var profileDetails =
+        '<div class="ts-tpb-profile-row"><dt>Website</dt><dd>' + icon('globe') + '<span class="ts-tpb-break">' + esc(b.website) + '</span></dd></div>' +
+        '<div class="ts-tpb-profile-row"><dt>Category</dt><dd>' + icon('tag') + '<span>' + esc(b.category) + '</span></dd></div>' +
+        '<div class="ts-tpb-profile-row"><dt>Market</dt><dd>' + flag(b.market) + '<span>' + esc(b.market) + '</span></dd></div>' +
+        '<div class="ts-tpb-profile-row"><dt>Product types</dt><dd><ul class="ts-tpb-profile-products">' +
+        b.productTypes.split(',').map(function (p) {
+          var name = /gift/i.test(p) ? 'gift' : /skin/i.test(p) ? 'droplets' : /body/i.test(p) ? 'sparkles' : 'package';
+          return '<li>' + icon(name) + '<span>' + esc(p.trim()) + '</span></li>';
+        }).join('') + '</ul></dd></div>';
+      var profileEdit =
+        '<label class="ts-tpb-profile-field"><span>Brand name</span><input type="text" data-tpb-edit="name" value="' + esc(b.name) + '"></label>' +
+        '<label class="ts-tpb-profile-field"><span>Product category</span><select data-tpb-edit="category">' + CATEGORIES.map(function (c) { return '<option' + (c === b.category ? ' selected' : '') + '>' + esc(c) + '</option>'; }).join('') + '</select></label>' +
+        '<label class="ts-tpb-profile-field"><span>Target market</span><select data-tpb-edit="market">' + MARKETS.map(function (m) { return '<option' + (m === b.market ? ' selected' : '') + '>' + esc(m) + '</option>'; }).join('') + '</select></label>' +
+        '<label class="ts-tpb-profile-field"><span>Product types</span><input type="text" data-tpb-edit="productTypes" value="' + esc(b.productTypes) + '"></label>';
+      openFlow(
+        '<div class="ts-tpb-results">' +
+          '<div class="ts-tpb-results-main">' +
+            '<h1 class="ts-tpb-results-h1"><span>Your next customers are</span><span class="ts-tpb-gradient">closer than you think.</span></h1>' +
+            '<div class="ts-tpb-results-bar"><h2>' + opps.length + ' opportunities in ' + esc(b.market) + '</h2><span data-tpb-sel-count>' + session.selected.length + ' selected</span></div>' +
+            '<ul class="ts-tpb-opps" data-tpb-opps>' + rows + '</ul>' +
+            '<div class="ts-tpb-results-foot">' + moreBtn +
+              '<button type="button" class="ts-tpb-btn ts-tpb-btn-primary" data-tpb-start-advertising>Start Advertising ' + icon('chevron-right') + '</button>' +
+            '</div>' +
+          '</div>' +
+          '<aside class="ts-tpb-profile" aria-label="Brand profile" data-editing="false">' +
+            '<div class="ts-tpb-profile-head"><p>Your brand profile</p>' +
+              '<button type="button" class="ts-tpb-profile-editbtn" data-tpb-profile-edit aria-label="Edit brand profile">' + icon('pencil', 'ts-tpb-ico-pencil') + icon('check', 'ts-tpb-ico-check') + '</button></div>' +
+            '<h2 class="ts-tpb-profile-name" data-tpb-profile-name>' + esc(b.name) + '</h2>' +
+            '<dl class="ts-tpb-profile-details" data-tpb-profile-details>' + profileDetails + '</dl>' +
+            '<div class="ts-tpb-profile-editfields" data-tpb-profile-editfields hidden>' + profileEdit + '</div>' +
+            '<p class="ts-tpb-profile-note">Please check and edit these details.</p>' +
+          '</aside>' +
+        '</div>');
+      all('.ts-tpb-pillwrap', layerBody).forEach(function (wrap) {
+        var r = wrap.getBoundingClientRect();
+        if (r.left + r.width / 2 > window.innerWidth / 2) wrap.classList.add('ts-tpb-tip-right');
+      });
+      wireResults();
+    }
+    function refreshResults() {
+      var scroll = one('.ts-tpb-flow-scroll', layer).scrollTop;
+      showResults();
+      one('.ts-tpb-flow-scroll', layer).scrollTop = scroll;
+    }
+    function wireResults() {
+      all('[data-tpb-select]', layerBody).forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var id = btn.getAttribute('data-tpb-select');
+          var i = session.selected.indexOf(id);
+          if (i === -1) session.selected.push(id); else session.selected.splice(i, 1);
+          refreshResults();
+        });
+      });
+      var more = one('[data-tpb-more]', layerBody);
+      if (more) more.addEventListener('click', function () {
+        if (!session.showAll && matchOpps().length > 5) session.showAll = true;
+        else session.brand.market = 'Other markets';
+        refreshResults();
+      });
+      var start = one('[data-tpb-start-advertising]', layerBody);
+      if (start) start.addEventListener('click', function () { showSignup(session.selected.length > 0); });
+      var aside = one('.ts-tpb-profile', layerBody);
+      var editBtn = one('[data-tpb-profile-edit]', layerBody);
+      var details = one('[data-tpb-profile-details]', layerBody);
+      var fields = one('[data-tpb-profile-editfields]', layerBody);
+      editBtn.addEventListener('click', function () {
+        var editing = aside.getAttribute('data-editing') !== 'true';
+        aside.setAttribute('data-editing', String(editing));
+        editBtn.setAttribute('aria-label', editing ? 'Done editing brand profile' : 'Edit brand profile');
+        details.hidden = editing;
+        fields.hidden = !editing;
+      });
+      all('[data-tpb-edit]', layerBody).forEach(function (field) {
+        field.addEventListener('change', function () {
+          var key = field.getAttribute('data-tpb-edit');
+          session.brand[key] = field.value;
+          if (key === 'name') one('[data-tpb-profile-name]', layerBody).textContent = field.value;
+          if (key === 'category' || key === 'market') { session.showAll = key === 'market' && field.value === 'Other markets' ? session.showAll : false; refreshResults(); }
+        });
+      });
+    }
+
+    /* ----- step 3 · create account / sign in ----- */
+    function showSignup(fromOpportunities) {
+      var b = session.brand;
+      var count = session.selected.length;
+      var selectedLabel = count === 1 ? 'your opportunity' : 'your ' + count + ' opportunities';
+      var guess = 'you@' + b.website;
+      var head = fromOpportunities
+        ? '<h1 class="ts-tpb-signup-h1">Create your account to keep <span class="ts-tpb-gradient">' + esc(selectedLabel) + '.</span></h1>' + selectedPreview() +
+          '<p class="ts-tpb-signup-sub">Your selections stay saved when you create your account, ready to launch your first campaign.</p>'
+        : '<h1 class="ts-tpb-signup-h1">Your next stage of growth <span class="ts-tpb-gradient">starts here.</span></h1>' +
+          '<p class="ts-tpb-signup-sub">More places to sell. More customers to win.</p>';
+      openFlow(
+        '<div class="ts-tpb-signup">' +
+          '<div class="ts-tpb-signup-left">' +
+            '<button type="button" class="ts-tpb-signup-back" data-tpb-signup-back>' + icon('chevron-left') + 'Back</button>' +
+            '<div class="ts-tpb-signup-card">' +
+              '<div class="ts-tpb-signup-brand"><video src="' + ICON_VIDEO + '" muted playsinline preload="auto" aria-hidden="true"></video><img src="' + LOGO_SVG + '" alt="Toppie"></div>' +
+              '<div data-tpb-signup-stage>' +
+                '<div data-tpb-stage="auth">' + head +
+                  '<div class="ts-tpb-signup-actions">' +
+                    '<button type="button" class="ts-tpb-btn ts-tpb-btn-outline ts-tpb-btn-block" data-tpb-auth-google>' + icon('google') + 'Continue with Google ' + icon('chevron-right') + '</button>' +
+                    '<button type="button" class="ts-tpb-btn ts-tpb-btn-primary ts-tpb-btn-block" data-tpb-auth-email>Continue with work email ' + icon('chevron-right') + '</button>' +
+                  '</div>' +
+                  '<a class="ts-tpb-signup-existing" href="https://app.topsort.com/" target="_blank" rel="noopener" data-tpb-auth-existing>Sign in to an existing Topsort account ' + icon('chevron-right') + '</a>' +
+                '</div>' +
+                '<div data-tpb-stage="email" hidden>' +
+                  '<form data-tpb-email-form novalidate>' +
+                    '<h1 class="ts-tpb-signup-h1 ts-tpb-signup-h1-sm">Your work email</h1>' +
+                    '<label class="ts-tpb-signup-field"><span>Work email</span><input type="email" data-tpb-email-input data-tpb-autofocus placeholder="' + esc(guess) + '" autocomplete="email"></label>' +
+                    '<p class="ts-tpb-signup-error" data-tpb-email-error hidden>Enter a valid work email.</p>' +
+                    '<button type="submit" class="ts-tpb-btn ts-tpb-btn-primary ts-tpb-btn-block">Continue ' + icon('chevron-right') + '</button>' +
+                  '</form>' +
+                '</div>' +
+                '<div data-tpb-stage="org" hidden>' +
+                  '<h1 class="ts-tpb-signup-h1 ts-tpb-signup-h1-sm">Choose your organization</h1>' +
+                  '<p class="ts-tpb-signup-sub">Signed in as <span data-tpb-org-email></span>.</p>' +
+                  '<div class="ts-tpb-org-options" data-tpb-org-options></div>' +
+                  '<button type="button" class="ts-tpb-btn ts-tpb-btn-primary ts-tpb-btn-block" data-tpb-org-continue>Continue ' + icon('chevron-right') + '</button>' +
+                '</div>' +
+                '<div data-tpb-stage="done" hidden>' +
+                  '<h1 class="ts-tpb-signup-h1">You\u2019re all set, <span class="ts-tpb-gradient">' + esc(b.name) + '.</span></h1>' +
+                  '<p class="ts-tpb-signup-sub" data-tpb-done-copy></p>' + selectedPreview() +
+                  '<div class="ts-tpb-signup-actions"><a class="ts-tpb-btn ts-tpb-btn-primary ts-tpb-btn-block" href="https://app.topsort.com/" target="_blank" rel="noopener">Open Topsort ' + icon('chevron-right') + '</a></div>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+            '<p class="ts-tpb-signup-foot">New to Toppie? <button type="button" class="ts-tpb-signup-footlink" data-tpb-signup-explore>Explore opportunities first</button></p>' +
+          '</div>' +
+          '<div class="ts-tpb-signup-right" aria-hidden="true"><div class="ts-tpb-signup-video"><video src="' + RUN_VIDEO + '" muted playsinline autoplay loop preload="auto"></video></div></div>' +
+        '</div>', 'ts-tpb-flow-card');
+      wireSignup(guess, fromOpportunities);
+    }
+    function selectedPreview() {
+      var items = session.selected.map(oppById).filter(Boolean);
+      if (!items.length) return '';
+      return '<ul class="ts-tpb-selpreview">' + items.map(function (o, i) {
+        return '<li class="ts-tpb-selpreview-item" data-open="' + (i === 0 ? 'true' : 'false') + '">' +
+          '<button type="button" class="ts-tpb-selpreview-head" data-tpb-selpreview-toggle aria-expanded="' + (i === 0) + '">' +
+            '<span class="ts-tpb-selpreview-name">' + esc(o.destination) + '</span>' +
+            '<span class="ts-tpb-selpreview-market">' + flag(o.market) + esc(o.market) + '</span>' + icon('chevron-down', 'ts-tpb-selpreview-chev') +
+          '</button>' +
+          '<div class="ts-tpb-selpreview-body"><div>' + statusSpan(o) +
+            '<div class="ts-tpb-selpreview-formats">' + o.formats.map(function (f) { return formatPill(f, false); }).join('') + '</div>' +
+          '</div></div></li>';
+      }).join('') + '</ul>';
+    }
+    function wireSignup(guess, fromOpportunities) {
+      var stage = 'auth', email = '', method = 'email', orgChoice = 'new';
+      function setStage(name) {
+        stage = name;
+        all('[data-tpb-stage]', layerBody).forEach(function (el) { el.hidden = el.getAttribute('data-tpb-stage') !== name; });
+        var focus = one('[data-tpb-stage="' + name + '"] [data-tpb-autofocus]', layerBody);
+        if (focus) focus.focus();
+        var video = one('.ts-tpb-signup-brand video', layerBody);
+        if (video && !reduced()) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+      }
+      function authed(m, e) {
+        method = m; email = e;
+        one('[data-tpb-org-email]', layerBody).textContent = e;
+        var options = '<label class="ts-tpb-org-option"><input type="radio" name="tpb-org" value="new" checked><span>Create \u201C' + esc(session.brand.name) + '\u201D advertiser organization</span></label>' +
+          (m === 'existing' ? '<label class="ts-tpb-org-option"><input type="radio" name="tpb-org" value="existing"><span>Existing Topsort organization</span></label>' : '');
+        one('[data-tpb-org-options]', layerBody).innerHTML = options;
+        all('input[name="tpb-org"]', layerBody).forEach(function (radio) {
+          radio.addEventListener('change', function () { orgChoice = radio.value; paintOrg(); });
+        });
+        paintOrg();
+        setStage('org');
+      }
+      function paintOrg() {
+        all('.ts-tpb-org-option', layerBody).forEach(function (label) {
+          var input = one('input', label);
+          label.setAttribute('data-checked', String(input.checked));
+        });
+      }
+      one('[data-tpb-signup-back]', layerBody).addEventListener('click', function () {
+        if (stage !== 'auth') { setStage('auth'); return; }
+        if (fromOpportunities) showResults(); else closeFlow();
+      });
+      one('[data-tpb-signup-explore]', layerBody).addEventListener('click', closeFlow);
+      one('[data-tpb-auth-google]', layerBody).addEventListener('click', function () { authed('google', guess); });
+      one('[data-tpb-auth-email]', layerBody).addEventListener('click', function () { setStage('email'); });
+      var existing = one('[data-tpb-auth-existing]', layerBody);
+      existing.addEventListener('click', function (event) { event.preventDefault(); authed('existing', guess); });
+      var emailForm = one('[data-tpb-email-form]', layerBody);
+      var emailInput = one('[data-tpb-email-input]', layerBody);
+      var emailError = one('[data-tpb-email-error]', layerBody);
+      emailForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var value = emailInput.value.trim();
+        if (!/^\S+@\S+\.\S+$/.test(value)) { emailError.hidden = false; emailInput.focus(); return; }
+        emailError.hidden = true;
+        authed('email', value);
+      });
+      emailInput.addEventListener('input', function () { emailError.hidden = true; });
+      one('[data-tpb-org-continue]', layerBody).addEventListener('click', function () {
+        var org = orgChoice === 'new' ? session.brand.name : 'Existing Topsort organization';
+        var count = session.selected.length;
+        one('[data-tpb-done-copy]', layerBody).textContent = count
+          ? 'Your ' + (count === 1 ? 'opportunity is' : count + ' opportunities are') + ' saved to the \u201C' + org + '\u201D organization. Sign in to Topsort to launch your first campaign.'
+          : 'Your account details are saved to the \u201C' + org + '\u201D organization. Sign in to Topsort to continue.';
+        setStage('done');
+      });
+      all('[data-tpb-selpreview-toggle]', layerBody).forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.closest('.ts-tpb-selpreview-item');
+          var open = item.getAttribute('data-open') !== 'true';
+          item.setAttribute('data-open', String(open));
+          btn.setAttribute('aria-expanded', String(open));
+        });
+      });
+      var brandVideo = one('.ts-tpb-signup-brand video', layerBody);
+      if (brandVideo && !reduced()) { var p = brandVideo.play(); if (p && p.catch) p.catch(function () {}); }
+      var sideVideo = one('.ts-tpb-signup-video video', layerBody);
+      if (sideVideo && reduced()) sideVideo.pause();
+    }
+
+    /* ----- entry points ----- */
+    function start(website, market) {
+      session = { brand: brandFrom(website, market), selected: [], showAll: false };
+      showLoading();
+    }
+    function openSignin() {
+      session = session || { brand: brandFrom('yourbrand.com', 'Brazil'), selected: [], showAll: false };
+      showSignup(false);
+    }
+    return { start: start, openSignin: openSignin, close: closeFlow };
+  })();
+
+  (function exploreForm() {
+    var form = one('[data-tpb-form]');
+    if (!form) return;
+    var input = one('#ts-tpb-site', form);
+    var error = one('[data-tpb-form-error]', form);
+    var marketsWrap = one('[data-tpb-markets]', form);
+    var market = 'Brazil';
+
+    function normalizeWebsite(value) {
+      var raw = (value || '').trim().toLowerCase();
+      if (!raw) return null;
+      try {
+        var url = new URL(/^https?:\/\//.test(raw) ? raw : ('https://' + raw));
+        var host = url.hostname.replace(/^www\./, '');
+        if (!/^([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/.test(host)) return null;
+        return host;
+      } catch (_) { return null; }
+    }
+
+    all('[data-tpb-market]', marketsWrap).forEach(function (button) {
+      button.addEventListener('click', function () {
+        market = button.getAttribute('data-tpb-market');
+        all('[data-tpb-market]', marketsWrap).forEach(function (b) { b.setAttribute('aria-pressed', String(b === button)); });
+      });
+    });
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var host = normalizeWebsite(input.value);
+      if (!host) {
+        error.hidden = false;
+        input.focus();
+        return;
+      }
+      error.hidden = true;
+      tpbFlow.start(host, market);
+    });
+    input.addEventListener('input', function () { error.hidden = true; });
+  })();
+
+  /* Header Sign In opens the same account screen as the Lovable source
+     (demo mode); the final step hands off to the real Topsort app. */
+  all('[data-tpb-signin]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      tpbFlow.openSignin();
+    });
+  });
+
+  /* ---------------------------------------------------------------------
+   * End section art: Toppie jumps in from the right edge with a springy
+   * entrance, then keeps a gentle idle hop (QA task 07). On mobile the art
+   * sits in flow above the headline, so the jump is a vertical hop instead.
+   * ------------------------------------------------------------------- */
+  (function endArt() {
+    var art = one('[data-tpb-end-art]');
+    if (!art) return;
+    if (reduced()) { art.style.opacity = '1'; return; }
+    var narrow = window.matchMedia('(max-width: 639px)');
+    var from = narrow.matches ? 'translate(0, 26%)' : 'translate(16%, 6%)';
+    art.style.opacity = '0';
+    art.style.transform = from;
+    art.style.transition = 'opacity 1.2s cubic-bezier(.22,1,.36,1), transform 1.5s cubic-bezier(.3,1.36,.44,1)';
+    function land() {
+      art.style.opacity = '1';
+      art.style.transform = 'none';
+      setTimeout(function () {
+        art.style.transition = '';
+        art.style.transform = '';
+        art.classList.add('ts-tpb-end-art-in');
+      }, 1600);
+    }
+    if (!('IntersectionObserver' in window)) { land(); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        land();
+        io.unobserve(art);
+      });
+    }, { rootMargin: '-4% 0px -8% 0px', threshold: 0 });
+    io.observe(art);
+  })();
+
+  /* ---------------------------------------------------------------------
+   * Footer: logo mark, divider line and tagline letters animate in once,
+   * the first time the footer enters the viewport.
+   * ------------------------------------------------------------------- */
+  (function footerReveal() {
+    var footer = one('#ts-tpb-footer');
+    if (!footer) return;
+    if (reduced() || !('IntersectionObserver' in window)) { footer.classList.add('ts-tpb-footer-in'); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { footer.classList.toggle('ts-tpb-footer-in', entry.isIntersecting); });
+    }, { threshold: 0.35 });
+    io.observe(footer);
+  })();
+
+  motion.addEventListener('change', function () { /* CSS media query handles the reduced-motion fallback. */ });
+})();
+</script>
+<!-- ════════ END PART 4 of 4 ════════ -->
