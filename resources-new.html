@@ -264,10 +264,10 @@ function readResourceCMS(document) {
   const text=(el,name)=>{const n=el.querySelector('.cms-field-'+name);return n&&!n.classList.contains('w-dyn-bind-empty')?n.textContent.trim():'';};
   const image=(el,name)=>{const n=el.querySelector('img.cms-field-'+name);return n&&!n.classList.contains('w-dyn-bind-empty')?n.getAttribute('src')||'':'';};
   const read=(selector,category)=>Array.from(document.querySelectorAll(selector)).map((el,i)=>{
-    const link=el.querySelector('.cms-field-link');
-    const companyNews=!!el.querySelector('.cms-field-company-news');
+    const link=Array.from(el.querySelectorAll('.cms-field-link')).find(n=>{const v=(n.getAttribute('href')||n.textContent||'').trim();return /^(https?:\/\/|\/(?!\/))/.test(v)&&!n.classList.contains('w-dyn-bind-empty')&&!n.classList.contains('w-condition-invisible');});
+    const companyNews=Array.from(el.querySelectorAll('.cms-field-company-news')).some(n=>!n.classList.contains('w-condition-invisible')&&!n.classList.contains('w-dyn-bind-empty'));
     const tags=Array.from(el.querySelectorAll('.cms-field-tag:not(.w-dyn-bind-empty)')).map(tag=>tag.textContent.trim().replace(/\s*\*$/,'')).filter(Boolean);
-    return {id:category+'-'+i,category:companyNews?'News':category,companyNews,title:text(el,'title'),summary:text(el,'summary'),date:text(el,'date'),tags,tag:text(el,'card-tag')||tags[0]||(companyNews?'Company News':category),meta:[text(el,'company'),text(el,'industry'),text(el,'region')].filter(Boolean).join(' · '),company:text(el,'company'),industry:text(el,'industry'),region:text(el,'region'),metric:text(el,'metric'),metricLabel:text(el,'metric-label'),image:image(el,'thumbnail'),logo:image(el,'logo'),href:link?.getAttribute('href')||link?.textContent.trim()||'',featured:text(el,'card-tag').endsWith('*')};
+    return {id:category+'-'+i,category:companyNews?'News':category,companyNews,title:text(el,'title'),summary:text(el,'summary'),date:text(el,'date'),tags,tag:text(el,'card-tag')||tags[0]||(companyNews?'Company News':category),meta:[text(el,'company'),text(el,'industry'),text(el,'region')].filter(Boolean).join(' · '),company:text(el,'company'),industry:text(el,'industry'),region:text(el,'region'),metric:text(el,'metric'),metricLabel:text(el,'metric-label'),image:image(el,'thumbnail')||image(el,'outlet'),hero:image(el,'hero'),logo:image(el,'logo'),href:link?.getAttribute('href')||link?.textContent.trim()||'',featured:text(el,'card-tag').endsWith('*')};
   }).filter(e=>e.title).map(e=>({...e,tag:e.tag.replace(/\s*\*$/,'')}));
   const customers=read('.cms-customers .cms-item','Customers');
   const opinions=read('.cms-opinions > [role="listitem"]','Opinion');
@@ -319,14 +319,14 @@ var cms = (function () {
   }
   function storyFrom(entry) {
     var brand = brandOf(entry);
-    return {kind: 'story', brand: brand, label: entry.tag || 'Customer story', industry: industryOf(entry), title: entry.title, description: storyDescription(entry, brand, entry.title), metric: String(entry.metric || '').trim(), metricLabel: String(entry.metricLabel || '').trim(), image: entry.thumbnail || entry.image || '', logo: entry.logo || '', href: absolute(entry.href)};
+    return {kind: 'story', brand: brand, label: entry.tag || 'Customer story', industry: industryOf(entry), title: entry.title, description: storyDescription(entry, brand, entry.title), metric: String(entry.metric || '').trim(), metricLabel: String(entry.metricLabel || '').trim(), image: entry.thumbnail || entry.image || '', hero: entry.hero || '', logo: entry.logo || '', href: absolute(entry.href)};
   }
   function guideFrom(entry) {
     return {kind: 'guide', brand: '', label: entry.tag || 'Buyer guide', industry: '', title: entry.title, description: entry.summary || '', image: entry.thumbnail || entry.image || '', logo: '', href: absolute(entry.href)};
   }
 
   function curated(records) {
-    var sp=["/casestudy/heb","/casestudy/despegar","/casestudy/concha-y-toro-topsort-mindgruve","/casestudy/falabella"], gp=["/post/build-vs-buy-retail-media-infrastructure-the-true-5-year-cost","/post/how-to-build-a-retail-media-network","/post/migrate-from-legacy-ad-server-to-topsort","/post/marketplace-advertiser-activation-retention"], sm={"liverpool":["Liverpool","Retailers"],"heb":["H-E-B","Retailers"],"magalu":["Magalu","Retailers"],"cencosud":["Cencosud","Retailers"],"farmatodo":["Farmatodo","Retailers"],"la-rebaja":["La Rebaja","Retailers"],"atida":["Atida","Retailers"],"falabella":["Falabella","Marketplaces"],"falabella-story":["Falabella","Marketplaces"],"how-obi-improved-retail-media-performance-with-topsort":["OBI","Marketplaces"],"sodimac1":["Sodimac","Marketplaces"],"baby-tuto":["Babytuto","Marketplaces"],"poshmark":["Poshmark","Marketplaces"],"how-1stdibs-scaled-retail-media-with-topsort":["1stDibs","Marketplaces"],"auction-infrastructure-1stdibs":["1stDibs","Marketplaces"],"cdon-modern-commerce-media-infrastructure":["CDON","Marketplaces"],"garmentory":["Garmentory","Marketplaces"],"wolf-badger-empowers-800-independent-brands-via-retail-media":["Wolf & Badger","Marketplaces"],"weee":["Weee!","Delivery Apps"],"doordash":["DoorDash","Delivery Apps"],"glo-vo":["Glovo","Delivery Apps"],"daki":["Daki","Delivery Apps"],"elgrocer":["ElGrocer","Delivery Apps"],"bees":["BEES","B2B Commerce"],"chiper":["Chiper","B2B Commerce"],"despegar":["Despegar","Travel & Events"],"youtravel":["YouTravel","Travel & Events"],"hersheys-topsort-mindgruve":["Hershey’s","Brands & Advertisers"],"concha-y-toro-topsort-mindgruve":["Concha y Toro","Brands & Advertisers"]};
+    var sp=["/casestudy/heb","/casestudy/despegar","/casestudy/concha-y-toro-topsort-mindgruve","/casestudy/falabella"], gp=["/post/build-vs-buy-retail-media-infrastructure-the-true-5-year-cost","/post/how-to-build-a-retail-media-network","/post/migrate-from-legacy-ad-server-to-topsort","/post/marketplace-advertiser-activation-retention"], sm={"liverpool":["Liverpool","Retailers"],"heb":["H-E-B","Retailers"],"magalu":["Magalu","Retailers"],"cencosud":["Cencosud","Retailers"],"farmatodo":["Farmatodo","Retailers"],"la-rebaja":["La Rebaja","Retailers"],"atida":["Atida","Retailers"],"falabella":["Falabella","Marketplaces"],"falabella-story":["Falabella","Marketplaces"],"how-obi-improved-retail-media-performance-with-topsort":["OBI","Marketplaces"],"sodimac1":["Sodimac","Marketplaces"],"baby-tuto":["Babytuto","Marketplaces"],"poshmark":["Poshmark","Marketplaces"],"how-1stdibs-scaled-retail-media-with-topsort":["1stDibs","Marketplaces"],"auction-infrastructure-1stdibs":["1stDibs","Marketplaces"],"cdon-modern-commerce-media-infrastructure":["CDON","Marketplaces"],"garmentory":["Garmentory","Marketplaces"],"wolf-badger-empowers-800-independent-brands-via-retail-media":["Wolf & Badger","Marketplaces"],"weee":["Weee!","Delivery Apps"],"doordash":["DoorDash","Delivery Apps"],"glo-vo":["Glovo","Delivery Apps"],"daki":["Daki","Delivery Apps"],"elgrocer":["ElGrocer","Delivery Apps"],"bees":["BEES","B2B Commerce"],"chiper":["Chiper","B2B Commerce"],"just-eat-takeaway-commerce-ai":["Just Eat Takeaway","Delivery Apps"],"despegar":["Despegar","Travel & Events"],"youtravel":["YouTravel","Travel & Events"],"hersheys-topsort-mindgruve":["Hershey’s","Brands & Advertisers"],"concha-y-toro-topsort-mindgruve":["Concha y Toro","Brands & Advertisers"]};
     function pathOf(h){return String(h||'').replace(/^https?:\/\/(?:www\.)?topsort\.com/i,'').split(/[?#]/)[0].replace(/\/$/,'');}
     function pick(a,p){return p.map(function(k){return a.find(function(x){return pathOf(x.href)===k;});}).filter(Boolean);}
     var s=[],g=[],seen=new Set();
@@ -334,7 +334,7 @@ var cms = (function () {
       if(e.category==='Customers'||p.indexOf('/casestudy/')===0){x=storyFrom(e);var b=sm[p.split('/').pop()];if(b){x.brand=b[0];x.industry=b[1];}else{x.brand=e.company||x.brand;x.industry=e.industry||'';}if(x.href)s.push(x);}
       else{x=guideFrom(e);if(x.href)g.push(x);}
     });
-    var featured=s.find(function(x){return pathOf(x.href)==='/casestudy/wolf-badger-empowers-800-independent-brands-via-retail-media';})||s[0]||null;
+    var featured=s.find(function(x){return pathOf(x.href)==='/casestudy/just-eat-takeaway-commerce-ai';})||s.find(function(x){return pathOf(x.href)==='/casestudy/wolf-badger-empowers-800-independent-brands-via-retail-media';})||s[0]||null;
     var st=pick(s,sp),gu=pick(g,gp),lib=st.concat(gu),ss=s.filter(function(x){return st.indexOf(x)<0;}),gg=g.filter(function(x){return gu.indexOf(x)<0;});
     while(ss.length||gg.length){if(ss.length)lib.push(ss.shift());if(gg.length)lib.push(gg.shift());}
     return {featured:featured,stories:st,guides:gu,library:lib,events:[],research:null};
@@ -377,7 +377,7 @@ var cms = (function () {
       card.setAttribute('data-discovery-text', [entry.title, entry.brand, entry.description, entry.industry, entry.label].join(' ').toLowerCase());
     }
     var featured = find('.discovery-featured');
-    if (featured && data.featured) fillCard(featured, data.featured, data.featured.label);
+    if (featured && data.featured) fillCard(featured, Object.assign({},data.featured,{image:data.featured.hero||data.featured.image}), data.featured.label);
     var storyGrid = find('#customer-stories .discovery-four-grid');
     if (storyGrid) {
       var storyTemplate = storyGrid.lastElementChild;
@@ -517,10 +517,13 @@ var cms = (function () {
   var records = [];
   try { records = readResourceCMS(document); } catch (e) { records = []; }
   var inventory=new Map();
+  // Page-scoped visual overrides: populate only with verified Webflow hosted asset URLs. Existing CMS articles stay unchanged.
+  var resourceImageOverrides=window.__tsResourceImageOverrides||{};
   function inventoryKey(h){return String(h||'').replace(/^https?:\/\/(?:www\.)?topsort\.com/i,'').split(/[?#]/)[0].replace(/\/$/,'');}
   snapshot.forEach(function(r){inventory.set(inventoryKey(r.href),r);});
-  records.forEach(function(r){var k=inventoryKey(r.href);if(!k||k==='/casestudy/chiper')return;var p=inventory.get(k);if(p){['title','summary','date','image','logo','metric','metricLabel'].forEach(function(f){if(r[f])p[f]=r[f];});}else if(r.title)inventory.set(k,r);});
+  records.forEach(function(r){var k=inventoryKey(r.href);if(!k||k==='/casestudy/chiper')return;var p=inventory.get(k);if(p){['title','summary','date','image','hero','logo','metric','metricLabel'].forEach(function(f){if(r[f])p[f]=r[f];});}else if(r.title)inventory.set(k,r);});
   records=Array.from(inventory.values());
+  records.forEach(function(r){var o=resourceImageOverrides[inventoryKey(r.href)];if(o){if(o.thumbnail)r.image=o.thumbnail;if(o.hero)r.hero=o.hero;}});
   roots.forEach(function(root){ cms.render(root, function(name){ return classOf[name] || name; }, cms.curated(records)); });
   if (window.__tsRevealRegister) all('#customer-stories article').forEach(function(card){ window.__tsRevealRegister([card]); });
   roots.forEach(function(root){
