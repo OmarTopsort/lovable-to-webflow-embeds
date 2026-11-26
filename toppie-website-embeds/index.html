@@ -251,7 +251,14 @@ h2.ts-tpb-scrollwords { font-family: 'Poppins', system-ui, sans-serif !important
 .ts-tpb-why-copy { margin-top: 64px !important; display: grid !important; gap: 28px !important; font-size: 1.05rem !important; line-height: 1.4 !important; }
 @media (min-width: 1024px) { .ts-tpb-why-copy { grid-template-columns: repeat(2, minmax(0,1fr)) !important; gap: 48px !important; } }
 .ts-tpb-why-copy p:first-child { color: hsl(var(--tpb-muted-foreground)) !important; }
-.ts-tpb-list { padding: 0 !important; }
+/* The <ol> below carries .ts-tpb-wrap (for side padding) AND is itself an <ol>, so the
+   universal text-element reset "ol { padding: 0 }" (0,1,1 specificity) beats
+   .ts-tpb-wrap's single-class rule (0,1,0) and strips its left/right padding — the
+   Discover/Launch/Grow rows then run flush to the viewport edge instead of lining up
+   with the heading above them. Re-declare the wrap's side padding at matching (0,1,1)
+   specificity, after the reset, so it wins without touching the margin reset. */
+ol.ts-tpb-list { padding-left: 20px !important; padding-right: 20px !important; }
+@media (min-width: 640px) { ol.ts-tpb-list { padding-left: 40px !important; padding-right: 40px !important; } }
 li.ts-tpb-list-item { display: grid !important; gap: 12px !important; align-items: start !important; border-top: 1px solid hsl(var(--tpb-foreground) / .15) !important; padding: 32px 0 !important; }
 @media (min-width: 1024px) { li.ts-tpb-list-item { grid-template-columns: repeat(12, minmax(0,1fr)) !important; gap: 24px !important; padding: 40px 0 !important; } }
 .ts-tpb-list-index { padding-top: 8px !important; }
