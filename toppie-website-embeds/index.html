@@ -1,6 +1,6 @@
 <!-- ══════════════════════════════════════════════════════════════════
      toppie/index.html  ·  Webflow paste guide
-     4 parts · each under 50,000 chars (Webflow HTML Embed limit)
+     5 parts · each under 50,000 chars (Webflow HTML Embed limit)
      Paste each PART below into its own HTML Embed, in this order.
      The PART comments are landmarks only - you do not need to copy them.
      Toppie — "More places to sell. More customers to win." brand landing page.
@@ -9,10 +9,13 @@
      No live public URL for /brands exists on topsort.com yet. The Explore form opens an in-page
      Discover flow (loading -> opportunity results -> create account / sign in) that mirrors the
      Lovable /brands/discover + /brands/signup demo journey with the same sample inventory; the
-     final hand-off goes to https://app.topsort.com/. QA fixes per fixes.pdf (2026-11-25).
+     final hand-off goes to https://app.topsort.com/. QA fixes per fixes.pdf (2026-11-25) and the
+     26 Nov follow-up (row padding, hero mascot, autoplay safety-net).
+     PART 4 and PART 5 are a single IIFE-per-script JS bundle split only because it outgrew the
+     50,000-char limit — paste both, in order; see CLAUDE.md "CSS and JS split freely".
      ══════════════════════════════════════════════════════════════════ -->
 
-<!-- ════════ PART 1 of 4 · CSS · page · 37,597 chars ════════ -->
+<!-- ════════ PART 1 of 5 · CSS · page · 37,597 chars ════════ -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
 <style>
 .ts-tpb,
@@ -437,8 +440,8 @@ p.ts-tpb-footer-tagline { font-size: .875rem !important; color: hsl(var(--tpb-ba
   .ts-tpb-footer-mark, .ts-tpb-footer-divider, .ts-tpb-footer-letter { opacity: 1 !important; transform: none !important; filter: none !important; }
 }
 </style>
-<!-- ════════ END PART 1 of 4 ════════ -->
-<!-- ════════ PART 2 of 4 · HTML · 21,698 chars ════════ -->
+<!-- ════════ END PART 1 of 5 ════════ -->
+<!-- ════════ PART 2 of 5 · HTML · 21,698 chars ════════ -->
 <div id="ts-toppie" class="ts-root ts-tpb" style="--tpb-logo-url:url('https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/e1d9bcc6-cf25-4934-bb46-2cd38a20f955/logo_toppie.svg')">
 
   <!-- ===== NAV ===== -->
@@ -672,7 +675,7 @@ p.ts-tpb-footer-tagline { font-size: .875rem !important; color: hsl(var(--tpb-ba
 
   <!-- ===== END ===== -->
   <section class="ts-tpb-end">
-    <img class="ts-tpb-end-art" data-tpb-end-art data-tpb-no-reveal src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/8bf9dfbc-2f9a-4662-b79f-f13e5c58f0fb/toppie_jump.png" alt="Toppie the robot jumping" loading="eager" decoding="async">
+    <img class="ts-tpb-end-art" data-tpb-end-art data-tpb-no-reveal src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/c2476a88-380e-4a8e-bfee-e23360162ae2/toppie_waving_headphones.png" alt="Toppie the robot waving" loading="eager" decoding="async">
     <div class="ts-tpb-wrap">
       <div class="ts-tpb-end-grid">
         <div class="ts-tpb-end-main">
@@ -697,8 +700,8 @@ p.ts-tpb-footer-tagline { font-size: .875rem !important; color: hsl(var(--tpb-ba
   </footer>
 
 </div>
-<!-- ════════ END PART 2 of 4 ════════ -->
-<!-- ════════ PART 3 of 4 · CSS · Discover flow · 25,221 chars ════════ -->
+<!-- ════════ END PART 2 of 5 ════════ -->
+<!-- ════════ PART 3 of 5 · CSS · Discover flow · 25,221 chars ════════ -->
 <style>
 /* ===================== DISCOVER FLOW (QA task 08) =====================
    Full-screen layer inside the embed root: loading → results → signup. */
@@ -898,8 +901,8 @@ button.ts-tpb-selpreview-head { display: flex !important; align-items: center !i
   .ts-tpb-load-step[data-active="true"] .ts-tpb-load-light { animation: none !important; }
 }
 </style>
-<!-- ════════ END PART 3 of 4 ════════ -->
-<!-- ════════ PART 4 of 4 · JS · 48,648 chars ════════ -->
+<!-- ════════ END PART 3 of 5 ════════ -->
+<!-- ════════ PART 4 of 5 · JS · 9,727 chars ════════ -->
 <script>
 (function () {
   'use strict';
@@ -1040,6 +1043,14 @@ button.ts-tpb-selpreview-head { display: flex !important; align-items: center !i
   /* ---------------------------------------------------------------------
    * Background/loop videos: play only while visible, pause under reduced
    * motion or when the tab is hidden.
+   *
+   * Safety-net autoplay (QA follow-up, 26 Nov): some mobile browsers can
+   * reject the first .play() even on a muted/playsinline video, leaving a
+   * static frame. <video autoplay> covers the common case; as a fallback
+   * we also retry .play() on any still-paused, visible video on the
+   * visitor's first interaction (tap/scroll/key) — a real gesture always
+   * satisfies autoplay policy. Listeners remove themselves once nothing
+   * is stuck.
    * ------------------------------------------------------------------- */
   (function videos() {
     var list = all('video');
@@ -1060,6 +1071,19 @@ button.ts-tpb-selpreview-head { display: flex !important; align-items: center !i
     document.addEventListener('visibilitychange', function () {
       list.forEach(function (video) { update(video, video.getAttribute('data-tpb-visible') === 'true'); });
     });
+
+    if (reduced()) return;
+    var gestures = ['pointerdown', 'touchstart', 'keydown', 'scroll'];
+    function retry() {
+      var stuck = false;
+      list.forEach(function (video) {
+        if (document.hidden || video.getAttribute('data-tpb-visible') === 'false' || !video.paused) return;
+        var p = video.play(); if (p && p.catch) p.catch(function () {});
+        stuck = true;
+      });
+      if (!stuck) gestures.forEach(function (name) { document.removeEventListener(name, retry); });
+    }
+    gestures.forEach(function (name) { document.addEventListener(name, retry, { passive: true }); });
   })();
 
   /* ---------------------------------------------------------------------
@@ -1086,6 +1110,26 @@ button.ts-tpb-selpreview-head { display: flex !important; align-items: center !i
     window.addEventListener('scroll', schedule, { passive: true });
     window.addEventListener('resize', schedule);
   })();
+})();
+</script>
+<!-- ════════ END PART 4 of 5 ════════ -->
+<!-- ════════ PART 5 of 5 · JS (continued) · 40,884 chars ════════ -->
+<!-- Same page, split only because the JS bundle outgrew one 50,000-char Embed — paste
+     straight after PART 4's script, in order. Re-declares its own root/helpers and its
+     own ready-guard (data-tpb-ready-p5) since each <script> tag is a separate scope and
+     PART 4 already consumed the shared data-tpb-ready flag on root. See CLAUDE.md
+     "CSS and JS split freely". -->
+<script>
+(function () {
+  'use strict';
+  var root = document.getElementById('ts-toppie');
+  if (!root || root.hasAttribute('data-tpb-ready-p5')) return;
+  root.setAttribute('data-tpb-ready-p5', '');
+
+  var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var reduced = function () { return motion.matches; };
+  var one = function (s, scope) { return (scope || root).querySelector(s); };
+  var all = function (s, scope) { return Array.from((scope || root).querySelectorAll(s)); };
 
   /* ---------------------------------------------------------------------
    * Explore form: website field + market picker. Submitting opens the
@@ -1662,4 +1706,4 @@ button.ts-tpb-selpreview-head { display: flex !important; align-items: center !i
   motion.addEventListener('change', function () { /* CSS media query handles the reduced-motion fallback. */ });
 })();
 </script>
-<!-- ════════ END PART 4 of 4 ════════ -->
+<!-- ════════ END PART 5 of 5 ════════ -->
