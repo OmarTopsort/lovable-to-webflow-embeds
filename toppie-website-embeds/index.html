@@ -9,13 +9,15 @@
      No live public URL for /brands exists on topsort.com yet. The Explore form opens an in-page
      Discover flow (loading -> opportunity results -> create account / sign in) that mirrors the
      Lovable /brands/discover + /brands/signup demo journey with the same sample inventory; the
-     final hand-off goes to https://app.topsort.com/. QA fixes per fixes.pdf (2026-11-25) and the
-     26 Nov follow-up (row padding, hero mascot, autoplay safety-net).
+     final hand-off goes to https://app.topsort.com/. QA fixes per fixes.pdf (2026-11-25), the
+     26 Nov follow-up (row padding, hero mascot, autoplay safety-net), and the 27 Nov follow-up
+     (logo → "/", gradient legibility on burgundy, tooltip images, signup single-back + collapsed
+     opportunity, mobile pre-footer order).
      PART 4 and PART 5 are a single IIFE-per-script JS bundle split only because it outgrew the
      50,000-char limit — paste both, in order; see CLAUDE.md "CSS and JS split freely".
      ══════════════════════════════════════════════════════════════════ -->
 
-<!-- ════════ PART 1 of 5 · CSS · page · 37,597 chars ════════ -->
+<!-- ════════ PART 1 of 5 · CSS · page · 40,483 chars ════════ -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
 <style>
 .ts-tpb,
@@ -78,6 +80,16 @@
   color: transparent !important; -webkit-text-fill-color: transparent !important;
   animation: ts-tpb-gradient-pan 6s ease-in-out infinite !important;
   display: inline-block !important;
+}
+/* On a burgundy background (Explore section, loading screen) the gradient's own
+   --tpb-burgundy stop equals the surface behind it, so the animation periodically
+   paints part of the word the same color as its background — reads as a clipped/
+   missing letter (QA follow-up, 27 Nov: "still cutting the GO NEXT"). Source already
+   solves this the same way for its dark/onboarding screens (.onboarding-dark
+   .text-gradient-red swaps in --loading-bright instead of the burgundy-family stop);
+   apply that same swap here, scoped to the sections that actually sit on burgundy. */
+.ts-tpb-explore .ts-tpb-gradient, .ts-tpb-flow-dark .ts-tpb-gradient {
+  background-image: linear-gradient(90deg, hsl(var(--tpb-primary)), hsl(var(--tpb-red-3)), hsl(var(--tpb-red-2)), hsl(var(--tpb-primary))) !important;
 }
 .ts-tpb-hover-grad {
   background-image: linear-gradient(90deg, hsl(var(--tpb-primary)), hsl(var(--tpb-burgundy)), hsl(var(--tpb-red-2)), hsl(var(--tpb-primary))) !important;
@@ -365,13 +377,16 @@ p.ts-tpb-step-desc { max-width: 24rem !important; margin-top: 10px !important; c
 
 /* ===================== END ===================== */
 .ts-tpb-end { position: relative !important; overflow: hidden !important; background: hsl(var(--tpb-primary)) !important; color: hsl(var(--tpb-primary-foreground)) !important; }
-/* Toppie jumps in from the right edge of the pre-footer (QA task 07). */
+/* Mascot waves in from the right edge of the pre-footer. On mobile it stays absolutely
+   bottom-anchored (NOT in flow) and the content column reserves space with a large
+   bottom padding, so the order reads heading -> CTA -> big mascot below, matching the
+   Lovable reference (QA follow-up, 27 Nov: mobile pre-footer diagramation). */
 .ts-tpb-end-art { position: absolute !important; bottom: 0 !important; right: -2vw !important; display: block !important; height: 108% !important; width: auto !important; max-width: none !important; pointer-events: none !important; }
 @media (max-width: 1023px) { .ts-tpb-end-art { height: 88% !important; right: -6vw !important; } }
-@media (max-width: 639px) { .ts-tpb-end-art { position: static !important; height: auto !important; width: min(62vw, 250px) !important; margin: 0 0 -6px auto !important; padding-top: 44px !important; } }
+@media (max-width: 639px) { .ts-tpb-end-art { height: 64% !important; right: -10vw !important; } }
 .ts-tpb-end-grid { position: relative !important; display: grid !important; gap: 40px !important; padding: 96px 0 !important; }
 @media (min-width: 1024px) { .ts-tpb-end-grid { grid-template-columns: repeat(12, minmax(0,1fr)) !important; padding: 128px 0 !important; } }
-@media (max-width: 639px) { .ts-tpb-end-grid { padding: 56px 0 24px !important; } }
+@media (max-width: 639px) { .ts-tpb-end-grid { padding: 64px 0 75vw !important; } }
 .ts-tpb-end-main { min-width: 0 !important; }
 @media (min-width: 1024px) { .ts-tpb-end-main { grid-column: span 8 / span 8 !important; } }
 h2.ts-tpb-end-h2 { font-family: 'Poppins', system-ui, sans-serif !important; font-weight: 600 !important; font-size: clamp(2.4rem, 7.5vw, 6.5rem) !important; line-height: 0.9 !important; letter-spacing: -0.055em !important; overflow-wrap: break-word !important; }
@@ -441,13 +456,13 @@ p.ts-tpb-footer-tagline { font-size: .875rem !important; color: hsl(var(--tpb-ba
 }
 </style>
 <!-- ════════ END PART 1 of 5 ════════ -->
-<!-- ════════ PART 2 of 5 · HTML · 21,698 chars ════════ -->
+<!-- ════════ PART 2 of 5 · HTML · 22,098 chars ════════ -->
 <div id="ts-toppie" class="ts-root ts-tpb" style="--tpb-logo-url:url('https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/e1d9bcc6-cf25-4934-bb46-2cd38a20f955/logo_toppie.svg')">
 
   <!-- ===== NAV ===== -->
   <header id="ts-tpb-nav" class="ts-tpb-nav" data-tpb-scrolled="false" data-tpb-menu-open="false" data-tpb-tone="light">
     <div class="ts-tpb-nav-bar">
-      <a href="https://www.topsort.com/products/toppie-dsp" class="ts-tpb-nav-logo" aria-label="Toppie home">
+      <a href="/" class="ts-tpb-nav-logo" aria-label="Toppie home">
         <video class="ts-tpb-nav-icon" data-tpb-icon-video src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/0eb8677a-22a1-4880-a06f-78a2a96553cb/toppie_icon_head.mp4" muted playsinline preload="auto" aria-hidden="true"></video>
         <img class="ts-tpb-nav-logo-word" src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/e1d9bcc6-cf25-4934-bb46-2cd38a20f955/logo_toppie.svg" alt="Toppie" loading="eager">
       </a>
@@ -689,7 +704,7 @@ p.ts-tpb-footer-tagline { font-size: .875rem !important; color: hsl(var(--tpb-ba
   <!-- ===== FOOTER ===== -->
   <footer id="ts-tpb-footer" class="ts-tpb-footer">
     <div class="ts-tpb-footer-inner">
-      <a href="https://www.topsort.com/products/toppie-dsp" aria-label="Toppie home" class="ts-tpb-footer-mark">
+      <a href="/" aria-label="Toppie home" class="ts-tpb-footer-mark">
         <span class="ts-tpb-footer-logo"><img src="https://id-preview--f8dd8aba-8e04-4884-9025-7fa16ea06148.lovable.app/__l5e/assets-v1/e1d9bcc6-cf25-4934-bb46-2cd38a20f955/logo_toppie.svg" alt="Toppie" loading="lazy"></span>
       </a>
       <span class="ts-tpb-footer-divider" aria-hidden="true"></span>
@@ -701,7 +716,7 @@ p.ts-tpb-footer-tagline { font-size: .875rem !important; color: hsl(var(--tpb-ba
 
 </div>
 <!-- ════════ END PART 2 of 5 ════════ -->
-<!-- ════════ PART 3 of 5 · CSS · Discover flow · 25,221 chars ════════ -->
+<!-- ════════ PART 3 of 5 · CSS · Discover flow · 25,277 chars ════════ -->
 <style>
 /* ===================== DISCOVER FLOW (QA task 08) =====================
    Full-screen layer inside the embed root: loading → results → signup. */
@@ -709,6 +724,7 @@ p.ts-tpb-footer-tagline { font-size: .875rem !important; color: hsl(var(--tpb-ba
 .ts-tpb-flow[hidden] { display: none !important; }
 .ts-tpb-flow-scroll { height: 100% !important; overflow-y: auto !important; overflow-x: clip !important; -webkit-overflow-scrolling: touch !important; }
 .ts-tpb-flow-top { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 16px !important; max-width: 1600px !important; margin: 0 auto !important; padding: 18px 20px !important; }
+.ts-tpb-flow-top[hidden] { display: none !important; }
 @media (min-width: 640px) { .ts-tpb-flow-top { padding: 22px 40px !important; } }
 .ts-tpb-flow-top .ts-tpb-nav-logo { margin-right: 0 !important; }
 button.ts-tpb-flow-close { display: inline-flex !important; align-items: center !important; gap: 6px !important; font-size: 13px !important; font-weight: 600 !important; color: hsl(var(--tpb-muted-foreground)) !important; border-radius: 999px !important; padding: 8px 14px !important; transition: color .2s ease, background-color .2s ease !important; }
@@ -1113,7 +1129,7 @@ button.ts-tpb-selpreview-head { display: flex !important; align-items: center !i
 })();
 </script>
 <!-- ════════ END PART 4 of 5 ════════ -->
-<!-- ════════ PART 5 of 5 · JS (continued) · 40,884 chars ════════ -->
+<!-- ════════ PART 5 of 5 · JS (continued) · 41,984 chars ════════ -->
 <!-- Same page, split only because the JS bundle outgrew one 50,000-char Embed — paste
      straight after PART 4's script, in order. Re-declares its own root/helpers and its
      own ready-guard (data-tpb-ready-p5) since each <script> tag is a separate scope and
@@ -1146,9 +1162,9 @@ button.ts-tpb-selpreview-head { display: flex !important; align-items: center !i
     var ICON_VIDEO = ASSETS + '0eb8677a-22a1-4880-a06f-78a2a96553cb/toppie_icon_head.mp4';
     var LOGO_SVG = ASSETS + 'e1d9bcc6-cf25-4934-bb46-2cd38a20f955/logo_toppie.svg';
     var FORMAT_ART = {
-      'Sponsored Products': ASSETS + 'format_products.png',
-      'Sponsored Brands': ASSETS + 'format_brands.png',
-      'Banners': ASSETS + 'format_display.png'
+      'Sponsored Products': ASSETS + 'a46d8c2f-c407-4d55-965c-0958911aba9b/format_products.png',
+      'Sponsored Brands': ASSETS + '9192af60-dd70-4aaf-b789-cc38ce67884e/format_brands.png',
+      'Banners': ASSETS + 'd4109446-33a4-4b75-87f1-17f15e9e0f28/format_display.png'
     };
     var CATEGORIES = ['Beauty & Personal Care', 'Grocery & Beverage', 'Home & Living', 'Electronics', 'Fashion & Apparel', 'Health & Wellness', 'Pet Supplies', 'Sports & Outdoors'];
     var MARKETS = ['Brazil', 'Mexico', 'United States', 'Australia', 'Europe', 'Other markets'];
@@ -1280,7 +1296,7 @@ button.ts-tpb-selpreview-head { display: flex !important; align-items: center !i
       layer.innerHTML =
         '<div class="ts-tpb-flow-scroll">' +
           '<div class="ts-tpb-flow-top">' +
-            '<a href="https://www.topsort.com/products/toppie-dsp" class="ts-tpb-nav-logo" aria-label="Toppie home">' +
+            '<a href="/" class="ts-tpb-nav-logo" aria-label="Toppie home">' +
               '<img class="ts-tpb-nav-logo-word" src="' + LOGO_SVG + '" alt="Toppie">' +
             '</a>' +
             '<button type="button" class="ts-tpb-flow-close" data-tpb-flow-close aria-label="Close and return to the page">' + icon('chevron-left') + 'Back to Toppie</button>' +
@@ -1295,16 +1311,22 @@ button.ts-tpb-selpreview-head { display: flex !important; align-items: center !i
       });
       return layer;
     }
-    function openFlow(html, theme) {
+    function openFlow(html, theme, hideTop) {
       ensureLayer();
       clearTimeout(loadTimer);
       layer.className = 'ts-tpb-flow' + (theme ? ' ' + theme : '');
       layerBody.innerHTML = html;
       layer.hidden = false;
+      /* The signup screen (QA follow-up, 27 Nov: "two different back" controls) has its
+         own single Back button, matching the Lovable /brands/signup page exactly (no
+         site header there at all) — the shared flow-top bar is for the loading/results
+         screens, which stand in for pages that do have the full site nav in source.
+         Showing both on signup duplicated back/close controls, so hide flow-top there. */
+      one('.ts-tpb-flow-top', layer).hidden = !!hideTop;
       document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
       one('.ts-tpb-flow-scroll', layer).scrollTop = 0;
-      var focusTarget = one('[data-tpb-autofocus]', layerBody) || one('[data-tpb-flow-close]', layer);
+      var focusTarget = one('[data-tpb-autofocus]', layerBody) || (hideTop ? null : one('[data-tpb-flow-close]', layer));
       if (focusTarget) focusTarget.focus();
     }
     function closeFlow() {
@@ -1499,7 +1521,7 @@ button.ts-tpb-selpreview-head { display: flex !important; align-items: center !i
                 '</div>' +
                 '<div data-tpb-stage="done" hidden>' +
                   '<h1 class="ts-tpb-signup-h1">You\u2019re all set, <span class="ts-tpb-gradient">' + esc(b.name) + '.</span></h1>' +
-                  '<p class="ts-tpb-signup-sub" data-tpb-done-copy></p>' + selectedPreview() +
+                  '<p class="ts-tpb-signup-sub" data-tpb-done-copy></p>' + selectedPreview(true) +
                   '<div class="ts-tpb-signup-actions"><a class="ts-tpb-btn ts-tpb-btn-primary ts-tpb-btn-block" href="https://app.topsort.com/" target="_blank" rel="noopener">Open Topsort ' + icon('chevron-right') + '</a></div>' +
                 '</div>' +
               '</div>' +
@@ -1507,17 +1529,23 @@ button.ts-tpb-selpreview-head { display: flex !important; align-items: center !i
             '<p class="ts-tpb-signup-foot">New to Toppie? <button type="button" class="ts-tpb-signup-footlink" data-tpb-signup-explore>Explore opportunities first</button></p>' +
           '</div>' +
           '<div class="ts-tpb-signup-right" aria-hidden="true"><div class="ts-tpb-signup-video"><video src="' + RUN_VIDEO + '" muted playsinline autoplay loop preload="auto"></video></div></div>' +
-        '</div>', 'ts-tpb-flow-card');
+        '</div>', 'ts-tpb-flow-card', true);
       wireSignup(guess, fromOpportunities);
     }
-    function selectedPreview() {
+    function selectedPreview(allOpen) {
       var items = session.selected.map(oppById).filter(Boolean);
       if (!items.length) return '';
+      /* Lovable's SelectedPreview starts with everything collapsed (useState(-1), despite
+         its own stale doc-comment saying "first expanded") unless the caller passes
+         allOpen for a final read-only summary. The signup auth screen doesn't pass
+         allOpen, so it must start fully collapsed too (QA follow-up, 27 Nov: "when a
+         opportunity is charged, the idea is the opportunity it need to be collapse"). */
       return '<ul class="ts-tpb-selpreview">' + items.map(function (o, i) {
-        return '<li class="ts-tpb-selpreview-item" data-open="' + (i === 0 ? 'true' : 'false') + '">' +
-          '<button type="button" class="ts-tpb-selpreview-head" data-tpb-selpreview-toggle aria-expanded="' + (i === 0) + '">' +
+        var open = !!allOpen;
+        return '<li class="ts-tpb-selpreview-item" data-open="' + open + '">' +
+          '<button type="button" class="ts-tpb-selpreview-head" data-tpb-selpreview-toggle' + (allOpen ? ' disabled' : '') + ' aria-expanded="' + open + '">' +
             '<span class="ts-tpb-selpreview-name">' + esc(o.destination) + '</span>' +
-            '<span class="ts-tpb-selpreview-market">' + flag(o.market) + esc(o.market) + '</span>' + icon('chevron-down', 'ts-tpb-selpreview-chev') +
+            '<span class="ts-tpb-selpreview-market">' + flag(o.market) + esc(o.market) + '</span>' + (allOpen ? '' : icon('chevron-down', 'ts-tpb-selpreview-chev')) +
           '</button>' +
           '<div class="ts-tpb-selpreview-body"><div>' + statusSpan(o) +
             '<div class="ts-tpb-selpreview-formats">' + o.formats.map(function (f) { return formatPill(f, false); }).join('') + '</div>' +
